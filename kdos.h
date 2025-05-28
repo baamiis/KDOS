@@ -3,41 +3,44 @@
 #if !defined(_KDOS)
 #define _KDOS
 
+#include <stdbool.h> // For bool type
+
 // Macros and ennumerations
 // ========================
 
 // include your target processor here
 // exemple #include <targets/AT91M55800A.h>
 
-// We rely on these as booleans for the task goes to sleep whether to allow for
-other tasks execution or inhibit execution until.
+// We rely on these as booleans for the task goes to sleep whether to allow forother tasks execution or inhibit execution until.
 #define TASK_SWITCH_PERMIT 1
 #define TASK_SWITCH_INHIBIT 0
 
 #define MSG_WAIT 0xffff
 
-                         // Message identifiers
+// Message identifiers
 
-                         enum MSG_TYPE {
-                           // System message IDs
-                           MSG_TYPE_INIT,
-                           MSG_TYPE_TIMER
-                           // User message IDs
-                           // Config program uses the next 2
-                         };
+enum MSG_TYPE
+{
+  // System message IDs
+  MSG_TYPE_INIT,
+  MSG_TYPE_TIMER
+  // User message IDs
+  // Config program uses the next 2
+};
 
 // Structures
 // ==========
 
 struct TASK
 {
-  unsigned short int (*Func)(unsigned short int MsgType, unsigned short int sPara m, long lParam);
-  int32_t *StackPtr; // Corrected line
+  unsigned short int (*Func)(unsigned short int MsgType, unsigned short int sPar a m, long lParam);
+  int32_t *StackPtr;
   struct MSG *MsgQueue;
   struct MSG *MsgQueueIn;
   struct MSG *MsgQueueOut;
   struct MSG *MsgQueueEnd;
   int MsgCount;
+  INT QueueCapacity; // Added for queue overflow detection
   unsigned short int Timer;
   bool TimerFlag;
   bool Sleeping;
@@ -55,9 +58,10 @@ struct MSG
 // Prototypes
 // ==========
 void RunOS(void);
-void SendMsg(struct TASK *Task, unsigned short int MsgType, unsigned short int s Param, long lParam);
+// Changed SendMsg to return bool
+bool SendMsg(struct TASK *Task, unsigned short int MsgType, unsigned short int s Param, long lParam);
 int Sleep(unsigned short int Delay, bool TaskSwitchPermit);
-struct TASK *InitTask(unsigned short int (*Func)(unsigned short int MsgType, unsi gned short int sParam, long lParam),
+struct TASK *InitTask(unsigned short int (*Func)(unsigned short int MsgType, uns i gned short int sParam, long lParam),
                       INT StackSize,
                       INT QueueSize,
                       BYTE TaskID);
