@@ -208,7 +208,7 @@ void WakeUp(struct TASK *Task, INT WakeUpType)
   }
 }
 
-// MODIFIED SwitchTask function (interrupt placeholders)
+// MODIFIED SwitchTask function (interrupt HAL calls)
 static void SwitchTask()
 {
   static struct MSG *Msg;
@@ -229,7 +229,7 @@ static void SwitchTask()
         TaskCurrent->TimerFlag = FALSE;
         TaskCurrent->Sleeping = FALSE;
         K_HAL_EnableInterrupts(); // Replaced __ARMLIB_enableIRQ
-        return;                   // Returns to Sleep() context (on OS stack after PUSH_REGS)
+        return;
       }
     }
     else if (TaskCurrent->MsgCount != 0)
@@ -243,7 +243,7 @@ static void SwitchTask()
       }
       --TaskCurrent->MsgCount;
 
-      // Context switch logic will replace these SP assignments
+      // Context switch logic will replace these SP assignments (Phase 2/3)
       OS_SP = SP;
       SP = TaskCurrent->StackPtr;
 
@@ -251,7 +251,6 @@ static void SwitchTask()
       Delay = TaskCurrent->Func(Msg->MsgType, Msg->sParam, Msg->lParam);
       K_HAL_DisableInterrupts(); // Replaced __ARMLIB_disableIRQ (after task returns)
 
-      // Context switch logic will replace these SP assignments
       TaskCurrent->StackPtr = SP;
       SP = OS_SP;
 
@@ -273,7 +272,6 @@ static void SwitchTask()
       TaskCurrent->Timer = 0;
       TaskCurrent->TimerFlag = FALSE;
 
-      // Context switch logic will replace these SP assignments
       OS_SP = SP;
       SP = TaskCurrent->StackPtr;
 
@@ -285,7 +283,6 @@ static void SwitchTask()
       Delay = TaskCurrent->Func(MSG_TYPE_TIMER, 0, 0L);
       K_HAL_DisableInterrupts(); // Replaced __ARMLIB_disableIRQ (after task returns)
 
-      // Context switch logic will replace these SP assignments
       TaskCurrent->StackPtr = SP;
       SP = OS_SP;
 
@@ -306,7 +303,7 @@ static void SwitchTask()
   } // while TRUE
 }
 
-// MODIFIED Sleep function (interrupt placeholders for state modification)
+// MODIFIED Sleep function (interrupt HAL calls for state modification)
 INT Sleep(WORD Delay, bool TaskSwitchPermit)
 {
   K_HAL_DisableInterrupts(); // Protect TaskCurrent member modifications
@@ -328,31 +325,30 @@ INT Sleep(WORD Delay, bool TaskSwitchPermit)
   }
   MultiTask = TaskSwitchPermit;
 
-  // K_HAL_EnableInterrupts(); // NO! Context switch must happen with IRQs disabled,
-  // or K_HAL_ContextSwitch must handle IRQ state carefully.
-  // For now, assume IRQs remain disabled until task resumes.
+  // The PUSH_REGS/POP_REGS and SP manipulations for context switch
+  // will be replaced by K_HAL_ContextSwitch in the next phase.
+  // For now, K_HAL_EnableInterrupts() is called before SwitchTask, assuming
+  // SwitchTask itself will immediately call K_HAL_DisableInterrupts().
+  // This interaction needs to be precise when K_HAL_ContextSwitch is integrated.
+  K_HAL_EnableInterrupts(); // Allow SwitchTask to manage its own critical sections.
+                            // This is a temporary measure. Ideally, the section is protected until
+                            // the context switch call.
 
-  // PUSH_REGS, SP manipulations, and SwitchTask() call will be replaced by K_HAL_ContextSwitch
   PUSH_REGS
   TaskCurrent->StackPtr = SP;
   SP = OS_SP;
 
-  K_HAL_EnableInterrupts(); // Momentarily enable for SwitchTask's own IRQ control.
-                            // This is tricky; SwitchTask has its own disable/enable.
-                            // Better: K_HAL_ContextSwitch is called with IRQs disabled.
-  SwitchTask();             // SwitchTask expects to be called with IRQs disabled by its first K_HAL_DisableInterrupts()
+  SwitchTask(); // SwitchTask begins with K_HAL_DisableInterrupts
 
   // --- Code resumes here when this task is scheduled back in ---
-  // This part (OS_SP = SP; SP = TaskCurrent->StackPtr; POP_REGS) is effectively
-  // part of the K_HAL_ContextSwitch when returning to a task.
-
-  K_HAL_DisableInterrupts(); // Assume K_HAL_ContextSwitch returns with IRQs disabled.
+  // The K_HAL_ContextSwitch (when implemented) will return here with IRQs disabled.
+  K_HAL_DisableInterrupts(); // Ensure interrupts are disabled after context restore.
 
   OS_SP = SP;
   SP = TaskCurrent->StackPtr;
   POP_REGS
 
-  MultiTask = TRUE; // Reset for general operation
+  MultiTask = TRUE;
 
   K_HAL_EnableInterrupts(); // Enable interrupts before returning to task code
   return TaskCurrent->WakeUpType;
