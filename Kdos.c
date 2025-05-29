@@ -1,3 +1,31 @@
+/*
+ * WARNING: Using Sleep() with TASK_SWITCH_INHIBIT and a Delay of MSG_WAIT:
+ *
+ * When TASK_SWITCH_INHIBIT is used with the Sleep() function, the KDOS scheduler
+ * (`SwitchTask`) will cease its normal round-robin scheduling and will focus
+ * exclusively on the calling task. It will not advance to other tasks.
+ *
+ * If the Delay parameter is also set to MSG_WAIT (signifying an indefinite sleep),
+ * the system will effectively HALT with respect to all other task activities.
+ * The scheduler will continuously check only the current task, which is waiting
+ * indefinitely to be woken by an explicit call to WakeUp().
+ *
+ * Only an Interrupt Service Routine (ISR) that calls WakeUp() on this specific
+ * task can resume its execution and, subsequently, the scheduling of other tasks
+ * (because Sleep() resets MultiTask to TRUE upon exiting).
+ *
+ * The system's 1ms timer tick (`key_timer_irq_handler`) will continue to fire
+ * and update other tasks' timers and flags, but these tasks will NOT be scheduled
+ * as long as the initial task remains in this Sleep(MSG_WAIT, TASK_SWITCH_INHIBIT) state.
+ *
+ * This combination should be used with EXTREME CAUTION and only for very specific,
+ * short-duration critical sections or busy-waits where an external ISR is
+ * guaranteed to provide the WakeUp() call. Improper use will lead to an
+ * unresponsive system for other tasks.
+ *
+ * The original README warning "Do not do this lightly" for TASK_SWITCH_INHIBIT
+ * particularly applies to this scenario.
+ */
 // KDOS.c
 // Don't modify any of this file unless you really understand what you are doing
 // Includes
