@@ -1,4 +1,4 @@
-// KDOS.h
+ // KDOS.h
 
 #if !defined(_KDOS)
 #define _KDOS
@@ -11,7 +11,7 @@
 // include your target processor here
 // exemple #include <targets/AT91M55800A.h>
 
-// We rely on these as booleans for the task goes to sleep whether to allow forother tasks execution or inhibit execution until.
+// We rely on these as booleans for the task goes to sleep whether to allow for other tasks execution or inhibit execution until.
 #define TASK_SWITCH_PERMIT 1
 #define TASK_SWITCH_INHIBIT 0
 
@@ -33,7 +33,7 @@ enum MSG_TYPE
 
 struct TASK
 {
-  unsigned short int (*Func)(unsigned short int MsgType, unsigned short int sPar a m, long lParam);
+  unsigned short int (*Func)(unsigned short int MsgType, unsigned short int sParam, long lParam);
   int32_t *StackPtr;
   struct MSG *MsgQueue;
   struct MSG *MsgQueueIn;
@@ -41,6 +41,7 @@ struct TASK
   struct MSG *MsgQueueEnd;
   int MsgCount;
   INT QueueCapacity; // Added for queue overflow detection
+  BYTE TaskID;       // Added to store task identifier
   unsigned short int Timer;
   bool TimerFlag;
   bool Sleeping;
@@ -59,9 +60,10 @@ struct MSG
 // ==========
 void RunOS(void);
 // Changed SendMsg to return bool
-bool SendMsg(struct TASK *Task, unsigned short int MsgType, unsigned short int s Param, long lParam);
+bool SendMsg(struct TASK *Task, unsigned short int MsgType, unsigned short int sParam, long lParam);
 int Sleep(unsigned short int Delay, bool TaskSwitchPermit);
-struct TASK *InitTask(unsigned short int (*Func)(unsigned short int MsgType, uns i gned short int sParam, long lParam),
+// InitTask signature is unchanged by this particular kdos.h modification
+struct TASK *InitTask(unsigned short int (*Func)(unsigned short int MsgType, unsigned short int sParam, long lParam),
                       INT StackSize,
                       INT QueueSize,
                       BYTE TaskID);
