@@ -56,3 +56,10 @@
  Also note when accessing global variables that are used in interrupt handlers
  (though strictly this isn't anything to do with KDOS) you should first disable
  interrupts (preferably first saving the existing state of the interrupt flag).
+
+ # Updates
+ Corrected the OS_SP typo in Kdos.c.
+ Fixed the stack pointer type mismatch (kdos.h and Kdos.c).
+ Implemented message queue overflow detection (kdos.h and Kdos.c).
+ Added stub functions and their declarations (kmulti.c and KMulti.h, comment-stripped).
+ Conceptually reviewed atomicity concerns and the TaskSwitchPermit logic, with suggestions for future comments.
