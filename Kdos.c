@@ -32,7 +32,7 @@
 // ========
 #include "KMulti.h"
 #include "kdos.h"
-#include "k_hal.h" // Placeholder for HAL function declarations
+#include "k_hal.h"  // Placeholder for HAL function declarations
 #include <stdlib.h>
 #include <stdbool.h>
 
@@ -149,32 +149,21 @@ struct TASK *InitTask(WORD (*Func)(WORD MsgType, WORD sParam, LONG lParam),
   return Task;
 }
 
-// MODIFIED RunOS function
 void RunOS(void)
 {
-  if (TaskCurrent == NULL)
-  {
+  if (TaskCurrent == NULL) {
     Emergency("RunOS: No tasks initialized prior to starting OS!");
-    // This Emergency call might halt. If it returns, or for robustness:
-    while (1)
-      ; // Halt if no tasks and Emergency returns.
+    while(1);
   }
 
-  // Initialize the hardware timer to call key_timer_irq_handler periodically.
   K_HAL_InitSystemTimer(key_timer_irq_handler);
-
-  // Start the scheduler and the first task. This function does not return.
-  // TaskCurrent should point to the first task to be run.
-  // The implementation of K_HAL_StartScheduler (in BSP) will handle saving the
-  // current stack pointer (from this context, e.g. main's stack) into the global OS_SP.
   K_HAL_StartScheduler(TaskCurrent->StackPtr);
 
-  // Code below this line should ideally not be reached if K_HAL_StartScheduler is correct.
   Emergency("RunOS: K_HAL_StartScheduler returned unexpectedly!");
-  while (1)
-    ; // Halt if Emergency returns.
+  while(1);
 }
 
+// MODIFIED SendMsg function
 bool SendMsg(struct TASK *Task, WORD MsgType, WORD sParam, LONG lParam)
 {
   struct MSG *Msg;
@@ -186,7 +175,7 @@ bool SendMsg(struct TASK *Task, WORD MsgType, WORD sParam, LONG lParam)
       return false;
     }
 
-    PUSH_REGS
+    K_HAL_DisableInterrupts(); // Replaced PUSH_REGS
     Msg = Task->MsgQueueIn;
     Msg->MsgType = MsgType;
     Msg->sParam = sParam;
@@ -196,23 +185,24 @@ bool SendMsg(struct TASK *Task, WORD MsgType, WORD sParam, LONG lParam)
       Task->MsgQueueIn = Task->MsgQueue;
     }
     ++Task->MsgCount;
-    POP_REGS
+    K_HAL_EnableInterrupts();  // Replaced POP_REGS
     return true;
   }
   return false;
 }
 
+// MODIFIED WakeUp function
 void WakeUp(struct TASK *Task, INT WakeUpType)
 {
   if (Task)
   {
-    PUSH_REGS
+    K_HAL_DisableInterrupts(); // Replaced PUSH_REGS
     if ((Task->Sleeping) && (!Task->TimerFlag))
     {
       Task->TimerFlag = TRUE;
       Task->WakeUpType = WakeUpType;
     }
-    POP_REGS
+    K_HAL_EnableInterrupts();  // Replaced POP_REGS
   }
 }
 
@@ -223,7 +213,7 @@ static void SwitchTask()
 
   while (TRUE)
   {
-    __ARMLIB_disableIRQ();
+    __ARMLIB_disableIRQ(); // Will be replaced in a later step
     if (MultiTask)
     {
       TaskCurrent = TaskCurrent->TaskNext;
@@ -235,7 +225,7 @@ static void SwitchTask()
         TaskCurrent->Timer = 0;
         TaskCurrent->TimerFlag = FALSE;
         TaskCurrent->Sleeping = FALSE;
-        __ARMLIB_enableIRQ();
+        __ARMLIB_enableIRQ(); // Will be replaced
         return;
       }
     }
@@ -252,9 +242,9 @@ static void SwitchTask()
       OS_SP = SP;
       SP = TaskCurrent->StackPtr;
 
-      __ARMLIB_enableIRQ();
+      __ARMLIB_enableIRQ(); // Will be replaced
       Delay = TaskCurrent->Func(Msg->MsgType, Msg->sParam, Msg->lParam);
-      __ARMLIB_disableIRQ();
+      __ARMLIB_disableIRQ(); // Will be replaced
       TaskCurrent->StackPtr = SP;
       SP = OS_SP;
 
@@ -282,9 +272,9 @@ static void SwitchTask()
       TaskCurrent->TimeOuts++;
 #endif
 
-      __ARMLIB_enableIRQ();
+      __ARMLIB_enableIRQ(); // Will be replaced
       Delay = TaskCurrent->Func(MSG_TYPE_TIMER, 0, 0L);
-      __ARMLIB_disableIRQ();
+      __ARMLIB_disableIRQ(); // Will be replaced
       TaskCurrent->StackPtr = SP;
       SP = OS_SP;
 
@@ -301,7 +291,7 @@ static void SwitchTask()
         TaskCurrent->Timer = Delay;
       }
     }
-    __ARMLIB_enableIRQ();
+    __ARMLIB_enableIRQ(); // Will be replaced
   } // while TRUE
 }
 
@@ -324,7 +314,7 @@ INT Sleep(WORD Delay, bool TaskSwitchPermit)
   }
   MultiTask = TaskSwitchPermit;
 
-  PUSH_REGS
+  PUSH_REGS // Will be replaced in a later step (related to K_HAL_ContextSwitch)
   TaskCurrent->StackPtr = SP;
   SP = OS_SP;
 
@@ -332,7 +322,7 @@ INT Sleep(WORD Delay, bool TaskSwitchPermit)
 
   OS_SP = SP;
   SP = TaskCurrent->StackPtr;
-  POP_REGS
+  POP_REGS // Will be replaced
 
   MultiTask = TRUE;
 
