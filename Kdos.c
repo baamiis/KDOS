@@ -31,7 +31,7 @@
 // Includes
 // ========
 #include "KMulti.h"
-#include "kdos.h"  // Should be included for struct TASK, MSG_TYPE_INIT etc.
+#include "kdos.h"
 #include "k_hal.h" // Placeholder for HAL function declarations
 #include <stdlib.h>
 #include <stdbool.h>
@@ -43,28 +43,24 @@
 // ==========
 void key_timer_irq_handler(void) __attribute__((interrupt("IRQ")));
 static void SwitchTask(void);
-static void DefaultTaskExitHandler(void); // Declare our new exit handler
+static void DefaultTaskExitHandler(void);
 
 // Module variables
 // ================
 
 static struct TASK *TaskCurrent = NULL;
 static bool MultiTask = TRUE;
-static int32_t *OS_SP = NULL; // Initialize to NULL; K_HAL_StartScheduler will set it.
-static int32_t *OS_LP;        // Seems unused, consider removing later if confirmed.
-
-// declare the stack pointer register here
-// register int32_t *SP asm ("r13");
+static int32_t *OS_SP = NULL;
+static int32_t *OS_LP;
 
 // Program
 // =======
 
-// Default handler for tasks that return from their main function.
 static void DefaultTaskExitHandler(void)
 {
-#if DEBUG // Use DEBUG macro from KMulti.h
+#if DEBUG
   if (TaskCurrent)
-  { // Should always be true if a task is exiting
+  {
     DebugPrintf("Task '%c' exited normally.\n", TaskCurrent->TaskID);
   }
   else
@@ -72,27 +68,18 @@ static void DefaultTaskExitHandler(void)
     DebugPrintf("Unknown task exited.\n");
   }
 #endif
-  // In a more complete OS:
-  // 1. Mark TaskCurrent as terminated (e.g., TaskCurrent->State = TASK_TERMINATED;)
-  // 2. Potentially release task resources (stack, TCB, queue) if dynamically managed.
-  // 3. Call scheduler to switch to another task.
-  //    This would involve a K_HAL_ContextSwitch back to the OS/scheduler context.
-  //    For now, without that, we'll just loop to prevent running off.
   while (1)
   {
-    // Halt or idle this "terminated" context.
-    // A K_HAL_SuspendTask() or similar would be ideal here.
-    // Or K_HAL_ContextSwitch(&TaskCurrent->StackPtr, OS_SP); to yield to OS.
   }
 }
 
 struct TASK *InitTask(WORD (*Func)(WORD MsgType, WORD sParam, LONG lParam),
-                      INT StackSize, // Number of int32_t elements for the stack
+                      INT StackSize,
                       INT QueueSize,
-                      BYTE TaskIDVal) // Renamed TaskID to TaskIDVal to avoid conflict with struct member
+                      BYTE TaskIDVal)
 {
   struct TASK *Task;
-  int32_t *Stack; // Base of allocated stack memory
+  int32_t *Stack;
 #if DEBUG_STATS == 1
   int t;
 #endif
@@ -105,11 +92,7 @@ struct TASK *InitTask(WORD (*Func)(WORD MsgType, WORD sParam, LONG lParam),
 #endif
     Emergency("T Failed");
   }
-#if DEBUG_MEM == 1
-  // debug_printf("Task  %c %04x:%04x", TaskIDVal, FP_SEG(Task), FP_OFF(Task));
-#endif
 
-  // Allocate stack: StackSize is number of int32_t elements.
   Stack = (int32_t *)calloc(StackSize, sizeof(int32_t));
   if (Stack == NULL)
   {
@@ -118,9 +101,6 @@ struct TASK *InitTask(WORD (*Func)(WORD MsgType, WORD sParam, LONG lParam),
 #endif
     Emergency("S Failed");
   }
-#if DEBUG_MEM == 1
-  DebugPrintf("Stack %c %04x", TaskIDVal, Stack);
-#endif
 
   Task->MsgQueue = (struct MSG *)calloc(QueueSize, sizeof(struct MSG));
   if (Task->MsgQueue == NULL)
@@ -130,26 +110,20 @@ struct TASK *InitTask(WORD (*Func)(WORD MsgType, WORD sParam, LONG lParam),
 #endif
     Emergency("Q Failed");
   }
-#if DEBUG_MEM == 1
-  DebugPrintf("Queue %c %04x", TaskIDVal, Task->MsgQueue);
-#endif
 
   Task->Func = Func;
-  Task->TaskID = TaskIDVal;        // Store the Task ID
-  Task->QueueCapacity = QueueSize; // Store the queue capacity
+  Task->TaskID = TaskIDVal;
+  Task->QueueCapacity = QueueSize;
 
-  // Initialize the task stack using the HAL function
-  // Pass MSG_TYPE_INIT as the initial message for the task.
-  Task->StackPtr = K_HAL_InitTaskStack(Stack,                       // Base of stack memory
-                                       StackSize * sizeof(int32_t), // Size in bytes
-                                       Func,                        // Task's main function
-                                       DefaultTaskExitHandler,      // Handler if Func returns
-                                       MSG_TYPE_INIT,               // Initial message type
-                                       (WORD)0,                     // Initial sParam
-                                       (LONG)0L);                   // Initial lParam
+  Task->StackPtr = K_HAL_InitTaskStack(Stack,
+                                       StackSize * sizeof(int32_t),
+                                       Func,
+                                       DefaultTaskExitHandler,
+                                       MSG_TYPE_INIT,
+                                       (WORD)0,
+                                       (LONG)0L);
   if (Task->StackPtr == NULL)
   {
-    // K_HAL_InitTaskStack should indicate failure if stack setup is impossible
     Emergency("StackInit Failed");
   }
 
@@ -159,7 +133,7 @@ struct TASK *InitTask(WORD (*Func)(WORD MsgType, WORD sParam, LONG lParam),
   Task->Timer = 0;
   Task->TimerFlag = FALSE;
   Task->Sleeping = FALSE;
-  Task->MsgCount = 0; // Start with zero messages; K_HAL_InitTaskStack "delivers" the first one conceptually
+  Task->MsgCount = 0;
 
   if (TaskCurrent == NULL)
   {
@@ -175,12 +149,30 @@ struct TASK *InitTask(WORD (*Func)(WORD MsgType, WORD sParam, LONG lParam),
   return Task;
 }
 
-// ... (rest of Kdos.c remains the same for now) ...
-
+// MODIFIED RunOS function
 void RunOS(void)
 {
-  // Set up your ms timer here
-  SwitchTask();
+  if (TaskCurrent == NULL)
+  {
+    Emergency("RunOS: No tasks initialized prior to starting OS!");
+    // This Emergency call might halt. If it returns, or for robustness:
+    while (1)
+      ; // Halt if no tasks and Emergency returns.
+  }
+
+  // Initialize the hardware timer to call key_timer_irq_handler periodically.
+  K_HAL_InitSystemTimer(key_timer_irq_handler);
+
+  // Start the scheduler and the first task. This function does not return.
+  // TaskCurrent should point to the first task to be run.
+  // The implementation of K_HAL_StartScheduler (in BSP) will handle saving the
+  // current stack pointer (from this context, e.g. main's stack) into the global OS_SP.
+  K_HAL_StartScheduler(TaskCurrent->StackPtr);
+
+  // Code below this line should ideally not be reached if K_HAL_StartScheduler is correct.
+  Emergency("RunOS: K_HAL_StartScheduler returned unexpectedly!");
+  while (1)
+    ; // Halt if Emergency returns.
 }
 
 bool SendMsg(struct TASK *Task, WORD MsgType, WORD sParam, LONG lParam)
