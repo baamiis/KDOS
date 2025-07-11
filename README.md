@@ -1,4 +1,3 @@
- 
  # What is KDOS?
  
  KDOS is a simple co-operative task switcher. It allows different parts of the
@@ -63,3 +62,12 @@
  Implemented message queue overflow detection (kdos.h and Kdos.c).
  Added stub functions and their declarations (kmulti.c and KMulti.h, comment-stripped).
  Conceptually reviewed atomicity concerns and the TaskSwitchPermit logic, with suggestions for future comments.
+
+## BSP generation
+Use `scripts/kdos_config.py` to generate a board support package skeleton. Run:
+
+```bash
+python scripts/kdos_config.py stm32f4 -o bsp_stm32f4.c
+```
+
+This creates `bsp_stm32f4.c` from the STM32F4 template which implements the required `k_hal` functions for that controller.
