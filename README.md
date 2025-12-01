@@ -74,4 +74,13 @@ python scripts/kdos_config.py stm32f4 -o bsp_stm32f4.c
 [![License](https://img.shields.io/github/license/baamiis/KDOS)](LICENSE)
 [![Contributors](https://img.shields.io/github/contributors/baamiis/KDOS)](https://github.com/baamiis/KDOS/graphs/contributors)
 
+## Contributing
+
+We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details.
+
+- 🐛 Found a bug? [Open an issue](https://github.com/baamiis/KDOS/issues/new?template=bug_report.md)
+- 💡 Have an idea? [Request a feature](https://github.com/baamiis/KDOS/issues/new?template=feature_request.md)
+- 🆕 New to the project? Check out issues labeled [`good-first-issue`](https://github.com/baamiis/KDOS/labels/good-first-issue)
+
+Please read our [Code of Conduct](CODE_OF_CONDUCT.md) before contributing.
 This creates `bsp_stm32f4.c` from the STM32F4 template which implements the required `k_hal` functions for that controller.
