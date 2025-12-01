@@ -70,4 +70,8 @@ Use `scripts/kdos_config.py` to generate a board support package skeleton. Run:
 python scripts/kdos_config.py stm32f4 -o bsp_stm32f4.c
 ```
 
+[![CI Status](https://github.com/baamiis/KDOS/workflows/KDOS%20CI/badge.svg)](https://github.com/baamiis/KDOS/actions)
+[![License](https://img.shields.io/github/license/baamiis/KDOS)](LICENSE)
+[![Contributors](https://img.shields.io/github/contributors/baamiis/KDOS)](https://github.com/baamiis/KDOS/graphs/contributors)
+
 This creates `bsp_stm32f4.c` from the STM32F4 template which implements the required `k_hal` functions for that controller.
