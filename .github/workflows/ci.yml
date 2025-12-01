@@ -1,0 +1,107 @@
+name: KDOS CI
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  build-and-test:
+    name: Build KDOS
+    runs-on: ubuntu-latest
+    
+    strategy:
+      matrix:
+        platform: [avr, arm]
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+    
+    - name: Setup AVR toolchain
+      if: matrix.platform == 'avr'
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y gcc-avr avr-libc binutils-avr
+    
+    - name: Setup ARM toolchain
+      if: matrix.platform == 'arm'
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y gcc-arm-none-eabi libnewlib-arm-none-eabi
+    
+    - name: Build KDOS core
+      run: |
+        echo "Building KDOS core for ${{ matrix.platform }}"
+        # Add your actual build commands here
+        # For example:
+        # make PLATFORM=${{ matrix.platform }}
+    
+    - name: Check for compilation warnings
+      run: |
+        echo "Checking for warnings..."
+        # Add warning checks here
+    
+    - name: Run static analysis (optional)
+      run: |
+        # Install and run cppcheck or similar
+        # sudo apt-get install -y cppcheck
+        # cppcheck --enable=all --suppress=missingIncludeSystem src/
+        echo "Static analysis would run here"
+
+  code-quality:
+    name: Code Quality Checks
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+    
+    - name: Check file formatting
+      run: |
+        echo "Checking code formatting..."
+        # Add formatting checks
+        # For example: checking for tabs vs spaces, line endings, etc.
+    
+    - name: Check for common issues
+      run: |
+        echo "Running basic sanity checks..."
+        # Check for large files, binary files that shouldn't be there, etc.
+        find . -type f -size +1M -not -path "./.git/*" | while read file; do
+          echo "Warning: Large file detected: $file"
+        done
+
+  documentation:
+    name: Documentation Check
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+    
+    - name: Check documentation
+      run: |
+        echo "Checking documentation completeness..."
+        # Verify key documentation files exist
+        test -f README.md || (echo "README.md missing!" && exit 1)
+        test -f CONTRIBUTING.md || (echo "CONTRIBUTING.md missing!" && exit 1)
+        echo "Documentation check passed!"
+
+  license-check:
+    name: License Compliance
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+    
+    - name: Verify LICENSE file
+      run: |
+        test -f LICENSE || (echo "LICENSE file missing!" && exit 1)
+        echo "License file present"
+    
+    - name: Check for license headers (optional)
+      run: |
+        echo "Checking for license headers in source files..."
+        # Add checks for license headers in .c and .h files if required
