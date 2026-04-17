@@ -22,7 +22,7 @@ def generate(target, out_file):
 
 
 def main():
-    parser = argparse.ArgumentParser(description="KDOS BSP generator")
+    parser = argparse.ArgumentParser(description="KTOS BSP generator")
     parser.add_argument("target", nargs="?", help="Target controller identifier")
     parser.add_argument("-o", "--output", default="bsp_mycpu.c", help="Output file")
     args = parser.parse_args()

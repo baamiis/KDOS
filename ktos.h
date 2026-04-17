@@ -1,9 +1,10 @@
- // KDOS.h
+ // KTOS.h
 
-#if !defined(_KDOS)
-#define _KDOS
+#if !defined(_KTOS)
+#define _KTOS
 
-#include <stdbool.h> // For bool type
+#include <stdbool.h>
+#include "ktos_multi.h"
 
 // Macros and ennumerations
 // ========================
@@ -19,11 +20,12 @@
 
 // Message identifiers
 
-enum MSG_TYPE
+enum ktos_MSG_TYPE
 {
   // System message IDs
-  MSG_TYPE_INIT,
-  MSG_TYPE_TIMER
+  KTOS_MSG_TYPE_INIT,
+  KTOS_MSG_TYPE_TIMER,
+  KTOS_MSG_TYPE_SYSTEM_START
   // User message IDs
   // Config program uses the next 2
 };
@@ -31,25 +33,25 @@ enum MSG_TYPE
 // Structures
 // ==========
 
-struct TASK
+struct ktos_TASK
 {
   unsigned short int (*Func)(unsigned short int MsgType, unsigned short int sParam, long lParam);
   int32_t *StackPtr;
-  struct MSG *MsgQueue;
-  struct MSG *MsgQueueIn;
-  struct MSG *MsgQueueOut;
-  struct MSG *MsgQueueEnd;
+  struct ktos_MSG *MsgQueue;
+  struct ktos_MSG *MsgQueueIn;
+  struct ktos_MSG *MsgQueueOut;
+  struct ktos_MSG *MsgQueueEnd;
   int MsgCount;
   INT QueueCapacity; // Added for queue overflow detection
   BYTE TaskID;       // Added to store task identifier
   unsigned short int Timer;
   bool TimerFlag;
   bool Sleeping;
-  struct TASK *TaskNext;
+  struct ktos_TASK *TaskNext;
   int WakeUpType;
 };
 
-struct MSG
+struct ktos_MSG
 {
   unsigned short int MsgType;
   unsigned short int sParam;
@@ -58,16 +60,16 @@ struct MSG
 
 // Prototypes
 // ==========
-void RunOS(void);
-// Changed SendMsg to return bool
-bool SendMsg(struct TASK *Task, unsigned short int MsgType, unsigned short int sParam, long lParam);
-int Sleep(unsigned short int Delay, bool TaskSwitchPermit);
-// InitTask signature is unchanged by this particular kdos.h modification
-struct TASK *InitTask(unsigned short int (*Func)(unsigned short int MsgType, unsigned short int sParam, long lParam),
+void ktos_RunOS(void);
+// Changed ktos_SendMsg to return bool
+bool ktos_SendMsg(struct ktos_TASK *Task, unsigned short int MsgType, unsigned short int sParam, long lParam);
+int ktos_Sleep(unsigned short int Delay, bool TaskSwitchPermit);
+// ktos_InitTask signature is unchanged by this particular ktos.h modification
+struct ktos_TASK *ktos_InitTask(unsigned short int (*Func)(unsigned short int MsgType, unsigned short int sParam, long lParam),
                       INT StackSize,
                       INT QueueSize,
                       BYTE TaskID);
-void WakeUp(struct TASK *Task, INT WakeUpType);
+void ktos_WakeUp(struct ktos_TASK *Task, INT WakeUpType);
 
 // Stack sizes
 // ===========
@@ -93,4 +95,4 @@ void WakeUp(struct TASK *Task, INT WakeUpType);
 #define TASK_MAIN_ID 'M'
 // define your task IDs here
 
-#endif // !defined(_KDOS)
+#endif // !defined(_KTOS)
