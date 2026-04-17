@@ -1,6 +1,6 @@
 ---
 name: Feature Request
-about: Suggest a new feature or enhancement for KDOS
+about: Suggest a new feature or enhancement for KTOS
 title: '[FEATURE] '
 labels: enhancement
 assignees: ''
@@ -29,7 +29,7 @@ assignees: ''
 - [ ] Should work on all platforms
 - [ ] Specific to: <!-- e.g., ARM Cortex-M, AVR, etc. -->
 
-## Impact on KDOS
+## Impact on KTOS
 <!-- How might this affect existing functionality? -->
 - [ ] No breaking changes
 - [ ] Might break existing code

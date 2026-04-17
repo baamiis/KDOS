@@ -11,7 +11,7 @@ We release patches for security vulnerabilities in the following versions:
 
 ## Reporting a Vulnerability
 
-The KDOS team takes security vulnerabilities seriously. We appreciate your efforts to responsibly disclose your findings.
+The KTOS team takes security vulnerabilities seriously. We appreciate your efforts to responsibly disclose your findings.
 
 ### How to Report
 
@@ -48,11 +48,11 @@ We will not pursue legal action against researchers who:
 - Report vulnerabilities promptly
 - Keep vulnerability details confidential until we've addressed them
 
-## Security Considerations for KDOS Users
+## Security Considerations for KTOS Users
 
 ### Best Practices
 
-When using KDOS in your embedded systems:
+When using KTOS in your embedded systems:
 
 1. **Stack Sizing**: Carefully size task stacks to prevent overflow
 2. **Message Queue Sizing**: Size message queues appropriately to prevent overflow
@@ -62,7 +62,7 @@ When using KDOS in your embedded systems:
 
 ### Known Limitations
 
-KDOS is designed for cooperative multitasking:
+KTOS is designed for cooperative multitasking:
 - Tasks must voluntarily yield control
 - A misbehaving task can monopolize the CPU
 - No memory protection between tasks

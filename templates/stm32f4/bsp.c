@@ -1,17 +1,17 @@
-#include "k_hal.h"
+#include "ktos_hal.h"
 #include "stm32f4xx.h"
 
-void K_HAL_DisableInterrupts(void)
+void ktos_hal_DisableInterrupts(void)
 {
     __disable_irq();
 }
 
-void K_HAL_EnableInterrupts(void)
+void ktos_hal_EnableInterrupts(void)
 {
     __enable_irq();
 }
 
-void *K_HAL_InitTaskStack(void *p_stack_base,
+void *ktos_hal_InitTaskStack(void *p_stack_base,
                           unsigned int stack_size_bytes,
                           void (*task_func_addr)(WORD, WORD, LONG),
                           void (*task_exit_handler_addr)(WORD),
@@ -40,7 +40,7 @@ void *K_HAL_InitTaskStack(void *p_stack_base,
     return sp;
 }
 
-__attribute__((naked)) void K_HAL_ContextSwitch(void **current_sp_storage, void *next_sp)
+__attribute__((naked)) void ktos_hal_ContextSwitch(void **current_sp_storage, void *next_sp)
 {
     __asm volatile (
         "mrs r2, psp\n"           /* Get current process stack pointer */
@@ -53,7 +53,7 @@ __attribute__((naked)) void K_HAL_ContextSwitch(void **current_sp_storage, void 
     );
 }
 
-__attribute__((naked)) void K_HAL_StartScheduler(void *first_task_sp)
+__attribute__((naked)) void ktos_hal_StartScheduler(void *first_task_sp)
 {
     __asm volatile (
         "msr psp, %0\n"          /* Set PSP to task stack */
@@ -67,7 +67,7 @@ __attribute__((naked)) void K_HAL_StartScheduler(void *first_task_sp)
     for(;;);
 }
 
-void K_HAL_InitSystemTimer(void (*isr)(void))
+void ktos_hal_InitSystemTimer(void (*isr)(void))
 {
     SysTick_Config(SystemCoreClock / 1000);
     (void)isr; /* vector table should point to isr */

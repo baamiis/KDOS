@@ -1,6 +1,6 @@
-# Contributing to KDOS
+# Contributing to KTOS
 
-Thank you for your interest in contributing to KDOS (formerly KTOS)! This document provides guidelines and instructions for contributing to our tiny cooperative RTOS.
+Thank you for your interest in contributing to KTOS (formerly KTOS)! This document provides guidelines and instructions for contributing to our tiny cooperative RTOS.
 
 ## Table of Contents
 - [Code of Conduct](#code-of-conduct)
@@ -107,11 +107,11 @@ This project adheres to a Code of Conduct. By participating, you are expected to
   ```
 
 - **Naming conventions**:
-  - Functions: `k_function_name` or `KFunction` (follow existing style in KDOS)
+  - Functions: `k_function_name` or `KFunction` (follow existing style in KTOS)
   - Task functions: descriptive names like `task_timer`, `task_serial`
   - Types: `snake_case_t` (e.g., `task_handle_t`)
-  - Macros/Constants: `UPPER_CASE` (e.g., `KDOS_MAX_TASKS`, `MSG_TYPE_INIT`)
-  - Keep consistency with existing KDOS code style
+  - Macros/Constants: `UPPER_CASE` (e.g., `KTOS_MAX_TASKS`, `KTOS_MSG_TYPE_INIT`)
+  - Keep consistency with existing KTOS code style
 
 - **Comments**:
   - Use `/* */` for multi-line comments

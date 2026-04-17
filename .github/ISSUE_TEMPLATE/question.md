@@ -1,6 +1,6 @@
 ---
 name: Question
-about: Ask a question about KDOS
+about: Ask a question about KTOS
 title: '[QUESTION] '
 labels: question
 assignees: ''
@@ -20,7 +20,7 @@ assignees: ''
 
 ## Environment (if relevant)
 - MCU/Platform: 
-- KDOS Version: 
+- KTOS Version: 
 - Toolchain: 
 
 ## Code Sample (if applicable)

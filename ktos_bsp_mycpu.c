@@ -1,8 +1,8 @@
 // bsp_mycpu.c
-// Board Support Package implementations for KDOS HAL
+// Board Support Package implementations for KTOS HAL
 
-#include "k_hal.h"
-#include "kdos.h" // May be needed for WORD, LONG, TaskCurrent, OS_SP etc. if used in HAL impl.
+#include "ktos_hal.h"
+#include "ktos.h" // May be needed for WORD, LONG, TaskCurrent, OS_SP etc. if used in HAL impl.
                   // Or include a specific types header if you have one.
 
 // Include your microcontroller's specific register definition header here
@@ -11,24 +11,24 @@
 // #include "atmega328p.h"
 
 // --- Global Variables for BSP (if any) ---
-// Example: you might need to store the OS_SP if K_HAL_StartScheduler doesn't directly use the global
+// Example: you might need to store the OS_SP if ktos_hal_StartScheduler doesn't directly use the global
 // static void* g_bsp_os_stack_pointer = NULL;
 
 // --- Interrupt Control ---
 
-void K_HAL_DisableInterrupts(void)
+void ktos_hal_DisableInterrupts(void)
 {
     // TODO: Implement architecture-specific code to disable all relevant interrupts.
     // This might involve:
     //   - Setting a bit in a global interrupt enable register (e.g., CPSID I on ARM Cortex-M).
     //   - Saving the previous interrupt state if you plan to support nested critical sections
-    //     (though for KDOS's current design, a simple global disable/enable is likely sufficient).
+    //     (though for KTOS's current design, a simple global disable/enable is likely sufficient).
     //
     // Example (ARM Cortex-M):
     //   __asm volatile ("cpsid i" : : : "memory");
 }
 
-void K_HAL_EnableInterrupts(void)
+void ktos_hal_EnableInterrupts(void)
 {
     // TODO: Implement architecture-specific code to re-enable interrupts.
     // This might involve:
@@ -41,7 +41,7 @@ void K_HAL_EnableInterrupts(void)
 
 // --- Context Switching & Task Initialization ---
 
-void *K_HAL_InitTaskStack(void *p_stack_base,
+void *ktos_hal_InitTaskStack(void *p_stack_base,
                           unsigned int stack_size_bytes,
                           void (*task_func_addr)(WORD, WORD, LONG),
                           void (*task_exit_handler_addr)(WORD),
@@ -102,16 +102,16 @@ void *K_HAL_InitTaskStack(void *p_stack_base,
     (void)initial_lparam;
 
     // If stack setup fails (e.g., stack_size_bytes is too small), return NULL.
-    // Emergency("K_HAL_InitTaskStack: Not implemented for this BSP!");
+    // ktos_Emergency("ktos_hal_InitTaskStack: Not implemented for this BSP!");
     return NULL;
 }
 
 // Global variable to store OS_SP, accessible by assembly context switch routine if needed.
-// extern int32_t* OS_SP; // OS_SP is already declared static in Kdos.c.
-// The HAL might need a way to access it if K_HAL_ContextSwitch is pure assembly.
+// extern int32_t* OS_SP; // OS_SP is already declared static in Ktos.c.
+// The HAL might need a way to access it if ktos_hal_ContextSwitch is pure assembly.
 // Alternatively, OS_SP can be passed to an assembly wrapper.
 
-void K_HAL_ContextSwitch(void **p_current_task_sp_storage, void *next_task_sp_val)
+void ktos_hal_ContextSwitch(void **p_current_task_sp_storage, void *next_task_sp_val)
 {
     // TODO: Implement the context switch. This is almost entirely assembly language.
     //
@@ -140,50 +140,50 @@ void K_HAL_ContextSwitch(void **p_current_task_sp_storage, void *next_task_sp_va
     //      or a branch that loads the PC and PSR, effectively resuming the new context.
     //
     // Note on Interrupts:
-    // The K_HAL_ContextSwitch is called with interrupts disabled.
+    // The ktos_hal_ContextSwitch is called with interrupts disabled.
     // The act of restoring the PSR for the new task will typically restore its interrupt state.
     // If the new task was previously running with interrupts enabled, they will become enabled
     // as part of restoring its PSR.
 
     (void)p_current_task_sp_storage;
     (void)next_task_sp_val;
-    // Emergency("K_HAL_ContextSwitch: Not implemented for this BSP!");
+    // ktos_Emergency("ktos_hal_ContextSwitch: Not implemented for this BSP!");
 }
 
-void K_HAL_StartScheduler(void *first_task_stack_ptr)
+void ktos_hal_StartScheduler(void *first_task_stack_ptr)
 {
     // TODO: Implement this to start the OS and the first task.
     // This function does not return.
     //
     // Steps:
-    // 1. Ensure interrupts are disabled (caller `RunOS` should ensure this, or do it here).
-    //    K_HAL_DisableInterrupts(); // If not already done by caller.
+    // 1. Ensure interrupts are disabled (caller `ktos_RunOS` should ensure this, or do it here).
+    //    ktos_hal_DisableInterrupts(); // If not already done by caller.
     //
-    // 2. Get the current Stack Pointer. This SP belongs to the context that called RunOS
+    // 2. Get the current Stack Pointer. This SP belongs to the context that called ktos_RunOS
     //    (e.g., main() after C runtime setup). This will be the initial OS/scheduler stack.
-    //    Store this value in the global `OS_SP` variable in `Kdos.c`.
+    //    Store this value in the global `OS_SP` variable in `Ktos.c`.
     //    You might need an assembly intrinsic or a small asm function to get the current SP.
-    //    `extern int32_t* OS_SP;` // (Need to ensure visibility if OS_SP is static in Kdos.c)
+    //    `extern int32_t* OS_SP;` // (Need to ensure visibility if OS_SP is static in Ktos.c)
     //    `OS_SP = (int32_t*) Your_Get_Current_SP_Function();`
-    //    (If OS_SP is static in Kdos.c, this HAL function might need to be in Kdos.c too,
+    //    (If OS_SP is static in Ktos.c, this HAL function might need to be in Ktos.c too,
     //     or OS_SP needs to be made non-static or accessible via a setter function).
-    //     For now, assume OS_SP is globally accessible or passed to K_HAL_ContextSwitch.
+    //     For now, assume OS_SP is globally accessible or passed to ktos_hal_ContextSwitch.
     //
     // 3. Set the CPU's current Stack Pointer to `first_task_stack_ptr`.
     //
     // 4. Restore the full CPU context of the first task from its stack (which was
-    //    prepared by `K_HAL_InitTaskStack`). This includes setting the PC to the
+    //    prepared by `ktos_hal_InitTaskStack`). This includes setting the PC to the
     //    task's entry point and PSR to an appropriate initial state (interrupts enabled).
     //
     // 5. This last step effectively "returns" or jumps into the first task.
     //
     // Example (Conceptual for ARM Cortex-M):
-    //   K_HAL_DisableInterrupts(); // Ensure they are off
+    //   ktos_hal_DisableInterrupts(); // Ensure they are off
     //   void* main_stack_ptr;
     //   __asm volatile ("mov %0, sp" : "=r"(main_stack_ptr)); // Get current SP (main's stack)
-    //   // somehow set the global OS_SP in Kdos.c to main_stack_ptr
+    //   // somehow set the global OS_SP in Ktos.c to main_stack_ptr
     //   // For example, if OS_SP is accessible:
-    //   // extern int32_t* OS_SP; // from Kdos.c
+    //   // extern int32_t* OS_SP; // from Ktos.c
     //   // OS_SP = main_stack_ptr;
     //
     //   __asm volatile ("msr psp, %0" : : "r" (first_task_stack_ptr)); // Set Process Stack Pointer
@@ -193,21 +193,21 @@ void K_HAL_StartScheduler(void *first_task_stack_ptr)
     //   // This is complex and highly specific.
 
     (void)first_task_stack_ptr;
-    // Emergency("K_HAL_StartScheduler: Not implemented for this BSP!");
+    // ktos_Emergency("ktos_hal_StartScheduler: Not implemented for this BSP!");
     // This function should loop indefinitely if the context switch part fails,
-    // as KDOS expects it not to return.
+    // as KTOS expects it not to return.
     while (1)
         ;
 }
 
 // --- System Timer ---
 
-void K_HAL_InitSystemTimer(void (*timer_isr_addr)(void))
+void ktos_hal_InitSystemTimer(void (*timer_isr_addr)(void))
 {
     // TODO: Implement architecture-specific code to:
     // 1. Configure a hardware timer (e.g., SysTick on ARM Cortex-M, or another peripheral timer).
-    // 2. Set its period to generate interrupts at the KDOS tick rate (e.g., 1ms).
-    // 3. Register `timer_isr_addr` (which is `key_timer_irq_handler` from `Kdos.c`)
+    // 2. Set its period to generate interrupts at the KTOS tick rate (e.g., 1ms).
+    // 3. Register `timer_isr_addr` (which is `ktos_timer_irq_handler` from `Ktos.c`)
     //    as the Interrupt Service Routine for this timer. This means setting up the
     //    vector table entry for the timer interrupt to point to `timer_isr_addr`.
     // 4. Set the timer interrupt priority appropriately.
@@ -224,13 +224,13 @@ void K_HAL_InitSystemTimer(void (*timer_isr_addr)(void))
     //   // you might be able to assign `timer_isr_addr` to the vector.
 
     (void)timer_isr_addr;
-    // Emergency("K_HAL_InitSystemTimer: Not implemented for this BSP!");
+    // ktos_Emergency("ktos_hal_InitSystemTimer: Not implemented for this BSP!");
 }
 
-// Optional: Define K_HAL_ISR_FUNCTION_ATTRIBUTE if your compiler needs specific attributes for ISRs
+// Optional: Define ktos_hal_ISR_FUNCTION_ATTRIBUTE if your compiler needs specific attributes for ISRs
 // For example, for GCC ARM:
-// #define K_HAL_ISR_FUNCTION_ATTRIBUTE __attribute__((interrupt("IRQ")))
-// Then, in kdos.c, key_timer_irq_handler would be declared:
-// void K_HAL_ISR_FUNCTION_ATTRIBUTE key_timer_irq_handler(void) { ... }
+// #define ktos_hal_ISR_FUNCTION_ATTRIBUTE __attribute__((interrupt("IRQ")))
+// Then, in ktos.c, ktos_timer_irq_handler would be declared:
+// void ktos_hal_ISR_FUNCTION_ATTRIBUTE ktos_timer_irq_handler(void) { ... }
 // If no attribute is needed, this can be an empty define:
-// #define K_HAL_ISR_FUNCTION_ATTRIBUTE
+// #define ktos_hal_ISR_FUNCTION_ATTRIBUTE

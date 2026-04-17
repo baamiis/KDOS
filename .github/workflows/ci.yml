@@ -1,4 +1,4 @@
-name: KDOS CI
+name: KTOS CI
 
 on:
   push:
@@ -8,7 +8,7 @@ on:
 
 jobs:
   build-and-test:
-    name: Build KDOS
+    name: Build KTOS
     runs-on: ubuntu-latest
     
     strategy:
@@ -31,9 +31,9 @@ jobs:
         sudo apt-get update
         sudo apt-get install -y gcc-arm-none-eabi libnewlib-arm-none-eabi
     
-    - name: Build KDOS core
+    - name: Build KTOS core
       run: |
-        echo "Building KDOS core for ${{ matrix.platform }}"
+        echo "Building KTOS core for ${{ matrix.platform }}"
         # Add your actual build commands here
         # For example:
         # make PLATFORM=${{ matrix.platform }}
