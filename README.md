@@ -45,7 +45,7 @@
  sends the message. Message types are enumnerated in KTOS.h, with 0
  (KTOS_MSG_TYPE_INIT) and 1 (KTOS_MSG_TYPE_TIMER) pre-defined.
  The second and third parameters are user defined 16 bit and 32 bit values
- respectively. CDOS assigns no meaning to these these parameters, this must
+ respectively. KTOS assigns no meaning to these these parameters, this must
  be mutually agreed between the task that sends the message and the task
  receiving the message.
 
