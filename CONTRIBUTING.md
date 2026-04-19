@@ -1,97 +1,128 @@
 # Contributing to KTOS
 
-Thank you for your interest in contributing to KTOS (formerly KTOS)! This document provides guidelines and instructions for contributing to our tiny cooperative RTOS.
+Thank you for your interest in contributing to KTOS! This document provides guidelines and instructions for contributing to our tiny cooperative RTOS alternative.
 
 ## Table of Contents
 - [Code of Conduct](#code-of-conduct)
 - [Getting Started](#getting-started)
 - [Development Workflow](#development-workflow)
+- [Adding a New BSP](#adding-a-new-bsp)
 - [Coding Standards](#coding-standards)
 - [Commit Guidelines](#commit-guidelines)
 - [Pull Request Process](#pull-request-process)
 - [Testing](#testing)
-- [Documentation](#documentation)
 
 ## Code of Conduct
 
-This project adheres to a Code of Conduct. By participating, you are expected to uphold this code. Please report unacceptable behavior to [your-email]@[domain].
+This project adheres to a Code of Conduct. By participating, you are expected to uphold this code. Please report unacceptable behavior by opening an issue.
 
 ## Getting Started
 
 ### Prerequisites
+
 - Git
-- Appropriate toolchain for your target platform (e.g., gcc-arm-none-eabi for ARM)
-- Basic understanding of embedded systems and C programming
+- Toolchain for your target platform:
+  - **ARM (STM32)**: `sudo apt-get install gcc-arm-none-eabi libnewlib-arm-none-eabi`
+  - **AVR (ATmega/ATtiny)**: `sudo apt-get install gcc-avr avr-libc`
+  - **Xtensa (ESP8266)**: Install the ESP8266 SDK toolchain
+- Python 3 (for packaging scripts)
+- cppcheck (for static analysis): `sudo apt-get install cppcheck`
 
 ### Setting Up Your Development Environment
 
-1. **Fork the repository**
-   - Click the "Fork" button on GitHub
-   - Clone your fork locally:
-     ```bash
-     git clone https://github.com/YOUR-USERNAME/ktos.git
-     cd ktos
-     ```
-
-2. **Add upstream remote**
+1. **Fork the repository** on GitHub, then clone your fork:
    ```bash
-   git remote add upstream https://github.com/ORIGINAL-OWNER/ktos.git
+   git clone https://github.com/YOUR-USERNAME/KTOS.git
+   cd KTOS
+   git remote add upstream https://github.com/baamiis/KTOS.git
    ```
 
-3. **Build the project**
-   ```bash
-   make all
-   ```
+2. **Install toolchains** (see Prerequisites above)
 
-4. **Run tests**
+3. **Verify everything builds:**
    ```bash
-   make test
+   bash scripts/build_all.sh
    ```
+   All BSPs must pass before you start making changes.
+
+4. **The pre-push hook is automatic** — `build_all.sh` runs before every `git push`, blocking the push if any BSP fails to build.
 
 ## Development Workflow
 
-1. **Create a branch** for your work
+1. **Create a branch:**
    ```bash
    git checkout -b feature/your-feature-name
    ```
-   
-   Branch naming conventions:
-   - `feature/description` - for new features
-   - `fix/description` - for bug fixes
-   - `docs/description` - for documentation
-   - `refactor/description` - for code refactoring
-   - `test/description` - for test improvements
+   Branch naming:
+   - `feature/description` — new features
+   - `fix/description` — bug fixes
+   - `bsp/mcu-name` — new BSP additions
+   - `docs/description` — documentation only
 
-2. **Make your changes**
-   - Write clean, well-documented code
-   - Follow the coding standards below
-   - Add tests for new functionality
+2. **Make your changes** following the coding standards below.
 
-3. **Keep your branch updated**
+3. **Verify builds locally before pushing:**
    ```bash
-   git fetch upstream
-   git rebase upstream/main
+   bash scripts/build_all.sh
    ```
 
-4. **Test your changes**
-   - Build the project
-   - Run all tests
-   - Test on actual hardware if possible
-
-5. **Commit your changes**
-   - Follow the commit message guidelines below
-   - Keep commits focused and atomic
-
-6. **Push to your fork**
+4. **Commit and push** — the pre-push hook will run `build_all.sh` automatically:
    ```bash
    git push origin feature/your-feature-name
    ```
 
-7. **Open a Pull Request**
-   - Go to the original repository on GitHub
-   - Click "New Pull Request"
-   - Select your branch
-   - Fill out the PR template completely
+5. **Open a Pull Request** on GitHub — CI will build all BSPs and run static analysis automatically. All checks must be green before a maintainer can merge.
+
+## Adding a New BSP
+
+This is the most valuable contribution you can make — each new BSP means a new MCU is supported on [ktos.co.uk](https://ktos.co.uk).
+
+### Steps
+
+1. **Create the BSP directory:**
+   ```bash
+   mkdir bsp/<mcu_name>
+   ```
+
+2. **Implement `ktos_bsp.c`** — all 6 HAL functions from `core/ktos_hal.h`:
+
+   ```c
+   #include "../../core/ktos_hal.h"
+
+   void ktos_hal_DisableInterrupts(void) { /* disable interrupts */ }
+   void ktos_hal_EnableInterrupts(void)  { /* enable interrupts  */ }
+
+   void *ktos_hal_InitTaskStack(void *p_stack_base,
+                                 unsigned int stack_size_bytes,
+                                 WORD (*task_func_addr)(WORD, WORD, LONG),
+                                 void (*task_exit_handler_addr)(WORD),
+                                 WORD initial_msg_type,
+                                 WORD initial_sparam,
+                                 LONG initial_lparam) { /* setup stack */ }
+
+   void ktos_hal_ContextSwitch(void **p_current_sp, void *next_sp) { /* assembly */ }
+   void ktos_hal_StartScheduler(void *first_task_sp)               { /* assembly */ }
+   void ktos_hal_InitSystemTimer(void (*isr)(void))                 { /* 1ms timer */ }
+   ```
+
+3. **Create a `Makefile`** using the correct toolchain for that MCU. Use an existing BSP Makefile as a template (e.g. `bsp/stm32f103/Makefile` for ARM, `bsp/atmega328p/Makefile` for AVR).
+
+4. **Verify it builds:**
+   ```bash
+   bash scripts/build_all.sh
+   ```
+
+5. **Add MCU info to `scripts/package.py`** in the `MCU_INFO` dictionary so the website can generate ZIP packages for it.
+
+6. **Open a PR** — describe which MCU you added, which boards it supports, and which hardware you tested on if possible.
+
+### BSP implementation tips
+
+- **Context switch** is the hardest part — it requires architecture-specific assembly. Study existing BSPs for examples.
+- **Cortex-M3** (STM32F103): use `push {r4-r11}` / `str sp, [r0]` / `mov sp, r1` / `pop {r4-r11}`
+- **Cortex-M0** (STM32F030): same idea but SP cannot be used directly with STR — use `mov r2, sp` then `str r2, [r0]`
+- **AVR**: push/pop all 32 registers + SREG, use `in`/`out` for SP
+- Always use `--specs=nosys.specs` in ARM linker flags for bare-metal builds
 
 ## Coding Standards
 
@@ -99,197 +130,50 @@ This project adheres to a Code of Conduct. By participating, you are expected to
 
 - **Indentation**: 4 spaces (no tabs)
 - **Line length**: Maximum 100 characters
-- **Braces**: K&R style
-  ```c
-  if (condition) {
-      do_something();
-  }
-  ```
-
 - **Naming conventions**:
-  - Functions: `k_function_name` or `KFunction` (follow existing style in KTOS)
-  - Task functions: descriptive names like `task_timer`, `task_serial`
-  - Types: `snake_case_t` (e.g., `task_handle_t`)
-  - Macros/Constants: `UPPER_CASE` (e.g., `KTOS_MAX_TASKS`, `KTOS_MSG_TYPE_INIT`)
-  - Keep consistency with existing KTOS code style
-
-- **Comments**:
-  - Use `/* */` for multi-line comments
-  - Use `//` for single-line comments
-  - Document all public APIs with descriptive comments
-  - Explain "why" not "what" in comments
-
-### Code Organization
-
-- Keep functions small and focused (ideally < 50 lines)
-- One function should do one thing
-- Minimize global state
-- Use static functions for internal implementation details
-- Group related functions together
-
-### Memory Management
-
+  - Functions: `ktos_function_name` prefix for all public functions
+  - HAL functions: `ktos_hal_function_name` prefix
+  - Types/structs: `ktos_TypeName` (e.g. `ktos_TASK`, `ktos_MSG`)
+  - Enum values: `KTOS_ENUM_VALUE` (e.g. `KTOS_MSG_TYPE_INIT`)
+  - Macros/constants: `UPPER_CASE`
 - **No dynamic allocation** in core KTOS code
-- All memory should be statically allocated or stack-based
-- Document memory requirements clearly
-- Avoid recursion to prevent stack overflow
+- Pass `cppcheck` with no warnings before submitting
 
-### Platform-Specific Code
+### Commit Guidelines
 
-- Keep platform-specific code isolated in separate files
-- Use clear abstractions for hardware access
-- Document platform requirements
-
-## Commit Guidelines
-
-### Commit Message Format
+Use conventional commit format:
 
 ```
-<type>: <subject>
+<type>: <short description>
 
-<body>
-
-<footer>
+<optional body>
 ```
 
-**Type** must be one of:
-- `feat`: A new feature
-- `fix`: A bug fix
-- `docs`: Documentation only changes
-- `style`: Code style changes (formatting, missing semicolons, etc.)
-- `refactor`: Code change that neither fixes a bug nor adds a feature
-- `perf`: Performance improvement
-- `test`: Adding or updating tests
-- `chore`: Changes to build process or auxiliary tools
+Types: `feat`, `fix`, `bsp`, `docs`, `style`, `refactor`, `chore`
 
-**Subject**:
-- Use imperative mood ("add feature" not "added feature")
-- Don't capitalize first letter
-- No period at the end
-- Maximum 50 characters
-
-**Body** (optional):
-- Explain what and why, not how
-- Wrap at 72 characters
-
-**Footer** (optional):
-- Reference issues: `Closes #123` or `Fixes #456`
-
-### Examples
-
+Examples:
 ```
-feat: add semaphore support for task synchronization
+bsp: add ATmega2560 support
 
-Implements counting semaphores to allow tasks to synchronize
-access to shared resources. Includes wait and signal operations
-with timeout support.
+feat: add message queue overflow callback
 
-Closes #42
-```
-
-```
-fix: prevent race condition in scheduler
-
-The task ready queue was not properly protected during interrupt
-context, leading to occasional task corruption.
+fix: correct Cortex-M0 context switch SP constraint
 ```
 
 ## Pull Request Process
 
-1. **Before submitting**:
-   - Ensure all tests pass
-   - Update documentation if needed
-   - Rebase on latest main branch
-   - Ensure your branch has a clear, linear history
-
-2. **PR Description**:
-   - Fill out the entire PR template
-   - Explain what changed and why
-   - Link related issues
-   - Include test results
-
-3. **Review Process**:
-   - At least one maintainer must approve
-   - All CI checks must pass
-   - All review comments must be addressed
-   - Conversation must be resolved
-
-4. **After approval**:
-   - Maintainers will merge your PR
-   - You can delete your branch after merging
+1. All CI checks must pass (build, cppcheck, docs, license)
+2. At least 1 approving review from a maintainer is required
+3. All review comments must be resolved
+4. Maintainers will merge — contributors cannot merge directly to `main`
 
 ## Testing
 
-### Unit Tests
-
-- Write tests for all new functionality
-- Ensure existing tests still pass
-- Aim for high code coverage
-- Test edge cases and error conditions
-
-### Hardware Testing
-
-When possible, test on actual hardware:
-- Document which platform(s) you tested on
-- Include test results in your PR
-- Note any platform-specific behaviors
-
-### Test Naming
-
-```c
-void test_task_create_success(void);
-void test_task_create_null_pointer(void);
-void test_scheduler_round_robin(void);
-```
-
-## Documentation
-
-### Code Documentation
-
-- Document all public APIs
-- Use clear, descriptive comments
-- Include parameter descriptions
-- Document return values and error conditions
-- Provide usage examples for complex functions
-
-Example:
-```c
-/**
- * Create a new task in the KTOS scheduler
- * 
- * @param task_func Pointer to the task function
- * @param priority Task priority (0 = highest)
- * @param stack_size Size of task stack in bytes
- * @return Task handle on success, NULL on failure
- * 
- * Example:
- *   task_handle_t task = ktos_task_create(my_task, 0, 512);
- *   if (task == NULL) {
- *       // Handle error
- *   }
- */
-task_handle_t ktos_task_create(task_func_t task_func, 
-                                uint8_t priority, 
-                                size_t stack_size);
-```
-
-### README and Guides
-
-- Update README.md if you add new features
-- Add examples for new functionality
-- Update architecture docs if changing core behavior
-
-## Questions?
-
-- Open an issue with the `question` label
-- Join our discussions (if you have a discussion forum)
-- Contact maintainers
-
-## Recognition
-
-Contributors will be recognized in:
-- CONTRIBUTORS.md file
-- Release notes
-- Project documentation
+- Run `bash scripts/build_all.sh` — all BSPs must pass
+- If adding a new BSP, test on real hardware where possible and report results in the PR
+- Run `cppcheck` on your files:
+  ```bash
+  cppcheck --enable=warning,style --suppress=missingIncludeSystem --error-exitcode=1 bsp/<mcu_name>/
+  ```
 
 Thank you for contributing to KTOS!
