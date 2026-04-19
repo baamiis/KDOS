@@ -78,7 +78,7 @@ void ktos_hal_InitSystemTimer(void (*timer_isr_addr)(void))
 
 void *ktos_hal_InitTaskStack(void *p_stack_base,
                               unsigned int stack_size_bytes,
-                              void (*task_func_addr)(WORD, WORD, LONG),
+                              WORD (*task_func_addr)(WORD, WORD, LONG),
                               void (*task_exit_handler_addr)(WORD),
                               WORD initial_msg_type,
                               WORD initial_sparam,
