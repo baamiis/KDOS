@@ -207,14 +207,12 @@ html, body {
 
 #nav-tree a:hover { color: var(--syn-variable); }
 
-/* Tree expand/collapse arrows: convert to pure white so they're visible on dark bg */
-#nav-tree img.plus,
-#nav-tree .plus img {
-    filter: brightness(0) invert(1) !important;
-    opacity: 0.7;
-    vertical-align: middle !important;
-    position: relative;
-    z-index: 1;
+/* Tree expand/collapse arrows are Unicode ▶/▼ inside span.arrow — make them bright */
+#nav-tree span.arrow,
+.arrow {
+    color: #9cdcfe !important;
+    font-size: 10px !important;
+    display: inline !important;
 }
 
 /* Selected item: replace light tab_a.png with solid dark-blue */
