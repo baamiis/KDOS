@@ -7,101 +7,128 @@ on:
     branches: [ main, develop ]
 
 jobs:
-  build-and-test:
-    name: Build KTOS
-    runs-on: ubuntu-latest
-    
-    strategy:
-      matrix:
-        platform: [avr, arm]
-    
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
-    
-    - name: Setup AVR toolchain
-      if: matrix.platform == 'avr'
-      run: |
-        sudo apt-get update
-        sudo apt-get install -y gcc-avr avr-libc binutils-avr
-    
-    - name: Setup ARM toolchain
-      if: matrix.platform == 'arm'
-      run: |
-        sudo apt-get update
-        sudo apt-get install -y gcc-arm-none-eabi libnewlib-arm-none-eabi
-    
-    - name: Build KTOS core
-      run: |
-        echo "Building KTOS core for ${{ matrix.platform }}"
-        # Add your actual build commands here
-        # For example:
-        # make PLATFORM=${{ matrix.platform }}
-    
-    - name: Check for compilation warnings
-      run: |
-        echo "Checking for warnings..."
-        # Add warning checks here
-    
-    - name: Run static analysis (optional)
-      run: |
-        # Install and run cppcheck or similar
-        # sudo apt-get install -y cppcheck
-        # cppcheck --enable=all --suppress=missingIncludeSystem src/
-        echo "Static analysis would run here"
 
+  # ----------------------------------------------------------------
+  # Build every BSP with its correct toolchain
+  # ----------------------------------------------------------------
+  build:
+    name: Build KTOS (${{ matrix.bsp }})
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - bsp: atmega328p
+            toolchain: avr
+            install: gcc-avr avr-libc binutils-avr
+          - bsp: stm32f103
+            toolchain: arm
+            install: gcc-arm-none-eabi libnewlib-arm-none-eabi binutils-arm-none-eabi
+          - bsp: stm32f030
+            toolchain: arm
+            install: gcc-arm-none-eabi libnewlib-arm-none-eabi binutils-arm-none-eabi
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install toolchain
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y ${{ matrix.install }}
+
+      - name: Build BSP
+        run: make -C bsp/${{ matrix.bsp }}
+
+      - name: Verify output exists
+        run: |
+          ls bsp/${{ matrix.bsp }}/ktos_${{ matrix.bsp }}.elf
+          echo "Build successful for ${{ matrix.bsp }}"
+
+  # ----------------------------------------------------------------
+  # Code quality checks
+  # ----------------------------------------------------------------
   code-quality:
     name: Code Quality Checks
     runs-on: ubuntu-latest
-    
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
-    
-    - name: Check file formatting
-      run: |
-        echo "Checking code formatting..."
-        # Add formatting checks
-        # For example: checking for tabs vs spaces, line endings, etc.
-    
-    - name: Check for common issues
-      run: |
-        echo "Running basic sanity checks..."
-        # Check for large files, binary files that shouldn't be there, etc.
-        find . -type f -size +1M -not -path "./.git/*" | while read file; do
-          echo "Warning: Large file detected: $file"
-        done
 
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install cppcheck
+        run: sudo apt-get install -y cppcheck
+
+      - name: Run cppcheck on core
+        run: |
+          cppcheck --enable=warning,style \
+                   --suppress=missingIncludeSystem \
+                   --error-exitcode=1 \
+                   core/
+
+      - name: Run cppcheck on BSPs
+        run: |
+          for bsp_dir in bsp/*/; do
+            echo "Checking $bsp_dir..."
+            cppcheck --enable=warning,style \
+                     --suppress=missingIncludeSystem \
+                     --error-exitcode=1 \
+                     "$bsp_dir"
+          done
+
+      - name: Check for large files
+        run: |
+          find . -type f -size +500k -not -path "./.git/*" | while read f; do
+            echo "Warning: large file $f"
+          done
+
+  # ----------------------------------------------------------------
+  # Documentation check
+  # ----------------------------------------------------------------
   documentation:
     name: Documentation Check
     runs-on: ubuntu-latest
-    
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
-    
-    - name: Check documentation
-      run: |
-        echo "Checking documentation completeness..."
-        # Verify key documentation files exist
-        test -f README.md || (echo "README.md missing!" && exit 1)
-        test -f CONTRIBUTING.md || (echo "CONTRIBUTING.md missing!" && exit 1)
-        echo "Documentation check passed!"
 
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Check required docs exist
+        run: |
+          test -f README.md          || (echo "README.md missing!"       && exit 1)
+          test -f CONTRIBUTING.md    || (echo "CONTRIBUTING.md missing!" && exit 1)
+          test -f LICENSE            || (echo "LICENSE missing!"         && exit 1)
+          echo "All documentation checks passed"
+
+      - name: Check every BSP has a README or Makefile
+        run: |
+          for bsp_dir in bsp/*/; do
+            bsp=$(basename "$bsp_dir")
+            test -f "$bsp_dir/Makefile" || (echo "Missing Makefile in $bsp_dir" && exit 1)
+            test -f "$bsp_dir/ktos_bsp.c" || (echo "Missing ktos_bsp.c in $bsp_dir" && exit 1)
+            echo "$bsp: OK"
+          done
+
+  # ----------------------------------------------------------------
+  # License compliance
+  # ----------------------------------------------------------------
   license-check:
     name: License Compliance
     runs-on: ubuntu-latest
-    
+
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
-    
-    - name: Verify LICENSE file
-      run: |
-        test -f LICENSE || (echo "LICENSE file missing!" && exit 1)
-        echo "License file present"
-    
-    - name: Check for license headers (optional)
-      run: |
-        echo "Checking for license headers in source files..."
-        # Add checks for license headers in .c and .h files if required
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Verify LICENSE file
+        run: test -f LICENSE || (echo "LICENSE file missing!" && exit 1)
+
+      - name: Check license headers in core files
+        run: |
+          for f in core/*.c core/*.h; do
+            if ! head -5 "$f" | grep -qi "ktos"; then
+              echo "Warning: $f may be missing a header comment"
+            fi
+          done
+          echo "License check complete"
