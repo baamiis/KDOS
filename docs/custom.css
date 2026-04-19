@@ -207,9 +207,14 @@ html, body {
 
 #nav-tree a:hover { color: var(--syn-variable); }
 
-/* Tree expand/collapse arrows are dark PNGs — invert them for dark bg */
-#nav-tree img {
-    filter: invert(0.75) !important;
+/* Tree expand/collapse arrows: convert to pure white so they're visible on dark bg */
+#nav-tree img.plus,
+#nav-tree .plus img {
+    filter: brightness(0) invert(1) !important;
+    opacity: 0.7;
+    vertical-align: middle !important;
+    position: relative;
+    z-index: 1;
 }
 
 /* Selected item: replace light tab_a.png with solid dark-blue */
