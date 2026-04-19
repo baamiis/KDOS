@@ -95,9 +95,6 @@ struct ktos_TASK *ktos_InitTask(WORD (*Func)(WORD MsgType, WORD sParam, LONG lPa
 {
   struct ktos_TASK *Task;
   int32_t *Stack;
-#if DEBUG_STATS == 1
-  int t;
-#endif
 
   Task = (struct ktos_TASK *)malloc(sizeof(struct ktos_TASK));
   if (Task == NULL) { ktos_Emergency("T Failed"); }
@@ -152,11 +149,10 @@ void ktos_RunOS(void)
 
 bool ktos_SendMsg(struct ktos_TASK *Task, WORD MsgType, WORD sParam, LONG lParam)
 {
-  struct ktos_MSG *Msg;
   if (Task) {
     if (Task->MsgCount >= Task->QueueCapacity) { return false; }
     ktos_hal_DisableInterrupts();
-    Msg = Task->MsgQueueIn;
+    struct ktos_MSG *Msg = Task->MsgQueueIn;
     Msg->MsgType = MsgType;
     Msg->sParam = sParam;
     Msg->lParam = lParam;
