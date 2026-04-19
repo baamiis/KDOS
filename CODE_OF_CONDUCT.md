@@ -1,6 +1,6 @@
-# Contributing to KTOS
+# Code of Conduct
 
-Thank you for your interest in contributing to KTOS (formerly KTOS)! This document provides guidelines and instructions for contributing to our tiny cooperative RTOS.
+Thank you for your interest in contributing to KTOS! This document outlines our community standards and code of conduct.
 
 ## Table of Contents
 - [Code of Conduct](#code-of-conduct)
