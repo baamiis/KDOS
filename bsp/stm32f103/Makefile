@@ -13,7 +13,7 @@ TARGET  = ktos_stm32f103
 all: $(TARGET).elf
 
 $(TARGET).elf: $(OBJS)
-	$(CC) $(CFLAGS) -o $@ $^ -Wl,--gc-sections
+	$(CC) $(CFLAGS) -o $@ $^ -Wl,--gc-sections --specs=nosys.specs
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c -o $@ $<

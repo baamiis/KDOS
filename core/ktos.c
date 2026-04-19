@@ -56,7 +56,6 @@ static void ktos_DefaultTaskExitHandler(WORD task_return_value);
 static struct ktos_TASK *TaskCurrent = NULL;
 static bool MultiTask = TRUE;
 static int32_t *OS_SP = NULL; // System Stack Pointer (used by ktos_hal_ContextSwitch)
-static int32_t *OS_LP;
 static WORD g_LastTaskReturnValue; // Stores return value of task func across context switch
 
 // Program
@@ -182,7 +181,7 @@ void ktos_WakeUp(struct ktos_TASK *Task, INT WakeUpType)
 }
 
 // MODIFIED ktos_SwitchTask function (Phase 3: ktos_hal_ContextSwitch integration)
-static void ktos_SwitchTask()
+static void __attribute__((unused)) ktos_SwitchTask(void)
 {
   // static struct ktos_MSG *Msg; // Msg is no longer passed to Task->Func by ktos_SwitchTask
   static WORD Delay;     // Will be set by g_LastTaskReturnValue
