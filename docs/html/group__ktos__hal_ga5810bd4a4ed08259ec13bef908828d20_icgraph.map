@@ -1,0 +1,8 @@
+<map id="ktos_hal_ContextSwitch" name="ktos_hal_ContextSwitch">
+<area shape="rect" id="node1" title="Perform a cooperative context switch between two execution contexts." alt="" coords="521,56,700,83"/>
+<area shape="rect" id="node2" href="$ktos_8c.html#a43c4623c2553d09a59385aabe971d75d" title="Round&#45;robin cooperative scheduler — runs on the OS stack." alt="" coords="315,5,421,32"/>
+<area shape="rect" id="node3" href="$ktos_8c.html#a0472bc90096e9ce7acb6b8aebc9b127b" title="Default exit handler called when a task function returns." alt="" coords="263,56,473,83"/>
+<area shape="rect" id="node6" href="$ktos_8c.html#a58c939684b243c872c31ec084dba395a" title=" " alt="" coords="321,107,415,133"/>
+<area shape="rect" id="node4" href="$ktos_8c.html#a9f7bbd66bfb5333402db8b6c413cb114" title=" " alt="" coords="108,56,215,83"/>
+<area shape="rect" id="node5" href="$ktos__multi_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,56,60,83"/>
+</map>

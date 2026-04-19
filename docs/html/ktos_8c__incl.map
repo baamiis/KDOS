@@ -1,0 +1,10 @@
+<map id="core/ktos.c" name="core/ktos.c">
+<area shape="rect" id="node1" title="KTOS cooperative scheduler implementation." alt="" coords="185,5,278,32"/>
+<area shape="rect" id="node2" href="$ktos__multi_8h.html" title="Portable primitive types, constants, and utility prototypes used throughout the KTOS kernel and all B..." alt="" coords="87,229,189,256"/>
+<area shape="rect" id="node5" title=" " alt="" coords="199,304,282,331"/>
+<area shape="rect" id="node6" href="$ktos_8h.html" title="KTOS public API — include this in your application code." alt="" coords="172,155,235,181"/>
+<area shape="rect" id="node7" href="$ktos__hal_8h.html" title="KTOS Hardware Abstraction Layer (HAL) interface." alt="" coords="187,80,276,107"/>
+<area shape="rect" id="node8" title=" " alt="" coords="352,80,423,107"/>
+<area shape="rect" id="node3" title=" " alt="" coords="5,304,76,331"/>
+<area shape="rect" id="node4" title=" " alt="" coords="101,304,175,331"/>
+</map>

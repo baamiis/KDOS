@@ -1,0 +1,6 @@
+<map id="ktos_DebugPrintf" name="ktos_DebugPrintf">
+<area shape="rect" id="node1" title="Printf&#45;style debug logging (active only when DEBUG == 1)." alt="" coords="521,5,656,32"/>
+<area shape="rect" id="node2" href="$ktos_8c.html#a0472bc90096e9ce7acb6b8aebc9b127b" title="Default exit handler called when a task function returns." alt="" coords="263,5,473,32"/>
+<area shape="rect" id="node3" href="$ktos_8c.html#a9f7bbd66bfb5333402db8b6c413cb114" title=" " alt="" coords="108,5,215,32"/>
+<area shape="rect" id="node4" href="$ktos__multi_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,60,32"/>
+</map>
