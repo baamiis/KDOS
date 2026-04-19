@@ -207,11 +207,23 @@ html, body {
 
 #nav-tree a:hover { color: var(--syn-variable); }
 
+/* Tree expand/collapse arrows are dark PNGs — invert them for dark bg */
+#nav-tree img {
+    filter: invert(0.75) !important;
+}
+
+/* Selected item: replace light tab_a.png with solid dark-blue */
+#nav-tree .selected {
+    background-image: none !important;
+    background-color: var(--bg-selection) !important;
+    border-radius: 3px;
+}
+
 #nav-tree .selected a,
 #nav-tree .selected a:link {
-    background-color: var(--bg-selection);
-    color: var(--fg-default);
-    border-radius: 3px;
+    background-color: transparent !important;
+    color: var(--fg-default) !important;
+    text-shadow: none !important;
 }
 
 .arrow { color: var(--fg-muted); }
