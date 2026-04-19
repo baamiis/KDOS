@@ -1,16 +1,32 @@
-/*
- * KTOS BSP for STM32F030 (Nucleo-F030R8)
- * Core: ARM Cortex-M0
- * RAM:  4KB
- * Flash: 16-64KB
- * Clock: 48MHz (typical)
+/**
+ * @file ktos_bsp.c
+ * @brief KTOS Board Support Package — STM32F030 (ARM Cortex-M0)
  *
- * Toolchain: arm-none-eabi-gcc
- * Compile:   arm-none-eabi-gcc -mcpu=cortex-m0 -mthumb ...
+ * Supported boards: Nucleo-F030R8.
  *
- * NOTE: Cortex-M0 does not support STMDB/LDMIA with SP directly.
- * Push/pop must be done carefully — only low registers (R0-R7) usable
- * in most thumb instructions. R8-R11 require MOV to low registers first.
+ * | Property  | Value                         |
+ * |-----------|-------------------------------|
+ * | Core      | ARM Cortex-M0                 |
+ * | RAM       | 4 KB                          |
+ * | Flash     | 16–64 KB                      |
+ * | Clock     | 48 MHz (typical)              |
+ * | Toolchain | arm-none-eabi-gcc             |
+ *
+ * ### Build
+ * @code
+ * arm-none-eabi-gcc -mcpu=cortex-m0 -mthumb --specs=nosys.specs ...
+ * @endcode
+ *
+ * ### Cortex-M0 assembly constraints
+ * - Only low registers (R0–R7) can be used with most Thumb instructions.
+ * - R8–R11 must be moved to low registers via @c MOV before push/store.
+ * - @c STR with SP as source is **not permitted** — use @c MOV R2, SP first.
+ *
+ * ### SysTick ISR wiring
+ * @code
+ * void SysTick_Handler(void) { ktos_timer_irq_handler(); }
+ * @endcode
+ *
  */
 
 #include "../../core/ktos_hal.h"
@@ -22,16 +38,22 @@
 #define SYSTICK_LOAD    (*(volatile uint32_t *)(SYSTICK_BASE + 0x04))
 #define SYSTICK_VAL     (*(volatile uint32_t *)(SYSTICK_BASE + 0x08))
 
+/** @brief Disable all maskable interrupts (CPSID I). */
 void ktos_hal_DisableInterrupts(void)
 {
     __asm volatile ("cpsid i" ::: "memory");
 }
 
+/** @brief Re-enable maskable interrupts (CPSIE I). */
 void ktos_hal_EnableInterrupts(void)
 {
     __asm volatile ("cpsie i" ::: "memory");
 }
 
+/**
+ * @brief Configure SysTick for a 1 ms interrupt at 48 MHz.
+ *
+ */
 void ktos_hal_InitSystemTimer(void (*timer_isr_addr)(void))
 {
     /* 48MHz / 1000 = 48000 ticks per 1ms */
@@ -42,6 +64,13 @@ void ktos_hal_InitSystemTimer(void (*timer_isr_addr)(void))
     /* void SysTick_Handler(void) { ktos_timer_irq_handler(); } */
 }
 
+/**
+ * @brief Build the initial Cortex-M0 stack frame for a new task.
+ *
+ * Identical layout to the Cortex-M3 BSP.  Both cores share the same
+ * exception frame format (xPSR, PC, LR, R12, R3, R2, R1, R0) and the
+ * KTOS software-saved R4-R11 block.
+ */
 void *ktos_hal_InitTaskStack(void *p_stack_base,
                               unsigned int stack_size_bytes,
                               WORD (*task_func_addr)(WORD, WORD, LONG),
@@ -68,6 +97,15 @@ void *ktos_hal_InitTaskStack(void *p_stack_base,
     return (void *)sp;
 }
 
+/**
+ * @brief Cortex-M0 cooperative context switch.
+ *
+ * Cortex-M0 restrictions:
+ * - Only R0-R7 can be pushed/popped directly.
+ * - R8-R11 must be moved to low registers first via @c MOV.
+ * - @c STR SP is not allowed — use @c MOV R2, SP then @c STR R2, [R0].
+ *
+ */
 __attribute__((naked)) void ktos_hal_ContextSwitch(
     void **p_current_sp_storage __attribute__((unused)),
     void  *next_sp               __attribute__((unused)))
@@ -94,6 +132,14 @@ __attribute__((naked)) void ktos_hal_ContextSwitch(
     );
 }
 
+/**
+ * @brief Load the first task's stack and begin execution.  Never returns.
+ *
+ * On Cortex-M0, the hardware exception frame pop must be done manually
+ * because @c POP {PC} with bit-0 clear is unpredictable.  The PC is popped
+ * into R6 and jumped to via @c BX R6.
+ *
+ */
 __attribute__((naked)) void ktos_hal_StartScheduler(void *first_task_sp __attribute__((unused)))
 {
     __asm volatile (
