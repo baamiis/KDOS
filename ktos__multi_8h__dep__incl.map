@@ -1,0 +1,11 @@
+<map id="core/ktos_multi.h" name="core/ktos_multi.h">
+<area shape="rect" id="node1" title="Portable primitive types, constants, and utility prototypes used throughout the KTOS kernel and all B..." alt="" coords="137,5,271,32"/>
+<area shape="rect" id="node2" href="$ktos_8c.html" title="KTOS cooperative scheduler implementation." alt="" coords="5,237,99,263"/>
+<area shape="rect" id="node3" href="$ktos_8h.html" title="KTOS public API — include this in your application code." alt="" coords="157,80,251,107"/>
+<area shape="rect" id="node9" href="$ktos__multi_8c.html" title=" " alt="" coords="289,155,423,181"/>
+<area shape="rect" id="node4" href="$ktos__hal_8h.html" title="KTOS Hardware Abstraction Layer (HAL) interface." alt="" coords="143,155,265,181"/>
+<area shape="rect" id="node5" href="$atmega328p_2ktos__bsp_8c.html" title="KTOS Board Support Package — ATmega328P (AVR 8&#45;bit)" alt="" coords="123,229,285,271"/>
+<area shape="rect" id="node6" href="$esp8266_2ktos__bsp_8c.html" title="KTOS Board Support Package — ESP8266 (Xtensa LX106) — partial." alt="" coords="310,237,487,263"/>
+<area shape="rect" id="node7" href="$stm32f030_2ktos__bsp_8c.html" title="KTOS Board Support Package — STM32F030 (ARM Cortex&#45;M0)" alt="" coords="511,229,662,271"/>
+<area shape="rect" id="node8" href="$stm32f103_2ktos__bsp_8c.html" title="KTOS Board Support Package — STM32F103 (ARM Cortex&#45;M3)" alt="" coords="686,229,837,271"/>
+</map>

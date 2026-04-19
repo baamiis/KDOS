@@ -1,0 +1,4 @@
+<map id="ktos_TASK" name="ktos_TASK">
+<area shape="rect" id="node1" title="KTOS task control block (TCB)." alt="" coords="5,139,96,165"/>
+<area shape="rect" id="node2" href="$structktos__MSG.html" title="Represents a single message in a task&#39;s queue." alt="" coords="7,5,94,32"/>
+</map>
