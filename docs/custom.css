@@ -431,45 +431,83 @@ a:hover { color: var(--accent-bright); text-decoration: underline; }
 hr { border: none; border-top: 1px solid var(--border); margin: 20px 0; }
 
 /* ── Search ──────────────────────────────────────────────────── */
+/* Kill the PNG slices (search_l/m/r.png) and replace with a clean dark field */
 #MSearchBox {
-    background-color: #2d2d30;
-    border: 1px solid #555;
-    border-radius: 4px;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    margin-top: 6px !important;
+    width: 200px !important;
 }
 
-#MSearchBox input,
+/* The three PNG-slice divs */
+#MSearchBox .left,
+#MSearchBox .right {
+    display: none !important;
+}
+
 #MSearchField,
 input#MSearchField {
-    background-color: #2d2d30 !important;
+    background-color: #3c3c3c !important;
+    background-image: none !important;
     color: #d4d4d4 !important;
-    border: none !important;
+    border: 1px solid #555 !important;
+    border-radius: 4px !important;
     outline: none !important;
+    width: 180px !important;
+    height: 26px !important;
+    padding: 0 10px 0 28px !important;
+    margin-left: 0 !important;
+    font-family: 'Segoe UI', system-ui, sans-serif !important;
     font-size: 13px !important;
     caret-color: #d4d4d4 !important;
     -webkit-text-fill-color: #d4d4d4 !important;
+    transition: border-color 0.15s !important;
 }
 
-#MSearchBox input::placeholder,
-#MSearchField::placeholder {
-    color: #858585;
+#MSearchField:focus,
+input#MSearchField:focus {
+    border-color: #007acc !important;
+    box-shadow: 0 0 0 1px #007acc !important;
 }
 
-/* Doxygen renders the search as a table cell — target that too */
-.SRPage, #MSearchSelectWindow, #MSearchResultsWindow {
-    background-color: #252526;
-    color: #d4d4d4;
+#MSearchField::placeholder,
+input#MSearchField::placeholder {
+    color: #6e6e6e !important;
+    -webkit-text-fill-color: #6e6e6e !important;
 }
 
+/* Search icon — reposition over the dark input */
 #MSearchSelect {
-    background-color: #2d2d30;
-    color: #d4d4d4;
+    background: transparent !important;
+    left: 6px !important;
+    top: 3px !important;
+    z-index: 10;
 }
 
-#MSearchResultsWindow {
-    background-color: var(--bg-sidebar);
-    border: 1px solid var(--border);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+#MSearchSelect img,
+#MSearchSelect span {
+    filter: brightness(0) invert(0.6) !important;
 }
+
+/* Results dropdown */
+#MSearchResultsWindow {
+    background-color: #252526 !important;
+    border: 1px solid #474747 !important;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.7) !important;
+    border-radius: 4px !important;
+}
+
+.SRPage, #MSearchSelectWindow {
+    background-color: #252526 !important;
+    color: #d4d4d4 !important;
+}
+
+.SREntry { border-bottom: 1px solid #3e3e42; }
+.SREntry:hover { background-color: #094771 !important; }
+.SRSymbol { color: #9cdcfe !important; font-family: 'Cascadia Code', Consolas, monospace; }
+.SRFile   { color: #858585 !important; font-size: 11px; }
+.SRPage a { color: #d4d4d4 !important; }
 
 /* ── Breadcrumb ──────────────────────────────────────────────── */
 #nav-path { background-color: var(--bg-sidebar); border-top: 1px solid var(--border); }
