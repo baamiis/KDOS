@@ -114,8 +114,9 @@ void *ktos_hal_InitTaskStack(void *p_stack_base,
 /* Context Switch — Cortex-M3 assembly (naked function)                */
 /* ------------------------------------------------------------------ */
 
-__attribute__((naked)) void ktos_hal_ContextSwitch(void **p_current_sp_storage,
-                                                    void *next_sp)
+__attribute__((naked)) void ktos_hal_ContextSwitch(
+    void **p_current_sp_storage __attribute__((unused)),
+    void  *next_sp               __attribute__((unused)))
 {
     __asm volatile (
         "push   {r4-r11}            \n" /* Save callee-saved registers  */
@@ -130,7 +131,7 @@ __attribute__((naked)) void ktos_hal_ContextSwitch(void **p_current_sp_storage,
 /* Start Scheduler                                                      */
 /* ------------------------------------------------------------------ */
 
-__attribute__((naked)) void ktos_hal_StartScheduler(void *first_task_sp)
+__attribute__((naked)) void ktos_hal_StartScheduler(void *first_task_sp __attribute__((unused)))
 {
     __asm volatile (
         "mov    sp, r0              \n" /* Set SP to first task stack   */

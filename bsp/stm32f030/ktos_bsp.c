@@ -68,19 +68,22 @@ void *ktos_hal_InitTaskStack(void *p_stack_base,
     return (void *)sp;
 }
 
-__attribute__((naked)) void ktos_hal_ContextSwitch(void **p_current_sp_storage,
-                                                    void *next_sp)
+__attribute__((naked)) void ktos_hal_ContextSwitch(
+    void **p_current_sp_storage __attribute__((unused)),
+    void  *next_sp               __attribute__((unused)))
 {
     __asm volatile (
-        /* Cortex-M0: save R4-R7 then R8-R11 via mov */
+        /* Cortex-M0: save R4-R7 then R8-R11 via low registers */
         "push   {r4-r7}             \n"
         "mov    r4, r8              \n"
         "mov    r5, r9              \n"
         "mov    r6, r10             \n"
         "mov    r7, r11             \n"
         "push   {r4-r7}             \n"
-        "str    sp, [r0]            \n" /* save current SP */
-        "mov    sp, r1              \n" /* load next SP    */
+        /* Cortex-M0 cannot STR SP directly — move SP to low reg first */
+        "mov    r2, sp              \n"
+        "str    r2, [r0]            \n" /* *p_current_sp_storage = SP */
+        "mov    sp, r1              \n" /* SP = next_sp               */
         "pop    {r4-r7}             \n"
         "mov    r8,  r4             \n"
         "mov    r9,  r5             \n"
@@ -91,7 +94,7 @@ __attribute__((naked)) void ktos_hal_ContextSwitch(void **p_current_sp_storage,
     );
 }
 
-__attribute__((naked)) void ktos_hal_StartScheduler(void *first_task_sp)
+__attribute__((naked)) void ktos_hal_StartScheduler(void *first_task_sp __attribute__((unused)))
 {
     __asm volatile (
         "mov    sp, r0              \n"
