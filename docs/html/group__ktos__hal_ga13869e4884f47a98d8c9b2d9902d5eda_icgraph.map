@@ -1,8 +1,0 @@
-<map id="ktos_hal_DisableInterrupts" name="ktos_hal_DisableInterrupts">
-<area shape="rect" id="node1" title="Disable all maskable interrupts." alt="" coords="272,81,468,108"/>
-<area shape="rect" id="node2" href="$ktos_8c.html#a43c4623c2553d09a59385aabe971d75d" title="Round&#45;robin cooperative scheduler — runs on the OS stack." alt="" coords="113,5,219,32"/>
-<area shape="rect" id="node3" href="$ktos_8c.html#abdccd1793b29f0ab71047c522a9fb262" title=" " alt="" coords="108,56,224,83"/>
-<area shape="rect" id="node5" href="$ktos_8c.html#a58c939684b243c872c31ec084dba395a" title=" " alt="" coords="119,107,213,133"/>
-<area shape="rect" id="node6" href="$group__ktos__core.html#ga36de1d506ed25f7ec37016362726b45c" title="Wake a sleeping task immediately from an ISR or another task." alt="" coords="111,157,221,184"/>
-<area shape="rect" id="node4" href="$ktos__multi_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,56,60,83"/>
-</map>

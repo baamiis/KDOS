@@ -1,9 +1,0 @@
-<map id="bsp/esp8266/ktos_bsp.c" name="bsp/esp8266/ktos_bsp.c">
-<area shape="rect" id="node1" title="KTOS Board Support Package — ESP8266 (Xtensa LX106) — partial." alt="" coords="102,5,279,32"/>
-<area shape="rect" id="node2" href="$ktos__hal_8h.html" title="KTOS Hardware Abstraction Layer (HAL) interface." alt="" coords="63,80,209,107"/>
-<area shape="rect" id="node6" title=" " alt="" coords="211,304,282,331"/>
-<area shape="rect" id="node3" href="$ktos_8h.html" title="KTOS public API — include this in your application code." alt="" coords="105,155,167,181"/>
-<area shape="rect" id="node4" title=" " alt="" coords="5,304,88,331"/>
-<area shape="rect" id="node5" href="$ktos__multi_8h.html" title="Portable primitive types, constants, and utility prototypes used throughout the KTOS kernel and all B..." alt="" coords="91,229,194,256"/>
-<area shape="rect" id="node7" title=" " alt="" coords="112,304,187,331"/>
-</map>
