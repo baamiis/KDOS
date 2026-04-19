@@ -1,0 +1,8 @@
+<map id="core/ktos_hal.h" name="core/ktos_hal.h">
+<area shape="rect" id="node1" title="KTOS Hardware Abstraction Layer (HAL) interface." alt="" coords="338,5,459,32"/>
+<area shape="rect" id="node2" href="$ktos_8c.html" title="KTOS cooperative scheduler implementation." alt="" coords="5,87,99,114"/>
+<area shape="rect" id="node3" href="$atmega328p_2ktos__bsp_8c.html" title="KTOS Board Support Package — ATmega328P (AVR 8&#45;bit)" alt="" coords="123,80,285,121"/>
+<area shape="rect" id="node4" href="$esp8266_2ktos__bsp_8c.html" title="KTOS Board Support Package — ESP8266 (Xtensa LX106) — partial." alt="" coords="310,87,487,114"/>
+<area shape="rect" id="node5" href="$stm32f030_2ktos__bsp_8c.html" title="KTOS Board Support Package — STM32F030 (ARM Cortex&#45;M0)" alt="" coords="511,80,662,121"/>
+<area shape="rect" id="node6" href="$stm32f103_2ktos__bsp_8c.html" title="KTOS Board Support Package — STM32F103 (ARM Cortex&#45;M3)" alt="" coords="686,80,837,121"/>
+</map>

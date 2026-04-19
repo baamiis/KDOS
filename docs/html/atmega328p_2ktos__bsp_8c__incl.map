@@ -1,0 +1,11 @@
+<map id="bsp/atmega328p/ktos_bsp.c" name="bsp/atmega328p/ktos_bsp.c">
+<area shape="rect" id="node1" title="KTOS Board Support Package — ATmega328P (AVR 8&#45;bit)" alt="" coords="147,5,309,47"/>
+<area shape="rect" id="node2" href="$ktos__hal_8h.html" title="KTOS Hardware Abstraction Layer (HAL) interface." alt="" coords="23,95,169,121"/>
+<area shape="rect" id="node8" title=" " alt="" coords="193,95,263,121"/>
+<area shape="rect" id="node9" title=" " alt="" coords="288,95,403,121"/>
+<area shape="rect" id="node3" href="$ktos_8h.html" title="KTOS public API — include this in your application code." alt="" coords="65,169,127,196"/>
+<area shape="rect" id="node4" title=" " alt="" coords="5,319,88,345"/>
+<area shape="rect" id="node5" href="$ktos__multi_8h.html" title="Portable primitive types, constants, and utility prototypes used throughout the KTOS kernel and all B..." alt="" coords="93,244,195,271"/>
+<area shape="rect" id="node6" title=" " alt="" coords="113,319,183,345"/>
+<area shape="rect" id="node7" title=" " alt="" coords="208,319,283,345"/>
+</map>

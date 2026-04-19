@@ -1,0 +1,6 @@
+<map id="ktos_DefaultTaskExitHandler" name="ktos_DefaultTaskExitHandler">
+<area shape="rect" id="node1" title="Default exit handler called when a task function returns." alt="" coords="5,56,216,83"/>
+<area shape="rect" id="node2" href="$group__ktos__core.html#ga77b699103f3ec266c0d79d849ead8c1c" title="Printf&#45;style debug logging (active only when DEBUG == 1)." alt="" coords="286,5,421,32"/>
+<area shape="rect" id="node3" href="$group__ktos__core.html#ga7aca2702c8fa0e02fd05461d4f5d23fe" title="Emit a fatal&#45;error message and halt execution." alt="" coords="288,56,419,83"/>
+<area shape="rect" id="node4" href="$group__ktos__hal.html#ga5810bd4a4ed08259ec13bef908828d20" title="Perform a cooperative context switch between two execution contexts." alt="" coords="264,107,443,133"/>
+</map>
