@@ -1,9 +1,0 @@
-<map id="bsp/stm32f103/ktos_bsp.c" name="bsp/stm32f103/ktos_bsp.c">
-<area shape="rect" id="node1" title="KTOS Board Support Package — STM32F103 (ARM Cortex&#45;M3)" alt="" coords="115,5,266,47"/>
-<area shape="rect" id="node2" href="$ktos__hal_8h.html" title="KTOS Hardware Abstraction Layer (HAL) interface." alt="" coords="63,95,209,121"/>
-<area shape="rect" id="node6" title=" " alt="" coords="211,319,282,345"/>
-<area shape="rect" id="node3" href="$ktos_8h.html" title="KTOS public API — include this in your application code." alt="" coords="105,169,167,196"/>
-<area shape="rect" id="node4" title=" " alt="" coords="5,319,88,345"/>
-<area shape="rect" id="node5" href="$ktos__multi_8h.html" title="Portable primitive types, constants, and utility prototypes used throughout the KTOS kernel and all B..." alt="" coords="91,244,194,271"/>
-<area shape="rect" id="node7" title=" " alt="" coords="112,319,187,345"/>
-</map>

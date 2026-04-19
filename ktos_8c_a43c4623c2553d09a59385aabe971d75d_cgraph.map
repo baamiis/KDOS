@@ -1,6 +1,0 @@
-<map id="__attribute__" name="__attribute__">
-<area shape="rect" id="node1" title="Round&#45;robin cooperative scheduler — runs on the OS stack." alt="" coords="5,56,112,83"/>
-<area shape="rect" id="node2" href="$group__ktos__hal.html#ga5810bd4a4ed08259ec13bef908828d20" title="Perform a cooperative context switch between two execution contexts." alt="" coords="169,5,347,32"/>
-<area shape="rect" id="node3" href="$group__ktos__hal.html#ga13869e4884f47a98d8c9b2d9902d5eda" title="Disable all maskable interrupts." alt="" coords="160,56,356,83"/>
-<area shape="rect" id="node4" href="$group__ktos__hal.html#ga6741995a98c2dc4867a11717fa64efd8" title="Re&#45;enable maskable interrupts." alt="" coords="163,107,353,133"/>
-</map>
