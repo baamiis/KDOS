@@ -1,0 +1,8 @@
+<map id="core/ktos_hal.h" name="core/ktos_hal.h">
+<area shape="rect" id="node1" title="KTOS Hardware Abstraction Layer (HAL) interface." alt="" coords="35,5,157,32"/>
+<area shape="rect" id="node2" href="$ktos_8h.html" title="KTOS public API — include this in your application code." alt="" coords="65,80,127,107"/>
+<area shape="rect" id="node3" title=" " alt="" coords="5,229,88,256"/>
+<area shape="rect" id="node4" href="$ktos__multi_8h.html" title="Portable primitive types, constants, and utility prototypes used throughout the KTOS kernel and all B..." alt="" coords="93,155,195,181"/>
+<area shape="rect" id="node5" title=" " alt="" coords="113,229,183,256"/>
+<area shape="rect" id="node6" title=" " alt="" coords="208,229,283,256"/>
+</map>
