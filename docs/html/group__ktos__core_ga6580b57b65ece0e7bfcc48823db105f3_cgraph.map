@@ -1,7 +1,0 @@
-<map id="ktos_RunOS" name="ktos_RunOS">
-<area shape="rect" id="node1" title="Start the KTOS scheduler. Never returns." alt="" coords="5,81,105,108"/>
-<area shape="rect" id="node2" href="$group__ktos__core.html#ga7aca2702c8fa0e02fd05461d4f5d23fe" title="Emit a fatal&#45;error message and halt execution." alt="" coords="184,5,315,32"/>
-<area shape="rect" id="node3" href="$group__ktos__hal.html#gae42df35bd10d7d6b296be9687d436a32" title="Configure and start the 1 ms system tick timer." alt="" coords="153,56,345,83"/>
-<area shape="rect" id="node4" href="$group__ktos__hal.html#gada7d06870787ac11ce8ebc4df1fc9b4b" title="Launch the KTOS scheduler and the first task. Never returns." alt="" coords="160,107,339,133"/>
-<area shape="rect" id="node5" href="$ktos_8c.html#a2a3876653c789ddcd5a9ccf968d98fe0" title="1 ms system tick interrupt handler." alt="" coords="163,157,335,184"/>
-</map>

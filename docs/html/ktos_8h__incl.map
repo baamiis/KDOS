@@ -1,7 +1,0 @@
-<map id="core/ktos.h" name="core/ktos.h">
-<area shape="rect" id="node1" title="KTOS public API — include this in your application code." alt="" coords="49,5,143,32"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,155,88,181"/>
-<area shape="rect" id="node3" href="$ktos__multi_8h.html" title="Portable primitive types, constants, and utility prototypes used throughout the KTOS kernel and all B..." alt="" coords="93,80,195,107"/>
-<area shape="rect" id="node4" title=" " alt="" coords="113,155,183,181"/>
-<area shape="rect" id="node5" title=" " alt="" coords="208,155,283,181"/>
-</map>
