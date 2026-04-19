@@ -224,6 +224,12 @@ div.contents {
     max-width: 1000px;
 }
 
+/* ── Page header / title band ────────────────────────────────── */
+div.header, div.headertitle {
+    background-color: var(--bg-editor) !important;
+    background-image: none !important;
+}
+
 /* ── Page title ──────────────────────────────────────────────── */
 .title {
     color: var(--fg-default);
