@@ -1,116 +1,224 @@
+/**
+ * @file ktos_hal.h
+ * @brief KTOS Hardware Abstraction Layer (HAL) interface.
+ *
+ * BSP authors implement every function declared here for their specific
+ * microcontroller.  The KTOS kernel calls these functions but has no
+ * knowledge of the underlying hardware.
+ *
+ * ### Porting checklist
+ * Implement all six functions in @c bsp/\<mcu\>/ktos_bsp.c:
+ *
+ * | Function                    | Language   | Notes                                 |
+ * |-----------------------------|------------|---------------------------------------|
+ * | ktos_hal_DisableInterrupts  | C or ASM   | Global interrupt disable              |
+ * | ktos_hal_EnableInterrupts   | C or ASM   | Global interrupt enable               |
+ * | ktos_hal_InitTaskStack      | C (+ ASM)  | Stack frame setup                     |
+ * | ktos_hal_ContextSwitch      | ASM        | Save/restore CPU registers            |
+ * | ktos_hal_StartScheduler     | ASM        | First-task launch, never returns      |
+ * | ktos_hal_InitSystemTimer    | C          | 1 ms periodic hardware timer          |
+ *
+ * @defgroup ktos_hal KTOS HAL — hardware abstraction layer
+ */
+
 #ifndef ktos_hal_H_INCLUDED
 #define ktos_hal_H_INCLUDED
 
-// It is assumed that basic types like WORD, LONG, INT, BYTE, bool
-// are defined. This typically happens in "ktos.h" or a shared "ktos_types.h"
-// or "ktos_config.h". If not, k_hal.h might need to include ktos.h,
-// or such a types header directly. For KTOS, "ktos.h" defines these via "ktos_multi.h"
-// and its own typedefs effectively. Let's assume ktos.h should be included if
-// those types are needed by these function signatures directly (which they are).
-#include "ktos.h" // Provides WORD, LONG, INT, BYTE, bool (via stdbool.h)
+#include "ktos.h" /* provides WORD, LONG, INT, BYTE via ktos_multi.h */
 
-// --- Interrupt Control ---
+/* =========================================================================
+ * Interrupt control
+ * ========================================================================= */
 
 /**
- * @brief Disables all system interrupts that could interfere with KTOS critical sections.
- * Must be implemented by the BSP. This function should be re-entrant if applicable,
- * or save/restore interrupt state if nesting is required by the OS.
- * For KTOS's current usage, a simple global disable might suffice.
+ * @ingroup ktos_hal
+ * @brief Disable all maskable interrupts.
+ *
+ * Called by the KTOS kernel to protect critical sections (queue updates,
+ * task-state changes).  Must not be called from within an ISR.
+ *
+ * ### AVR example
+ * @code
+ * void ktos_hal_DisableInterrupts(void) { cli(); }
+ * @endcode
+ *
+ * ### Cortex-M example
+ * @code
+ * void ktos_hal_DisableInterrupts(void) { __disable_irq(); }
+ * @endcode
  */
 void ktos_hal_DisableInterrupts(void);
 
 /**
- * @brief Re-enables system interrupts previously disabled by ktos_hal_DisableInterrupts.
- * Must be implemented by the BSP.
+ * @ingroup ktos_hal
+ * @brief Re-enable maskable interrupts.
+ *
+ * Paired with ktos_hal_DisableInterrupts().  Every disable must be
+ * followed by exactly one enable.
+ *
+ * ### AVR example
+ * @code
+ * void ktos_hal_EnableInterrupts(void) { sei(); }
+ * @endcode
+ *
+ * ### Cortex-M example
+ * @code
+ * void ktos_hal_EnableInterrupts(void) { __enable_irq(); }
+ * @endcode
  */
 void ktos_hal_EnableInterrupts(void);
 
-// --- Context Switching & Task Initialization ---
+/* =========================================================================
+ * Context switching and task initialisation
+ * ========================================================================= */
 
 /**
- * @brief Initializes the stack for a new task.
- * Sets up the initial "saved" CPU context on the task's stack.
- * When this task is first switched to via ktos_hal_ContextSwitch, it should begin
- * execution at task_func_addr with the provided initial message parameters.
- * When task_func_addr returns, execution should transfer to task_exit_handler_addr,
- * passing the WORD return value of task_func_addr as an argument.
+ * @ingroup ktos_hal
+ * @brief Set up the initial stack frame for a new task.
  *
- * @param p_stack_base Pointer to the base of the allocated stack memory.
- *                     Stack typically grows towards lower addresses from (p_stack_base + stack_size_bytes).
- * @param stack_size_bytes Total size of the stack memory in bytes.
- * @param task_func_addr Pointer to the C function the task will execute.
- * @param task_exit_handler_addr Pointer to a C function that will be called if task_func_addr returns.
- *                               This handler is responsible for passing the task's return value
- *                               to the OS and yielding control back.
- * @param initial_msg_type The MsgType for the task's first execution.
- * @param initial_sparam The sParam for the task's first execution.
- * @param initial_lparam The lParam for the task's first execution.
- * @return The initial stack pointer value for this task. This value will be stored in Task->StackPtr.
- *         Returns NULL on failure (e.g., if stack size is too small for initial context).
- * Must be implemented by the BSP (likely involves some assembly).
+ * This function crafts a fake "saved context" at the top of the task's
+ * stack so that when ktos_hal_ContextSwitch() first switches to this task
+ * it begins execution at @p task_func_addr with the three initial parameters.
+ *
+ * When @p task_func_addr returns, execution must transfer to
+ * @p task_exit_handler_addr with the task's return value (a @c WORD) as the
+ * sole argument.  The exit handler performs the final context switch back to
+ * the OS scheduler.
+ *
+ * @param p_stack_base            Pointer to the start (lowest address) of the
+ *                                allocated stack buffer.
+ * @param stack_size_bytes        Size of that buffer in bytes.
+ * @param task_func_addr          Entry point of the task function.
+ * @param task_exit_handler_addr  Called when the task function returns; receives
+ *                                the task's @c WORD return value.
+ * @param initial_msg_type        @c MsgType passed to the task on first dispatch
+ *                                (always @c KTOS_MSG_TYPE_INIT on startup).
+ * @param initial_sparam          @c sParam for the first dispatch.
+ * @param initial_lparam          @c lParam for the first dispatch.
+ * @return  The initial stack pointer value to store in @c Task->StackPtr.
+ *          Returns @c NULL if the stack is too small for the frame.
+ *
+ * @note The stack layout is architecture-specific.  Study an existing BSP
+ *       (e.g. @c bsp/stm32f103/ktos_bsp.c) before writing a new one.
  */
-void *ktos_hal_InitTaskStack(void *p_stack_base,
-                          unsigned int stack_size_bytes,
-                          WORD (*task_func_addr)(WORD, WORD, LONG),
-                          void (*task_exit_handler_addr)(WORD), // Now takes WORD
-                          WORD initial_msg_type,
-                          WORD initial_sparam,
-                          LONG initial_lparam);
+void *ktos_hal_InitTaskStack(void          *p_stack_base,
+                              unsigned int   stack_size_bytes,
+                              WORD         (*task_func_addr)(WORD, WORD, LONG),
+                              void         (*task_exit_handler_addr)(WORD),
+                              WORD           initial_msg_type,
+                              WORD           initial_sparam,
+                              LONG           initial_lparam);
 
 /**
- * @brief Performs the context switch from the current context to a new one.
- * This function saves the complete CPU context of the currently executing code
- * onto its current stack, updates its stack pointer variable (whose address is provided),
- * then switches the CPU's stack pointer to the new task's stack pointer, restores the new
- * task's previously saved CPU context, and resumes execution of the new task.
- * This function DOES NOT RETURN to the caller in the original context in a
- * conventional way; execution continues in the new task's context.
- * Interrupts should be disabled by the caller before invoking this function.
- * The HAL implementation should ensure they are re-enabled appropriately within
- * the new context if necessary, or upon returning to C code in the new context.
+ * @ingroup ktos_hal
+ * @brief Perform a cooperative context switch between two execution contexts.
  *
- * @param p_current_task_sp_storage Address of the variable holding the current context's stack pointer
- *                                  (e.g., &(TaskCurrent->StackPtr) or &g_os_sp).
- *                                  The current CPU SP will be saved into the location pointed to by this address.
- * @param next_task_sp_val The stack pointer value of the context to switch to.
- * Must be implemented by the BSP (primarily in assembly).
+ * Saves the full CPU register set of the **current** context onto its stack,
+ * records the new stack-pointer value into @p p_current_sp_storage,
+ * loads @p next_sp into the CPU's stack pointer, then restores
+ * the register set of the **next** context and resumes it.
+ *
+ * From the C caller's perspective this function appears to return normally;
+ * execution actually continues in the next context and only "returns" here
+ * when the scheduler switches back to this context later.
+ *
+ * @param p_current_sp_storage  Address of the variable that holds this
+ *                                   context's saved stack pointer
+ *                                   (e.g. @c &TaskCurrent->StackPtr or
+ *                                   @c &OS_SP).  Updated on entry.
+ * @param next_sp           Stack pointer value of the context to
+ *                                   switch into (from a previous call to
+ *                                   ktos_hal_InitTaskStack() or a previous
+ *                                   ktos_hal_ContextSwitch()).
+ *
+ * @note Must be implemented in assembly.  Interrupts must be disabled by
+ *       the caller before invoking this function.
+ *
+ * ### Cortex-M3 skeleton
+ * @code
+ * __attribute__((naked)) void ktos_hal_ContextSwitch(
+ *         void **p_current_sp_storage __attribute__((unused)),
+ *         void  *next_sp          __attribute__((unused)))
+ * {
+ *     __asm volatile(
+ *         "push   {r4-r11}          \n"
+ *         "str    sp, [r0]          \n"  // save current SP → *p_current_sp_storage
+ *         "mov    sp, r1            \n"  // load next SP
+ *         "pop    {r4-r11}          \n"
+ *         "bx     lr                \n"
+ *     );
+ * }
+ * @endcode
+ *
+ * @note On **Cortex-M0** you cannot use @c STR with SP as source.
+ *       Route SP through a low register first:
+ * @code
+ *         "mov    r2, sp            \n"
+ *         "str    r2, [r0]          \n"
+ * @endcode
  */
-void ktos_hal_ContextSwitch(void **p_current_task_sp_storage, void *next_task_sp_val);
+void ktos_hal_ContextSwitch(void **p_current_sp_storage,
+                             void  *next_sp);
 
 /**
- * @brief Starts the OS scheduler and the first task.
- * This function is called once by ktos_RunOS(). It should:
- * 1. Save the current stack pointer (e.g., from main()) into the OS's global SP variable (e.g., OS_SP).
- * 2. Initiate a context switch to the first_task_stack_ptr.
- * This function does not return. Interrupts should be disabled by the caller before this call,
- * and the HAL implementation will enable them after starting the first task if appropriate.
+ * @ingroup ktos_hal
+ * @brief Launch the KTOS scheduler and the first task.  Never returns.
  *
- * @param first_task_stack_ptr The initial stack pointer of the first task to run (from ktos_hal_InitTaskStack).
- *                             The global OS_SP variable should be set up by this function.
- * Must be implemented by the BSP.
+ * Called once by ktos_RunOS() after all tasks have been initialised.
+ * The implementation must:
+ * 1. Store the current OS stack pointer into the kernel's @c OS_SP variable
+ *    so the scheduler can return to it later via ktos_hal_ContextSwitch().
+ * 2. Load @p first_task_sp into the CPU stack pointer and restore the
+ *    task's initial register context (as laid out by ktos_hal_InitTaskStack()).
+ * 3. Enable interrupts and begin executing the first task.
+ *
+ * @param first_task_sp  Initial stack pointer of the first task to run
+ *                              (the value returned by ktos_hal_InitTaskStack()).
+ *
+ * @note Must be implemented in assembly.  This function must not return.
  */
-void ktos_hal_StartScheduler(void *first_task_stack_ptr);
+void ktos_hal_StartScheduler(void *first_task_sp);
 
-// --- System Timer ---
+/* =========================================================================
+ * System timer
+ * ========================================================================= */
 
 /**
- * @brief Initializes and starts a hardware timer to generate periodic interrupts.
- * The timer should call the function pointed to by timer_isr_addr at regular
- * intervals (e.g., 1ms for the KTOS tick).
+ * @ingroup ktos_hal
+ * @brief Configure and start the 1 ms system tick timer.
  *
- * @param timer_isr_addr Pointer to the C function ISR (ktos_timer_irq_handler from Ktos.c).
- * Must be implemented by the BSP.
+ * Sets up a hardware timer (SysTick, Timer1, FRC1, …) to fire an interrupt
+ * exactly every 1 ms and call @p timer_isr_addr inside that ISR.
+ *
+ * The KTOS scheduler relies on this 1 ms resolution to track task timers and
+ * sleep durations accurately.
+ *
+ * @param timer_isr_addr  Pointer to @c ktos_timer_irq_handler() from ktos.c.
+ *                        The BSP must call this function from within its timer ISR.
+ *
+ * ### AVR Timer1 CTC example (16 MHz, prescaler 64, OCR1A = 249)
+ * @code
+ * void ktos_hal_InitSystemTimer(void (*isr)(void))
+ * {
+ *     g_ktos_timer_isr = isr;
+ *     TCCR1A = 0;
+ *     TCCR1B = (1 << WGM12) | (1 << CS11) | (1 << CS10); // CTC, prescaler 64
+ *     OCR1A  = 249;                                         // 1 ms at 16 MHz
+ *     TIMSK1 = (1 << OCIE1A);
+ * }
+ * // ISR calls g_ktos_timer_isr() directly.
+ * @endcode
+ *
+ * ### Cortex-M SysTick example (72 MHz)
+ * @code
+ * void ktos_hal_InitSystemTimer(void (*isr)(void))
+ * {
+ *     g_ktos_timer_isr = isr;
+ *     SysTick_Config(72000); // 72 MHz / 72000 = 1 kHz
+ * }
+ * void SysTick_Handler(void) { g_ktos_timer_isr(); }
+ * @endcode
  */
 void ktos_hal_InitSystemTimer(void (*timer_isr_addr)(void));
 
-/**
- * @brief Optional: A macro to wrap architecture-specific ISR declaration attributes/pragmas.
- * Example for ARM GCC: #define ktos_hal_ISR_FUNCTION_ATTRIBUTE __attribute__((interrupt("IRQ")))
- * If not needed by the target compiler/architecture, this can be an empty define.
- * The C-based ISR (ktos_timer_irq_handler) would then be declared in ktos.c as:
- *   void ktos_hal_ISR_FUNCTION_ATTRIBUTE ktos_timer_irq_handler(void);
- * (This means ktos.c would also need to include k_hal.h for this macro).
- */
-// #define ktos_hal_ISR_FUNCTION_ATTRIBUTE /* architecture-specific or empty */
-
-#endif // ktos_hal_H_INCLUDED
+#endif /* ktos_hal_H_INCLUDED */

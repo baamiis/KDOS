@@ -1,34 +1,54 @@
-/*
- * KTOS BSP for STM32F103 (Blue Pill, Nucleo-F103RB)
- * Core: ARM Cortex-M3
- * RAM:  20KB
- * Flash: 64-128KB
- * Clock: 72MHz (typical)
+/**
+ * @file ktos_bsp.c
+ * @brief KTOS Board Support Package — STM32F103 (ARM Cortex-M3)
  *
- * Toolchain: arm-none-eabi-gcc
- * Compile:   arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb ...
+ * Supported boards: Blue Pill, Nucleo-F103RB, Maple Mini.
+ *
+ * | Property  | Value                         |
+ * |-----------|-------------------------------|
+ * | Core      | ARM Cortex-M3                 |
+ * | RAM       | 20 KB                         |
+ * | Flash     | 64–128 KB                     |
+ * | Clock     | 72 MHz (typical)              |
+ * | Toolchain | arm-none-eabi-gcc             |
+ *
+ * ### Build
+ * @code
+ * arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb --specs=nosys.specs ...
+ * @endcode
+ *
+ * ### SysTick ISR wiring
+ * Add this to your application (not inside the BSP):
+ * @code
+ * void SysTick_Handler(void) { ktos_timer_irq_handler(); }
+ * @endcode
+ *
+ * @defgroup ktos_bsp_arm KTOS BSP — ARM Cortex-M (STM32F103, STM32F030)
+ * @ingroup  ktos_hal
  */
 
 #include "../../core/ktos_hal.h"
 #include <stdint.h>
 
-/* ------------------------------------------------------------------ */
-/* Interrupt Control                                                    */
-/* ------------------------------------------------------------------ */
+/* =========================================================================
+ * Interrupt control
+ * ========================================================================= */
 
+/** @brief Disable all maskable interrupts (Cortex-M @c CPSID I). */
 void ktos_hal_DisableInterrupts(void)
 {
     __asm volatile ("cpsid i" ::: "memory");
 }
 
+/** @brief Re-enable maskable interrupts (Cortex-M @c CPSIE I). */
 void ktos_hal_EnableInterrupts(void)
 {
     __asm volatile ("cpsie i" ::: "memory");
 }
 
-/* ------------------------------------------------------------------ */
-/* System Timer — SysTick, 1ms tick at 72MHz                           */
-/* ------------------------------------------------------------------ */
+/* =========================================================================
+ * System timer — SysTick, 1 ms tick at 72 MHz
+ * ========================================================================= */
 
 /* SysTick registers */
 #define SYSTICK_BASE    0xE000E010UL
@@ -40,6 +60,10 @@ void ktos_hal_EnableInterrupts(void)
 #define SYSTICK_CTRL_TICKINT    (1 << 1)
 #define SYSTICK_CTRL_CLKSOURCE  (1 << 2)
 
+/**
+ * @brief Configure SysTick for a 1 ms interrupt at 72 MHz.
+ *
+ */
 void ktos_hal_InitSystemTimer(void (*timer_isr_addr)(void))
 {
     /* 72MHz / 1000 = 72000 ticks per 1ms */
@@ -55,27 +79,29 @@ void ktos_hal_InitSystemTimer(void (*timer_isr_addr)(void))
      */
 }
 
-/* ------------------------------------------------------------------ */
-/* Task Stack Initialisation                                            */
-/* ------------------------------------------------------------------ */
-/*
- * Cortex-M3 exception stack frame (auto-saved by hardware on exception):
- *   xPSR, PC, LR, R12, R3, R2, R1, R0   ← pushed by CPU
- * Software-saved context:
- *   R4-R11                               ← pushed by context switch code
- *
- * Full initial stack layout (top = lowest address, stack grows down):
- *   R4, R5, R6, R7, R8, R9, R10, R11    ← software saved
- *   R0 (initial_msg_type)
- *   R1 (initial_sparam)
- *   R2 (initial_lparam low)
- *   R3 (initial_lparam high)
- *   R12
- *   LR  (task_exit_handler_addr)
- *   PC  (task_func_addr)
- *   xPSR (0x01000000 = Thumb mode)
- */
+/* =========================================================================
+ * Task stack initialisation
+ * ========================================================================= */
 
+/**
+ * @brief Build the initial Cortex-M3 stack frame for a new task.
+ *
+ * Cortex-M hardware automatically pushes/pops R0-R3, R12, LR, PC, xPSR on
+ * exceptions.  KTOS manually saves/restores R4-R11.  The synthesised frame:
+ * ```
+ * (low address / top of stack)
+ *   R4-R11   (zeroed)      ← software-saved, restored by ContextSwitch
+ *   R0       (MsgType)     ← first task argument
+ *   R1       (sParam)
+ *   R2       (lParam low)
+ *   R3       (lParam high)
+ *   R12      (0)
+ *   LR       (exit handler)
+ *   PC       (task entry)
+ *   xPSR     (0x01000000) ← Thumb bit set
+ * (high address / bottom of stack)
+ * ```
+ */
 void *ktos_hal_InitTaskStack(void *p_stack_base,
                               unsigned int stack_size_bytes,
                               WORD (*task_func_addr)(WORD, WORD, LONG),
@@ -110,10 +136,20 @@ void *ktos_hal_InitTaskStack(void *p_stack_base,
     return (void *)sp;
 }
 
-/* ------------------------------------------------------------------ */
-/* Context Switch — Cortex-M3 assembly (naked function)                */
-/* ------------------------------------------------------------------ */
+/* =========================================================================
+ * Context switch — Cortex-M3 assembly
+ * ========================================================================= */
 
+/**
+ * @brief Cortex-M3 cooperative context switch.
+ *
+ * Pushes R4-R11 onto the current stack, stores SP into
+ * @c *p_current_sp_storage, loads @p next_sp into SP, pops R4-R11 of the
+ * new context, and returns (BX LR) into it.
+ *
+ * @note Naked function — no compiler-generated prologue/epilogue.
+ *
+ */
 __attribute__((naked)) void ktos_hal_ContextSwitch(
     void **p_current_sp_storage __attribute__((unused)),
     void  *next_sp               __attribute__((unused)))
@@ -127,10 +163,19 @@ __attribute__((naked)) void ktos_hal_ContextSwitch(
     );
 }
 
-/* ------------------------------------------------------------------ */
-/* Start Scheduler                                                      */
-/* ------------------------------------------------------------------ */
+/* =========================================================================
+ * Scheduler launch
+ * ========================================================================= */
 
+/**
+ * @brief Load the first task's stack and begin execution.  Never returns.
+ *
+ * Sets SP to @p first_task_sp, restores R4-R11, then pops the hardware
+ * exception frame (R0-R3, R12, LR, PC, xPSR) to start the task.
+ *
+ * @note Naked function — no compiler-generated prologue/epilogue.
+ *
+ */
 __attribute__((naked)) void ktos_hal_StartScheduler(void *first_task_sp __attribute__((unused)))
 {
     __asm volatile (

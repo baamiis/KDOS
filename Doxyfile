@@ -1,0 +1,92 @@
+# Doxyfile — KTOS documentation configuration
+# Run: doxygen Doxyfile
+# Output: docs/html/index.html
+
+#---------------------------------------------------------------------------
+# Project
+#---------------------------------------------------------------------------
+PROJECT_NAME           = "KTOS"
+PROJECT_BRIEF          = "Tiny Cooperative Task Switcher for embedded systems"
+PROJECT_NUMBER         =
+OUTPUT_DIRECTORY       = docs
+CREATE_SUBDIRS         = NO
+OUTPUT_LANGUAGE        = English
+
+#---------------------------------------------------------------------------
+# Input
+#---------------------------------------------------------------------------
+INPUT                  = core/ bsp/
+RECURSIVE              = YES
+FILE_PATTERNS          = *.c *.h
+EXCLUDE_PATTERNS       = */templates/* */scripts/*
+USE_MDFILE_AS_MAINPAGE = README.md
+INPUT                 += README.md CONTRIBUTING.md CODE_OF_CONDUCT.md
+
+#---------------------------------------------------------------------------
+# Extraction — include everything, even undocumented items
+#---------------------------------------------------------------------------
+EXTRACT_ALL            = YES
+EXTRACT_STATIC         = YES
+EXTRACT_PRIVATE        = NO
+SHOW_INCLUDE_FILES     = YES
+
+#---------------------------------------------------------------------------
+# Source browsing — link docs to source code
+#---------------------------------------------------------------------------
+SOURCE_BROWSER         = YES
+INLINE_SOURCES         = NO
+REFERENCED_BY_RELATION = YES
+REFERENCES_RELATION    = YES
+
+#---------------------------------------------------------------------------
+# Output formats — HTML only (no LaTeX)
+#---------------------------------------------------------------------------
+GENERATE_HTML          = YES
+HTML_OUTPUT            = html
+GENERATE_LATEX         = NO
+GENERATE_MAN           = NO
+GENERATE_RTF           = NO
+
+#---------------------------------------------------------------------------
+# HTML appearance
+#---------------------------------------------------------------------------
+GENERATE_TREEVIEW      = YES
+TREEVIEW_WIDTH         = 250
+HTML_EXTRA_STYLESHEET  = docs/custom.css
+SEARCHENGINE           = YES
+SERVER_BASED_SEARCH    = NO
+
+#---------------------------------------------------------------------------
+# Call / caller graphs (requires Graphviz — install: apt install graphviz)
+#---------------------------------------------------------------------------
+HAVE_DOT               = YES
+CALL_GRAPH             = YES
+CALLER_GRAPH           = YES
+DOT_IMAGE_FORMAT       = svg
+INTERACTIVE_SVG        = YES
+DOT_GRAPH_MAX_NODES    = 50
+MAX_DOT_GRAPH_DEPTH    = 0
+
+#---------------------------------------------------------------------------
+# Warnings — treat undocumented public API as an error in CI
+#---------------------------------------------------------------------------
+QUIET                  = NO
+WARNINGS               = YES
+WARN_IF_UNDOCUMENTED   = YES
+WARN_IF_DOC_ERROR      = YES
+WARN_NO_PARAMDOC       = YES
+WARN_AS_ERROR          = YES
+
+#---------------------------------------------------------------------------
+# Preprocessing — let Doxygen see macros
+#---------------------------------------------------------------------------
+ENABLE_PREPROCESSING   = YES
+MACRO_EXPANSION        = NO
+EXPAND_ONLY_PREDEF     = NO
+PREDEFINED             = DEBUG=0
+
+#---------------------------------------------------------------------------
+# Groups / modules
+#---------------------------------------------------------------------------
+SHOW_GROUPED_MEMB_INC  = YES
+SORT_GROUP_NAMES       = NO

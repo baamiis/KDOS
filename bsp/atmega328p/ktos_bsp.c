@@ -1,36 +1,59 @@
-/*
- * KTOS BSP for ATmega328P (Arduino Uno, Nano, Pro Mini)
- * Core: AVR 8-bit
- * RAM:  2KB
- * Flash: 32KB
- * Clock: 16MHz (Arduino) or 8MHz (3.3V variants)
+/**
+ * @file ktos_bsp.c
+ * @brief KTOS Board Support Package — ATmega328P (AVR 8-bit)
  *
- * Toolchain: avr-gcc
- * Compile:   avr-gcc -mmcu=atmega328p -DF_CPU=16000000UL ...
+ * Supported boards: Arduino Uno, Arduino Nano, Arduino Pro Mini.
+ *
+ * | Property  | Value                              |
+ * |-----------|------------------------------------|
+ * | Core      | AVR 8-bit                          |
+ * | RAM       | 2 KB                               |
+ * | Flash     | 32 KB                              |
+ * | Clock     | 16 MHz (Arduino) / 8 MHz (3.3 V)  |
+ * | Toolchain | avr-gcc                            |
+ *
+ * ### Build
+ * @code
+ * avr-gcc -mmcu=atmega328p -DF_CPU=16000000UL ...
+ * @endcode
+ *
+ * ### Timer ISR wiring
+ * Add this to your application (not inside the BSP):
+ * @code
+ * #include <avr/interrupt.h>
+ * ISR(TIMER1_COMPA_vect) { ktos_timer_irq_handler(); }
+ * @endcode
+ *
+ * @defgroup ktos_bsp_avr KTOS BSP — AVR (ATmega328P)
+ * @ingroup  ktos_hal
  */
 
 #include "../../core/ktos_hal.h"
 #include <avr/io.h>
 #include <avr/interrupt.h>
 
-/* ------------------------------------------------------------------ */
-/* Interrupt Control                                                    */
-/* ------------------------------------------------------------------ */
+/* =========================================================================
+ * Interrupt control
+ * ========================================================================= */
 
-void ktos_hal_DisableInterrupts(void)
-{
-    cli();
-}
+/** @brief Disable all interrupts (AVR @c cli). */
+void ktos_hal_DisableInterrupts(void) { cli(); }
 
-void ktos_hal_EnableInterrupts(void)
-{
-    sei();
-}
+/** @brief Re-enable interrupts (AVR @c sei). */
+void ktos_hal_EnableInterrupts(void) { sei(); }
 
-/* ------------------------------------------------------------------ */
-/* System Timer — Timer1 CTC, 1ms tick at 16MHz                        */
-/* ------------------------------------------------------------------ */
+/* =========================================================================
+ * System timer — Timer1 CTC, 1 ms tick at 16 MHz
+ * ========================================================================= */
 
+/**
+ * @brief Configure Timer1 in CTC mode for a 1 ms interrupt.
+ *
+ * Settings: prescaler 64, OCR1A = 249 → 1 ms at 16 MHz.
+ * The ISR vector @c TIMER1_COMPA_vect must be defined in the application
+ * and must call @c ktos_timer_irq_handler().
+ *
+ */
 void ktos_hal_InitSystemTimer(void (*timer_isr_addr)(void))
 {
     /* Timer1 CTC mode, prescaler 64 → 1ms tick at 16MHz
@@ -47,23 +70,27 @@ void ktos_hal_InitSystemTimer(void (*timer_isr_addr)(void))
      */
 }
 
-/* ------------------------------------------------------------------ */
-/* Task Stack Initialisation                                            */
-/* ------------------------------------------------------------------ */
-/*
- * AVR stack grows downward. The initial stack frame must look like
- * what the RETI/RET instruction expects to find when restoring context.
- *
- * Frame layout (top of stack, highest address first):
- *   [PC high byte]  ← return address pushed as 2 bytes (3 on >128K devices)
- *   [PC low byte]
- *   [R0..R31]       ← 32 general purpose registers
- *   [SREG]          ← status register
- *
- * When ktos_hal_ContextSwitch restores this task, it pops SREG and R0-R31
- * then RET pops the PC → execution starts at task_func_addr.
- */
+/* =========================================================================
+ * Task stack initialisation
+ * ========================================================================= */
 
+/**
+ * @brief Build the initial AVR stack frame for a new task.
+ *
+ * AVR stack grows downward.  The frame looks exactly like what would be
+ * left on the stack after the task function called a subroutine, so that
+ * ktos_hal_ContextSwitch() can restore it uniformly.
+ *
+ * Stack layout (top = lowest address):
+ * ```
+ * [ R31..R1, R0 ]  32 general-purpose registers (R0 last, SREG first)
+ * [ SREG ]         status register (bit 7 = I, interrupts enabled)
+ * [ exit PC high ] return address of exit handler (AVR pushes PC as 2 bytes)
+ * [ exit PC low  ]
+ * [ task PC high ] entry point of the task function
+ * [ task PC low  ]
+ * ```
+ */
 void *ktos_hal_InitTaskStack(void *p_stack_base,
                               unsigned int stack_size_bytes,
                               WORD (*task_func_addr)(WORD, WORD, LONG),
@@ -105,14 +132,21 @@ void *ktos_hal_InitTaskStack(void *p_stack_base,
     return (void *)sp;
 }
 
-/* ------------------------------------------------------------------ */
-/* Context Switch — AVR assembly                                        */
-/* ------------------------------------------------------------------ */
-/*
- * Saves all 32 registers + SREG of the current context onto its stack,
- * stores the updated SP, loads the new SP, restores the new context.
- */
+/* =========================================================================
+ * Context switch — AVR assembly
+ * ========================================================================= */
 
+/**
+ * @brief Save/restore all 32 AVR registers + SREG and swap stack pointers.
+ *
+ * Saves SREG and R0-R31 of the current context onto the current stack,
+ * writes the current SP into @c *p_current_sp_storage, sets SP to
+ * @p next_sp, then restores R0-R31 and SREG of the new context and
+ * returns into it.
+ *
+ * @note AVR SP is split across two 8-bit I/O registers (@c SPL / @c SPH).
+ *
+ */
 void ktos_hal_ContextSwitch(void **p_current_sp_storage, void *next_sp)
 {
     __asm__ volatile (
@@ -210,10 +244,18 @@ void ktos_hal_ContextSwitch(void **p_current_sp_storage, void *next_sp)
     );
 }
 
-/* ------------------------------------------------------------------ */
-/* Start Scheduler                                                      */
-/* ------------------------------------------------------------------ */
+/* =========================================================================
+ * Scheduler launch
+ * ========================================================================= */
 
+/**
+ * @brief Load the first task's stack and begin execution.  Never returns.
+ *
+ * Sets the AVR stack pointer to @p first_task_sp, restores the initial
+ * register context built by ktos_hal_InitTaskStack(), and executes RET to
+ * jump to the task entry point.
+ *
+ */
 void ktos_hal_StartScheduler(void *first_task_sp)
 {
     /* Load the first task stack pointer and restore its context */

@@ -1,0 +1,33 @@
+name: Generate and Deploy Docs
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write   # needed to push to gh-pages
+
+jobs:
+  doxygen:
+    name: Build and publish Doxygen docs
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install Doxygen and Graphviz
+        run: sudo apt-get update && sudo apt-get install -y doxygen graphviz
+
+      - name: Run Doxygen
+        run: doxygen Doxyfile
+
+      - name: Deploy to GitHub Pages (gh-pages branch)
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs/html
+          publish_branch: gh-pages
+          commit_message: "docs: auto-generated from ${{ github.sha }}"
