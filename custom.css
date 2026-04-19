@@ -1,258 +1,453 @@
-/* KTOS Doxygen custom stylesheet
- * Palette: dark navy (#0d1117) + electric teal (#00d4aa) + off-white (#e6edf3)
- * Matches the ktos.co.uk brand feel.
- */
+/* ============================================================
+   KTOS Doxygen — VS Code Dark+ Theme
+   Palette mirrors Visual Studio Code "Dark+" exactly.
+   ============================================================ */
 
-/* ── Fonts ─────────────────────────────────────────────────────────────── */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;500;600;700&family=Cascadia+Code:wght@400;500&display=swap');
 
-body, table, div, p, dl {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    font-size: 15px;
-    line-height: 1.65;
-    color: #e6edf3;
+/* ── CSS variables (VS Code Dark+ palette) ──────────────────── */
+:root {
+    --bg-editor:       #1e1e1e;
+    --bg-sidebar:      #252526;
+    --bg-panel:        #2d2d30;
+    --bg-hover:        #2a2d2e;
+    --bg-selection:    #264f78;
+    --bg-highlight:    #3a3d41;
+    --border:          #474747;
+    --border-light:    #3e3e42;
+
+    --fg-default:      #d4d4d4;
+    --fg-muted:        #858585;
+    --fg-faint:        #6e6e6e;
+
+    --syn-keyword:     #569cd6;
+    --syn-type:        #4ec9b0;
+    --syn-function:    #dcdcaa;
+    --syn-string:      #ce9178;
+    --syn-comment:     #6a9955;
+    --syn-number:      #b5cea8;
+    --syn-macro:       #c586c0;
+    --syn-variable:    #9cdcfe;
+
+    --accent:          #007acc;
+    --accent-bright:   #4fc3f7;
 }
 
-code, pre, .fragment, tt, kbd, samp {
-    font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
-    font-size: 13px;
+/* ── Reset / base ────────────────────────────────────────────── */
+* { box-sizing: border-box; }
+
+html, body {
+    background-color: var(--bg-editor);
+    color: var(--fg-default);
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0; padding: 0;
 }
 
-/* ── Colours ────────────────────────────────────────────────────────────── */
-body {
-    background-color: #0d1117;
-}
-
-/* Top navigation bar */
+/* ── Top bar ─────────────────────────────────────────────────── */
 #top {
-    background: linear-gradient(135deg, #0d1117 0%, #161b22 100%);
-    border-bottom: 2px solid #00d4aa;
-    padding: 0;
+    background-color: var(--bg-panel);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.5);
 }
 
+/* ── Title area ──────────────────────────────────────────────── */
 #titlearea {
-    padding: 12px 20px;
-    border-bottom: none;
+    background: linear-gradient(90deg, #1e1e1e 0%, #252526 100%);
+    border-bottom: 2px solid var(--accent);
+    padding: 12px 20px 10px;
 }
 
 #projectname {
-    font-size: 26px;
+    font-size: 22px;
     font-weight: 700;
-    color: #00d4aa;
-    letter-spacing: -0.5px;
+    color: var(--fg-default);
 }
 
 #projectbrief {
-    font-size: 13px;
-    color: #8b949e;
+    font-size: 12px;
+    color: var(--fg-muted);
     margin-top: 2px;
 }
 
-/* ── Navigation tabs ────────────────────────────────────────────────────── */
+/* ── Navigation tabs ─────────────────────────────────────────── */
 .tabs, .tabs2, .tabs3 {
-    background: #161b22;
-    border-bottom: 1px solid #21262d;
+    background-color: var(--bg-sidebar);
+    border-bottom: 1px solid var(--border);
 }
+
+.tablist { margin: 0; padding: 0; display: flex; }
+.tablist li { list-style: none; }
 
 .tablist a, .tablist a:link, .tablist a:visited {
-    color: #8b949e;
+    color: var(--fg-muted);
     text-decoration: none;
-    font-size: 14px;
-    font-weight: 500;
-    padding: 8px 16px;
-    display: inline-block;
-    transition: color 0.2s;
-}
-
-.tablist a:hover, .tablist li.current a {
-    color: #00d4aa;
-    border-bottom: 2px solid #00d4aa;
-}
-
-/* ── Left tree panel ────────────────────────────────────────────────────── */
-#side-nav {
-    background-color: #161b22;
-    border-right: 1px solid #21262d;
-}
-
-#nav-tree {
-    background-color: #161b22;
-}
-
-#nav-tree .label {
-    color: #c9d1d9;
     font-size: 13px;
+    padding: 9px 16px 8px;
+    display: block;
+    border-bottom: 2px solid transparent;
+    transition: color 0.15s, border-color 0.15s;
 }
+
+.tablist a:hover {
+    color: var(--fg-default);
+    background-color: var(--bg-hover);
+    border-bottom-color: var(--accent);
+}
+
+.tablist li.current a {
+    color: var(--fg-default);
+    border-bottom: 2px solid var(--accent);
+    background-color: var(--bg-editor);
+}
+
+/* ── Left panel ──────────────────────────────────────────────── */
+#side-nav, #nav-tree {
+    background-color: var(--bg-sidebar);
+    border-right: 1px solid var(--border);
+}
+
+#nav-tree { font-size: 13px; }
+
+.ui-resizable-handle { background-color: var(--border); }
+
+#nav-tree .label { color: var(--fg-default); }
 
 #nav-tree a, #nav-tree a:link, #nav-tree a:visited {
-    color: #c9d1d9;
+    color: var(--fg-default);
     text-decoration: none;
 }
 
-#nav-tree a:hover, #nav-tree .selected a {
-    color: #00d4aa;
+#nav-tree a:hover { color: var(--syn-variable); }
+
+#nav-tree .selected a,
+#nav-tree .selected a:link {
+    background-color: var(--bg-selection);
+    color: var(--fg-default);
+    border-radius: 3px;
 }
 
-/* ── Content area ────────────────────────────────────────────────────────── */
-#doc-content {
-    background-color: #0d1117;
+.arrow { color: var(--fg-muted); }
+
+/* ── Main content ────────────────────────────────────────────── */
+#doc-content { background-color: var(--bg-editor); }
+
+div.contents {
+    padding: 24px 36px;
+    max-width: 1000px;
 }
 
-.contents {
-    max-width: 980px;
-    margin: 0 auto;
-    padding: 24px 32px;
-}
-
-/* ── Headings ─────────────────────────────────────────────────────────── */
-h1.groupheader, h2.groupheader, h3.groupheader {
-    border-bottom: 1px solid #21262d;
-    color: #e6edf3;
-    font-weight: 600;
-    padding-bottom: 8px;
-    margin-top: 32px;
-}
-
+/* ── Page title ──────────────────────────────────────────────── */
 .title {
-    color: #e6edf3;
-    font-size: 28px;
-    font-weight: 700;
+    color: var(--fg-default);
+    font-size: 24px;
+    font-weight: 600;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
 }
 
-/* ── Member declarations ────────────────────────────────────────────────── */
+/* ── Headings ────────────────────────────────────────────────── */
+h1.groupheader {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--fg-default);
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 8px;
+    margin-top: 28px;
+    background: none;
+}
+
+h2.groupheader { font-size: 15px; color: var(--fg-muted); }
+h3 { font-size: 14px; color: var(--syn-variable); }
+
+/* ── Member items ────────────────────────────────────────────── */
 .memitem {
-    background-color: #161b22;
-    border: 1px solid #21262d;
-    border-radius: 6px;
-    margin-bottom: 16px;
+    background-color: var(--bg-sidebar);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    margin-bottom: 12px;
     overflow: hidden;
+    transition: border-color 0.15s;
 }
 
+.memitem:hover { border-color: var(--accent); }
+
+/* Prototype bar */
 .memproto {
-    background: #1c2128;
-    border-bottom: 1px solid #21262d;
+    background-color: var(--bg-panel);
+    border-bottom: 1px solid var(--border);
     padding: 10px 16px;
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Cascadia Code', Consolas, 'Courier New', monospace;
     font-size: 13px;
-    color: #79c0ff;
+    overflow-x: auto;
 }
 
+.memname { color: var(--syn-function); font-weight: 500; }
+.memtemplate { color: var(--syn-macro); font-size: 12px; }
+
+/* Doc body */
 .memdoc {
-    padding: 12px 16px;
-    color: #c9d1d9;
+    padding: 12px 18px;
+    color: var(--fg-default);
+    font-size: 13.5px;
+    line-height: 1.65;
+}
+.memdoc p { margin: 6px 0; }
+
+/* ── Code blocks ─────────────────────────────────────────────── */
+div.fragment, pre.fragment {
+    background-color: #0d0d0d;
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    border-radius: 4px;
+    padding: 14px 16px;
+    margin: 12px 0;
+    overflow-x: auto;
+    font-family: 'Cascadia Code', Consolas, 'Courier New', monospace;
+    font-size: 13px;
+    line-height: 1.55;
+    color: var(--fg-default);
 }
 
-.memname {
-    color: #00d4aa;
+span.keyword       { color: var(--syn-keyword); }
+span.keywordtype   { color: var(--syn-keyword); }
+span.keywordflow   { color: var(--syn-keyword); font-weight: 500; }
+span.comment       { color: var(--syn-comment); font-style: italic; }
+span.preprocessor  { color: var(--syn-macro); }
+span.stringliteral { color: var(--syn-string); }
+span.charliteral   { color: var(--syn-string); }
+span.vhdldigit     { color: var(--syn-number); }
+span.vhdlkeyword   { color: var(--syn-keyword); }
+
+/* Inline code */
+code, tt {
+    font-family: 'Cascadia Code', Consolas, monospace;
+    font-size: 12.5px;
+    background-color: var(--bg-panel);
+    color: var(--syn-variable);
+    padding: 1px 5px;
+    border-radius: 3px;
+    border: 1px solid var(--border-light);
+}
+
+/* ── Parameters ──────────────────────────────────────────────── */
+dl.params .paramname, dl.retval .paramname {
+    color: var(--syn-variable);
+    font-family: 'Cascadia Code', Consolas, monospace;
+    font-size: 13px;
     font-weight: 500;
 }
 
-/* ── Code blocks ─────────────────────────────────────────────────────────── */
-.fragment, pre.fragment {
-    background-color: #161b22;
-    border: 1px solid #21262d;
-    border-radius: 6px;
-    padding: 16px;
-    overflow-x: auto;
-    color: #e6edf3;
+dl.params td, dl.retval td {
+    padding: 4px 10px;
+    vertical-align: top;
+    color: var(--fg-default);
 }
 
-/* Syntax highlighting colours */
-span.keyword    { color: #ff7b72; }
-span.keywordtype { color: #79c0ff; }
-span.keywordflow { color: #ff7b72; }
-span.comment    { color: #8b949e; font-style: italic; }
-span.preprocessor { color: #d2a8ff; }
-span.stringliteral { color: #a5d6ff; }
-span.charliteral { color: #a5d6ff; }
-span.vhdldigit  { color: #f8c555; }
-span.vhdlchar   { color: #e6edf3; }
-span.vhdlkeyword { color: #ff7b72; }
-span.vhdllogic  { color: #79c0ff; }
+table.params td.paramdir {
+    color: var(--syn-keyword);
+    font-family: 'Cascadia Code', Consolas, monospace;
+    font-size: 12px;
+    white-space: nowrap;
+}
 
-/* ── Tables ─────────────────────────────────────────────────────────────── */
+/* ── Note/warning boxes ──────────────────────────────────────── */
+dl.note, dl.warning, dl.attention,
+dl.pre, dl.post, dl.deprecated, dl.todo {
+    border-radius: 4px;
+    padding: 10px 14px;
+    margin: 14px 0;
+    border-width: 1px;
+    border-style: solid;
+}
+
+dl.note        { background: #1a2a1a; border-color: var(--syn-comment); }
+dl.warning     { background: #2a1f0a; border-color: #e0a030; }
+dl.attention   { background: #2a1010; border-color: #f44747; }
+dl.deprecated  { background: #1e1a2a; border-color: var(--syn-macro); }
+dl.todo        { background: #1a1e2a; border-color: var(--syn-keyword); }
+
+dl.note        dt { color: var(--syn-comment); }
+dl.warning     dt { color: #e0a030; }
+dl.attention   dt { color: #f44747; }
+dl.deprecated  dt { color: var(--syn-macro); }
+dl.todo        dt { color: var(--syn-keyword); }
+
+dl.note dt, dl.warning dt, dl.attention dt,
+dl.deprecated dt, dl.todo dt {
+    font-weight: 700;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.7px;
+    margin-bottom: 5px;
+}
+
+/* ── Tables ──────────────────────────────────────────────────── */
 table.doxtable {
     border-collapse: collapse;
     width: 100%;
-    margin: 16px 0;
+    margin: 14px 0;
+    font-size: 13.5px;
 }
 
 table.doxtable th {
-    background-color: #1c2128;
-    color: #00d4aa;
+    background-color: var(--bg-panel);
+    color: var(--syn-keyword);
     font-weight: 600;
-    padding: 10px 14px;
-    border: 1px solid #21262d;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 8px 14px;
+    border: 1px solid var(--border);
     text-align: left;
 }
 
 table.doxtable td {
-    padding: 8px 14px;
-    border: 1px solid #21262d;
-    color: #c9d1d9;
+    padding: 7px 14px;
+    border: 1px solid var(--border-light);
+    color: var(--fg-default);
 }
 
-table.doxtable tr:nth-child(even) td {
-    background-color: #161b22;
-}
+table.doxtable tr:nth-child(even) td { background-color: var(--bg-sidebar); }
+table.doxtable tr:hover td { background-color: var(--bg-hover); }
 
-/* ── Parameter / return doc blocks ──────────────────────────────────────── */
-dl.params dt, dl.retval dt, dl.exception dt {
-    color: #79c0ff;
-    font-weight: 600;
-}
-
-dl.params dd, dl.retval dd, dl.exception dd {
-    color: #c9d1d9;
-}
-
-/* Note / warning boxes */
-dl.note, dl.warning, dl.attention {
-    border-left: 4px solid;
-    border-radius: 4px;
-    padding: 10px 16px;
-    margin: 16px 0;
-}
-
-dl.note    { border-color: #00d4aa; background: #0d2b23; }
-dl.warning { border-color: #f8c555; background: #2b2200; }
-dl.attention { border-color: #ff7b72; background: #2b0a00; }
-
-dl.note dt    { color: #00d4aa; }
-dl.warning dt { color: #f8c555; }
-dl.attention dt { color: #ff7b72; }
-
-/* ── Links ──────────────────────────────────────────────────────────────── */
+/* ── Links ───────────────────────────────────────────────────── */
 a, a:link, a:visited {
-    color: #58a6ff;
+    color: var(--syn-variable);
     text-decoration: none;
 }
+a:hover { color: var(--accent-bright); text-decoration: underline; }
 
-a:hover {
-    color: #00d4aa;
-    text-decoration: underline;
-}
+/* ── HR ──────────────────────────────────────────────────────── */
+hr { border: none; border-top: 1px solid var(--border); margin: 20px 0; }
 
-/* ── Search box ─────────────────────────────────────────────────────────── */
+/* ── Search ──────────────────────────────────────────────────── */
 #MSearchBox {
-    background: #161b22;
-    border: 1px solid #30363d;
-    border-radius: 6px;
-    color: #c9d1d9;
-}
-
-/* ── Footer ─────────────────────────────────────────────────────────────── */
-address.footer {
-    color: #8b949e;
-    font-size: 12px;
-    text-align: center;
-    padding: 16px;
-    border-top: 1px solid #21262d;
-}
-
-/* ── Call graph / dot diagrams ──────────────────────────────────────────── */
-.dyncontent img {
-    max-width: 100%;
-    border: 1px solid #21262d;
+    background-color: var(--bg-panel);
+    border: 1px solid var(--border);
     border-radius: 4px;
 }
+
+#MSearchBox input {
+    background: transparent;
+    color: var(--fg-default);
+    border: none;
+    outline: none;
+    font-size: 13px;
+}
+
+#MSearchResultsWindow {
+    background-color: var(--bg-sidebar);
+    border: 1px solid var(--border);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+}
+
+/* ── Breadcrumb ──────────────────────────────────────────────── */
+#nav-path { background-color: var(--bg-sidebar); border-top: 1px solid var(--border); }
+#nav-path ul { display: flex; align-items: center; padding: 4px 12px; margin: 0; list-style: none; }
+#nav-path li.navelem a { color: var(--fg-muted); font-size: 12px; }
+#nav-path li.navelem a:hover { color: var(--fg-default); }
+
+/* ── Member summary table ────────────────────────────────────── */
+.memberdecls { width: 100%; border-collapse: collapse; margin-bottom: 6px; }
+
+.memberdecls td.memItemLeft {
+    background-color: var(--bg-sidebar);
+    color: var(--syn-keyword);
+    font-family: 'Cascadia Code', Consolas, monospace;
+    font-size: 12.5px;
+    padding: 5px 10px;
+    border-bottom: 1px solid var(--border-light);
+    white-space: nowrap;
+    vertical-align: top;
+}
+
+.memberdecls td.memItemRight {
+    background-color: var(--bg-sidebar);
+    padding: 5px 10px;
+    border-bottom: 1px solid var(--border-light);
+    color: var(--fg-default);
+    font-size: 13px;
+}
+
+.memberdecls td.memItemRight a {
+    color: var(--syn-function);
+    font-family: 'Cascadia Code', Consolas, monospace;
+}
+
+.memberdecls td.memItemRight a:hover { color: var(--accent-bright); }
+
+.memberdecls td.mdescLeft,
+.memberdecls td.mdescRight {
+    background-color: var(--bg-editor);
+    color: var(--fg-muted);
+    font-size: 12.5px;
+    padding: 2px 10px 8px;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.memberdecls td.memSeparator {
+    background-color: var(--bg-editor);
+    border-bottom: 1px solid var(--border);
+    padding: 0; height: 1px;
+}
+
+tr.heading td {
+    background-color: var(--bg-panel);
+    color: var(--syn-keyword);
+    font-weight: 600;
+    font-size: 13px;
+    padding: 7px 10px;
+    border-bottom: 2px solid var(--accent);
+}
+
+/* ── Directory listing ───────────────────────────────────────── */
+table.directory { width: 100%; border-collapse: collapse; }
+table.directory td {
+    padding: 5px 10px;
+    border-bottom: 1px solid var(--border-light);
+    color: var(--fg-default);
+    font-size: 13px;
+}
+table.directory tr:hover td { background-color: var(--bg-hover); }
+table.directory td.entry a { color: var(--syn-variable); }
+table.directory td.desc { color: var(--fg-muted); font-size: 12.5px; }
+
+/* ── Call graphs ─────────────────────────────────────────────── */
+.dyncontent img {
+    max-width: 100%;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    background-color: #1a1a1a;
+}
+
+/* ── Footer (VS Code status bar style) ──────────────────────── */
+address.footer {
+    background-color: var(--accent);
+    color: #ffffff;
+    font-size: 12px;
+    padding: 5px 16px;
+    text-align: right;
+    border-top: none;
+}
+address.footer a { color: #cce8ff; }
+
+/* ── Scrollbar ───────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: var(--bg-sidebar); }
+::-webkit-scrollbar-thumb {
+    background: #555;
+    border-radius: 5px;
+    border: 2px solid var(--bg-sidebar);
+}
+::-webkit-scrollbar-thumb:hover { background: #777; }
+
+/* ── Misc ────────────────────────────────────────────────────── */
+.textblock { color: var(--fg-default); font-size: 13.5px; line-height: 1.65; }
+.textblock p { margin: 8px 0; }
+.groupheader img { display: none; }

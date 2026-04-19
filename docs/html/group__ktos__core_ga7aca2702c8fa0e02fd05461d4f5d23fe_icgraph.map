@@ -1,7 +1,0 @@
-<map id="ktos_Emergency" name="ktos_Emergency">
-<area shape="rect" id="node1" title="Emit a fatal&#45;error message and halt execution." alt="" coords="521,81,652,108"/>
-<area shape="rect" id="node2" href="$ktos_8c.html#a0472bc90096e9ce7acb6b8aebc9b127b" title="Default exit handler called when a task function returns." alt="" coords="263,5,473,32"/>
-<area shape="rect" id="node3" href="$ktos_8c.html#a9f7bbd66bfb5333402db8b6c413cb114" title=" " alt="" coords="108,56,215,83"/>
-<area shape="rect" id="node4" href="$ktos__multi_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,107,60,133"/>
-<area shape="rect" id="node5" href="$group__ktos__core.html#ga6580b57b65ece0e7bfcc48823db105f3" title="Start the KTOS scheduler. Never returns." alt="" coords="111,157,211,184"/>
-</map>
