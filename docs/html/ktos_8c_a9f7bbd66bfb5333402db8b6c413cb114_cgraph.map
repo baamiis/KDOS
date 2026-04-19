@@ -1,0 +1,8 @@
+<map id="ktos_InitTask" name="ktos_InitTask">
+<area shape="rect" id="node1" title=" " alt="" coords="5,107,112,133"/>
+<area shape="rect" id="node2" href="$ktos_8c.html#a0472bc90096e9ce7acb6b8aebc9b127b" title="Default exit handler called when a task function returns." alt="" coords="160,56,371,83"/>
+<area shape="rect" id="node4" href="$group__ktos__core.html#ga7aca2702c8fa0e02fd05461d4f5d23fe" title="Emit a fatal&#45;error message and halt execution." alt="" coords="443,107,573,133"/>
+<area shape="rect" id="node6" href="$group__ktos__hal.html#ga8556e39382caea4984aaefd7813ba7b1" title="Set up the initial stack frame for a new task." alt="" coords="180,157,351,184"/>
+<area shape="rect" id="node3" href="$group__ktos__core.html#ga77b699103f3ec266c0d79d849ead8c1c" title="Printf&#45;style debug logging (active only when DEBUG == 1)." alt="" coords="441,5,575,32"/>
+<area shape="rect" id="node5" href="$group__ktos__hal.html#ga5810bd4a4ed08259ec13bef908828d20" title="Perform a cooperative context switch between two execution contexts." alt="" coords="419,56,597,83"/>
+</map>
