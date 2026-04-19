@@ -47,12 +47,13 @@ html, body {
 
 /* ── Top bar ─────────────────────────────────────────────────── */
 #top {
-    background-color: var(--bg-panel);
-    border-bottom: 1px solid var(--border);
+    background-color: #141414 !important;
+    background-image: none !important;
+    border-bottom: 1px solid #333 !important;
     position: sticky;
     top: 0;
     z-index: 100;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.6);
 }
 
 /* ── Title area ──────────────────────────────────────────────── */
@@ -75,16 +76,21 @@ html, body {
 }
 
 /* ── Navigation tabs ─────────────────────────────────────────── */
+/* Doxygen uses background PNGs — must override with !important  */
 .tabs, .tabs2, .tabs3 {
-    background-color: #141414;
-    border-bottom: 1px solid var(--border);
+    background-color: #141414 !important;
+    background-image: none !important;
+    border-bottom: 1px solid #333 !important;
+    box-shadow: none !important;
 }
 
-.tablist { margin: 0; padding: 0; display: flex; }
-.tablist li { list-style: none; }
+.tablist { margin: 0 !important; padding: 0 !important; display: flex; }
+.tablist li { list-style: none; background-image: none !important; }
 
 .tablist a, .tablist a:link, .tablist a:visited {
-    color: var(--fg-muted);
+    background-image: none !important;
+    background-color: transparent !important;
+    color: #858585 !important;
     text-decoration: none;
     font-size: 13px;
     padding: 9px 16px 8px;
@@ -94,15 +100,17 @@ html, body {
 }
 
 .tablist a:hover {
-    color: var(--fg-default);
-    background-color: var(--bg-hover);
-    border-bottom-color: var(--accent);
+    color: #d4d4d4 !important;
+    background-color: #1e1e1e !important;
+    background-image: none !important;
+    border-bottom-color: #007acc;
 }
 
 .tablist li.current a {
-    color: var(--fg-default);
-    border-bottom: 2px solid var(--accent);
-    background-color: var(--bg-editor);
+    color: #d4d4d4 !important;
+    background-color: #1e1e1e !important;
+    background-image: none !important;
+    border-bottom: 2px solid #007acc;
 }
 
 /* ── Left panel ──────────────────────────────────────────────── */
@@ -334,13 +342,15 @@ hr { border: none; border-top: 1px solid var(--border); margin: 20px 0; }
 }
 
 #MSearchBox input,
-#MSearchField {
+#MSearchField,
+input#MSearchField {
     background-color: #2d2d30 !important;
     color: #d4d4d4 !important;
-    border: none;
-    outline: none;
-    font-size: 13px;
-    caret-color: #d4d4d4;
+    border: none !important;
+    outline: none !important;
+    font-size: 13px !important;
+    caret-color: #d4d4d4 !important;
+    -webkit-text-fill-color: #d4d4d4 !important;
 }
 
 #MSearchBox input::placeholder,
