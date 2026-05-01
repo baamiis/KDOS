@@ -98,7 +98,6 @@ static void ktos_DefaultTaskExitHandler(WORD task_return_value)
     ktos_hal_ContextSwitch((void **)&(TaskCurrent->StackPtr), OS_SP);
 
     ktos_Emergency("ExitHandler_CtxSwitch_Failed");
-    while (1);
 }
 
 /* =========================================================================
@@ -162,12 +161,10 @@ void ktos_RunOS(void)
 {
     if (TaskCurrent == NULL) {
         ktos_Emergency("ktos_RunOS: No tasks initialized prior to starting OS!");
-        while (1);
     }
     ktos_hal_InitSystemTimer(ktos_timer_irq_handler);
     ktos_hal_StartScheduler(TaskCurrent->StackPtr);
     ktos_Emergency("ktos_RunOS: ktos_hal_StartScheduler returned unexpectedly!");
-    while (1);
 }
 
 bool ktos_SendMsg(struct ktos_TASK *Task,
