@@ -9,7 +9,7 @@ struct ktos_TASK *TaskMain;
 extern struct ktos_TASK *TaskSerial;
 extern struct ktos_TASK *TaskCheckSum;
 
-void ktos_Emergency(const char *Msg) {
+__attribute__((noreturn)) void ktos_Emergency(const char *Msg) {
   (void)Msg;
   while (1) {
   }
