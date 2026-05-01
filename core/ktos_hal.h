@@ -158,7 +158,7 @@ void *ktos_hal_InitTaskStack(void          *p_stack_base,
  * @endcode
  */
 void ktos_hal_ContextSwitch(void **p_current_sp_storage,
-                             void  *next_sp);
+                             const void *next_sp);
 
 /**
  * @ingroup ktos_hal
@@ -177,7 +177,7 @@ void ktos_hal_ContextSwitch(void **p_current_sp_storage,
  *
  * @note Must be implemented in assembly.  This function must not return.
  */
-void ktos_hal_StartScheduler(void *first_task_sp);
+void ktos_hal_StartScheduler(const void *first_task_sp);
 
 /* =========================================================================
  * System timer

@@ -108,7 +108,7 @@ void *ktos_hal_InitTaskStack(void *p_stack_base,
  */
 __attribute__((naked)) void ktos_hal_ContextSwitch(
     void **p_current_sp_storage __attribute__((unused)),
-    void  *next_sp               __attribute__((unused)))
+    const void *next_sp          __attribute__((unused)))
 {
     __asm volatile (
         /* Cortex-M0: save R4-R7 then R8-R11 via low registers */
@@ -140,7 +140,7 @@ __attribute__((naked)) void ktos_hal_ContextSwitch(
  * into R6 and jumped to via @c BX R6.
  *
  */
-__attribute__((naked)) void ktos_hal_StartScheduler(void *first_task_sp __attribute__((unused)))
+__attribute__((naked)) void ktos_hal_StartScheduler(const void *first_task_sp __attribute__((unused)))
 {
     __asm volatile (
         "mov    sp, r0              \n"

@@ -152,7 +152,7 @@ void *ktos_hal_InitTaskStack(void *p_stack_base,
  */
 __attribute__((naked)) void ktos_hal_ContextSwitch(
     void **p_current_sp_storage __attribute__((unused)),
-    void  *next_sp               __attribute__((unused)))
+    const void *next_sp          __attribute__((unused)))
 {
     __asm volatile (
         "push   {r4-r11}            \n" /* Save callee-saved registers  */
@@ -176,7 +176,7 @@ __attribute__((naked)) void ktos_hal_ContextSwitch(
  * @note Naked function — no compiler-generated prologue/epilogue.
  *
  */
-__attribute__((naked)) void ktos_hal_StartScheduler(void *first_task_sp __attribute__((unused)))
+__attribute__((naked)) void ktos_hal_StartScheduler(const void *first_task_sp __attribute__((unused)))
 {
     __asm volatile (
         "mov    sp, r0              \n" /* Set SP to first task stack   */

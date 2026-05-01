@@ -91,7 +91,7 @@ typedef unsigned char BYTE;
  *
  * @note This function must never return.
  */
-void ktos_Emergency(const char *Msg);
+__attribute__((noreturn)) void ktos_Emergency(const char *Msg);
 
 /**
  * @ingroup ktos_core

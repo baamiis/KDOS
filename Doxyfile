@@ -81,9 +81,10 @@ WARN_AS_ERROR          = YES
 # Preprocessing — let Doxygen see macros
 #---------------------------------------------------------------------------
 ENABLE_PREPROCESSING   = YES
-MACRO_EXPANSION        = NO
-EXPAND_ONLY_PREDEF     = NO
-PREDEFINED             = DEBUG=0
+MACRO_EXPANSION        = YES
+EXPAND_ONLY_PREDEF     = YES
+PREDEFINED             = DEBUG=0 \
+                         "__attribute__(x)="
 
 #---------------------------------------------------------------------------
 # Groups / modules
