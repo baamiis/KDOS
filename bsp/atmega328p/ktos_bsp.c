@@ -147,7 +147,7 @@ void *ktos_hal_InitTaskStack(void *p_stack_base,
  * @note AVR SP is split across two 8-bit I/O registers (@c SPL / @c SPH).
  *
  */
-void ktos_hal_ContextSwitch(void **p_current_sp_storage, void *next_sp)
+void ktos_hal_ContextSwitch(void **p_current_sp_storage, const void *next_sp)
 {
     __asm__ volatile (
         /* Save SREG and disable interrupts */
@@ -256,7 +256,7 @@ void ktos_hal_ContextSwitch(void **p_current_sp_storage, void *next_sp)
  * jump to the task entry point.
  *
  */
-void ktos_hal_StartScheduler(void *first_task_sp)
+void ktos_hal_StartScheduler(const void *first_task_sp)
 {
     /* Load the first task stack pointer and restore its context */
     __asm__ volatile (
