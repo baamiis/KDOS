@@ -3,7 +3,9 @@
 [![CI Status](https://github.com/baamiis/KTOS/workflows/KTOS%20CI/badge.svg)](https://github.com/baamiis/KTOS/actions)
 [![License](https://img.shields.io/github/license/baamiis/KTOS)](LICENSE)
 [![Contributors](https://img.shields.io/github/contributors/baamiis/KTOS)](https://github.com/baamiis/KTOS/graphs/contributors)
-[![Documentation](https://img.shields.io/badge/docs-website-blue)](https://www.kdos.co.uk)
+[![Documentation](https://img.shields.io/badge/docs-website-blue)](https://www.ktos.co.uk)
+
+Main website: https://www.ktos.co.uk/
 
 ## What is KTOS?
 
