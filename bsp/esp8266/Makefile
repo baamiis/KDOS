@@ -4,8 +4,9 @@ CFLAGS  = -mlongcalls -Wall -Wextra -Os -I../../core
 SRCS    = ktos_bsp.c \
           ../../core/ktos.c \
           ../../core/ktos_multi.c
+ASRCS   = ktos_bsp_asm.S
 
-OBJS    = $(SRCS:.c=.o)
+OBJS    = $(SRCS:.c=.o) $(ASRCS:.S=.o)
 TARGET  = ktos_esp8266
 
 all: $(TARGET).elf
@@ -14,6 +15,9 @@ $(TARGET).elf: $(OBJS)
 	$(CC) $(CFLAGS) -o $@ $^
 
 %.o: %.c
+	$(CC) $(CFLAGS) -c -o $@ $<
+
+%.o: %.S
 	$(CC) $(CFLAGS) -c -o $@ $<
 
 clean:

@@ -1,0 +1,23 @@
+NOTICE
+======
+
+KTOS — Tiny Cooperative Task Switcher
+Copyright (C) 2004-2025 Khalid Hamdou / BAAMIIS LIMITED
+All rights reserved.
+
+This software was conceived, designed, and written by Khalid Hamdou.
+BAAMIIS LIMITED is the sole legal copyright holder.
+
+No person or organisation may claim authorship or ownership of this
+software or any substantial portion of it without the express written
+permission of Khalid Hamdou / BAAMIIS LIMITED.
+
+Any derivative work must retain this NOTICE in full.
+
+KTOS is dual-licensed under:
+  1. GNU General Public License v3 — see LICENSE
+  2. Commercial License — see COMMERCIAL_LICENSE
+
+Contact: Khalid Hamdou / BAAMIIS LIMITED
+Email:   [your contact email]
+GitHub:  https://github.com/baamiis/KTOS

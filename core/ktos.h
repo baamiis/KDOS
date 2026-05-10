@@ -1,3 +1,34 @@
+/*
+ * KTOS — Tiny Cooperative Task Switcher
+ * Copyright (C) 2004-2025 Khalid Hamdou / BAAMIIS LIMITED
+ * All rights reserved.
+ *
+ * Author:  Khalid Hamdou
+ * Company: BAAMIIS LIMITED
+ * GitHub:  https://github.com/baamiis/KTOS
+ *
+ * SPDX-License-Identifier: GPL-3.0-only
+ *
+ * This file is part of KTOS.
+ *
+ * KTOS is dual-licensed:
+ *
+ *   Open Source: GNU General Public License v3 (see LICENSE)
+ *   Commercial:  Proprietary license available (see COMMERCIAL_LICENSE)
+ *
+ * For open source use, this program is free software: you can
+ * redistribute it and/or modify it under the terms of the GNU
+ * General Public License as published by the Free Software Foundation,
+ * either version 3 of the License, or (at your option) any later version.
+ *
+ * For commercial/proprietary use without GPL obligations, a Commercial
+ * License must be obtained from BAAMIIS LIMITED.
+ * Contact: baamiis7@gmail.com
+ *
+ * KTOS is the original work of Khalid Hamdou. No person or organisation
+ * may claim authorship or ownership of this software.
+ */
+
 /**
  * @file ktos.h
  * @brief KTOS public API — include this in your application code.
@@ -145,6 +176,9 @@ struct ktos_TASK
                                unsigned short int sParam,
                                long               lParam); /**< Task entry function. */
     int32_t          *StackPtr;      /**< Current stack pointer (updated on each context switch). */
+    int32_t          *StackBase;     /**< Base of allocated stack buffer (used to reinitialise for each message). */
+    unsigned int      StackSizeBytes;/**< Size of the stack buffer in bytes. */
+    bool              NeedsReinit;   /**< Set after task returns; cleared when scheduler reinitialises the stack. */
     struct ktos_MSG  *MsgQueue;      /**< Base of the circular message queue. */
     struct ktos_MSG  *MsgQueueIn;    /**< Write pointer into the message queue. */
     struct ktos_MSG  *MsgQueueOut;   /**< Read pointer out of the message queue. */
@@ -313,6 +347,19 @@ int ktos_Sleep(unsigned short int Delay, bool TaskSwitchPermit);
  * @endcode
  */
 void ktos_WakeUp(struct ktos_TASK *Task, INT WakeUpType);
+
+/**
+ * @ingroup ktos_core
+ * @brief Signal the scheduler to exit ktos_RunOS() after the current task yields.
+ *
+ * Intended for platforms where the host event loop (e.g. ESP8266 ets_run())
+ * must resume after KTOS has finished its work.  Call from task context just
+ * before returning MSG_WAIT.  ktos_RunOS() returns to its caller on the next
+ * scheduler cycle.
+ *
+ * Has no effect if called from ISR context or before ktos_RunOS().
+ */
+void ktos_ExitOS(void);
 
 /* =========================================================================
  * Default stack / queue sizes and task IDs
