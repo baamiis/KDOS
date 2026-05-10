@@ -1,0 +1,92 @@
+KTOS COMMERCIAL LICENSE AGREEMENT
+Version 1.0
+
+Copyright (C) 2004-2025 Khalid Hamdou / BAAMIIS LIMITED
+All rights reserved.
+
+KTOS — Tiny Cooperative Task Switcher
+Original author and sole copyright holder: Khalid Hamdou / BAAMIIS LIMITED
+
+---
+
+OVERVIEW
+
+KTOS is dual-licensed. This Commercial License is for organisations and
+individuals who cannot or do not wish to comply with the GNU General
+Public License v3 (GPL v3).
+
+If you are building a proprietary or closed-source product using KTOS,
+you must purchase this Commercial License.
+
+---
+
+GRANT OF LICENSE
+
+Upon payment and written confirmation from BAAMIIS LIMITED, you are
+granted a non-exclusive, non-transferable, worldwide, perpetual license to:
+
+  - Use and embed KTOS in your proprietary product(s)
+  - Modify KTOS for your internal use without open-sourcing changes
+  - Distribute KTOS as part of your compiled commercial product
+  - Receive support directly from Khalid Hamdou
+
+---
+
+LICENSE TIERS
+
+  SINGLE PRODUCT LICENSE
+  - Use in one (1) commercial product
+  - 12 months email support from Khalid Hamdou
+  - Contact for pricing
+
+  MULTI PRODUCT LICENSE
+  - Use in up to five (5) commercial products
+  - Priority email support from Khalid Hamdou
+  - Contact for pricing
+
+  ENTERPRISE / OEM LICENSE
+  - Unlimited products
+  - Custom BSP development available
+  - Dedicated support from Khalid Hamdou
+  - Contact for pricing
+
+---
+
+RESTRICTIONS
+
+  1. You may NOT sublicense, resell, or transfer this license to any third party.
+  2. You may NOT remove or alter any copyright notices in the KTOS source code.
+  3. You may NOT claim authorship or ownership of KTOS or any part of it.
+  4. You MUST acknowledge KTOS and Khalid Hamdou / BAAMIIS LIMITED in your
+     product documentation or about screen.
+  5. This license does not transfer any intellectual property rights.
+     Khalid Hamdou / BAAMIIS LIMITED retains full ownership of KTOS at all times.
+
+---
+
+DISCLAIMER OF WARRANTY
+
+KTOS IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
+PARTICULAR PURPOSE, OR NON-INFRINGEMENT. IN NO EVENT SHALL KHALID HAMDOU
+OR BAAMIIS LIMITED BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY
+ARISING FROM USE OF THIS SOFTWARE.
+
+---
+
+GOVERNING LAW
+
+This agreement is governed by the laws of England and Wales.
+Any disputes shall be subject to the exclusive jurisdiction of the courts
+of England and Wales.
+
+---
+
+CONTACT
+
+To obtain a Commercial License, contact:
+
+  Author:  Khalid Hamdou
+  Company: BAAMIIS LIMITED
+  Email:   [your contact email]
+  GitHub:  https://github.com/baamiis/KTOS
