@@ -1,3 +1,34 @@
+/*
+ * KTOS — Tiny Cooperative Task Switcher
+ * Copyright (C) 2004-2025 Khalid Hamdou / BAAMIIS LIMITED
+ * All rights reserved.
+ *
+ * Author:  Khalid Hamdou
+ * Company: BAAMIIS LIMITED
+ * GitHub:  https://github.com/baamiis/KTOS
+ *
+ * SPDX-License-Identifier: GPL-3.0-only
+ *
+ * This file is part of KTOS.
+ *
+ * KTOS is dual-licensed:
+ *
+ *   Open Source: GNU General Public License v3 (see LICENSE)
+ *   Commercial:  Proprietary license available (see COMMERCIAL_LICENSE)
+ *
+ * For open source use, this program is free software: you can
+ * redistribute it and/or modify it under the terms of the GNU
+ * General Public License as published by the Free Software Foundation,
+ * either version 3 of the License, or (at your option) any later version.
+ *
+ * For commercial/proprietary use without GPL obligations, a Commercial
+ * License must be obtained from BAAMIIS LIMITED.
+ * Contact: baamiis7@gmail.com
+ *
+ * KTOS is the original work of Khalid Hamdou. No person or organisation
+ * may claim authorship or ownership of this software.
+ */
+
 /**
  * @file ktos.c
  * @brief KTOS cooperative scheduler implementation.
@@ -58,6 +89,9 @@ static bool MultiTask = TRUE;
  *  scheduler context after a task yields. */
 static int32_t *OS_SP = NULL;
 
+/** Set by ktos_ExitOS() to request a clean return from ktos_RunOS(). */
+static volatile bool ktos_exit_requested;
+
 /** Holds the WORD return value of the most recently completed task function.
  *  Written by ktos_DefaultTaskExitHandler() before context-switching back to
  *  the scheduler; read by ktos_SwitchTask() immediately after the switch. */
@@ -93,6 +127,7 @@ static void ktos_DefaultTaskExitHandler(WORD task_return_value)
 #endif
 
     g_LastTaskReturnValue = task_return_value;
+    TaskCurrent->NeedsReinit = TRUE;
 
     /* Return to the OS scheduler context. */
     ktos_hal_ContextSwitch((void **)&(TaskCurrent->StackPtr), OS_SP);
@@ -122,9 +157,12 @@ struct ktos_TASK *ktos_InitTask(
     Task->MsgQueue = (struct ktos_MSG *)calloc(QueueSize, sizeof(struct ktos_MSG));
     if (Task->MsgQueue == NULL) { ktos_Emergency("Q Failed"); }
 
-    Task->Func         = Func;
-    Task->TaskID       = TaskIDVal;
-    Task->QueueCapacity = QueueSize;
+    Task->Func           = Func;
+    Task->TaskID         = TaskIDVal;
+    Task->QueueCapacity  = QueueSize;
+    Task->StackBase      = Stack;
+    Task->StackSizeBytes = (unsigned int)((unsigned int)StackSize * sizeof(int32_t));
+    Task->NeedsReinit    = FALSE;
 
     Task->StackPtr = ktos_hal_InitTaskStack(
         Stack,
@@ -141,7 +179,7 @@ struct ktos_TASK *ktos_InitTask(
     Task->MsgQueueOut = Task->MsgQueue;
     Task->MsgQueueEnd = Task->MsgQueue + QueueSize;
     Task->Timer       = 0;
-    Task->TimerFlag   = FALSE;
+    Task->TimerFlag   = TRUE;   /* ready for initial INIT dispatch */
     Task->Sleeping    = FALSE;
     Task->MsgCount    = 0;
 
@@ -157,14 +195,19 @@ struct ktos_TASK *ktos_InitTask(
     return Task;
 }
 
+void ktos_ExitOS(void)
+{
+    ktos_exit_requested = true;
+}
+
 void ktos_RunOS(void)
 {
     if (TaskCurrent == NULL) {
         ktos_Emergency("ktos_RunOS: No tasks initialized prior to starting OS!");
     }
     ktos_hal_InitSystemTimer(ktos_timer_irq_handler);
-    ktos_hal_StartScheduler(TaskCurrent->StackPtr);
-    ktos_Emergency("ktos_RunOS: ktos_hal_StartScheduler returned unexpectedly!");
+    ktos_exit_requested = false;
+    ktos_SwitchTask();   /* returns only when ktos_ExitOS() has been called */
 }
 
 bool ktos_SendMsg(struct ktos_TASK *Task,
@@ -223,13 +266,18 @@ void ktos_WakeUp(struct ktos_TASK *Task, INT WakeUpType)
  *    task's timer accordingly.
  * 5. Repeat forever.
  */
-static void __attribute__((unused)) ktos_SwitchTask(void)
+static void ktos_SwitchTask(void)
 {
     static WORD Delay;
 
     while (TRUE)
     {
         ktos_hal_DisableInterrupts();
+
+        if (ktos_exit_requested) {
+            ktos_hal_EnableInterrupts();
+            return;
+        }
 
         if (MultiTask) {
             TaskCurrent = TaskCurrent->TaskNext;
@@ -247,13 +295,37 @@ static void __attribute__((unused)) ktos_SwitchTask(void)
         if (!TaskCurrent->Sleeping &&
             (TaskCurrent->MsgCount != 0 || TaskCurrent->TimerFlag))
         {
-            if (TaskCurrent->MsgCount != 0) {
-                /* Advance the read pointer (consume the oldest message). */
-                if (++TaskCurrent->MsgQueueOut >= TaskCurrent->MsgQueueEnd) {
-                    TaskCurrent->MsgQueueOut = TaskCurrent->MsgQueue;
+            if (TaskCurrent->NeedsReinit) {
+                /*
+                 * Handler model: task previously returned a value.
+                 * Re-initialise the stack with the next pending message so
+                 * the task is called fresh as task_func(MsgType, sParam, lParam).
+                 */
+                WORD msg_type = KTOS_MSG_TYPE_TIMER;
+                WORD s_param  = 0;
+                LONG l_param  = 0;
+
+                if (TaskCurrent->MsgCount != 0) {
+                    /* Read message content before consuming. */
+                    msg_type = TaskCurrent->MsgQueueOut->MsgType;
+                    s_param  = TaskCurrent->MsgQueueOut->sParam;
+                    l_param  = TaskCurrent->MsgQueueOut->lParam;
+                    if (++TaskCurrent->MsgQueueOut >= TaskCurrent->MsgQueueEnd) {
+                        TaskCurrent->MsgQueueOut = TaskCurrent->MsgQueue;
+                    }
+                    --TaskCurrent->MsgCount;
                 }
-                --TaskCurrent->MsgCount;
+
+                TaskCurrent->NeedsReinit = FALSE;
+                TaskCurrent->StackPtr = (int32_t *)ktos_hal_InitTaskStack(
+                    TaskCurrent->StackBase,
+                    TaskCurrent->StackSizeBytes,
+                    TaskCurrent->Func,
+                    ktos_DefaultTaskExitHandler,
+                    msg_type, s_param, l_param);
             }
+            /* else: coroutine model (ktos_Sleep) or fresh first-run — restore
+             * existing StackPtr as-is; do not consume from the message queue. */
 
             /* Switch into the task; returns when the task yields back. */
             ktos_hal_ContextSwitch((void **)&OS_SP, TaskCurrent->StackPtr);
@@ -266,7 +338,7 @@ static void __attribute__((unused)) ktos_SwitchTask(void)
                 TaskCurrent->TimerFlag = TRUE;
                 TaskCurrent->Timer     = 0;
             } else if (Delay == MSG_WAIT) {
-                /* Sleep indefinitely until ktos_WakeUp(). */
+                /* Sleep indefinitely until a message arrives. */
                 TaskCurrent->Timer     = 0;
                 TaskCurrent->TimerFlag = FALSE;
             } else {

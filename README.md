@@ -170,3 +170,48 @@ Please see [CONTRIBUTING.md](CONTRIBUTING.md) for full guidelines.
 - New to the project? Check out issues labeled [`good-first-issue`](https://github.com/baamiis/KTOS/labels/good-first-issue)
 
 Please read our [Code of Conduct](CODE_OF_CONDUCT.md) before contributing.
+
+## Licensing
+
+KTOS is dual-licensed by **Khalid Hamdou / BAAMIIS LIMITED**, the original
+author and sole copyright holder.
+
+---
+
+### Open Source — GPL v3
+
+If you are building an **open source project**, KTOS is free to use under the
+[GNU General Public License v3](LICENSE).
+
+Under GPL v3 you must:
+- Release your source code under a GPL v3 compatible license
+- Retain all copyright notices and the NOTICE file
+- State any significant changes you make to KTOS
+
+---
+
+### Commercial License
+
+If you are building a **proprietary or closed-source product** and cannot
+comply with the GPL v3, you must purchase a Commercial License from
+BAAMIIS LIMITED.
+
+The Commercial License allows you to:
+- Use KTOS in closed-source products
+- Distribute without disclosing your source code
+- Receive direct support from Khalid Hamdou
+
+**Contact for commercial licensing:**
+
+|-------- |---------------------------------|
+| Author  | Khalid Hamdou                   |
+| Company | BAAMIIS LIMITED                 |
+| Email   | baamiis7@gmail.com               |
+| GitHub  | https://github.com/baamiis/KTOS |
+
+See [COMMERCIAL_LICENSE](COMMERCIAL_LICENSE) for full terms.
+
+---
+
+> KTOS is the original work of Khalid Hamdou / BAAMIIS LIMITED.
+> No person or organisation may claim authorship or ownership of this software.
