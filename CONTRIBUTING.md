@@ -12,11 +12,11 @@ Thank you for your interest in contributing to KTOS! This document provides guid
 - [Pull Request Process](#pull-request-process)
 - [Testing](#testing)
 
-## Code of Conduct
+## Code of Conduct {#code-of-conduct}
 
 This project adheres to a Code of Conduct. By participating, you are expected to uphold this code. Please report unacceptable behavior by opening an issue.
 
-## Getting Started
+## Getting Started {#getting-started}
 
 ### Prerequisites
 
@@ -47,7 +47,7 @@ This project adheres to a Code of Conduct. By participating, you are expected to
 
 4. **The pre-push hook is automatic** — `build_all.sh` runs before every `git push`, blocking the push if any BSP fails to build.
 
-## Development Workflow
+## Development Workflow {#development-workflow}
 
 1. **Create a branch:**
    ```bash
@@ -73,7 +73,7 @@ This project adheres to a Code of Conduct. By participating, you are expected to
 
 5. **Open a Pull Request** on GitHub — CI will build all BSPs and run static analysis automatically. All checks must be green before a maintainer can merge.
 
-## Adding a New BSP
+## Adding a New BSP {#adding-a-new-bsp}
 
 This is the most valuable contribution you can make — each new BSP means a new MCU is supported on [ktos.co.uk](https://ktos.co.uk).
 
@@ -124,7 +124,7 @@ This is the most valuable contribution you can make — each new BSP means a new
 - **AVR**: push/pop all 32 registers + SREG, use `in`/`out` for SP
 - Always use `--specs=nosys.specs` in ARM linker flags for bare-metal builds
 
-## Coding Standards
+## Coding Standards {#coding-standards}
 
 ### C Code Style
 
@@ -139,7 +139,7 @@ This is the most valuable contribution you can make — each new BSP means a new
 - **No dynamic allocation** in core KTOS code
 - Pass `cppcheck` with no warnings before submitting
 
-### Commit Guidelines
+### Commit Guidelines {#commit-guidelines}
 
 Use conventional commit format:
 
@@ -160,14 +160,14 @@ feat: add message queue overflow callback
 fix: correct Cortex-M0 context switch SP constraint
 ```
 
-## Pull Request Process
+## Pull Request Process {#pull-request-process}
 
 1. All CI checks must pass (build, cppcheck, docs, license)
 2. At least 1 approving review from a maintainer is required
 3. All review comments must be resolved
 4. Maintainers will merge — contributors cannot merge directly to `main`
 
-## Testing
+## Testing {#testing}
 
 - Run `bash scripts/build_all.sh` — all BSPs must pass
 - If adding a new BSP, test on real hardware where possible and report results in the PR
