@@ -1,3 +1,34 @@
+/*
+ * KTOS — Tiny Cooperative Task Switcher
+ * Copyright (C) 2004-2025 Khalid Hamdou / BAAMIIS LIMITED
+ * All rights reserved.
+ *
+ * Author:  Khalid Hamdou
+ * Company: BAAMIIS LIMITED
+ * GitHub:  https://github.com/baamiis/KTOS
+ *
+ * SPDX-License-Identifier: GPL-3.0-only
+ *
+ * This file is part of KTOS.
+ *
+ * KTOS is dual-licensed:
+ *
+ *   Open Source: GNU General Public License v3 (see LICENSE)
+ *   Commercial:  Proprietary license available (see COMMERCIAL_LICENSE)
+ *
+ * For open source use, this program is free software: you can
+ * redistribute it and/or modify it under the terms of the GNU
+ * General Public License as published by the Free Software Foundation,
+ * either version 3 of the License, or (at your option) any later version.
+ *
+ * For commercial/proprietary use without GPL obligations, a Commercial
+ * License must be obtained from BAAMIIS LIMITED.
+ * Contact: baamiis7@gmail.com
+ *
+ * KTOS is the original work of Khalid Hamdou. No person or organisation
+ * may claim authorship or ownership of this software.
+ */
+
 /**
  * @file ktos_bsp.c
  * @brief KTOS Board Support Package — STM32F103 (ARM Cortex-M3)
@@ -152,7 +183,7 @@ void *ktos_hal_InitTaskStack(void *p_stack_base,
  */
 __attribute__((naked)) void ktos_hal_ContextSwitch(
     void **p_current_sp_storage __attribute__((unused)),
-    void  *next_sp               __attribute__((unused)))
+    const void *next_sp          __attribute__((unused)))
 {
     __asm volatile (
         "push   {r4-r11}            \n" /* Save callee-saved registers  */
@@ -176,7 +207,7 @@ __attribute__((naked)) void ktos_hal_ContextSwitch(
  * @note Naked function — no compiler-generated prologue/epilogue.
  *
  */
-__attribute__((naked)) void ktos_hal_StartScheduler(void *first_task_sp __attribute__((unused)))
+__attribute__((naked)) void ktos_hal_StartScheduler(const void *first_task_sp __attribute__((unused)))
 {
     __asm volatile (
         "mov    sp, r0              \n" /* Set SP to first task stack   */
