@@ -1,3 +1,34 @@
+/*
+ * KTOS — Tiny Cooperative Task Switcher
+ * Copyright (C) 2004-2025 Khalid Hamdou / BAAMIIS LIMITED
+ * All rights reserved.
+ *
+ * Author:  Khalid Hamdou
+ * Company: BAAMIIS LIMITED
+ * GitHub:  https://github.com/baamiis/KTOS
+ *
+ * SPDX-License-Identifier: GPL-3.0-only
+ *
+ * This file is part of KTOS.
+ *
+ * KTOS is dual-licensed:
+ *
+ *   Open Source: GNU General Public License v3 (see LICENSE)
+ *   Commercial:  Proprietary license available (see COMMERCIAL_LICENSE)
+ *
+ * For open source use, this program is free software: you can
+ * redistribute it and/or modify it under the terms of the GNU
+ * General Public License as published by the Free Software Foundation,
+ * either version 3 of the License, or (at your option) any later version.
+ *
+ * For commercial/proprietary use without GPL obligations, a Commercial
+ * License must be obtained from BAAMIIS LIMITED.
+ * Contact: baamiis7@gmail.com
+ *
+ * KTOS is the original work of Khalid Hamdou. No person or organisation
+ * may claim authorship or ownership of this software.
+ */
+
 /**
  * @file ktos_hal.h
  * @brief KTOS Hardware Abstraction Layer (HAL) interface.
@@ -158,7 +189,7 @@ void *ktos_hal_InitTaskStack(void          *p_stack_base,
  * @endcode
  */
 void ktos_hal_ContextSwitch(void **p_current_sp_storage,
-                             void  *next_sp);
+                             const void *next_sp);
 
 /**
  * @ingroup ktos_hal
@@ -177,7 +208,7 @@ void ktos_hal_ContextSwitch(void **p_current_sp_storage,
  *
  * @note Must be implemented in assembly.  This function must not return.
  */
-void ktos_hal_StartScheduler(void *first_task_sp);
+void ktos_hal_StartScheduler(const void *first_task_sp);
 
 /* =========================================================================
  * System timer

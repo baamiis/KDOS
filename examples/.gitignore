@@ -1,0 +1,13 @@
+# Build artifacts
+*.o
+*.elf
+*.bin
+*.map
+*.lst
+
+# Keep pre-built BearSSL static library and headers
+# (root .gitignore has *.a — this exception overrides it for examples/)
+!**/libbearssl.a
+!**/bearssl_inc/
+!**/bearssl_inc/**
+!**/*.pem

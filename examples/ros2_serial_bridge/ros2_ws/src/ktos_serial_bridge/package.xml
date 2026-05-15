@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>ktos_serial_bridge</name>
+  <version>1.0.0</version>
+  <description>
+    ROS 2 serial bridge node for KTOS-based microcontroller firmware.
+    Publishes KTOS telemetry to ROS 2 topics and forwards ROS 2 commands
+    to the MCU over USB serial / UART.
+  </description>
+
+  <maintainer email="baamiis7@gmail.com">Khalid Hamdou</maintainer>
+  <license>GPL-3.0-only</license>
+
+  <depend>rclpy</depend>
+  <depend>std_msgs</depend>
+
+  <exec_depend>python3-serial</exec_depend>
+
+  <export>
+    <build_type>ament_python</build_type>
+  </export>
+</package>
