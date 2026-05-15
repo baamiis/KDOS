@@ -10,7 +10,7 @@ permissions:
 jobs:
   doxygen:
     name: Build and publish Doxygen docs
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
 
     steps:
       - name: Checkout source
@@ -20,6 +20,9 @@ jobs:
 
       - name: Install Doxygen and Graphviz
         run: sudo apt-get update && sudo apt-get install -y doxygen graphviz
+
+      - name: Show Doxygen version
+        run: doxygen --version
 
       - name: Run Doxygen
         run: doxygen Doxyfile
