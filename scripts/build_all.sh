@@ -51,9 +51,17 @@ build_bsp() {
 # Build every BSP found in bsp/
 for bsp_dir in "$ROOT"/bsp/*/; do
     bsp=$(basename "$bsp_dir")
-    # Skip ESP8266 if xtensa toolchain not installed
+    # Skip BSPs whose toolchain is not installed
     if [ "$bsp" = "esp8266" ] && ! command -v xtensa-lx106-elf-gcc &>/dev/null; then
         echo -e "Skipping esp8266 ${YELLOW}(xtensa toolchain not installed)${NC}"
+        continue
+    fi
+    if [ "$bsp" = "msp430g2553" ] && ! command -v msp430-elf-gcc &>/dev/null; then
+        echo -e "Skipping msp430g2553 ${YELLOW}(msp430-elf-gcc not installed)${NC}"
+        continue
+    fi
+    if [ "$bsp" = "pic18f" ] && ! command -v sdcc &>/dev/null; then
+        echo -e "Skipping pic18f ${YELLOW}(sdcc not installed)${NC}"
         continue
     fi
     build_bsp "$bsp"

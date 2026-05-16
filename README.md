@@ -29,15 +29,23 @@ KTOS provides ready-to-use Board Support Packages (BSPs) for the following micro
 | ATmega328P | AVR 8-bit | 2KB | 32KB | ✅ Full BSP |
 | STM32F103 | Cortex-M3 | 20KB | 64-128KB | ✅ Full BSP |
 | STM32F030 | Cortex-M0 | 4KB | 16-64KB | ✅ Full BSP |
-| ESP8266 (LX106) | Xtensa 32-bit | ~30KB free | 1MB+ | ⚠️ Partial (assembly TODO) |
+| ESP8266 (LX106) | Xtensa 32-bit | ~30KB free | 1MB+ | ✅ Full BSP |
+| ATmega2560 | AVR 8-bit | 8KB | 256KB | ✅ Full BSP |
+| ATtiny85 | AVR 8-bit | 512B | 8KB | ✅ Full BSP |
+| STM32L031 | Cortex-M0+ | 8KB | 32KB | ✅ Full BSP |
+| MSP430G2553 | MSP430 16-bit | 512B | 16KB | ✅ Full BSP |
+| PIC18F4550 | PIC18 8-bit | 2KB | 32KB | ⚠️ Experimental |
 
 **Compatible boards per MCU:**
 - **ATmega328P**: Arduino Uno, Arduino Nano, Arduino Pro Mini
 - **STM32F103**: Blue Pill, Nucleo-F103RB, Maple Mini
 - **STM32F030**: Nucleo-F030R8
 - **ESP8266**: NodeMCU, Wemos D1 Mini, ESP-01
-
-More MCUs coming: ATmega2560, ATtiny85, MSP430G2553, STM32L031, PIC16F/18F.
+- **ATmega2560**: Arduino Mega 2560
+- **ATtiny85**: Digispark
+- **STM32L031**: Nucleo-L031K6
+- **MSP430G2553**: MSP430 LaunchPad (MSP-EXP430G2)
+- **PIC18F4550**: Custom board (SDCC toolchain)
 
 ## Get Started
 
