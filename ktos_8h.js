@@ -11,6 +11,7 @@ var ktos_8h =
       [ "KTOS_MSG_TYPE_TIMER", "group__ktos__types.html#gga7c3dfdbcd730c74a49f47ef8e70bff72ad71262172d8ddd249d07c0e8d534d76c", null ],
       [ "KTOS_MSG_TYPE_SYSTEM_START", "group__ktos__types.html#gga7c3dfdbcd730c74a49f47ef8e70bff72af8497f560d1dc4c4a62e54877f20e885", null ]
     ] ],
+    [ "ktos_ExitOS", "group__ktos__core.html#ga8f78fa1da33bb60620e50d418b6d5f6e", null ],
     [ "ktos_InitTask", "group__ktos__core.html#gaf203c90e278b6a707ab18bf27dd97ee3", null ],
     [ "ktos_RunOS", "group__ktos__core.html#ga6580b57b65ece0e7bfcc48823db105f3", null ],
     [ "ktos_SendMsg", "group__ktos__core.html#ga1ea17f77c672ca82bb8a137fef9c7b7e", null ],

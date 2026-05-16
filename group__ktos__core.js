@@ -6,6 +6,7 @@ var group__ktos__core =
     [ "TASK_SWITCH_PERMIT", "group__ktos__core.html#gab461f6e68138fc65ade61ef2d25d799f", null ],
     [ "ktos_DebugPrintf", "group__ktos__core.html#ga77b699103f3ec266c0d79d849ead8c1c", null ],
     [ "ktos_Emergency", "group__ktos__core.html#ga7aca2702c8fa0e02fd05461d4f5d23fe", null ],
+    [ "ktos_ExitOS", "group__ktos__core.html#ga8f78fa1da33bb60620e50d418b6d5f6e", null ],
     [ "ktos_InitSys", "group__ktos__core.html#gaa3d9ea3cbeb12c3ce81ce4ad1be4b3e0", null ],
     [ "ktos_InitTask", "group__ktos__core.html#gaf203c90e278b6a707ab18bf27dd97ee3", null ],
     [ "ktos_RunOS", "group__ktos__core.html#ga6580b57b65ece0e7bfcc48823db105f3", null ],

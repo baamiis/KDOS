@@ -87,7 +87,7 @@
 <!-- Node5 -->
 <g id="node5" class="node">
 <title>Node5</title>
-<g id="a_node5"><a xlink:href="group__ktos__hal.html#ga5810bd4a4ed08259ec13bef908828d20" target="_top" xlink:title="Perform a cooperative context switch between two execution contexts.">
+<g id="a_node5"><a xlink:href="group__ktos__hal.html#gab41a95b0bdad0b96dd0957bb95e087bc" target="_top" xlink:title="Perform a cooperative context switch between two execution contexts.">
 <polygon fill="white" stroke="black" points="310,-76.5 310,-95.5 444,-95.5 444,-76.5 310,-76.5"/>
 <text text-anchor="middle" x="377" y="-83.5" font-family="Helvetica,sans-Serif" font-size="10.00">ktos_hal_ContextSwitch</text>
 </a>
@@ -98,6 +98,21 @@
 <title>Node2&#45;&gt;Node5</title>
 <path fill="none" stroke="midnightblue" d="M274.17,-86C282.6,-86 291.17,-86 299.58,-86"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="299.74,-89.5 309.74,-86 299.74,-82.5 299.74,-89.5"/>
+</g>
+<!-- Node7 -->
+<g id="node7" class="node">
+<title>Node7</title>
+<g id="a_node7"><a xlink:href="esp8266_2ktos__bsp_8c.html#ad0087b08af4998a5440320140fb300a6" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="326.5,-0.5 326.5,-19.5 427.5,-19.5 427.5,-0.5 326.5,-0.5"/>
+<text text-anchor="middle" x="377" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">ktos_task_launch</text>
+</a>
+</g>
+</g>
+<!-- Node6&#45;&gt;Node7 -->
+<g id="edge7" class="edge">
+<title>Node6&#45;&gt;Node7</title>
+<path fill="none" stroke="midnightblue" d="M259.21,-10C277.67,-10 297.79,-10 316.04,-10"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="316.26,-13.5 326.26,-10 316.26,-6.5 316.26,-13.5"/>
 </g>
 </g>
 </svg>

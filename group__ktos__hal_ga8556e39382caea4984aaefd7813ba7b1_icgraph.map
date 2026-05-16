@@ -1,5 +1,7 @@
 <map id="ktos_hal_InitTaskStack" name="ktos_hal_InitTaskStack">
-<area shape="rect" id="node1" title="Set up the initial stack frame for a new task." alt="" coords="263,5,433,32"/>
+<area shape="rect" id="node1" title="Set up the initial stack frame for a new task." alt="" coords="440,31,611,57"/>
 <area shape="rect" id="node2" href="$ktos_8c.html#a9f7bbd66bfb5333402db8b6c413cb114" title=" " alt="" coords="108,5,215,32"/>
-<area shape="rect" id="node3" href="$ktos__multi_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,60,32"/>
+<area shape="rect" id="node4" href="$ktos_8c.html#ae0e8182ad311d004e6d96f8d42a70501" title="Round&#45;robin cooperative scheduler — runs on the OS stack." alt="" coords="263,56,392,83"/>
+<area shape="rect" id="node3" href="$ktos__multi_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,31,60,57"/>
+<area shape="rect" id="node5" href="$group__ktos__core.html#ga6580b57b65ece0e7bfcc48823db105f3" title="Start the KTOS scheduler. Never returns." alt="" coords="111,56,211,83"/>
 </map>

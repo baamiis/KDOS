@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['queuecapacity_137',['QueueCapacity',['../structktos__TASK.html#a3d3c07036ef7eacc386ca527e3363f84',1,'ktos_TASK']]]
+  ['needsreinit_143',['NeedsReinit',['../structktos__TASK.html#ab30082bd7d65f763724fd035b3474a49',1,'ktos_TASK']]]
 ];
