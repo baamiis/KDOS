@@ -1,9 +1,9 @@
 # KTOS — Tiny Cooperative Task Switcher
 
-[![CI Status](https://github.com/baamiis/KTOS/workflows/KTOS%20CI/badge.svg)](https://github.com/baamiis/KTOS/actions)
-[![License](https://img.shields.io/github/license/baamiis/KTOS)](LICENSE)
+[![CI Status](https://github.com/baamiis/KTOS/actions/workflows/ci.yml/badge.svg)](https://github.com/baamiis/KTOS/actions/workflows/ci.yml)
+[![License: GPL v3](https://img.shields.io/badge/license-GPL--3.0--only-blue)](LICENSE)
 [![Contributors](https://img.shields.io/github/contributors/baamiis/KTOS)](https://github.com/baamiis/KTOS/graphs/contributors)
-[![Documentation](https://img.shields.io/badge/docs-website-blue)](https://www.ktos.co.uk)
+[![Documentation](https://img.shields.io/badge/docs-ktos.co.uk-blue)](https://www.ktos.co.uk)
 
 Main website: https://www.ktos.co.uk/
 
