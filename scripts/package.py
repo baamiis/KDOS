@@ -84,7 +84,7 @@ https://ktos.co.uk
 def generate_example_main(mcu):
     mcu_name = MCU_INFO.get(mcu, {}).get('name', mcu)
     return f"""/*
- * KTOS example starter for {mcu_name}
+ * KTOS example starter for {MCU_INFO.get(mcu, {{}}).get('name', mcu)}
  * Edit this file to add your application tasks.
  */
 #include "ktos.h"

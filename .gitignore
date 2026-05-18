@@ -53,3 +53,20 @@ dkms.conf
 
 # Doxygen generated output
 docs/html/
+
+# PlatformIO build cache
+.pio/
+.pioenvs/
+.piolibdeps/
+
+# avr-gcc / gcc saved temps
+*.s
+*.i
+*.ii
+
+# IDE
+.vscode/
+.idea/
+
+# Claude Code local config
+.claude/
