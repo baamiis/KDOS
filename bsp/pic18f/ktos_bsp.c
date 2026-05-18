@@ -283,7 +283,7 @@ void ktos_hal_ContextSwitch(void **p_current_sp_storage, const void *next_sp)
  */
 void ktos_hal_StartScheduler(const void *first_task_sp)
 {
-    ktos_pic18_ctx_t *ctx = (ktos_pic18_ctx_t *)first_task_sp;
+    const ktos_pic18_ctx_t *ctx = (const ktos_pic18_ctx_t *)first_task_sp;
 
     FSR1L_sfr = (uint8_t)(ctx->fsr1 & 0xFF);
     FSR1H_sfr = (uint8_t)(ctx->fsr1 >> 8);
