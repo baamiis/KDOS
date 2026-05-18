@@ -3,14 +3,14 @@
 Thank you for your interest in contributing to KTOS! This document provides guidelines and instructions for contributing to our tiny cooperative RTOS alternative.
 
 ## Table of Contents
-- [Code of Conduct](#code-of-conduct)
-- [Getting Started](#getting-started)
-- [Development Workflow](#development-workflow)
-- [Adding a New BSP](#adding-a-new-bsp)
-- [Coding Standards](#coding-standards)
-- [Commit Guidelines](#commit-guidelines)
-- [Pull Request Process](#pull-request-process)
-- [Testing](#testing)
+- Code of Conduct
+- Getting Started
+- Development Workflow
+- Adding a New BSP
+- Coding Standards
+- Commit Guidelines
+- Pull Request Process
+- Testing
 
 ## Code of Conduct
 
