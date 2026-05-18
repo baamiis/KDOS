@@ -27,17 +27,34 @@ KTOS provides ready-to-use Board Support Packages (BSPs) for the following micro
 | MCU | Core | RAM | Flash | Status |
 |-----|------|-----|-------|--------|
 | ATmega328P | AVR 8-bit | 2KB | 32KB | ✅ Full BSP |
+| SAM3X8E | Cortex-M3 | 96KB | 512KB | ✅ Full BSP |
 | STM32F103 | Cortex-M3 | 20KB | 64-128KB | ✅ Full BSP |
 | STM32F030 | Cortex-M0 | 4KB | 16-64KB | ✅ Full BSP |
-| ESP8266 (LX106) | Xtensa 32-bit | ~30KB free | 1MB+ | ⚠️ Partial (assembly TODO) |
+| ESP8266 (LX106) | Xtensa 32-bit | ~30KB free | 1MB+ | ✅ Full BSP |
+| ATmega2560 | AVR 8-bit | 8KB | 256KB | ✅ Full BSP |
+| ATtiny85 | AVR 8-bit | 512B | 8KB | ✅ Full BSP |
+| STM32L031 | Cortex-M0+ | 8KB | 32KB | ✅ Full BSP |
+| MSP430G2553 | MSP430 16-bit | 512B | 16KB | ✅ Full BSP |
+| PIC18F4550 | PIC18 8-bit | 2KB | 32KB | ⚠️ Experimental |
 
 **Compatible boards per MCU:**
 - **ATmega328P**: Arduino Uno, Arduino Nano, Arduino Pro Mini
+- **SAM3X8E**: Arduino Due
 - **STM32F103**: Blue Pill, Nucleo-F103RB, Maple Mini
 - **STM32F030**: Nucleo-F030R8
 - **ESP8266**: NodeMCU, Wemos D1 Mini, ESP-01
+- **ATmega2560**: Arduino Mega 2560
+- **ATtiny85**: Digispark
+- **STM32L031**: Nucleo-L031K6
+- **MSP430G2553**: MSP430 LaunchPad (MSP-EXP430G2)
+- **PIC18F4550**: Custom board (SDCC toolchain)
+- ATmega4809 (Arduino UNO WiFi Rev2)
+- SAMD21G18A (Arduino MKR WiFi 1010)
+- Renesas RA4M1 (Arduino UNO R4 WiFi)
+- STM32H747 (Arduino GIGA R1 WiFi)
+- STM32U585 (Arduino UNO Q — MCU side)
 
-More MCUs coming: ATmega2560, ATtiny85, MSP430G2553, STM32L031, PIC16F/18F.
+Plus the long-standing roadmap: ATmega2560, ATtiny85, MSP430G2553, STM32L031, PIC16F/18F.
 
 ## Get Started
 
@@ -93,6 +110,12 @@ KTOS/
 │   ├── stm32f103/      # STM32F103 Cortex-M3 BSP + Makefile
 │   ├── stm32f030/      # STM32F030 Cortex-M0 BSP + Makefile
 │   └── esp8266/        # ESP8266 Xtensa BSP + Makefile
+├── examples/              # Ready-to-flash KTOS demos
+│   ├── Arduino/           # ATmega328P boards (PlatformIO, bare-metal)
+│   │   ├── Nano/          # 5 examples (adc, i2c, led_control, button_control, uart)
+│   │   ├── Uno/           # 2 Uno-specific (usb_serial, eeprom) — Nano examples portable
+│   │   └── Pro_Mini/      # 5 examples (same source as Nano, programmed via USB-TTL)
+│   └── esp8266/           # Xtensa LX106 examples
 ├── scripts/
 │   ├── build_all.sh    # Local build verification script
 │   ├── package.py      # ZIP package generator for website
@@ -102,6 +125,16 @@ KTOS/
         ├── ci.yml      # CI: builds all BSPs on every PR
         └── package.yml # Generates ZIP packages on merge to main
 ```
+
+## Examples
+
+Each `examples/<family>/` directory has a top-level README that walks
+you through download, build, and flash.  Quick links:
+
+| Family                          | Where                                          | Highlights                                          |
+|---------------------------------|------------------------------------------------|-----------------------------------------------------|
+| Arduino (ATmega328P)            | [`examples/Arduino/`](examples/Arduino/README.md) | Bare-metal KTOS — no Arduino framework.  Builds with PlatformIO. |
+| ESP8266 (Xtensa LX106)          | [`examples/esp8266/`](examples/esp8266.md)        | KTOS bridging from the SDK's windowed ABI into CALL0. |
 
 ## Building Locally
 
