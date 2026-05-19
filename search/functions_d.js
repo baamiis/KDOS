@@ -1,9 +1,8 @@
 var searchData=
 [
-  ['tc3_5fhandler_0',['TC3_Handler',['../startup_8c.html#ae69893861c9ce728a475a17e26296582',1,'startup.c']]],
-  ['tc4_5fhandler_1',['TC4_Handler',['../startup_8c.html#a0c1fbde5812fec0be065efcc9d864efd',1,'startup.c']]],
-  ['tc5_5fhandler_2',['TC5_Handler',['../startup_8c.html#ab72ac9948c9e1d1a59863025b29f70c4',1,'startup.c']]],
-  ['tcc0_5fhandler_3',['TCC0_Handler',['../startup_8c.html#aff4b3092699ca4f7382621f3443688a3',1,'startup.c']]],
-  ['tcc1_5fhandler_4',['TCC1_Handler',['../startup_8c.html#aaa9421127bf93f9b4ccfb0a6ffcf94c2',1,'startup.c']]],
-  ['tcc2_5fhandler_5',['TCC2_Handler',['../startup_8c.html#a5dccf47df0e19e941bc4758a82db1906',1,'startup.c']]]
+  ['rcc_5firqhandler_0',['RCC_IRQHandler',['../stm32f103_2startup_8c.html#a485ab398adc303a0ca68885dddcbfe07',1,'startup.c']]],
+  ['reset_5fhandler_1',['reset_handler',['../samd21g18_2startup_8c.html#ae7ee340978f5c25f52f0cad1457c6616',1,'Reset_Handler(void):&#160;startup.c'],['../stm32f103_2startup_8c.html#ae7ee340978f5c25f52f0cad1457c6616',1,'Reset_Handler(void):&#160;startup.c']]],
+  ['rtc_5fhandler_2',['RTC_Handler',['../samd21g18_2startup_8c.html#ab6a8110ba2ed9a12326dc9db531be942',1,'startup.c']]],
+  ['rtc_5firqhandler_3',['RTC_IRQHandler',['../stm32f103_2startup_8c.html#ab86b9dd0d7b4eacfe38086e1fa4c2312',1,'startup.c']]],
+  ['rtcalarm_5firqhandler_4',['RTCAlarm_IRQHandler',['../stm32f103_2startup_8c.html#aefbc016ded9975fe115f44a848b99dfb',1,'startup.c']]]
 ];

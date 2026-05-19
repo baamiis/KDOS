@@ -632,7 +632,7 @@ Example</h3>
 </dl>
 <h3><a class="anchor" id="autotoc_md5"></a>
 Example — wake a task from a button ISR</h3>
-<div class="fragment"><div class="line"><span class="keywordtype">void</span> EXTI0_IRQHandler(<span class="keywordtype">void</span>)</div>
+<div class="fragment"><div class="line"><span class="keywordtype">void</span> <a class="code hl_function" href="stm32f103_2startup_8c.html#a17e9789a29a87d2df54f12b94dd1a0b6">EXTI0_IRQHandler</a>(<span class="keywordtype">void</span>)</div>
 <div class="line">{</div>
 <div class="line">    <a class="code hl_function" href="group__ktos__core.html#ga36de1d506ed25f7ec37016362726b45c">ktos_WakeUp</a>(g_ui_task, WAKE_BUTTON_PRESS);</div>
 <div class="line">}</div>
@@ -642,6 +642,7 @@ Example — wake a task from a button ISR</h3>
 <div class="line"><span class="keywordflow">if</span> (reason == WAKE_BUTTON_PRESS) { handle_button(); }</div>
 <div class="ttc" id="agroup__ktos__core_html_ga36de1d506ed25f7ec37016362726b45c"><div class="ttname"><a href="group__ktos__core.html#ga36de1d506ed25f7ec37016362726b45c">ktos_WakeUp</a></div><div class="ttdeci">void ktos_WakeUp(struct ktos_TASK *Task, INT WakeUpType)</div><div class="ttdoc">Wake a sleeping task immediately from an ISR or another task.</div><div class="ttdef"><b>Definition</b> <a href="ktos_8c_source.html#l00235">ktos.c:235</a></div></div>
 <div class="ttc" id="agroup__ktos__core_html_ga8156ba636f06697351932fb2c712c8b4"><div class="ttname"><a href="group__ktos__core.html#ga8156ba636f06697351932fb2c712c8b4">MSG_WAIT</a></div><div class="ttdeci">#define MSG_WAIT</div><div class="ttdoc">Return this value from a task function to sleep indefinitely until explicitly woken by ktos_WakeUp() ...</div><div class="ttdef"><b>Definition</b> <a href="ktos_8h_source.html#l00108">ktos.h:108</a></div></div>
+<div class="ttc" id="astm32f103_2startup_8c_html_a17e9789a29a87d2df54f12b94dd1a0b6"><div class="ttname"><a href="stm32f103_2startup_8c.html#a17e9789a29a87d2df54f12b94dd1a0b6">EXTI0_IRQHandler</a></div><div class="ttdeci">void EXTI0_IRQHandler(void)</div></div>
 </div><!-- fragment --> 
 <p class="definition">Definition at line <a class="el" href="ktos_8c_source.html#l00235">235</a> of file <a class="el" href="ktos_8c_source.html">ktos.c</a>.</p>
 

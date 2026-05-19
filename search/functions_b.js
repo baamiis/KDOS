@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['reset_5fhandler_0',['Reset_Handler',['../startup_8c.html#ae7ee340978f5c25f52f0cad1457c6616',1,'startup.c']]],
-  ['rtc_5fhandler_1',['RTC_Handler',['../startup_8c.html#ab6a8110ba2ed9a12326dc9db531be942',1,'startup.c']]]
+  ['nmi_5fhandler_0',['nmi_handler',['../samd21g18_2startup_8c.html#a6ad7a5e3ee69cb6db6a6b9111ba898bc',1,'NMI_Handler(void):&#160;startup.c'],['../stm32f103_2startup_8c.html#a6ad7a5e3ee69cb6db6a6b9111ba898bc',1,'NMI_Handler(void):&#160;startup.c']]],
+  ['nvmctrl_5fhandler_1',['NVMCTRL_Handler',['../samd21g18_2startup_8c.html#aeee84cfd7d3279751e9c3b8042f19155',1,'startup.c']]]
 ];

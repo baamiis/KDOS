@@ -12,7 +12,7 @@
 <area shape="rect" id="Node000006" href="$ktos_8c.html#ae0e8182ad311d004e6d96f8d42a70501" title="Round&#45;robin cooperative scheduler — runs on the OS stack." alt="" coords="421,55,551,80"/>
 <area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="585,70,551,70,551,65,585,65"/>
 <area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="428,37,274,83,226,99,225,94,273,78,426,32"/>
-<area shape="rect" id="Node000005" href="$startup_8c.html#ae7ee340978f5c25f52f0cad1457c6616" title=" " alt="" coords="5,93,123,119"/>
+<area shape="rect" id="Node000005" href="$samd21g18_2startup_8c.html#ae7ee340978f5c25f52f0cad1457c6616" title=" " alt="" coords="5,93,123,119"/>
 <area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="157,109,123,109,123,103,157,103"/>
 <area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="419,86,374,97,373,92,418,81"/>
 <area shape="poly" id="edge7_Node000007_Node000004" title=" " alt="" coords="260,109,225,109,225,103,260,103"/>

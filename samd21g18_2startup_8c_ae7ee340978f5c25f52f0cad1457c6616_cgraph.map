@@ -1,0 +1,7 @@
+<map id="Reset_Handler" name="Reset_Handler">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,123,56"/>
+<area shape="rect" id="Node000002" href="$samd21g18_2startup_8c.html#a0b551273446a40b6642560095f9498a2" title=" " alt="" coords="171,5,307,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="123,32,157,27,158,32,123,37"/>
+<area shape="rect" id="Node000003" href="$ktos__multi_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="211,55,266,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="123,49,198,59,197,64,123,54"/>
+</map>

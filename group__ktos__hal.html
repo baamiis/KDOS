@@ -313,7 +313,7 @@ Cortex-M example</h3>
 <div class="fragment"><div class="line"><span class="keywordtype">void</span> <a class="code hl_function" href="group__ktos__hal.html#ga6741995a98c2dc4867a11717fa64efd8">ktos_hal_EnableInterrupts</a>(<span class="keywordtype">void</span>) { __enable_irq(); }</div>
 </div><!-- fragment --><p>Re-enable maskable interrupts.</p>
 <p>Re-enable maskable interrupts.</p>
-<p>Safe after <a class="el" href="startup_8c.html">startup.c</a> has called ets_wdt_disable() + system_soft_wdt_stop() and <a class="el" href="group__ktos__hal.html#gae42df35bd10d7d6b296be9687d436a32" title="Configure and start the 1 ms system tick timer.">ktos_hal_InitSystemTimer()</a> has stopped FRC1. Those were the only ROM timer sources that fired spurious callbacks into the UART TX path.</p>
+<p>Safe after startup.c has called ets_wdt_disable() + system_soft_wdt_stop() and <a class="el" href="group__ktos__hal.html#gae42df35bd10d7d6b296be9687d436a32" title="Configure and start the 1 ms system tick timer.">ktos_hal_InitSystemTimer()</a> has stopped FRC1. Those were the only ROM timer sources that fired spurious callbacks into the UART TX path.</p>
 <p>Allowing interrupts lets the WiFi MAC's hardware beacon timer fire, so a soft-AP stays visible to scanners and a station connection is maintained at the hardware level. Higher-level SDK events (auth, DHCP) still require ets_run() — they queue up but are not processed. </p>
 
 <p class="definition">Definition at line <a class="el" href="atmega2560_2ktos__bsp_8c_source.html#l00072">72</a> of file <a class="el" href="atmega2560_2ktos__bsp_8c_source.html">ktos_bsp.c</a>.</p>
@@ -373,8 +373,8 @@ Cortex-M SysTick example (72 MHz)</h3>
 <div class="line">    g_ktos_timer_isr = isr;</div>
 <div class="line">    SysTick_Config(72000); <span class="comment">// 72 MHz / 72000 = 1 kHz</span></div>
 <div class="line">}</div>
-<div class="line"><span class="keywordtype">void</span> <a class="code hl_function" href="startup_8c.html#ab5e09814056d617c521549e542639b7e">SysTick_Handler</a>(<span class="keywordtype">void</span>) { g_ktos_timer_isr(); }</div>
-<div class="ttc" id="astartup_8c_html_ab5e09814056d617c521549e542639b7e"><div class="ttname"><a href="startup_8c.html#ab5e09814056d617c521549e542639b7e">SysTick_Handler</a></div><div class="ttdeci">void SysTick_Handler(void)</div></div>
+<div class="line"><span class="keywordtype">void</span> <a class="code hl_function" href="samd21g18_2startup_8c.html#ab5e09814056d617c521549e542639b7e">SysTick_Handler</a>(<span class="keywordtype">void</span>) { g_ktos_timer_isr(); }</div>
+<div class="ttc" id="asamd21g18_2startup_8c_html_ab5e09814056d617c521549e542639b7e"><div class="ttname"><a href="samd21g18_2startup_8c.html#ab5e09814056d617c521549e542639b7e">SysTick_Handler</a></div><div class="ttdeci">void SysTick_Handler(void)</div></div>
 </div><!-- fragment --><p>Configure and start the 1 ms system tick timer.</p>
 <p>Prescaler 64, OCR1A = 249 → 1 ms at 16 MHz. ISR vector <code>TIMER1_COMPA_vect</code> must be defined in the application.</p>
 <p>Configure and start the 1 ms system tick timer.</p>
@@ -384,9 +384,9 @@ Cortex-M SysTick example (72 MHz)</h3>
 <p>Configure and start the 1 ms system tick timer.</p>
 <p>Prescaler 64, OCR0A = 124 → 1 ms at 8 MHz. ATtiny85 uses <code>TIMSK</code> (not <code>TIMSK0</code>) for the interrupt enable register.</p>
 <p>Configure and start the 1 ms system tick timer.</p>
-<p>FRC1 management is left to each example's <a class="el" href="startup_8c.html">startup.c</a>:</p>
+<p>FRC1 management is left to each example's startup.c:</p>
 <ul>
-<li>Examples that abandon ets_run() (wifi_scan, wifi_connect) stop FRC1 in <a class="el" href="startup_8c.html">startup.c</a> BEFORE the ABI crossing so the SDK's os_timer ISR cannot corrupt UART output once ets_run() is gone.</li>
+<li>Examples that abandon ets_run() (wifi_scan, wifi_connect) stop FRC1 in startup.c BEFORE the ABI crossing so the SDK's os_timer ISR cannot corrupt UART output once ets_run() is gone.</li>
 <li>Examples that return to ets_run() after KTOS finishes (wifi_AP) leave FRC1 running so the SDK's os_timer callbacks continue servicing the WiFi stack (beacon management, DHCP server, etc.).</li>
 </ul>
 <p>KTOS timer-based task wakeups (ktos_Sleep with ms &gt; 0) are not used in any current ESP8266 example, so the ktos_timer_irq_handler is not hooked.</p>
