@@ -190,10 +190,10 @@ void Reset_Handler(void)
 
     /* Copy .data from flash to RAM */
     const uint32_t *src = &_sidata;
-    for (uint32_t *dst = &_sdata; dst < &_edata; ) { *dst++ = *src++; }
+    for (uint32_t *dst = &_sdata; (uintptr_t)dst < (uintptr_t)&_edata; ) { *dst++ = *src++; }
 
     /* Zero .bss */
-    for (uint32_t *p = &_sbss; p < &_ebss; ) { *p++ = 0; }
+    for (uint32_t *p = &_sbss; (uintptr_t)p < (uintptr_t)&_ebss; ) { *p++ = 0; }
 
     main();
     while (1) {}
