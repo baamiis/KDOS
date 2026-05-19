@@ -3,14 +3,14 @@
 Thank you for your interest in contributing to KTOS! This document outlines our community standards and code of conduct.
 
 ## Table of Contents
-- [Code of Conduct](#code-of-conduct)
-- [Getting Started](#getting-started)
-- [Development Workflow](#development-workflow)
-- [Coding Standards](#coding-standards)
-- [Commit Guidelines](#commit-guidelines)
-- [Pull Request Process](#pull-request-process)
-- [Testing](#testing)
-- [Documentation](#documentation)
+- Code of Conduct
+- Getting Started
+- Development Workflow
+- Coding Standards
+- Commit Guidelines
+- Pull Request Process
+- Testing
+- Documentation
 
 ## Code of Conduct
 
