@@ -19,8 +19,9 @@ firmware needs.
 | [`led_control/`](led_control/)                  | **Two tasks**, `ktos_SendMsg(MSG_SET_MODE)` from UART to LED (D13/PB27). |
 | [`button_control/`](button_control/)            | **Two tasks**, debouncer on D2 (PB25) publishes `MSG_BUTTON_EVENT`. |
 | [`uart/`](uart/)                                | **Two tasks**, line-assembler hands lines to a command processor.   |
+| [`spi/`](spi/)                                  | Single KTOS task, SPI0 hardware loopback (LLB), 1 MHz, sends 0x00–0xFF. |
 
-Footprints — all five sit well under 3 % of the Due's 96 KB SRAM and
+Footprints — all six sit well under 3 % of the Due's 96 KB SRAM and
 ~3 % of its 512 KB flash:
 
 | Example          | Flash    | RAM     |
@@ -30,6 +31,7 @@ Footprints — all five sit well under 3 % of the Due's 96 KB SRAM and
 | `button_control` | 14 192 B | 2 648 B |
 | `uart`           | 14 996 B | 2 712 B |
 | `i2c`            | 14 268 B | 2 640 B |
+| `spi`            | 14 032 B | 2 624 B |
 
 ---
 
@@ -70,6 +72,9 @@ matters more than the silkscreened labels:
 | `A0`          | —               | `PA16`      | ADC channel 7 (`adc`) |
 | `SDA1` (pin 20) | —             | `PB12`      | TWI1 SDA — "Wire" on Due (`i2c`) |
 | `SCL1` (pin 21) | —             | `PB13`      | TWI1 SCL — "Wire" on Due (`i2c`) |
+| `D50` / ICSP-1  | —             | `PA25`      | SPI0 MISO (`spi`) |
+| `D51` / ICSP-4  | —             | `PA26`      | SPI0 MOSI (`spi`) |
+| `D52` / ICSP-3  | —             | `PA27`      | SPI0 SPCK (`spi`) |
 
 ---
 
@@ -146,31 +151,25 @@ pio run -t upload --upload-port /dev/ttyACM0
 
 ---
 
-## Why `framework = arduino` and not bare-metal?
+## Why no `framework = arduino`?
 
-PlatformIO's `atmelsam` platform does **not** expose a "no framework"
-mode for the Due (the build pipeline assumes Arduino, CMSIS-mbed, or
-Zephyr).  Trying `framework = cmsis` fails immediately with
-*"This board doesn't support cmsis framework!"*.  So we pick the
-smallest-footprint option: the Arduino framework — but we use
-**none of its APIs**.
+These examples are **fully bare-metal** — no Arduino framework at all.
+PlatformIO's `atmelsam` platform normally defaults to the Arduino framework
+for the Due, but it is possible to omit it entirely by supplying a custom
+linker script and startup file.
 
-What the Arduino framework provides for us:
-- Vector table at flash address 0
-- Reset handler / `_init` chain
-- `SystemInit()` clock tree setup (84 MHz from 12 MHz crystal via PLL)
-- Linker script (sections, RAM bank mapping)
-- An `extern "C"`-callable `main()` that calls our `setup()` and `loop()`
+What `bsp/sam3x8e/` provides instead of the Arduino framework:
+- `sam3x8e.ld` — linker script: flash at 0x00080000 (SAM-BA application
+  area), 64 KB SRAM, section layout, `_estack`.
+- `startup.c` — bare-metal vector table (45 SAM3X8E IRQs as weak aliases
+  to `Default_Handler`), `Reset_Handler` that copies `.data` from flash,
+  zeroes `.bss`, then calls `main()`.
+- `ktos_bsp.c` — TC0 channel 0 init for the 1 ms KTOS tick, Cortex-M3
+  context-switch assembly.
 
-What we provide instead:
-- `setup()` initialises our peripherals, registers KTOS tasks, calls
-  `ktos_RunOS()` — which never returns.
-- `loop()` is an empty stub the linker insists on.
-- All peripheral drivers go straight to the SAM3X registers.
-
-The result: KTOS owns the CPU after `setup()` returns into
-`ktos_RunOS()`, and your firmware lives at ~14 KB flash + ~2.7 KB RAM
-vs. the 30 KB+ a typical Arduino sketch consumes.
+Each example's `main()` initialises only the peripherals it needs and
+calls `ktos_RunOS()`, which never returns.  The result: ~14 KB flash and
+~2.6 KB RAM — roughly 3× smaller than a minimal Arduino sketch.
 
 ---
 
@@ -183,21 +182,27 @@ build_src_filter =
     +<*>
     +<../../../../../core/ktos.c>
     +<../../../../../bsp/sam3x8e/ktos_bsp.c>
+    +<../../../../../bsp/sam3x8e/startup.c>
 
 build_flags =
-    -Os
-    -Wall
-    -Wextra
+    -mcpu=cortex-m3 -mthumb
+    -DF_CPU=84000000UL
+    -Wall -Wextra -Os
+    -ffunction-sections -fdata-sections
+    -Wl,--gc-sections
+    --specs=nosys.specs
     -I../../../../core
     -I../../../../bsp/sam3x8e
 ```
 
 - `core/ktos.c` — the platform-independent KTOS scheduler.
 - `bsp/sam3x8e/ktos_bsp.c` — TC0 init, context switch, stack frame
-  builder.  Cortex-M3 assembly identical to `bsp/stm32f103/`.
+  builder for Cortex-M3.
+- `bsp/sam3x8e/startup.c` — bare-metal vector table and `Reset_Handler`
+  (copies `.data`, zeros `.bss`, calls `main()`).  No Arduino framework.
 - `core/ktos_multi.c` is **deliberately excluded** — it defines its
-  own `main()` and stub callbacks that would collide with the
-  Arduino-SAM core's `main()` and with each example's own callbacks.
+  own `main()` and stub callbacks that would collide with each example's
+  own `main()` and platform callbacks.
 
 ---
 
