@@ -1,0 +1,7 @@
+<map id="bsp/sam3x8e" name="bsp/sam3x8e">
+<area shape="rect" id="node1" href="dir_5fd63477713681e7500bccd4ac8b7be5.html" title="sam3x8e" alt="" coords="27,52,109,77"/>
+<area shape="rect" id="node2" href="dir_4270bfced15e0e73154b13468c7c9ad9.html" title="core" alt="" coords="43,125,93,151"/>
+<area shape="poly" id="edge1" href="dir_000008_000004.html" alt="" coords="71,78,71,112,65,112,65,78"/>
+<area shape="rect" id="edge1-headlabel" href="dir_000008_000004.html" title="1" alt="" coords="72,100,81,114"/>
+<area shape="rect" id="clust1" href="dir_3c5459f7c179b79c90e2565474bb2856.html" title="bsp" alt="" coords="16,16,120,88"/>
+</map>

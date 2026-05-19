@@ -2,7 +2,7 @@ var ktos_8c =
 [
     [ "ktos_DefaultTaskExitHandler", "ktos_8c.html#a0472bc90096e9ce7acb6b8aebc9b127b", null ],
     [ "ktos_ExitOS", "group__ktos__core.html#ga8f78fa1da33bb60620e50d418b6d5f6e", null ],
-    [ "ktos_InitTask", "ktos_8c.html#a9f7bbd66bfb5333402db8b6c413cb114", null ],
+    [ "ktos_InitTask", "ktos_8c.html#a56286f073d2c35d6eb89a0f60f41e0b8", null ],
     [ "ktos_RunOS", "group__ktos__core.html#ga6580b57b65ece0e7bfcc48823db105f3", null ],
     [ "ktos_SendMsg", "ktos_8c.html#abdccd1793b29f0ab71047c522a9fb262", null ],
     [ "ktos_Sleep", "ktos_8c.html#a58c939684b243c872c31ec084dba395a", null ],

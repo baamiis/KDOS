@@ -1,5 +1,7 @@
 <map id="ktos_SendMsg" name="ktos_SendMsg">
-<area shape="rect" id="node1" title=" " alt="" coords="5,31,121,57"/>
-<area shape="rect" id="node2" href="$group__ktos__hal.html#ga13869e4884f47a98d8c9b2d9902d5eda" title="Disable all maskable interrupts." alt="" coords="169,5,365,32"/>
-<area shape="rect" id="node3" href="$group__ktos__hal.html#ga6741995a98c2dc4867a11717fa64efd8" title="Re&#45;enable maskable interrupts." alt="" coords="172,56,363,83"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,121,56"/>
+<area shape="rect" id="Node000002" href="$group__ktos__hal.html#ga13869e4884f47a98d8c9b2d9902d5eda" title="Disable all maskable interrupts." alt="" coords="169,5,365,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="121,33,155,29,156,35,122,39"/>
+<area shape="rect" id="Node000003" href="$group__ktos__hal.html#ga6741995a98c2dc4867a11717fa64efd8" title="Re&#45;enable maskable interrupts." alt="" coords="172,55,363,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="122,47,158,52,158,57,122,53"/>
 </map>

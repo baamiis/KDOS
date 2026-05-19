@@ -1,5 +1,7 @@
 <map id="ktos_WakeUp" name="ktos_WakeUp">
-<area shape="rect" id="node1" title="Wake a sleeping task immediately from an ISR or another task." alt="" coords="5,31,116,57"/>
-<area shape="rect" id="node2" href="$group__ktos__hal.html#ga13869e4884f47a98d8c9b2d9902d5eda" title="Disable all maskable interrupts." alt="" coords="164,5,360,32"/>
-<area shape="rect" id="node3" href="$group__ktos__hal.html#ga6741995a98c2dc4867a11717fa64efd8" title="Re&#45;enable maskable interrupts." alt="" coords="167,56,357,83"/>
+<area shape="rect" id="Node000001" title="Wake a sleeping task immediately from an ISR or another task." alt="" coords="5,31,116,56"/>
+<area shape="rect" id="Node000002" href="$group__ktos__hal.html#ga13869e4884f47a98d8c9b2d9902d5eda" title="Disable all maskable interrupts." alt="" coords="164,5,360,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="116,34,150,29,151,35,117,39"/>
+<area shape="rect" id="Node000003" href="$group__ktos__hal.html#ga6741995a98c2dc4867a11717fa64efd8" title="Re&#45;enable maskable interrupts." alt="" coords="167,55,357,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="117,47,153,52,153,57,116,53"/>
 </map>

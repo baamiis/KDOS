@@ -1,9 +1,18 @@
 <map id="ktos_hal_EnableInterrupts" name="ktos_hal_EnableInterrupts">
-<area shape="rect" id="node1" title="Re&#45;enable maskable interrupts." alt="" coords="449,68,640,95"/>
-<area shape="rect" id="node2" href="$ktos_8c.html#abdccd1793b29f0ab71047c522a9fb262" title=" " alt="" coords="108,5,224,32"/>
-<area shape="rect" id="node4" href="$ktos_8c.html#a58c939684b243c872c31ec084dba395a" title=" " alt="" coords="290,43,383,69"/>
-<area shape="rect" id="node5" href="$ktos_8c.html#ae0e8182ad311d004e6d96f8d42a70501" title="Round&#45;robin cooperative scheduler — runs on the OS stack." alt="" coords="272,93,401,120"/>
-<area shape="rect" id="node7" href="$group__ktos__core.html#ga36de1d506ed25f7ec37016362726b45c" title="Wake a sleeping task immediately from an ISR or another task." alt="" coords="281,144,392,171"/>
-<area shape="rect" id="node3" href="$ktos__multi_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,43,60,69"/>
-<area shape="rect" id="node6" href="$group__ktos__core.html#ga6580b57b65ece0e7bfcc48823db105f3" title="Start the KTOS scheduler. Never returns." alt="" coords="116,68,216,95"/>
+<area shape="rect" id="Node000001" title="Re&#45;enable maskable interrupts." alt="" coords="499,107,689,132"/>
+<area shape="rect" id="Node000002" href="$group__ktos__hal.html#gaf4300bbe2d54c65f155361e713d7c56a" title="Load the first task&#39;s context and begin execution." alt="" coords="272,5,451,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="555,103,450,52,399,33,401,28,452,48,557,98"/>
+<area shape="rect" id="Node000003" href="$ktos_8c.html#abdccd1793b29f0ab71047c522a9fb262" title=" " alt="" coords="108,69,224,95"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="518,107,450,97,330,88,224,85,225,80,330,82,451,91,519,102"/>
+<area shape="rect" id="Node000005" href="$ktos_8c.html#a58c939684b243c872c31ec084dba395a" title=" " alt="" coords="315,107,408,132"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="485,122,409,122,409,117,485,117"/>
+<area shape="rect" id="Node000006" href="$ktos_8c.html#ae0e8182ad311d004e6d96f8d42a70501" title="Round&#45;robin cooperative scheduler — runs on the OS stack." alt="" coords="297,156,426,181"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="521,137,423,159,422,153,520,132"/>
+<area shape="rect" id="Node000008" href="$group__ktos__core.html#ga36de1d506ed25f7ec37016362726b45c" title="Wake a sleeping task immediately from an ISR or another task." alt="" coords="306,205,417,231"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="561,141,511,169,452,196,418,208,416,203,450,192,508,165,559,137"/>
+<area shape="rect" id="Node000004" href="$ktos__multi_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,107,60,132"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="108,101,61,114,59,109,106,96"/>
+<area shape="rect" id="Node000007" href="$group__ktos__core.html#ga6580b57b65ece0e7bfcc48823db105f3" title="Start the KTOS scheduler. Never returns." alt="" coords="116,131,216,156"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="282,161,216,152,217,147,283,156"/>
+<area shape="poly" id="edge7_Node000007_Node000004" title=" " alt="" coords="102,134,60,127,61,122,103,129"/>
 </map>

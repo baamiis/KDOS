@@ -1,4 +1,0 @@
-<map id="ktos_hal_InitTaskStack" name="ktos_hal_InitTaskStack">
-<area shape="rect" id="node1" title="Set up the initial stack frame for a new task." alt="" coords="5,5,176,32"/>
-<area shape="rect" id="node2" href="$esp8266_2ktos__bsp_8c.html#ad0087b08af4998a5440320140fb300a6" title=" " alt="" coords="224,5,359,32"/>
-</map>

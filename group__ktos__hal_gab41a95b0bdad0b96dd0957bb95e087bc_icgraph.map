@@ -1,9 +1,17 @@
 <map id="ktos_hal_ContextSwitch" name="ktos_hal_ContextSwitch">
-<area shape="rect" id="node1" title="Perform a cooperative context switch between two execution contexts." alt="" coords="699,56,877,83"/>
-<area shape="rect" id="node2" href="$ktos_8c.html#a0472bc90096e9ce7acb6b8aebc9b127b" title="Default exit handler called when a task function returns." alt="" coords="440,5,651,32"/>
-<area shape="rect" id="node5" href="$ktos_8c.html#ae0e8182ad311d004e6d96f8d42a70501" title="Round&#45;robin cooperative scheduler — runs on the OS stack." alt="" coords="263,56,392,83"/>
-<area shape="rect" id="node7" href="$ktos_8c.html#a58c939684b243c872c31ec084dba395a" title=" " alt="" coords="499,107,592,133"/>
-<area shape="rect" id="node3" href="$ktos_8c.html#a9f7bbd66bfb5333402db8b6c413cb114" title=" " alt="" coords="108,5,215,32"/>
-<area shape="rect" id="node4" href="$ktos__multi_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,31,60,57"/>
-<area shape="rect" id="node6" href="$group__ktos__core.html#ga6580b57b65ece0e7bfcc48823db105f3" title="Start the KTOS scheduler. Never returns." alt="" coords="111,56,211,83"/>
+<area shape="rect" id="Node000001" title="Perform a cooperative context switch between two execution contexts." alt="" coords="699,56,877,81"/>
+<area shape="rect" id="Node000002" href="$ktos_8c.html#a0472bc90096e9ce7acb6b8aebc9b127b" title="Default exit handler called when a task function returns." alt="" coords="440,5,651,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="712,56,606,33,607,28,713,50"/>
+<area shape="rect" id="Node000005" href="$ktos_8c.html#ae0e8182ad311d004e6d96f8d42a70501" title="Round&#45;robin cooperative scheduler — runs on the OS stack." alt="" coords="263,56,392,81"/>
+<area shape="poly" id="edge8_Node000001_Node000005" title=" " alt="" coords="685,71,392,71,392,66,685,66"/>
+<area shape="rect" id="Node000007" href="$ktos_8c.html#a58c939684b243c872c31ec084dba395a" title=" " alt="" coords="499,107,592,132"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="714,87,593,112,592,107,712,82"/>
+<area shape="rect" id="Node000003" href="$ktos_8c.html#a56286f073d2c35d6eb89a0f60f41e0b8" title=" " alt="" coords="108,7,215,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="426,21,215,22,215,16,426,16"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="477,36,383,59,382,53,476,31"/>
+<area shape="rect" id="Node000004" href="$ktos__multi_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,32,60,57"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="95,35,61,42,60,37,94,30"/>
+<area shape="rect" id="Node000006" href="$group__ktos__core.html#ga6580b57b65ece0e7bfcc48823db105f3" title="Start the KTOS scheduler. Never returns." alt="" coords="111,56,211,81"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="249,71,212,71,212,66,249,66"/>
+<area shape="poly" id="edge6_Node000006_Node000004" title=" " alt="" coords="97,59,60,52,61,47,98,54"/>
 </map>

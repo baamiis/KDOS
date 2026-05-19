@@ -1,4 +1,5 @@
 <map id="ktos_task_launch" name="ktos_task_launch">
-<area shape="rect" id="node1" title=" " alt="" coords="224,5,359,32"/>
-<area shape="rect" id="node2" href="$group__ktos__hal.html#ga8556e39382caea4984aaefd7813ba7b1" title="Build the initial CALL0 context frame for a new task." alt="" coords="5,5,176,32"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="224,5,359,31"/>
+<area shape="rect" id="Node000002" href="$group__ktos__hal.html#ga73dd6050479b4a96fb2f604c7fbc3e3a" title="Build the initial CALL0 context frame for a new task." alt="" coords="5,5,176,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="210,21,176,21,176,15,210,15"/>
 </map>

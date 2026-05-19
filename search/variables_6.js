@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['os_5fsp_144',['OS_SP',['../ktos_8c.html#adc28a92b0f2dcafb08df29723e6d03f4',1,'ktos.c']]]
+  ['os_5fsp_0',['OS_SP',['../ktos_8c.html#adc28a92b0f2dcafb08df29723e6d03f4',1,'ktos.c']]]
 ];

@@ -1,7 +1,4 @@
 var searchData=
 [
-  ['code_20of_20conduct_1',['Code of Conduct',['../md_CODE_OF_CONDUCT.html',1,'']]],
-  ['code_5fof_5fconduct_2emd_2',['CODE_OF_CONDUCT.md',['../CODE__OF__CONDUCT_8md.html',1,'']]],
-  ['contributing_20to_20ktos_3',['Contributing to KTOS',['../md_CONTRIBUTING.html',1,'']]],
-  ['contributing_2emd_4',['CONTRIBUTING.md',['../CONTRIBUTING_8md.html',1,'']]]
+  ['249_0',['AVR Timer1 CTC example (16 MHz, prescaler 64, OCR1A = 249)',['../group__ktos__hal.html#autotoc_md12',1,'']]]
 ];

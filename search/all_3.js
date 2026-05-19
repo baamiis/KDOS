@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['g_5flasttaskreturnvalue_15',['g_LastTaskReturnValue',['../ktos_8c.html#ad41da386e0487d9ef764ca15def81b71',1,'ktos.c']]]
+  ['72_20mhz_0',['Cortex-M SysTick example (72 MHz)',['../group__ktos__hal.html#autotoc_md13',1,'']]]
 ];

@@ -1,0 +1,16 @@
+<map id="ktos_InitTask" name="ktos_InitTask">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,104,112,129"/>
+<area shape="rect" id="Node000002" href="$ktos_8c.html#a0472bc90096e9ce7acb6b8aebc9b127b" title="Default exit handler called when a task function returns." alt="" coords="160,53,371,79"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="111,101,199,79,200,85,112,106"/>
+<area shape="rect" id="Node000004" href="$group__ktos__core.html#ga7aca2702c8fa0e02fd05461d4f5d23fe" title="Emit a fatal&#45;error message and halt execution." alt="" coords="443,104,573,129"/>
+<area shape="poly" id="edge5_Node000001_Node000004" title=" " alt="" coords="112,114,429,114,429,119,112,119"/>
+<area shape="rect" id="Node000006" href="$group__ktos__hal.html#ga73dd6050479b4a96fb2f604c7fbc3e3a" title="Set up the initial stack frame for a new task." alt="" coords="180,155,351,180"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="112,127,200,149,199,154,111,132"/>
+<area shape="rect" id="Node000003" href="$group__ktos__core.html#ga77b699103f3ec266c0d79d849ead8c1c" title="Printf&#45;style debug logging (active only when DEBUG == 1)." alt="" coords="441,5,575,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="330,51,429,31,430,36,331,56"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="328,76,434,99,433,104,327,81"/>
+<area shape="rect" id="Node000005" href="$group__ktos__hal.html#gab41a95b0bdad0b96dd0957bb95e087bc" title="Perform a cooperative context switch between two execution contexts." alt="" coords="419,55,597,80"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="371,64,405,64,405,69,371,69"/>
+<area shape="rect" id="Node000007" href="$esp8266_2ktos__bsp_8c.html#ad0087b08af4998a5440320140fb300a6" title=" " alt="" coords="441,155,575,180"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="351,165,427,165,427,170,351,170"/>
+</map>

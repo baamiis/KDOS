@@ -1,0 +1,26 @@
+var searchData=
+[
+  ['m_20example_0',['m example',['../group__ktos__hal.html#autotoc_md10',1,'Cortex-M example'],['../group__ktos__hal.html#autotoc_md8',1,'Cortex-M example']]],
+  ['m_20stm32f103_20stm32f030_1',['KTOS BSP — ARM Cortex-M (STM32F103, STM32F030)',['../group__ktos__bsp__arm.html',1,'']]],
+  ['m_20systick_20example_2072_20mhz_2',['Cortex-M SysTick example (72 MHz)',['../group__ktos__hal.html#autotoc_md13',1,'']]],
+  ['m0_3',['KTOS BSP — STM32L031 (Cortex-M0+)',['../group__ktos__bsp__stm32l031.html',1,'']]],
+  ['m0_20assembly_20constraints_4',['m0 assembly constraints',['../stm32f030_2ktos__bsp_8c.html#autotoc_md32',1,'Cortex-M0 assembly constraints'],['../stm32l031_2ktos__bsp_8c.html#autotoc_md37',1,'Cortex-M0+ assembly constraints']]],
+  ['m3_20skeleton_5',['Cortex-M3 skeleton',['../group__ktos__hal.html#autotoc_md11',1,'']]],
+  ['main_6',['main',['../ktos__multi_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'ktos_multi.c']]],
+  ['management_7',['management',['../group__ktos__core.html',1,'KTOS Core — scheduler and task management'],['../md_CODE__OF__CONDUCT.html#autotoc_md83',1,'Memory Management']]],
+  ['mcus_8',['Supported MCUs',['../index.html#autotoc_md42',1,'']]],
+  ['memory_20management_9',['Memory Management',['../md_CODE__OF__CONDUCT.html#autotoc_md83',1,'']]],
+  ['message_20format_10',['Commit Message Format',['../md_CODE__OF__CONDUCT.html#autotoc_md86',1,'']]],
+  ['mhz_11',['Cortex-M SysTick example (72 MHz)',['../group__ktos__hal.html#autotoc_md13',1,'']]],
+  ['mhz_20prescaler_2064_20ocr1a_20249_12',['AVR Timer1 CTC example (16 MHz, prescaler 64, OCR1A = 249)',['../group__ktos__hal.html#autotoc_md12',1,'']]],
+  ['minimal_20usage_20example_13',['Minimal usage example',['../ktos_8h.html#autotoc_md1',1,'']]],
+  ['msg_5fwait_14',['MSG_WAIT',['../group__ktos__core.html#ga8156ba636f06697351932fb2c712c8b4',1,'ktos.h']]],
+  ['msgcount_15',['MsgCount',['../structktos__TASK.html#a57dc69d62ff01789c0a95910c1b1be9d',1,'ktos_TASK']]],
+  ['msgqueue_16',['MsgQueue',['../structktos__TASK.html#a987a36f6c18d1d4c9c3c8b975d5c2caf',1,'ktos_TASK']]],
+  ['msgqueueend_17',['MsgQueueEnd',['../structktos__TASK.html#ac9d536c31cf647f0d45329aa7f88c549',1,'ktos_TASK']]],
+  ['msgqueuein_18',['MsgQueueIn',['../structktos__TASK.html#aed87b5eb4fae69b898788d38c65add8a',1,'ktos_TASK']]],
+  ['msgqueueout_19',['MsgQueueOut',['../structktos__TASK.html#a0cf80291ee43d51e55e5a09bcc9a2a51',1,'ktos_TASK']]],
+  ['msgtype_20',['MsgType',['../structktos__MSG.html#a7d22f07eae9fa437950cb4133da23f18',1,'ktos_MSG']]],
+  ['msp430g2553_21',['KTOS BSP — MSP430G2553',['../group__ktos__bsp__msp430.html',1,'']]],
+  ['multitask_22',['MultiTask',['../ktos_8c.html#a372513539a70e214d30309defea94e58',1,'ktos.c']]]
+];

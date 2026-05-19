@@ -5,306 +5,377 @@
  -->
 <!-- Title: main Pages: 1 -->
 <svg width="739pt" height="284pt"
- viewBox="0.00 0.00 739.00 284.32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 280.32)">
+ viewBox="0.00 0.00 739.00 283.65" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 279.65)">
 <title>main</title>
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-280.32 735,-280.32 735,4 -4,4"/>
 <!-- Node1 -->
-<g id="node1" class="node">
+<g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title=" ">
-<polygon fill="#bfbfbf" stroke="black" points="0,-133.5 0,-152.5 41,-152.5 41,-133.5 0,-133.5"/>
-<text text-anchor="middle" x="20.5" y="-140.5" font-family="Helvetica,sans-Serif" font-size="10.00">main</text>
+<g id="a_Node000001"><a xlink:title=" ">
+<polygon fill="#999999" stroke="#666666" points="41,-140 0,-140 0,-121 41,-121 41,-140"/>
+<text text-anchor="middle" x="20.5" y="-128" font-family="Helvetica,sans-Serif" font-size="10.00">main</text>
 </a>
 </g>
 </g>
 <!-- Node2 -->
-<g id="node2" class="node">
+<g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="group__ktos__core.html#ga7aca2702c8fa0e02fd05461d4f5d23fe" target="_top" xlink:title="Emit a fatal&#45;error message and halt execution.">
-<polygon fill="white" stroke="black" points="615,-209.5 615,-228.5 713,-228.5 713,-209.5 615,-209.5"/>
-<text text-anchor="middle" x="664" y="-216.5" font-family="Helvetica,sans-Serif" font-size="10.00">ktos_Emergency</text>
+<g id="a_Node000002"><a xlink:href="group__ktos__core.html#ga7aca2702c8fa0e02fd05461d4f5d23fe" target="_top" xlink:title="Emit a fatal&#45;error message and halt execution.">
+<polygon fill="white" stroke="#666666" points="713,-226 615,-226 615,-207 713,-207 713,-226"/>
+<text text-anchor="middle" x="664" y="-214" font-family="Helvetica,sans-Serif" font-size="10.00">ktos_Emergency</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node2 -->
-<g id="edge1" class="edge">
+<g id="edge1_Node000001_Node000002" class="edge">
 <title>Node1&#45;&gt;Node2</title>
-<path fill="none" stroke="midnightblue" d="M31.9,-152.73C42.59,-162.35 60.03,-177.05 77,-187 137.53,-222.47 154.62,-231.32 223,-247 369.5,-280.6 413.2,-285.29 561,-258 586.96,-253.21 614.85,-242.09 634.89,-232.95"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="636.49,-236.07 644.06,-228.66 633.52,-229.73 636.49,-236.07"/>
+<g id="a_edge1_Node000001_Node000002"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M31.96,-140.3C42.7,-150.03 60.17,-164.98 77,-175.5 137.7,-213.44 153.71,-225.51 223,-243.5 368.51,-281.27 413.28,-284.43 561,-256.5 587.34,-251.52 615.59,-239.9 635.67,-230.46"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="637.34,-233.54 644.82,-226.04 634.3,-227.24 637.34,-233.54"/>
+</a>
+</g>
 </g>
 <!-- Node3 -->
-<g id="node3" class="node">
+<g id="Node000003" class="node">
 <title>Node3</title>
-<g id="a_node3"><a xlink:href="ktos_8c.html#a9f7bbd66bfb5333402db8b6c413cb114" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="255,-190.5 255,-209.5 335,-209.5 335,-190.5 255,-190.5"/>
-<text text-anchor="middle" x="295" y="-197.5" font-family="Helvetica,sans-Serif" font-size="10.00">ktos_InitTask</text>
+<g id="a_Node000003"><a xlink:href="ktos_8c.html#a56286f073d2c35d6eb89a0f60f41e0b8" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="#666666" points="335,-205 255,-205 255,-186 335,-186 335,-205"/>
+<text text-anchor="middle" x="295" y="-193" font-family="Helvetica,sans-Serif" font-size="10.00">ktos_InitTask</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node3 -->
-<g id="edge2" class="edge">
+<g id="edge2_Node000001_Node000003" class="edge">
 <title>Node1&#45;&gt;Node3</title>
-<path fill="none" stroke="midnightblue" d="M41.05,-150.53C51.58,-154.37 64.87,-158.88 77,-162 133.88,-176.62 200.59,-187.37 244.87,-193.64"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="244.41,-197.11 254.8,-195.02 245.38,-190.17 244.41,-197.11"/>
+<g id="a_edge2_Node000001_Node000003"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M41.1,-137.86C51.64,-141.65 64.92,-146.17 77,-149.5 134,-165.24 200.68,-178.64 244.93,-186.85"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="244.38,-190.31 254.85,-188.68 245.65,-183.43 244.38,-190.31"/>
+</a>
+</g>
 </g>
 <!-- Node9 -->
-<g id="node9" class="node">
+<g id="Node000009" class="node">
 <title>Node9</title>
-<g id="a_node9"><a xlink:href="group__ktos__core.html#ga6580b57b65ece0e7bfcc48823db105f3" target="_top" xlink:title="Start the KTOS scheduler. Never returns.">
-<polygon fill="white" stroke="black" points="94.5,-133.5 94.5,-152.5 169.5,-152.5 169.5,-133.5 94.5,-133.5"/>
-<text text-anchor="middle" x="132" y="-140.5" font-family="Helvetica,sans-Serif" font-size="10.00">ktos_RunOS</text>
+<g id="a_Node000009"><a xlink:href="group__ktos__core.html#ga6580b57b65ece0e7bfcc48823db105f3" target="_top" xlink:title="Start the KTOS scheduler. Never returns.">
+<polygon fill="white" stroke="#666666" points="169.5,-140 94.5,-140 94.5,-121 169.5,-121 169.5,-140"/>
+<text text-anchor="middle" x="132" y="-128" font-family="Helvetica,sans-Serif" font-size="10.00">ktos_RunOS</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node9 -->
-<g id="edge10" class="edge">
+<g id="edge10_Node000001_Node000009" class="edge">
 <title>Node1&#45;&gt;Node9</title>
-<path fill="none" stroke="midnightblue" d="M41.08,-143C53.07,-143 68.97,-143 84.07,-143"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="84.33,-146.5 94.33,-143 84.33,-139.5 84.33,-146.5"/>
+<g id="a_edge10_Node000001_Node000009"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M41.08,-130.5C53.07,-130.5 68.97,-130.5 84.07,-130.5"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="84.33,-134 94.33,-130.5 84.33,-127 84.33,-134"/>
+</a>
+</g>
 </g>
 <!-- Node15 -->
-<g id="node15" class="node">
+<g id="Node000015" class="node">
 <title>Node15</title>
-<g id="a_node15"><a xlink:href="ktos_8c.html#abdccd1793b29f0ab71047c522a9fb262" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="251.5,-38.5 251.5,-57.5 338.5,-57.5 338.5,-38.5 251.5,-38.5"/>
-<text text-anchor="middle" x="295" y="-45.5" font-family="Helvetica,sans-Serif" font-size="10.00">ktos_SendMsg</text>
+<g id="a_Node000015"><a xlink:href="ktos_8c.html#abdccd1793b29f0ab71047c522a9fb262" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="#666666" points="338.5,-57 251.5,-57 251.5,-38 338.5,-38 338.5,-57"/>
+<text text-anchor="middle" x="295" y="-45" font-family="Helvetica,sans-Serif" font-size="10.00">ktos_SendMsg</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node15 -->
-<g id="edge20" class="edge">
+<g id="edge20_Node000001_Node000015" class="edge">
 <title>Node1&#45;&gt;Node15</title>
-<path fill="none" stroke="midnightblue" d="M41.01,-134.9C76.72,-120.24 155.19,-88.8 223,-67 230.26,-64.66 238.01,-62.38 245.61,-60.26"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="246.75,-63.58 255.48,-57.56 244.91,-56.82 246.75,-63.58"/>
+<g id="a_edge20_Node000001_Node000015"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M41.24,-123.61C51.82,-119.95 65.1,-115.41 77,-111.5 141.63,-90.26 157.56,-84.09 223,-65.5 230.06,-63.49 237.55,-61.48 244.92,-59.56"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="246.02,-62.89 254.83,-57.01 244.27,-56.11 246.02,-62.89"/>
+</a>
+</g>
 </g>
 <!-- Node16 -->
-<g id="node16" class="node">
+<g id="Node000016" class="node">
 <title>Node16</title>
-<g id="a_node16"><a xlink:href="ktos__multi_8c.html#a161041827d36e1daec9539403c87c20e" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="77,-29.5 77,-48.5 187,-48.5 187,-29.5 77,-29.5"/>
-<text text-anchor="middle" x="132" y="-36.5" font-family="Helvetica,sans-Serif" font-size="10.00">ktos_TaskMainProc</text>
+<g id="a_Node000016"><a xlink:href="ktos__multi_8c.html#a161041827d36e1daec9539403c87c20e" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="#666666" points="187,-38 77,-38 77,-19 187,-19 187,-38"/>
+<text text-anchor="middle" x="132" y="-26" font-family="Helvetica,sans-Serif" font-size="10.00">ktos_TaskMainProc</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node16 -->
-<g id="edge23" class="edge">
+<g id="edge23_Node000001_Node000016" class="edge">
 <title>Node1&#45;&gt;Node16</title>
-<path fill="none" stroke="midnightblue" d="M27.4,-133.38C36.66,-118.84 55.74,-90.95 77,-72 84.73,-65.11 94.09,-58.82 102.83,-53.62"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="104.66,-56.61 111.62,-48.62 101.2,-50.52 104.66,-56.61"/>
+<g id="a_edge23_Node000001_Node000016"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M29.28,-120.91C39.59,-108.45 58.62,-86.32 77,-69.5 86.81,-60.53 98.47,-51.49 108.44,-44.2"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="110.6,-46.96 116.68,-38.28 106.52,-41.27 110.6,-46.96"/>
+</a>
+</g>
 </g>
 <!-- Node3&#45;&gt;Node2 -->
-<g id="edge7" class="edge">
+<g id="edge7_Node000003_Node000002" class="edge">
 <title>Node3&#45;&gt;Node2</title>
-<path fill="none" stroke="midnightblue" d="M335.28,-202.03C399.91,-205.38 529.05,-212.07 604.49,-215.97"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="604.59,-219.48 614.76,-216.5 604.96,-212.49 604.59,-219.48"/>
+<g id="a_edge7_Node000003_Node000002"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M335.28,-197.75C399.91,-201.45 529.05,-208.84 604.49,-213.15"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="604.58,-216.66 614.76,-213.74 604.98,-209.67 604.58,-216.66"/>
+</a>
+</g>
 </g>
 <!-- Node4 -->
-<g id="node4" class="node">
+<g id="Node000004" class="node">
 <title>Node4</title>
-<g id="a_node4"><a xlink:href="ktos_8c.html#a0472bc90096e9ce7acb6b8aebc9b127b" target="_top" xlink:title="Default exit handler called when a task function returns.">
-<polygon fill="white" stroke="black" points="403,-152.5 403,-171.5 561,-171.5 561,-152.5 403,-152.5"/>
-<text text-anchor="middle" x="482" y="-159.5" font-family="Helvetica,sans-Serif" font-size="10.00">ktos_DefaultTaskExitHandler</text>
+<g id="a_Node000004"><a xlink:href="ktos_8c.html#a0472bc90096e9ce7acb6b8aebc9b127b" target="_top" xlink:title="Default exit handler called when a task function returns.">
+<polygon fill="white" stroke="#666666" points="561,-169 403,-169 403,-150 561,-150 561,-169"/>
+<text text-anchor="middle" x="482" y="-157" font-family="Helvetica,sans-Serif" font-size="10.00">ktos_DefaultTaskExitHandler</text>
 </a>
 </g>
 </g>
 <!-- Node3&#45;&gt;Node4 -->
-<g id="edge3" class="edge">
+<g id="edge3_Node000003_Node000004" class="edge">
 <title>Node3&#45;&gt;Node4</title>
-<path fill="none" stroke="midnightblue" d="M335.23,-191.94C361.23,-186.6 395.74,-179.51 424.66,-173.57"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="425.54,-176.97 434.63,-171.52 424.13,-170.11 425.54,-176.97"/>
+<g id="a_edge3_Node000003_Node000004"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M335.23,-187.87C360.36,-182.98 393.44,-176.54 421.74,-171.03"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="422.78,-174.4 431.92,-169.05 421.44,-167.52 422.78,-174.4"/>
+</a>
+</g>
 </g>
 <!-- Node7 -->
-<g id="node7" class="node">
+<g id="Node000007" class="node">
 <title>Node7</title>
-<g id="a_node7"><a xlink:href="group__ktos__hal.html#ga8556e39382caea4984aaefd7813ba7b1" target="_top" xlink:title="Set up the initial stack frame for a new task.">
-<polygon fill="white" stroke="black" points="418,-114.5 418,-133.5 546,-133.5 546,-114.5 418,-114.5"/>
-<text text-anchor="middle" x="482" y="-121.5" font-family="Helvetica,sans-Serif" font-size="10.00">ktos_hal_InitTaskStack</text>
+<g id="a_Node000007"><a xlink:href="group__ktos__hal.html#ga73dd6050479b4a96fb2f604c7fbc3e3a" target="_top" xlink:title="Set up the initial stack frame for a new task.">
+<polygon fill="white" stroke="#666666" points="546,-132 418,-132 418,-113 546,-113 546,-132"/>
+<text text-anchor="middle" x="482" y="-120" font-family="Helvetica,sans-Serif" font-size="10.00">ktos_hal_InitTaskStack</text>
 </a>
 </g>
 </g>
 <!-- Node3&#45;&gt;Node7 -->
-<g id="edge8" class="edge">
+<g id="edge8_Node000003_Node000007" class="edge">
 <title>Node3&#45;&gt;Node7</title>
-<path fill="none" stroke="midnightblue" d="M335.13,-193.61C345.95,-190.78 357.35,-186.74 367,-181 386.99,-169.1 382.88,-154.67 403,-143 406.73,-140.84 410.7,-138.92 414.79,-137.22"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="416.34,-140.37 424.52,-133.63 413.92,-133.81 416.34,-140.37"/>
+<g id="a_edge8_Node000003_Node000007"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M335.03,-189.56C345.84,-186.88 357.27,-183.03 367,-177.5 386.67,-166.32 383.28,-152.59 403,-141.5 407,-139.25 411.27,-137.26 415.66,-135.51"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="417.18,-138.68 425.43,-132.04 414.84,-132.09 417.18,-138.68"/>
+</a>
+</g>
 </g>
 <!-- Node4&#45;&gt;Node2 -->
-<g id="edge5" class="edge">
+<g id="edge5_Node000004_Node000002" class="edge">
 <title>Node4&#45;&gt;Node2</title>
-<path fill="none" stroke="midnightblue" d="M514.53,-171.59C528.75,-175.94 545.73,-181.18 561,-186 581.86,-192.58 605.06,-200.08 624.06,-206.26"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="622.98,-209.59 633.58,-209.36 625.15,-202.93 622.98,-209.59"/>
+<g id="a_edge5_Node000004_Node000002"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M514.53,-169.09C528.75,-173.44 545.73,-178.68 561,-183.5 581.86,-190.08 605.06,-197.58 624.06,-203.76"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="622.98,-207.09 633.58,-206.86 625.15,-200.43 622.98,-207.09"/>
+</a>
+</g>
 </g>
 <!-- Node5 -->
-<g id="node5" class="node">
+<g id="Node000005" class="node">
 <title>Node5</title>
-<g id="a_node5"><a xlink:href="group__ktos__core.html#ga77b699103f3ec266c0d79d849ead8c1c" target="_top" xlink:title="Printf&#45;style debug logging (active only when DEBUG == 1).">
-<polygon fill="white" stroke="black" points="613.5,-152.5 613.5,-171.5 714.5,-171.5 714.5,-152.5 613.5,-152.5"/>
-<text text-anchor="middle" x="664" y="-159.5" font-family="Helvetica,sans-Serif" font-size="10.00">ktos_DebugPrintf</text>
+<g id="a_Node000005"><a xlink:href="group__ktos__core.html#ga77b699103f3ec266c0d79d849ead8c1c" target="_top" xlink:title="Printf&#45;style debug logging (active only when DEBUG == 1).">
+<polygon fill="white" stroke="#666666" points="714.5,-169 613.5,-169 613.5,-150 714.5,-150 714.5,-169"/>
+<text text-anchor="middle" x="664" y="-157" font-family="Helvetica,sans-Serif" font-size="10.00">ktos_DebugPrintf</text>
 </a>
 </g>
 </g>
 <!-- Node4&#45;&gt;Node5 -->
-<g id="edge4" class="edge">
+<g id="edge4_Node000004_Node000005" class="edge">
 <title>Node4&#45;&gt;Node5</title>
-<path fill="none" stroke="midnightblue" d="M561.17,-162C575.3,-162 589.84,-162 603.34,-162"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="603.44,-165.5 613.44,-162 603.44,-158.5 603.44,-165.5"/>
+<g id="a_edge4_Node000004_Node000005"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M561.17,-159.5C575.3,-159.5 589.84,-159.5 603.34,-159.5"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="603.44,-163 613.44,-159.5 603.44,-156 603.44,-163"/>
+</a>
+</g>
 </g>
 <!-- Node6 -->
-<g id="node6" class="node">
+<g id="Node000006" class="node">
 <title>Node6</title>
-<g id="a_node6"><a xlink:href="group__ktos__hal.html#gab41a95b0bdad0b96dd0957bb95e087bc" target="_top" xlink:title="Perform a cooperative context switch between two execution contexts.">
-<polygon fill="white" stroke="black" points="597,-76.5 597,-95.5 731,-95.5 731,-76.5 597,-76.5"/>
-<text text-anchor="middle" x="664" y="-83.5" font-family="Helvetica,sans-Serif" font-size="10.00">ktos_hal_ContextSwitch</text>
+<g id="a_Node000006"><a xlink:href="group__ktos__hal.html#gab41a95b0bdad0b96dd0957bb95e087bc" target="_top" xlink:title="Perform a cooperative context switch between two execution contexts.">
+<polygon fill="white" stroke="#666666" points="731,-95 597,-95 597,-76 731,-76 731,-95"/>
+<text text-anchor="middle" x="664" y="-83" font-family="Helvetica,sans-Serif" font-size="10.00">ktos_hal_ContextSwitch</text>
 </a>
 </g>
 </g>
 <!-- Node4&#45;&gt;Node6 -->
-<g id="edge6" class="edge">
+<g id="edge6_Node000004_Node000006" class="edge">
 <title>Node4&#45;&gt;Node6</title>
-<path fill="none" stroke="midnightblue" d="M539.48,-152.37C546.99,-149.92 554.37,-146.85 561,-143 581.12,-131.33 577.12,-117.09 597,-105 600.55,-102.84 604.36,-100.91 608.29,-99.2"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="609.57,-102.46 617.62,-95.58 607.03,-95.94 609.57,-102.46"/>
+<g id="a_edge6_Node000004_Node000006"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M541.52,-149.99C548.32,-147.74 554.97,-144.95 561,-141.5 581.19,-129.95 577.04,-115.45 597,-103.5 599.85,-101.79 602.87,-100.24 605.99,-98.84"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="607.54,-101.98 615.54,-95.04 604.96,-95.48 607.54,-101.98"/>
+</a>
+</g>
 </g>
 <!-- Node8 -->
-<g id="node8" class="node">
+<g id="Node000008" class="node">
 <title>Node8</title>
-<g id="a_node8"><a xlink:href="esp8266_2ktos__bsp_8c.html#ad0087b08af4998a5440320140fb300a6" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="613.5,-114.5 613.5,-133.5 714.5,-133.5 714.5,-114.5 613.5,-114.5"/>
-<text text-anchor="middle" x="664" y="-121.5" font-family="Helvetica,sans-Serif" font-size="10.00">ktos_task_launch</text>
+<g id="a_Node000008"><a xlink:href="esp8266_2ktos__bsp_8c.html#ad0087b08af4998a5440320140fb300a6" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="#666666" points="714.5,-132 613.5,-132 613.5,-113 714.5,-113 714.5,-132"/>
+<text text-anchor="middle" x="664" y="-120" font-family="Helvetica,sans-Serif" font-size="10.00">ktos_task_launch</text>
 </a>
 </g>
 </g>
 <!-- Node7&#45;&gt;Node8 -->
-<g id="edge9" class="edge">
+<g id="edge9_Node000007_Node000008" class="edge">
 <title>Node7&#45;&gt;Node8</title>
-<path fill="none" stroke="midnightblue" d="M546.21,-124C564.67,-124 584.79,-124 603.04,-124"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="603.26,-127.5 613.26,-124 603.26,-120.5 603.26,-127.5"/>
+<g id="a_edge9_Node000007_Node000008"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M546.21,-122.5C564.67,-122.5 584.79,-122.5 603.04,-122.5"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="603.26,-126 613.26,-122.5 603.26,-119 603.26,-126"/>
+</a>
+</g>
 </g>
 <!-- Node9&#45;&gt;Node2 -->
-<g id="edge11" class="edge">
+<g id="edge11_Node000009_Node000002" class="edge">
 <title>Node9&#45;&gt;Node2</title>
-<path fill="none" stroke="midnightblue" d="M140.39,-152.54C154.35,-169.67 186.47,-205.18 223,-219 355.33,-269.07 526.51,-246.69 611.04,-230.48"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="611.78,-233.91 620.91,-228.54 610.43,-227.04 611.78,-233.91"/>
+<g id="a_edge11_Node000009_Node000002"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M139.53,-140.12C152.73,-158.64 184.64,-198.76 223,-214.5 354.92,-268.63 528.39,-244.88 612.68,-228.05"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="613.42,-231.47 622.51,-226.04 612.01,-224.62 613.42,-231.47"/>
+</a>
+</g>
 </g>
 <!-- Node10 -->
-<g id="node10" class="node">
+<g id="Node000010" class="node">
 <title>Node10</title>
-<g id="a_node10"><a xlink:href="group__ktos__hal.html#gae42df35bd10d7d6b296be9687d436a32" target="_top" xlink:title="Configure and start the 1 ms system tick timer.">
-<polygon fill="white" stroke="black" points="223,-114.5 223,-133.5 367,-133.5 367,-114.5 223,-114.5"/>
-<text text-anchor="middle" x="295" y="-121.5" font-family="Helvetica,sans-Serif" font-size="10.00">ktos_hal_InitSystemTimer</text>
+<g id="a_Node000010"><a xlink:href="group__ktos__hal.html#gae42df35bd10d7d6b296be9687d436a32" target="_top" xlink:title="Configure and start the 1 ms system tick timer.">
+<polygon fill="white" stroke="#666666" points="367,-131 223,-131 223,-112 367,-112 367,-131"/>
+<text text-anchor="middle" x="295" y="-119" font-family="Helvetica,sans-Serif" font-size="10.00">ktos_hal_InitSystemTimer</text>
 </a>
 </g>
 </g>
 <!-- Node9&#45;&gt;Node10 -->
-<g id="edge12" class="edge">
+<g id="edge12_Node000009_Node000010" class="edge">
 <title>Node9&#45;&gt;Node10</title>
-<path fill="none" stroke="midnightblue" d="M169.53,-138.69C182.47,-137.16 197.6,-135.38 212.75,-133.59"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="213.18,-137.06 222.7,-132.41 212.36,-130.11 213.18,-137.06"/>
+<g id="a_edge12_Node000009_Node000010"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M169.53,-128.46C182.35,-127.74 197.31,-126.91 212.32,-126.07"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="212.91,-129.54 222.7,-125.49 212.52,-122.55 212.91,-129.54"/>
+</a>
+</g>
 </g>
 <!-- Node11 -->
-<g id="node11" class="node">
+<g id="Node000011" class="node">
 <title>Node11</title>
-<g id="a_node11"><a xlink:href="ktos_8c.html#ae0e8182ad311d004e6d96f8d42a70501" target="_top" xlink:title="Round&#45;robin cooperative scheduler — runs on the OS stack.">
-<polygon fill="white" stroke="black" points="246.5,-76.5 246.5,-95.5 343.5,-95.5 343.5,-76.5 246.5,-76.5"/>
-<text text-anchor="middle" x="295" y="-83.5" font-family="Helvetica,sans-Serif" font-size="10.00">ktos_SwitchTask</text>
+<g id="a_Node000011"><a xlink:href="ktos_8c.html#ae0e8182ad311d004e6d96f8d42a70501" target="_top" xlink:title="Round&#45;robin cooperative scheduler — runs on the OS stack.">
+<polygon fill="white" stroke="#666666" points="343.5,-94 246.5,-94 246.5,-75 343.5,-75 343.5,-94"/>
+<text text-anchor="middle" x="295" y="-82" font-family="Helvetica,sans-Serif" font-size="10.00">ktos_SwitchTask</text>
 </a>
 </g>
 </g>
 <!-- Node9&#45;&gt;Node11 -->
-<g id="edge13" class="edge">
+<g id="edge13_Node000009_Node000011" class="edge">
 <title>Node9&#45;&gt;Node11</title>
-<path fill="none" stroke="midnightblue" d="M153.42,-133.42C171.46,-125.19 198.61,-113.37 223,-105 229.89,-102.64 237.23,-100.38 244.49,-98.31"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="245.57,-101.64 254.28,-95.59 243.7,-94.89 245.57,-101.64"/>
+<g id="a_edge13_Node000009_Node000011"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M162.47,-120.9C179.99,-115.3 202.68,-108.23 223,-102.5 230.07,-100.51 237.56,-98.5 244.93,-96.58"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="246.02,-99.91 254.84,-94.03 244.28,-93.13 246.02,-99.91"/>
+</a>
+</g>
 </g>
 <!-- Node14 -->
-<g id="node14" class="node">
+<g id="Node000014" class="node">
 <title>Node14</title>
-<g id="a_node14"><a xlink:href="ktos_8c.html#a2a3876653c789ddcd5a9ccf968d98fe0" target="_top" xlink:title="1 ms system tick interrupt handler.">
-<polygon fill="white" stroke="black" points="230.5,-152.5 230.5,-171.5 359.5,-171.5 359.5,-152.5 230.5,-152.5"/>
-<text text-anchor="middle" x="295" y="-159.5" font-family="Helvetica,sans-Serif" font-size="10.00">ktos_timer_irq_handler</text>
+<g id="a_Node000014"><a xlink:href="ktos_8c.html#a2a3876653c789ddcd5a9ccf968d98fe0" target="_top" xlink:title="1 ms system tick interrupt handler.">
+<polygon fill="white" stroke="#666666" points="359.5,-168 230.5,-168 230.5,-149 359.5,-149 359.5,-168"/>
+<text text-anchor="middle" x="295" y="-156" font-family="Helvetica,sans-Serif" font-size="10.00">ktos_timer_irq_handler</text>
 </a>
 </g>
 </g>
 <!-- Node9&#45;&gt;Node14 -->
-<g id="edge19" class="edge">
+<g id="edge19_Node000009_Node000014" class="edge">
 <title>Node9&#45;&gt;Node14</title>
-<path fill="none" stroke="midnightblue" d="M169.53,-147.31C184.58,-149.09 202.58,-151.21 220.16,-153.29"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="220.09,-156.8 230.43,-154.5 220.91,-149.85 220.09,-156.8"/>
+<g id="a_edge19_Node000009_Node000014"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M169.53,-136.85C187.23,-139.93 209.02,-143.72 229.4,-147.27"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="228.81,-150.72 239.26,-148.98 230.01,-143.82 228.81,-150.72"/>
+</a>
+</g>
 </g>
 <!-- Node11&#45;&gt;Node4 -->
-<g id="edge14" class="edge">
+<g id="edge14_Node000011_Node000004" class="edge">
 <title>Node11&#45;&gt;Node4</title>
-<path fill="none" stroke="midnightblue" d="M343.69,-94.86C351.79,-97.44 359.87,-100.76 367,-105 386.99,-116.9 382.88,-131.33 403,-143 406.73,-145.16 410.7,-147.08 414.79,-148.78"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="413.92,-152.19 424.52,-152.37 416.34,-145.63 413.92,-152.19"/>
+<g id="a_edge14_Node000011_Node000004"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M343.73,-92.55C351.82,-95.03 359.9,-98.27 367,-102.5 387.27,-114.56 382.6,-129.65 403,-141.5 406.04,-143.26 409.23,-144.85 412.53,-146.29"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="411.44,-149.62 422.03,-149.93 413.95,-143.08 411.44,-149.62"/>
+</a>
+</g>
 </g>
 <!-- Node11&#45;&gt;Node6 -->
-<g id="edge15" class="edge">
+<g id="edge15_Node000011_Node000006" class="edge">
 <title>Node11&#45;&gt;Node6</title>
-<path fill="none" stroke="midnightblue" d="M343.6,-86C405.29,-86 513.58,-86 586.78,-86"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="586.86,-89.5 596.86,-86 586.86,-82.5 586.86,-89.5"/>
+<g id="a_edge15_Node000011_Node000006"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M343.6,-84.63C405.29,-84.8 513.58,-85.09 586.78,-85.29"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="586.85,-88.79 596.86,-85.32 586.87,-81.79 586.85,-88.79"/>
+</a>
+</g>
 </g>
 <!-- Node11&#45;&gt;Node7 -->
-<g id="edge18" class="edge">
+<g id="edge18_Node000011_Node000007" class="edge">
 <title>Node11&#45;&gt;Node7</title>
-<path fill="none" stroke="midnightblue" d="M342.68,-95.59C367.65,-100.72 398.56,-107.07 424.83,-112.46"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="424.15,-115.9 434.65,-114.48 425.56,-109.04 424.15,-115.9"/>
+<g id="a_edge18_Node000011_Node000007"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M342.68,-94.09C367.65,-99.22 398.56,-105.57 424.83,-110.96"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="424.15,-114.4 434.65,-112.98 425.56,-107.54 424.15,-114.4"/>
+</a>
+</g>
 </g>
 <!-- Node12 -->
-<g id="node12" class="node">
+<g id="Node000012" class="node">
 <title>Node12</title>
-<g id="a_node12"><a xlink:href="group__ktos__hal.html#ga13869e4884f47a98d8c9b2d9902d5eda" target="_top" xlink:title="Disable all maskable interrupts.">
-<polygon fill="white" stroke="black" points="408.5,-0.5 408.5,-19.5 555.5,-19.5 555.5,-0.5 408.5,-0.5"/>
-<text text-anchor="middle" x="482" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">ktos_hal_DisableInterrupts</text>
+<g id="a_Node000012"><a xlink:href="group__ktos__hal.html#ga13869e4884f47a98d8c9b2d9902d5eda" target="_top" xlink:title="Disable all maskable interrupts.">
+<polygon fill="white" stroke="#666666" points="555.5,-19 408.5,-19 408.5,0 555.5,0 555.5,-19"/>
+<text text-anchor="middle" x="482" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">ktos_hal_DisableInterrupts</text>
 </a>
 </g>
 </g>
 <!-- Node11&#45;&gt;Node12 -->
-<g id="edge16" class="edge">
+<g id="edge16_Node000011_Node000012" class="edge">
 <title>Node11&#45;&gt;Node12</title>
-<path fill="none" stroke="midnightblue" d="M343.69,-77.14C351.79,-74.56 359.87,-71.24 367,-67 386.99,-55.1 382.88,-40.67 403,-29 406.73,-26.84 410.7,-24.92 414.79,-23.22"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="416.34,-26.37 424.52,-19.63 413.92,-19.81 416.34,-26.37"/>
+<g id="a_edge16_Node000011_Node000012"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M343.69,-75.64C351.79,-73.06 359.87,-69.74 367,-65.5 386.99,-53.6 382.81,-39.05 403,-27.5 406.2,-25.67 409.58,-24.02 413.07,-22.54"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="414.35,-25.8 422.48,-19.01 411.89,-19.25 414.35,-25.8"/>
+</a>
+</g>
 </g>
 <!-- Node13 -->
-<g id="node13" class="node">
+<g id="Node000013" class="node">
 <title>Node13</title>
-<g id="a_node13"><a xlink:href="group__ktos__hal.html#ga6741995a98c2dc4867a11717fa64efd8" target="_top" xlink:title="Re&#45;enable maskable interrupts.">
-<polygon fill="white" stroke="black" points="410.5,-38.5 410.5,-57.5 553.5,-57.5 553.5,-38.5 410.5,-38.5"/>
-<text text-anchor="middle" x="482" y="-45.5" font-family="Helvetica,sans-Serif" font-size="10.00">ktos_hal_EnableInterrupts</text>
+<g id="a_Node000013"><a xlink:href="group__ktos__hal.html#ga6741995a98c2dc4867a11717fa64efd8" target="_top" xlink:title="Re&#45;enable maskable interrupts.">
+<polygon fill="white" stroke="#666666" points="553.5,-56 410.5,-56 410.5,-37 553.5,-37 553.5,-56"/>
+<text text-anchor="middle" x="482" y="-44" font-family="Helvetica,sans-Serif" font-size="10.00">ktos_hal_EnableInterrupts</text>
 </a>
 </g>
 </g>
 <!-- Node11&#45;&gt;Node13 -->
-<g id="edge17" class="edge">
+<g id="edge17_Node000011_Node000013" class="edge">
 <title>Node11&#45;&gt;Node13</title>
-<path fill="none" stroke="midnightblue" d="M342.68,-76.41C367.65,-71.28 398.56,-64.93 424.83,-59.54"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="425.56,-62.96 434.65,-57.52 424.15,-56.1 425.56,-62.96"/>
+<g id="a_edge17_Node000011_Node000013"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M342.68,-74.91C367.65,-69.78 398.56,-63.43 424.83,-58.04"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="425.56,-61.46 434.65,-56.02 424.15,-54.6 425.56,-61.46"/>
+</a>
+</g>
 </g>
 <!-- Node15&#45;&gt;Node12 -->
-<g id="edge21" class="edge">
+<g id="edge21_Node000015_Node000012" class="edge">
 <title>Node15&#45;&gt;Node12</title>
-<path fill="none" stroke="midnightblue" d="M338.91,-39.19C364.39,-33.95 396.99,-27.26 424.54,-21.6"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="425.34,-25.01 434.44,-19.56 423.94,-18.15 425.34,-25.01"/>
+<g id="a_edge21_Node000015_Node000012"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M338.91,-38.69C364.39,-33.45 396.99,-26.76 424.54,-21.1"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="425.34,-24.51 434.44,-19.06 423.94,-17.65 425.34,-24.51"/>
+</a>
+</g>
 </g>
 <!-- Node15&#45;&gt;Node13 -->
-<g id="edge22" class="edge">
+<g id="edge22_Node000015_Node000013" class="edge">
 <title>Node15&#45;&gt;Node13</title>
-<path fill="none" stroke="midnightblue" d="M338.91,-48C357.16,-48 379.07,-48 400.16,-48"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="400.43,-51.5 410.43,-48 400.43,-44.5 400.43,-51.5"/>
+<g id="a_edge22_Node000015_Node000013"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M338.91,-47.27C357.16,-47.17 379.07,-47.05 400.16,-46.94"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="400.45,-50.44 410.43,-46.88 400.41,-43.44 400.45,-50.44"/>
+</a>
+</g>
 </g>
 <!-- Node17 -->
-<g id="node17" class="node">
+<g id="Node000017" class="node">
 <title>Node17</title>
-<g id="a_node17"><a xlink:href="group__ktos__core.html#gaa3d9ea3cbeb12c3ce81ce4ad1be4b3e0" target="_top" xlink:title="Optional platform&#45;level system initialisation hook.">
-<polygon fill="white" stroke="black" points="257,-0.5 257,-19.5 333,-19.5 333,-0.5 257,-0.5"/>
-<text text-anchor="middle" x="295" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">ktos_InitSys</text>
+<g id="a_Node000017"><a xlink:href="group__ktos__core.html#gaa3d9ea3cbeb12c3ce81ce4ad1be4b3e0" target="_top" xlink:title="Optional platform&#45;level system initialisation hook.">
+<polygon fill="white" stroke="#666666" points="333,-20 257,-20 257,-1 333,-1 333,-20"/>
+<text text-anchor="middle" x="295" y="-8" font-family="Helvetica,sans-Serif" font-size="10.00">ktos_InitSys</text>
 </a>
 </g>
 </g>
 <!-- Node16&#45;&gt;Node17 -->
-<g id="edge24" class="edge">
+<g id="edge24_Node000016_Node000017" class="edge">
 <title>Node16&#45;&gt;Node17</title>
-<path fill="none" stroke="midnightblue" d="M186.16,-29.42C205.73,-25.9 227.74,-21.94 246.75,-18.51"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="247.45,-21.94 256.67,-16.72 246.21,-15.05 247.45,-21.94"/>
+<g id="a_edge24_Node000016_Node000017"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M187.06,-22.46C206.33,-20.3 227.87,-17.89 246.54,-15.81"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="247.04,-19.27 256.59,-14.68 246.26,-12.32 247.04,-19.27"/>
+</a>
+</g>
 </g>
 </g>
 </svg>
