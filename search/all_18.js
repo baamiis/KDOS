@@ -1,15 +1,17 @@
 var searchData=
 [
   ['unit_20tests_0',['Unit Tests',['../md_CODE__OF__CONDUCT.html#autotoc_md93',1,'']]],
-  ['up_20your_20development_20environment_1',['up your development environment',['../md_CONTRIBUTING.html#autotoc_md66',1,'Setting Up Your Development Environment'],['../md_CODE__OF__CONDUCT.html#autotoc_md81',1,'Setting Up Your Development Environment']]],
+  ['up_20your_20development_20environment_1',['up your development environment',['../md_CODE__OF__CONDUCT.html#autotoc_md81',1,'Setting Up Your Development Environment'],['../md_CONTRIBUTING.html#autotoc_md66',1,'Setting Up Your Development Environment']]],
   ['usage_20example_2',['Minimal usage example',['../ktos_8h.html#autotoc_md1',1,'']]],
   ['usagefault_5fhandler_3',['UsageFault_Handler',['../stm32f103_2startup_8c.html#a1d98923de2ed6b7309b66f9ba2971647',1,'startup.c']]],
-  ['usart1_5firqhandler_4',['USART1_IRQHandler',['../stm32f103_2startup_8c.html#a7139cd4baabbbcbab0c1fe6d7d4ae1cc',1,'startup.c']]],
-  ['usart2_5firqhandler_5',['USART2_IRQHandler',['../stm32f103_2startup_8c.html#a0ca6fd0e6f77921dd1123539857ba0a8',1,'startup.c']]],
-  ['usart3_5firqhandler_6',['USART3_IRQHandler',['../stm32f103_2startup_8c.html#a0d108a3468b2051548183ee5ca2158a0',1,'startup.c']]],
-  ['usb_5fhandler_7',['USB_Handler',['../samd21g18_2startup_8c.html#a38c26073ef07063ed778df5fb292fce3',1,'startup.c']]],
-  ['usb_5fhp_5fcan_5ftx_5firqhandler_8',['USB_HP_CAN_TX_IRQHandler',['../stm32f103_2startup_8c.html#a800532e86d7abe0bc34a57167d13e5ad',1,'startup.c']]],
-  ['usb_5flp_5fcan_5frx0_5firqhandler_9',['USB_LP_CAN_RX0_IRQHandler',['../stm32f103_2startup_8c.html#a6543c7b9f9bdb00685db956a0e7c560b',1,'startup.c']]],
-  ['usbwakeup_5firqhandler_10',['USBWakeup_IRQHandler',['../stm32f103_2startup_8c.html#abc42a8f1b392c0ea9a04953fa6d133a9',1,'startup.c']]],
-  ['use_20ktos_11',['When should you use KTOS?',['../index.html#autotoc_md44',1,'']]]
+  ['usart1_5firqhandler_4',['usart1_irqhandler',['../stm32f030_2startup_8c.html#a7139cd4baabbbcbab0c1fe6d7d4ae1cc',1,'USART1_IRQHandler(void):&#160;startup.c'],['../stm32f103_2startup_8c.html#a7139cd4baabbbcbab0c1fe6d7d4ae1cc',1,'USART1_IRQHandler(void):&#160;startup.c']]],
+  ['usart2_5firqhandler_5',['usart2_irqhandler',['../stm32f103_2startup_8c.html#a0ca6fd0e6f77921dd1123539857ba0a8',1,'USART2_IRQHandler(void):&#160;startup.c'],['../stm32f030_2startup_8c.html#a0ca6fd0e6f77921dd1123539857ba0a8',1,'USART2_IRQHandler(void):&#160;startup.c']]],
+  ['usart3_5f4_5firqhandler_6',['USART3_4_IRQHandler',['../stm32f030_2startup_8c.html#a1aabaf02d0eafd24b4634143c04af37d',1,'startup.c']]],
+  ['usart3_5firqhandler_7',['USART3_IRQHandler',['../stm32f103_2startup_8c.html#a0d108a3468b2051548183ee5ca2158a0',1,'startup.c']]],
+  ['usb_5fhandler_8',['USB_Handler',['../samd21g18_2startup_8c.html#a38c26073ef07063ed778df5fb292fce3',1,'startup.c']]],
+  ['usb_5fhp_5fcan_5ftx_5firqhandler_9',['USB_HP_CAN_TX_IRQHandler',['../stm32f103_2startup_8c.html#a800532e86d7abe0bc34a57167d13e5ad',1,'startup.c']]],
+  ['usb_5firqhandler_10',['USB_IRQHandler',['../stm32f030_2startup_8c.html#a0fbd54f7ff4b48c5b9a900421adf3702',1,'startup.c']]],
+  ['usb_5flp_5fcan_5frx0_5firqhandler_11',['USB_LP_CAN_RX0_IRQHandler',['../stm32f103_2startup_8c.html#a6543c7b9f9bdb00685db956a0e7c560b',1,'startup.c']]],
+  ['usbwakeup_5firqhandler_12',['USBWakeup_IRQHandler',['../stm32f103_2startup_8c.html#abc42a8f1b392c0ea9a04953fa6d133a9',1,'startup.c']]],
+  ['use_20ktos_13',['When should you use KTOS?',['../index.html#autotoc_md44',1,'']]]
 ];

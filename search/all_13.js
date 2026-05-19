@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['pendsv_5fhandler_0',['pendsv_handler',['../stm32f103_2startup_8c.html#a6303e1f258cbdc1f970ce579cc015623',1,'PendSV_Handler(void):&#160;startup.c'],['../samd21g18_2startup_8c.html#a6303e1f258cbdc1f970ce579cc015623',1,'PendSV_Handler(void):&#160;startup.c']]],
+  ['pendsv_5fhandler_0',['pendsv_handler',['../stm32f030_2startup_8c.html#a6303e1f258cbdc1f970ce579cc015623',1,'PendSV_Handler(void):&#160;startup.c'],['../stm32f103_2startup_8c.html#a6303e1f258cbdc1f970ce579cc015623',1,'PendSV_Handler(void):&#160;startup.c'],['../samd21g18_2startup_8c.html#a6303e1f258cbdc1f970ce579cc015623',1,'PendSV_Handler(void):&#160;startup.c']]],
   ['pic18f4550_20experimental_1',['KTOS BSP — PIC18F4550 (Experimental)',['../group__ktos__bsp__pic18f.html',1,'']]],
   ['pipeline_2',['CI / CD Pipeline',['../index.html#autotoc_md53',1,'']]],
   ['platform_20specific_20code_3',['Platform-Specific Code',['../md_CODE__OF__CONDUCT.html#autotoc_md87',1,'']]],

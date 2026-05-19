@@ -2,8 +2,8 @@ var searchData=
 [
   ['false_0',['FALSE',['../group__ktos__types.html#gaa93f0eb578d23995850d61f7d61c55c1',1,'ktos_multi.h']]],
   ['flag_20required_1',['Build flag required',['../esp8266_2ktos__bsp_8c.html#autotoc_md24',1,'']]],
-  ['flash_5facr_2',['FLASH_ACR',['../stm32f103_2startup_8c.html#a17131472a9863dc9ef3fd97ec5b4dafc',1,'startup.c']]],
-  ['flash_5firqhandler_3',['FLASH_IRQHandler',['../stm32f103_2startup_8c.html#ae5c044ed8d30b13cb7eb9df52586c64d',1,'startup.c']]],
+  ['flash_5facr_2',['flash_acr',['../stm32f030_2startup_8c.html#a17131472a9863dc9ef3fd97ec5b4dafc',1,'FLASH_ACR:&#160;startup.c'],['../stm32f103_2startup_8c.html#a17131472a9863dc9ef3fd97ec5b4dafc',1,'FLASH_ACR:&#160;startup.c']]],
+  ['flash_5firqhandler_3',['flash_irqhandler',['../stm32f030_2startup_8c.html#ae5c044ed8d30b13cb7eb9df52586c64d',1,'FLASH_IRQHandler(void):&#160;startup.c'],['../stm32f103_2startup_8c.html#ae5c044ed8d30b13cb7eb9df52586c64d',1,'FLASH_IRQHandler(void):&#160;startup.c']]],
   ['format_4',['Commit Message Format',['../md_CODE__OF__CONDUCT.html#autotoc_md89',1,'']]],
   ['frame_20layout_2064_20bytes_2016_20byte_20aligned_20grows_20downward_5',['Context frame layout (64 bytes, 16-byte aligned, grows downward)',['../esp8266_2ktos__bsp_8c.html#autotoc_md25',1,'']]],
   ['frc1_5fcount_5faddress_6',['FRC1_COUNT_ADDRESS',['../esp8266_2ktos__bsp_8c.html#adefcab205cdab32af37e7ef552de1c9a',1,'ktos_bsp.c']]],

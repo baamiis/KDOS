@@ -9,5 +9,5 @@ var searchData=
   ['word_6',['WORD',['../group__ktos__types.html#ga197942eefa7db30960ae396d68339b97',1,'ktos_multi.h']]],
   ['work_7',['How does it work?',['../index.html#autotoc_md47',1,'']]],
   ['workflow_8',['workflow',['../md_CONTRIBUTING.html#autotoc_md67',1,'Development Workflow'],['../md_CODE__OF__CONDUCT.html#autotoc_md82',1,'Development Workflow']]],
-  ['wwdg_5firqhandler_9',['WWDG_IRQHandler',['../stm32f103_2startup_8c.html#a049e27b7d5d0d36a331e6ef5e78e1fc5',1,'startup.c']]]
+  ['wwdg_5firqhandler_9',['wwdg_irqhandler',['../stm32f103_2startup_8c.html#a049e27b7d5d0d36a331e6ef5e78e1fc5',1,'WWDG_IRQHandler(void):&#160;startup.c'],['../stm32f030_2startup_8c.html#a049e27b7d5d0d36a331e6ef5e78e1fc5',1,'WWDG_IRQHandler(void):&#160;startup.c']]]
 ];

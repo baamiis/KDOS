@@ -6,7 +6,7 @@ var searchData=
   ['m0_3',['KTOS BSP — STM32L031 (Cortex-M0+)',['../group__ktos__bsp__stm32l031.html',1,'']]],
   ['m0_20assembly_20constraints_4',['m0 assembly constraints',['../stm32f030_2ktos__bsp_8c.html#autotoc_md35',1,'Cortex-M0 assembly constraints'],['../stm32l031_2ktos__bsp_8c.html#autotoc_md40',1,'Cortex-M0+ assembly constraints']]],
   ['m3_20skeleton_5',['Cortex-M3 skeleton',['../group__ktos__hal.html#autotoc_md11',1,'']]],
-  ['main_6',['main',['../stm32f103_2startup_8c.html#a840291bc02cba5474a4cb46a9b9566fe',1,'main(void):&#160;ktos_multi.c'],['../samd21g18_2startup_8c.html#a840291bc02cba5474a4cb46a9b9566fe',1,'main(void):&#160;ktos_multi.c'],['../ktos__multi_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main():&#160;ktos_multi.c']]],
+  ['main_6',['main',['../stm32f103_2startup_8c.html#a840291bc02cba5474a4cb46a9b9566fe',1,'main(void):&#160;ktos_multi.c'],['../stm32f030_2startup_8c.html#a840291bc02cba5474a4cb46a9b9566fe',1,'main(void):&#160;ktos_multi.c'],['../samd21g18_2startup_8c.html#a840291bc02cba5474a4cb46a9b9566fe',1,'main(void):&#160;ktos_multi.c'],['../ktos__multi_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main():&#160;ktos_multi.c']]],
   ['management_7',['management',['../group__ktos__core.html',1,'KTOS Core — scheduler and task management'],['../md_CODE__OF__CONDUCT.html#autotoc_md86',1,'Memory Management']]],
   ['mcus_8',['Supported MCUs',['../index.html#autotoc_md45',1,'']]],
   ['memmanage_5fhandler_9',['MemManage_Handler',['../stm32f103_2startup_8c.html#a3150f74512510287a942624aa9b44cc5',1,'startup.c']]],

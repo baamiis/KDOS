@@ -265,7 +265,7 @@ Variables</h2></td></tr>
 <li>Default_Handler: infinite loop for unhandled exceptions</li>
 </ul>
 <p>Clock chain: HSE 8 MHz → PLL ×9 → SYSCLK 72 MHz AHB = 72 MHz, APB1 = 36 MHz, APB2 = 72 MHz ADC clock = APB2 / 6 = 12 MHz</p>
-<p>Every main.c must define: void <a class="el" href="stm32f103_2startup_8c.html#ab5e09814056d617c521549e542639b7e">SysTick_Handler(void)</a> { <a class="el" href="ktos_8c.html#a2a3876653c789ddcd5a9ccf968d98fe0" title="1 ms system tick interrupt handler.">ktos_timer_irq_handler()</a>; } </p>
+<p>Every main.c must define: void <a class="el" href="stm32f030_2startup_8c.html#ab5e09814056d617c521549e542639b7e">SysTick_Handler(void)</a> { <a class="el" href="ktos_8c.html#a2a3876653c789ddcd5a9ccf968d98fe0" title="1 ms system tick interrupt handler.">ktos_timer_irq_handler()</a>; } </p>
 
 <p class="definition">Definition in file <a class="el" href="stm32f103_2startup_8c_source.html">startup.c</a>.</p>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
@@ -433,7 +433,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="stm32f103_2startup_8c_source.html#l00044">44</a> of file <a class="el" href="stm32f103_2startup_8c_source.html">startup.c</a>.</p>
 
-<p class="reference">References <a class="el" href="stm32f103_2startup_8c_source.html#l00040">FLASH_ACR</a>, <a class="el" href="stm32f103_2startup_8c_source.html#l00042">RCC_CFGR</a>, and <a class="el" href="stm32f103_2startup_8c_source.html#l00041">RCC_CR</a>.</p>
+<p class="reference">References <a class="el" href="stm32f030_2startup_8c_source.html#l00039">FLASH_ACR</a>, <a class="el" href="stm32f030_2startup_8c_source.html#l00041">RCC_CFGR</a>, and <a class="el" href="stm32f030_2startup_8c_source.html#l00040">RCC_CR</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="stm32f103_2startup_8c_source.html#l00200">Reset_Handler()</a>.</p>
 <div class="dynheader">
