@@ -1,7 +1,9 @@
 <map id="ktos_InitSys" name="ktos_InitSys">
-<area shape="rect" id="Node000001" title="Optional platform&#45;level system initialisation hook." alt="" coords="303,5,404,31"/>
-<area shape="rect" id="Node000002" href="$ktos__multi_8c.html#a161041827d36e1daec9539403c87c20e" title=" " alt="" coords="108,5,255,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="289,21,255,21,255,15,289,15"/>
-<area shape="rect" id="Node000003" href="$ktos__multi_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,60,31"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="94,21,60,21,60,15,94,15"/>
+<area shape="rect" id="Node000001" title="Optional platform&#45;level system initialisation hook." alt="" coords="468,5,569,31"/>
+<area shape="rect" id="Node000002" href="$ktos__multi_8c.html#a161041827d36e1daec9539403c87c20e" title=" " alt="" coords="273,5,420,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="454,21,420,21,420,15,454,15"/>
+<area shape="rect" id="Node000003" href="$ktos__multi_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="171,5,225,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="260,21,225,21,225,15,260,15"/>
+<area shape="rect" id="Node000004" href="$startup_8c.html#ae7ee340978f5c25f52f0cad1457c6616" title=" " alt="" coords="5,5,123,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="157,21,123,21,123,15,157,15"/>
 </map>

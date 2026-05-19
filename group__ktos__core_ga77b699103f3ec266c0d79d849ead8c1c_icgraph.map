@@ -1,14 +1,16 @@
 <map id="ktos_DebugPrintf" name="ktos_DebugPrintf">
-<area shape="rect" id="Node000001" title="Printf&#45;style debug logging (active only when DEBUG == 1)." alt="" coords="699,29,833,55"/>
-<area shape="rect" id="Node000002" href="$ktos_8c.html#a0472bc90096e9ce7acb6b8aebc9b127b" title="Default exit handler called when a task function returns." alt="" coords="440,29,651,55"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="685,45,651,45,651,39,685,39"/>
-<area shape="rect" id="Node000003" href="$ktos_8c.html#a56286f073d2c35d6eb89a0f60f41e0b8" title=" " alt="" coords="108,5,215,31"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="426,37,215,24,215,19,426,32"/>
-<area shape="rect" id="Node000005" href="$ktos_8c.html#ae0e8182ad311d004e6d96f8d42a70501" title="Round&#45;robin cooperative scheduler — runs on the OS stack." alt="" coords="263,55,392,80"/>
-<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="426,59,393,62,392,57,426,53"/>
-<area shape="rect" id="Node000004" href="$ktos__multi_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,31,60,56"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="95,34,61,41,60,35,94,29"/>
-<area shape="rect" id="Node000006" href="$group__ktos__core.html#ga6580b57b65ece0e7bfcc48823db105f3" title="Start the KTOS scheduler. Never returns." alt="" coords="111,55,211,80"/>
-<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="249,70,212,70,212,65,249,65"/>
-<area shape="poly" id="edge6_Node000006_Node000004" title=" " alt="" coords="97,58,60,51,61,46,98,53"/>
+<area shape="rect" id="Node000001" title="Printf&#45;style debug logging (active only when DEBUG == 1)." alt="" coords="864,29,999,55"/>
+<area shape="rect" id="Node000002" href="$ktos_8c.html#a0472bc90096e9ce7acb6b8aebc9b127b" title="Default exit handler called when a task function returns." alt="" coords="605,29,816,55"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="850,45,816,45,816,39,850,39"/>
+<area shape="rect" id="Node000003" href="$ktos_8c.html#a56286f073d2c35d6eb89a0f60f41e0b8" title=" " alt="" coords="273,5,380,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="591,37,380,24,380,19,592,32"/>
+<area shape="rect" id="Node000006" href="$ktos_8c.html#ae0e8182ad311d004e6d96f8d42a70501" title="Round&#45;robin cooperative scheduler — runs on the OS stack." alt="" coords="428,55,557,80"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="592,59,558,62,557,57,591,53"/>
+<area shape="rect" id="Node000004" href="$ktos__multi_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="171,31,225,56"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="260,34,226,41,225,35,259,29"/>
+<area shape="rect" id="Node000005" href="$startup_8c.html#ae7ee340978f5c25f52f0cad1457c6616" title=" " alt="" coords="5,31,123,56"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="157,46,123,46,123,41,157,41"/>
+<area shape="rect" id="Node000007" href="$group__ktos__core.html#ga6580b57b65ece0e7bfcc48823db105f3" title="Start the KTOS scheduler. Never returns." alt="" coords="277,55,377,80"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="414,70,377,70,377,65,414,65"/>
+<area shape="poly" id="edge7_Node000007_Node000004" title=" " alt="" coords="263,58,225,51,226,46,264,53"/>
 </map>

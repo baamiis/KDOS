@@ -27,54 +27,54 @@ var NAVTREE =
   [ "KTOS", "index.html", [
     [ "KTOS — Tiny Cooperative Task Switcher", "index.html", "index" ],
     [ "Contributing to KTOS", "md_CONTRIBUTING.html", [
-      [ "Table of Contents", "md_CONTRIBUTING.html#autotoc_md61", null ],
-      [ "Code of Conduct", "md_CONTRIBUTING.html#autotoc_md62", null ],
-      [ "Getting Started", "md_CONTRIBUTING.html#autotoc_md63", [
-        [ "Prerequisites", "md_CONTRIBUTING.html#autotoc_md64", null ],
-        [ "Setting Up Your Development Environment", "md_CONTRIBUTING.html#autotoc_md65", null ]
+      [ "Table of Contents", "md_CONTRIBUTING.html#autotoc_md62", null ],
+      [ "Code of Conduct", "md_CONTRIBUTING.html#autotoc_md63", null ],
+      [ "Getting Started", "md_CONTRIBUTING.html#autotoc_md64", [
+        [ "Prerequisites", "md_CONTRIBUTING.html#autotoc_md65", null ],
+        [ "Setting Up Your Development Environment", "md_CONTRIBUTING.html#autotoc_md66", null ]
       ] ],
-      [ "Development Workflow", "md_CONTRIBUTING.html#autotoc_md66", null ],
-      [ "Adding a New BSP", "md_CONTRIBUTING.html#autotoc_md67", [
-        [ "Steps", "md_CONTRIBUTING.html#autotoc_md68", null ],
-        [ "BSP implementation tips", "md_CONTRIBUTING.html#autotoc_md69", null ]
+      [ "Development Workflow", "md_CONTRIBUTING.html#autotoc_md67", null ],
+      [ "Adding a New BSP", "md_CONTRIBUTING.html#autotoc_md68", [
+        [ "Steps", "md_CONTRIBUTING.html#autotoc_md69", null ],
+        [ "BSP implementation tips", "md_CONTRIBUTING.html#autotoc_md70", null ]
       ] ],
-      [ "Coding Standards", "md_CONTRIBUTING.html#autotoc_md70", [
-        [ "C Code Style", "md_CONTRIBUTING.html#autotoc_md71", null ],
-        [ "Commit Guidelines", "md_CONTRIBUTING.html#autotoc_md72", null ]
+      [ "Coding Standards", "md_CONTRIBUTING.html#autotoc_md71", [
+        [ "C Code Style", "md_CONTRIBUTING.html#autotoc_md72", null ],
+        [ "Commit Guidelines", "md_CONTRIBUTING.html#autotoc_md73", null ]
       ] ],
-      [ "Pull Request Process", "md_CONTRIBUTING.html#autotoc_md73", null ],
-      [ "Testing", "md_CONTRIBUTING.html#autotoc_md74", null ]
+      [ "Pull Request Process", "md_CONTRIBUTING.html#autotoc_md74", null ],
+      [ "Testing", "md_CONTRIBUTING.html#autotoc_md75", null ]
     ] ],
     [ "Code of Conduct", "md_CODE__OF__CONDUCT.html", [
-      [ "Table of Contents", "md_CODE__OF__CONDUCT.html#autotoc_md76", null ],
-      [ "Code of Conduct", "md_CODE__OF__CONDUCT.html#autotoc_md77", null ],
-      [ "Getting Started", "md_CODE__OF__CONDUCT.html#autotoc_md78", [
-        [ "Prerequisites", "md_CODE__OF__CONDUCT.html#autotoc_md79", null ],
-        [ "Setting Up Your Development Environment", "md_CODE__OF__CONDUCT.html#autotoc_md80", null ]
+      [ "Table of Contents", "md_CODE__OF__CONDUCT.html#autotoc_md77", null ],
+      [ "Code of Conduct", "md_CODE__OF__CONDUCT.html#autotoc_md78", null ],
+      [ "Getting Started", "md_CODE__OF__CONDUCT.html#autotoc_md79", [
+        [ "Prerequisites", "md_CODE__OF__CONDUCT.html#autotoc_md80", null ],
+        [ "Setting Up Your Development Environment", "md_CODE__OF__CONDUCT.html#autotoc_md81", null ]
       ] ],
-      [ "Development Workflow", "md_CODE__OF__CONDUCT.html#autotoc_md81", null ],
-      [ "Coding Standards", "md_CODE__OF__CONDUCT.html#autotoc_md82", [
-        [ "C Code Style", "md_CODE__OF__CONDUCT.html#autotoc_md83", null ],
-        [ "Code Organization", "md_CODE__OF__CONDUCT.html#autotoc_md84", null ],
-        [ "Memory Management", "md_CODE__OF__CONDUCT.html#autotoc_md85", null ],
-        [ "Platform-Specific Code", "md_CODE__OF__CONDUCT.html#autotoc_md86", null ]
+      [ "Development Workflow", "md_CODE__OF__CONDUCT.html#autotoc_md82", null ],
+      [ "Coding Standards", "md_CODE__OF__CONDUCT.html#autotoc_md83", [
+        [ "C Code Style", "md_CODE__OF__CONDUCT.html#autotoc_md84", null ],
+        [ "Code Organization", "md_CODE__OF__CONDUCT.html#autotoc_md85", null ],
+        [ "Memory Management", "md_CODE__OF__CONDUCT.html#autotoc_md86", null ],
+        [ "Platform-Specific Code", "md_CODE__OF__CONDUCT.html#autotoc_md87", null ]
       ] ],
-      [ "Commit Guidelines", "md_CODE__OF__CONDUCT.html#autotoc_md87", [
-        [ "Commit Message Format", "md_CODE__OF__CONDUCT.html#autotoc_md88", null ],
-        [ "Examples", "md_CODE__OF__CONDUCT.html#autotoc_md89", null ]
+      [ "Commit Guidelines", "md_CODE__OF__CONDUCT.html#autotoc_md88", [
+        [ "Commit Message Format", "md_CODE__OF__CONDUCT.html#autotoc_md89", null ],
+        [ "Examples", "md_CODE__OF__CONDUCT.html#autotoc_md90", null ]
       ] ],
-      [ "Pull Request Process", "md_CODE__OF__CONDUCT.html#autotoc_md90", null ],
-      [ "Testing", "md_CODE__OF__CONDUCT.html#autotoc_md91", [
-        [ "Unit Tests", "md_CODE__OF__CONDUCT.html#autotoc_md92", null ],
-        [ "Hardware Testing", "md_CODE__OF__CONDUCT.html#autotoc_md93", null ],
-        [ "Test Naming", "md_CODE__OF__CONDUCT.html#autotoc_md94", null ]
+      [ "Pull Request Process", "md_CODE__OF__CONDUCT.html#autotoc_md91", null ],
+      [ "Testing", "md_CODE__OF__CONDUCT.html#autotoc_md92", [
+        [ "Unit Tests", "md_CODE__OF__CONDUCT.html#autotoc_md93", null ],
+        [ "Hardware Testing", "md_CODE__OF__CONDUCT.html#autotoc_md94", null ],
+        [ "Test Naming", "md_CODE__OF__CONDUCT.html#autotoc_md95", null ]
       ] ],
-      [ "Documentation", "md_CODE__OF__CONDUCT.html#autotoc_md95", [
-        [ "Code Documentation", "md_CODE__OF__CONDUCT.html#autotoc_md96", null ],
-        [ "README and Guides", "md_CODE__OF__CONDUCT.html#autotoc_md97", null ]
+      [ "Documentation", "md_CODE__OF__CONDUCT.html#autotoc_md96", [
+        [ "Code Documentation", "md_CODE__OF__CONDUCT.html#autotoc_md97", null ],
+        [ "README and Guides", "md_CODE__OF__CONDUCT.html#autotoc_md98", null ]
       ] ],
-      [ "Questions?", "md_CODE__OF__CONDUCT.html#autotoc_md98", null ],
-      [ "Recognition", "md_CODE__OF__CONDUCT.html#autotoc_md99", null ]
+      [ "Questions?", "md_CODE__OF__CONDUCT.html#autotoc_md99", null ],
+      [ "Recognition", "md_CODE__OF__CONDUCT.html#autotoc_md100", null ]
     ] ],
     [ "Topics", "topics.html", "topics" ],
     [ "Classes", "annotated.html", [
@@ -88,7 +88,7 @@ var NAVTREE =
     [ "Files", "files.html", [
       [ "File List", "files.html", "files_dup" ],
       [ "File Members", "globals.html", [
-        [ "All", "globals.html", null ],
+        [ "All", "globals.html", "globals_dup" ],
         [ "Functions", "globals_func.html", null ],
         [ "Variables", "globals_vars.html", null ],
         [ "Typedefs", "globals_type.html", null ],
@@ -102,7 +102,8 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"annotated.html"
+"annotated.html",
+"startup_8c.html#a6ad7a5e3ee69cb6db6a6b9111ba898bc"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

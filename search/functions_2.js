@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['main_0',['main',['../ktos__multi_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'ktos_multi.c']]]
+  ['clock_5finit_5f48mhz_0',['clock_init_48MHz',['../startup_8c.html#a0b551273446a40b6642560095f9498a2',1,'startup.c']]]
 ];

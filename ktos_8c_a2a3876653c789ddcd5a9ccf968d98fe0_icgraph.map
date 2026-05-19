@@ -1,7 +1,9 @@
 <map id="ktos_timer_irq_handler" name="ktos_timer_irq_handler">
-<area shape="rect" id="Node000001" title="1 ms system tick interrupt handler." alt="" coords="256,5,428,31"/>
-<area shape="rect" id="Node000002" href="$group__ktos__core.html#ga6580b57b65ece0e7bfcc48823db105f3" title="Start the KTOS scheduler. Never returns." alt="" coords="108,5,208,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="242,21,208,21,208,15,242,15"/>
-<area shape="rect" id="Node000003" href="$ktos__multi_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,60,31"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="94,21,60,21,60,15,94,15"/>
+<area shape="rect" id="Node000001" title="1 ms system tick interrupt handler." alt="" coords="421,5,593,31"/>
+<area shape="rect" id="Node000002" href="$group__ktos__core.html#ga6580b57b65ece0e7bfcc48823db105f3" title="Start the KTOS scheduler. Never returns." alt="" coords="273,5,373,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="408,21,373,21,373,15,408,15"/>
+<area shape="rect" id="Node000003" href="$ktos__multi_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="171,5,225,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="260,21,225,21,225,15,260,15"/>
+<area shape="rect" id="Node000004" href="$startup_8c.html#ae7ee340978f5c25f52f0cad1457c6616" title=" " alt="" coords="5,5,123,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="157,21,123,21,123,15,157,15"/>
 </map>

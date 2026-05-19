@@ -1,17 +1,19 @@
 <map id="ktos_Emergency" name="ktos_Emergency">
-<area shape="rect" id="Node000001" title="Emit a fatal&#45;error message and halt execution." alt="" coords="692,80,823,105"/>
-<area shape="rect" id="Node000002" href="$ktos_8c.html#a0472bc90096e9ce7acb6b8aebc9b127b" title="Default exit handler called when a task function returns." alt="" coords="433,55,644,80"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="678,86,644,82,644,77,679,81"/>
-<area shape="rect" id="Node000003" href="$ktos_8c.html#a56286f073d2c35d6eb89a0f60f41e0b8" title=" " alt="" coords="267,5,374,31"/>
-<area shape="poly" id="edge7_Node000001_Node000003" title=" " alt="" coords="721,76,684,59,643,45,571,31,498,23,374,19,374,14,499,17,572,25,645,39,686,54,723,71"/>
-<area shape="rect" id="Node000004" href="$ktos__multi_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,93,60,119"/>
-<area shape="poly" id="edge9_Node000001_Node000004" title=" " alt="" coords="678,105,644,109,426,126,208,134,158,137,108,134,59,120,61,115,108,129,158,132,208,129,426,120,644,103,678,100"/>
-<area shape="rect" id="Node000006" href="$group__ktos__core.html#ga6580b57b65ece0e7bfcc48823db105f3" title="Start the KTOS scheduler. Never returns." alt="" coords="108,93,208,119"/>
-<area shape="poly" id="edge8_Node000001_Node000006" title=" " alt="" coords="678,97,208,108,208,102,678,92"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="468,54,374,33,375,27,469,49"/>
-<area shape="rect" id="Node000005" href="$ktos_8c.html#ae0e8182ad311d004e6d96f8d42a70501" title="Round&#45;robin cooperative scheduler — runs on the OS stack." alt="" coords="256,55,385,80"/>
-<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="419,70,386,70,386,65,419,65"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="262,37,109,83,61,99,59,94,107,78,261,32"/>
-<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="254,86,209,97,208,92,253,81"/>
-<area shape="poly" id="edge6_Node000006_Node000004" title=" " alt="" coords="94,109,60,109,60,103,94,103"/>
+<area shape="rect" id="Node000001" title="Emit a fatal&#45;error message and halt execution." alt="" coords="857,80,988,105"/>
+<area shape="rect" id="Node000002" href="$ktos_8c.html#a0472bc90096e9ce7acb6b8aebc9b127b" title="Default exit handler called when a task function returns." alt="" coords="599,55,809,80"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="843,86,809,82,810,77,844,81"/>
+<area shape="rect" id="Node000003" href="$ktos_8c.html#a56286f073d2c35d6eb89a0f60f41e0b8" title=" " alt="" coords="433,5,539,31"/>
+<area shape="poly" id="edge8_Node000001_Node000003" title=" " alt="" coords="886,76,850,59,809,45,737,31,664,23,539,19,540,14,664,17,737,25,810,39,852,54,889,71"/>
+<area shape="rect" id="Node000004" href="$ktos__multi_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="171,93,225,119"/>
+<area shape="poly" id="edge10_Node000001_Node000004" title=" " alt="" coords="844,105,810,109,592,126,373,134,323,137,273,134,225,120,226,115,274,129,323,132,373,129,591,120,809,103,843,100"/>
+<area shape="rect" id="Node000007" href="$group__ktos__core.html#ga6580b57b65ece0e7bfcc48823db105f3" title="Start the KTOS scheduler. Never returns." alt="" coords="273,93,373,119"/>
+<area shape="poly" id="edge9_Node000001_Node000007" title=" " alt="" coords="843,97,373,108,373,102,843,92"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="633,54,539,33,540,27,635,49"/>
+<area shape="rect" id="Node000006" href="$ktos_8c.html#ae0e8182ad311d004e6d96f8d42a70501" title="Round&#45;robin cooperative scheduler — runs on the OS stack." alt="" coords="421,55,551,80"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="585,70,551,70,551,65,585,65"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="428,37,274,83,226,99,225,94,273,78,426,32"/>
+<area shape="rect" id="Node000005" href="$startup_8c.html#ae7ee340978f5c25f52f0cad1457c6616" title=" " alt="" coords="5,93,123,119"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="157,109,123,109,123,103,157,103"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="419,86,374,97,373,92,418,81"/>
+<area shape="poly" id="edge7_Node000007_Node000004" title=" " alt="" coords="260,109,225,109,225,103,260,103"/>
 </map>

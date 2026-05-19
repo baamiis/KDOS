@@ -1,0 +1,7 @@
+<map id="bsp/samd21g18" name="bsp/samd21g18">
+<area shape="rect" id="node1" href="dir_05ca701c2a77062811823f351d3a16ac.html" title="samd21g18" alt="" coords="27,52,125,77"/>
+<area shape="rect" id="node2" href="dir_4270bfced15e0e73154b13468c7c9ad9.html" title="core" alt="" coords="51,125,101,151"/>
+<area shape="poly" id="edge1" href="dir_000010_000005.html" alt="" coords="79,78,79,112,73,112,73,78"/>
+<area shape="rect" id="edge1-headlabel" href="dir_000010_000005.html" title="1" alt="" coords="80,100,89,114"/>
+<area shape="rect" id="clust1" href="dir_3c5459f7c179b79c90e2565474bb2856.html" title="bsp" alt="" coords="16,16,136,88"/>
+</map>

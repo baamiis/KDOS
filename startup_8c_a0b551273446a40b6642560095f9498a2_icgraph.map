@@ -1,0 +1,5 @@
+<map id="clock_init_48MHz" name="clock_init_48MHz">
+<area shape="rect" id="Node000001" title=" " alt="" coords="171,5,307,31"/>
+<area shape="rect" id="Node000002" href="$startup_8c.html#ae7ee340978f5c25f52f0cad1457c6616" title=" " alt="" coords="5,5,123,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="157,21,123,21,123,15,157,15"/>
+</map>

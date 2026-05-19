@@ -46,7 +46,7 @@
   </g>
 </defs>
 <script type="application/ecmascript">
-var viewWidth = 521;
+var viewWidth = 645;
 var viewHeight = 177;
 var sectionId = 'dynsection-3';
 </script>
@@ -58,8 +58,8 @@ var sectionId = 'dynsection-3';
 <g id="Node000001" class="node">
 <title>Node1</title>
 <g id="a_Node000001"><a xlink:title="Re&#45;enable maskable interrupts.">
-<polygon fill="#999999" stroke="#666666" points="513,-93 370,-93 370,-74 513,-74 513,-93"/>
-<text text-anchor="middle" x="441.5" y="-81" font-family="Helvetica,sans-Serif" font-size="10.00">ktos_hal_EnableInterrupts</text>
+<polygon fill="#999999" stroke="#666666" points="637,-93 494,-93 494,-74 637,-74 637,-93"/>
+<text text-anchor="middle" x="565.5" y="-81" font-family="Helvetica,sans-Serif" font-size="10.00">ktos_hal_EnableInterrupts</text>
 </a>
 </g>
 </g>
@@ -67,8 +67,8 @@ var sectionId = 'dynsection-3';
 <g id="Node000002" class="node">
 <title>Node2</title>
 <g id="a_Node000002"><a xlink:href="group__ktos__hal.html#gaf4300bbe2d54c65f155361e713d7c56a" target="_top" xlink:title="Load the first task&#39;s context and begin execution.">
-<polygon fill="white" stroke="#666666" points="334,-169 200,-169 200,-150 334,-150 334,-169"/>
-<text text-anchor="middle" x="267" y="-157" font-family="Helvetica,sans-Serif" font-size="10.00">ktos_hal_StartScheduler</text>
+<polygon fill="white" stroke="#666666" points="458,-169 324,-169 324,-150 458,-150 458,-169"/>
+<text text-anchor="middle" x="391" y="-157" font-family="Helvetica,sans-Serif" font-size="10.00">ktos_hal_StartScheduler</text>
 </a>
 </g>
 </g>
@@ -76,8 +76,8 @@ var sectionId = 'dynsection-3';
 <g id="edge1_Node000001_Node000002" class="edge">
 <title>Node1&#45;&gt;Node2</title>
 <g id="a_edge1_Node000001_Node000002"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M413.21,-97.82C391.91,-108.74 361.43,-123.86 334,-135.5 321.77,-140.69 307.99,-145.82 296.19,-149.99"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="415.02,-100.82 422.3,-93.12 411.81,-94.6 415.02,-100.82"/>
+<path fill="none" stroke="#63b8ff" d="M537.21,-97.82C515.91,-108.74 485.43,-123.86 458,-135.5 445.77,-140.69 431.99,-145.82 420.19,-149.99"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="539.02,-100.82 546.3,-93.12 535.81,-94.6 539.02,-100.82"/>
 </a>
 </g>
 </g>
@@ -85,8 +85,8 @@ var sectionId = 'dynsection-3';
 <g id="Node000003" class="node">
 <title>Node3</title>
 <g id="a_Node000003"><a xlink:href="ktos_8c.html#abdccd1793b29f0ab71047c522a9fb262" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#666666" points="164,-121 77,-121 77,-102 164,-102 164,-121"/>
-<text text-anchor="middle" x="120.5" y="-109" font-family="Helvetica,sans-Serif" font-size="10.00">ktos_SendMsg</text>
+<polygon fill="white" stroke="#666666" points="288,-121 201,-121 201,-102 288,-102 288,-121"/>
+<text text-anchor="middle" x="244.5" y="-109" font-family="Helvetica,sans-Serif" font-size="10.00">ktos_SendMsg</text>
 </a>
 </g>
 </g>
@@ -94,35 +94,17 @@ var sectionId = 'dynsection-3';
 <g id="edge2_Node000001_Node000003" class="edge">
 <title>Node1&#45;&gt;Node3</title>
 <g id="a_edge2_Node000001_Node000003"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M384.89,-94.87C368.56,-97.82 350.62,-100.67 334,-102.5 275.46,-108.93 207.37,-110.84 164.36,-111.37"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="385.63,-98.3 394.83,-93.04 384.36,-91.41 385.63,-98.3"/>
-</a>
-</g>
-</g>
-<!-- Node5 -->
-<g id="Node000005" class="node">
-<title>Node5</title>
-<g id="a_Node000005"><a xlink:href="ktos_8c.html#a58c939684b243c872c31ec084dba395a" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#666666" points="302,-93 232,-93 232,-74 302,-74 302,-93"/>
-<text text-anchor="middle" x="267" y="-81" font-family="Helvetica,sans-Serif" font-size="10.00">ktos_Sleep</text>
-</a>
-</g>
-</g>
-<!-- Node1&#45;&gt;Node5 -->
-<g id="edge4_Node000001_Node000005" class="edge">
-<title>Node1&#45;&gt;Node5</title>
-<g id="a_edge4_Node000001_Node000005"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M359.68,-83.5C339.52,-83.5 318.96,-83.5 302.44,-83.5"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="359.84,-87 369.84,-83.5 359.84,-80 359.84,-87"/>
+<path fill="none" stroke="#63b8ff" d="M508.89,-94.87C492.56,-97.82 474.62,-100.67 458,-102.5 399.46,-108.93 331.37,-110.84 288.36,-111.37"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="509.63,-98.3 518.83,-93.04 508.36,-91.41 509.63,-98.3"/>
 </a>
 </g>
 </g>
 <!-- Node6 -->
 <g id="Node000006" class="node">
 <title>Node6</title>
-<g id="a_Node000006"><a xlink:href="ktos_8c.html#ae0e8182ad311d004e6d96f8d42a70501" target="_top" xlink:title="Round&#45;robin cooperative scheduler — runs on the OS stack.">
-<polygon fill="white" stroke="#666666" points="315.5,-56 218.5,-56 218.5,-37 315.5,-37 315.5,-56"/>
-<text text-anchor="middle" x="267" y="-44" font-family="Helvetica,sans-Serif" font-size="10.00">ktos_SwitchTask</text>
+<g id="a_Node000006"><a xlink:href="ktos_8c.html#a58c939684b243c872c31ec084dba395a" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="#666666" points="426,-93 356,-93 356,-74 426,-74 426,-93"/>
+<text text-anchor="middle" x="391" y="-81" font-family="Helvetica,sans-Serif" font-size="10.00">ktos_Sleep</text>
 </a>
 </g>
 </g>
@@ -130,26 +112,44 @@ var sectionId = 'dynsection-3';
 <g id="edge5_Node000001_Node000006" class="edge">
 <title>Node1&#45;&gt;Node6</title>
 <g id="a_edge5_Node000001_Node000006"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M386.18,-71.85C362.48,-66.77 335.04,-60.88 312.57,-56.06"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="385.57,-75.3 396.08,-73.97 387.03,-68.45 385.57,-75.3"/>
+<path fill="none" stroke="#63b8ff" d="M483.68,-83.5C463.52,-83.5 442.96,-83.5 426.44,-83.5"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="483.84,-87 493.84,-83.5 483.84,-80 483.84,-87"/>
 </a>
 </g>
 </g>
-<!-- Node8 -->
-<g id="Node000008" class="node">
-<title>Node8</title>
-<g id="a_Node000008"><a xlink:href="group__ktos__core.html#ga36de1d506ed25f7ec37016362726b45c" target="_top" xlink:title="Wake a sleeping task immediately from an ISR or another task.">
-<polygon fill="white" stroke="#666666" points="308.5,-19 225.5,-19 225.5,0 308.5,0 308.5,-19"/>
-<text text-anchor="middle" x="267" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">ktos_WakeUp</text>
+<!-- Node7 -->
+<g id="Node000007" class="node">
+<title>Node7</title>
+<g id="a_Node000007"><a xlink:href="ktos_8c.html#ae0e8182ad311d004e6d96f8d42a70501" target="_top" xlink:title="Round&#45;robin cooperative scheduler — runs on the OS stack.">
+<polygon fill="white" stroke="#666666" points="439.5,-56 342.5,-56 342.5,-37 439.5,-37 439.5,-56"/>
+<text text-anchor="middle" x="391" y="-44" font-family="Helvetica,sans-Serif" font-size="10.00">ktos_SwitchTask</text>
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node8 -->
-<g id="edge8_Node000001_Node000008" class="edge">
-<title>Node1&#45;&gt;Node8</title>
-<g id="a_edge8_Node000001_Node000008"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M416.13,-68.73C395,-56.4 363.29,-39.04 334,-27.5 325.93,-24.32 317.1,-21.49 308.59,-19.07"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="414.39,-71.76 424.78,-73.83 417.95,-65.73 414.39,-71.76"/>
+<!-- Node1&#45;&gt;Node7 -->
+<g id="edge6_Node000001_Node000007" class="edge">
+<title>Node1&#45;&gt;Node7</title>
+<g id="a_edge6_Node000001_Node000007"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M510.18,-71.85C486.48,-66.77 459.04,-60.88 436.57,-56.06"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="509.57,-75.3 520.08,-73.97 511.03,-68.45 509.57,-75.3"/>
+</a>
+</g>
+</g>
+<!-- Node9 -->
+<g id="Node000009" class="node">
+<title>Node9</title>
+<g id="a_Node000009"><a xlink:href="group__ktos__core.html#ga36de1d506ed25f7ec37016362726b45c" target="_top" xlink:title="Wake a sleeping task immediately from an ISR or another task.">
+<polygon fill="white" stroke="#666666" points="432.5,-19 349.5,-19 349.5,0 432.5,0 432.5,-19"/>
+<text text-anchor="middle" x="391" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">ktos_WakeUp</text>
+</a>
+</g>
+</g>
+<!-- Node1&#45;&gt;Node9 -->
+<g id="edge9_Node000001_Node000009" class="edge">
+<title>Node1&#45;&gt;Node9</title>
+<g id="a_edge9_Node000001_Node000009"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M540.13,-68.73C519,-56.4 487.29,-39.04 458,-27.5 449.93,-24.32 441.1,-21.49 432.59,-19.07"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="538.39,-71.76 548.78,-73.83 541.95,-65.73 538.39,-71.76"/>
 </a>
 </g>
 </g>
@@ -157,8 +157,8 @@ var sectionId = 'dynsection-3';
 <g id="Node000004" class="node">
 <title>Node4</title>
 <g id="a_Node000004"><a xlink:href="ktos__multi_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#666666" points="41,-93 0,-93 0,-74 41,-74 41,-93"/>
-<text text-anchor="middle" x="20.5" y="-81" font-family="Helvetica,sans-Serif" font-size="10.00">main</text>
+<polygon fill="white" stroke="#666666" points="165,-93 124,-93 124,-74 165,-74 165,-93"/>
+<text text-anchor="middle" x="144.5" y="-81" font-family="Helvetica,sans-Serif" font-size="10.00">main</text>
 </a>
 </g>
 </g>
@@ -166,35 +166,53 @@ var sectionId = 'dynsection-3';
 <g id="edge3_Node000003_Node000004" class="edge">
 <title>Node3&#45;&gt;Node4</title>
 <g id="a_edge3_Node000003_Node000004"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M76.35,-99.17C64.04,-95.65 51.23,-92 41.1,-89.1"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="75.47,-102.56 86.05,-101.94 77.39,-95.83 75.47,-102.56"/>
+<path fill="none" stroke="#63b8ff" d="M200.35,-99.17C188.04,-95.65 175.23,-92 165.1,-89.1"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="199.47,-102.56 210.05,-101.94 201.39,-95.83 199.47,-102.56"/>
 </a>
 </g>
 </g>
-<!-- Node7 -->
-<g id="Node000007" class="node">
-<title>Node7</title>
-<g id="a_Node000007"><a xlink:href="group__ktos__core.html#ga6580b57b65ece0e7bfcc48823db105f3" target="_top" xlink:title="Start the KTOS scheduler. Never returns.">
-<polygon fill="white" stroke="#666666" points="158,-75 83,-75 83,-56 158,-56 158,-75"/>
-<text text-anchor="middle" x="120.5" y="-63" font-family="Helvetica,sans-Serif" font-size="10.00">ktos_RunOS</text>
+<!-- Node5 -->
+<g id="Node000005" class="node">
+<title>Node5</title>
+<g id="a_Node000005"><a xlink:href="startup_8c.html#ae7ee340978f5c25f52f0cad1457c6616" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="#666666" points="88,-93 0,-93 0,-74 88,-74 88,-93"/>
+<text text-anchor="middle" x="44" y="-81" font-family="Helvetica,sans-Serif" font-size="10.00">Reset_Handler</text>
 </a>
 </g>
 </g>
-<!-- Node6&#45;&gt;Node7 -->
-<g id="edge6_Node000006_Node000007" class="edge">
-<title>Node6&#45;&gt;Node7</title>
-<g id="a_edge6_Node000006_Node000007"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M207.99,-54.13C191.18,-56.34 173.29,-58.69 158.18,-60.68"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="208.83,-57.55 218.28,-52.77 207.91,-50.61 208.83,-57.55"/>
+<!-- Node4&#45;&gt;Node5 -->
+<g id="edge4_Node000004_Node000005" class="edge">
+<title>Node4&#45;&gt;Node5</title>
+<g id="a_edge4_Node000004_Node000005"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M113.57,-83.5C105.53,-83.5 96.69,-83.5 88.09,-83.5"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="113.57,-87 123.57,-83.5 113.57,-80 113.57,-87"/>
 </a>
 </g>
 </g>
-<!-- Node7&#45;&gt;Node4 -->
-<g id="edge7_Node000007_Node000004" class="edge">
-<title>Node7&#45;&gt;Node4</title>
-<g id="a_edge7_Node000007_Node000004"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M72.63,-74.11C61.51,-76.15 50.25,-78.22 41.13,-79.89"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="73.53,-77.5 82.73,-72.25 72.26,-70.62 73.53,-77.5"/>
+<!-- Node8 -->
+<g id="Node000008" class="node">
+<title>Node8</title>
+<g id="a_Node000008"><a xlink:href="group__ktos__core.html#ga6580b57b65ece0e7bfcc48823db105f3" target="_top" xlink:title="Start the KTOS scheduler. Never returns.">
+<polygon fill="white" stroke="#666666" points="282,-75 207,-75 207,-56 282,-56 282,-75"/>
+<text text-anchor="middle" x="244.5" y="-63" font-family="Helvetica,sans-Serif" font-size="10.00">ktos_RunOS</text>
+</a>
+</g>
+</g>
+<!-- Node7&#45;&gt;Node8 -->
+<g id="edge7_Node000007_Node000008" class="edge">
+<title>Node7&#45;&gt;Node8</title>
+<g id="a_edge7_Node000007_Node000008"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M331.99,-54.13C315.18,-56.34 297.29,-58.69 282.18,-60.68"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="332.83,-57.55 342.28,-52.77 331.91,-50.61 332.83,-57.55"/>
+</a>
+</g>
+</g>
+<!-- Node8&#45;&gt;Node4 -->
+<g id="edge8_Node000008_Node000004" class="edge">
+<title>Node8&#45;&gt;Node4</title>
+<g id="a_edge8_Node000008_Node000004"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M196.63,-74.11C185.51,-76.15 174.25,-78.22 165.13,-79.89"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="197.53,-77.5 206.73,-72.25 196.26,-70.62 197.53,-77.5"/>
 </a>
 </g>
 </g>
