@@ -20,7 +20,12 @@
 #include <stdint.h>
 
 /* Linker script symbols */
-extern uint32_t _sidata, _sdata, _edata, _sbss, _ebss, _estack;
+extern uint32_t _sidata;
+extern uint32_t _sdata;
+extern uint32_t _edata;
+extern uint32_t _sbss;
+extern uint32_t _ebss;
+extern uint32_t _estack;
 extern int main(void);
 
 /* =========================================================================
@@ -60,7 +65,7 @@ static void clock_init_48MHz(void)
     while (GCLK_STATUS & (1u << 7)) {}
 
     /* Connect GCLK1 to DFLL48M reference (peripheral clock ID 0) */
-    GCLK_CLKCTRL = (uint16_t)((0u << 0) | (1u << 8) | (1u << 14)); /* ID=0|GEN=1|CLKEN */
+    GCLK_CLKCTRL = (uint16_t)((1u << 8) | (1u << 14)); /* ID=0|GEN=1|CLKEN */
     while (GCLK_STATUS & (1u << 7)) {}
 
     /* Enable DFLL48M in open-loop first (required before switching to closed-loop) */
@@ -79,9 +84,9 @@ static void clock_init_48MHz(void)
     while (!(SYSCTRL_PCLKSR & (1u << 6))) {}  /* DFLLLCKF */
 
     /* GCLK0 = DFLL48M (48 MHz system clock) */
-    GCLK_GENDIV  = (0u << 0);                              /* GCLK0 divisor = 1 */
+    GCLK_GENDIV  = 0u;                                      /* GCLK0 divisor = 1 */
     while (GCLK_STATUS & (1u << 7)) {}
-    GCLK_GENCTRL = (0u << 0) | (7u << 8) | (1u << 16);    /* ID=0|SRC=DFLL48M|GCLKEN */
+    GCLK_GENCTRL = (7u << 8) | (1u << 16);                 /* ID=0|SRC=DFLL48M|GCLKEN */
     while (GCLK_STATUS & (1u << 7)) {}
 }
 
@@ -184,7 +189,7 @@ void Reset_Handler(void)
     clock_init_48MHz();
 
     /* Copy .data from flash to RAM */
-    uint32_t *src = &_sidata;
+    const uint32_t *src = &_sidata;
     for (uint32_t *dst = &_sdata; dst < &_edata; ) { *dst++ = *src++; }
 
     /* Zero .bss */

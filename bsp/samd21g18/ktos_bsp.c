@@ -82,7 +82,7 @@ void ktos_hal_InitSystemTimer(void (*timer_isr_addr)(void))
     PM_APBCMASK |= (1u << 11);
 
     /* Connect GCLK0 (48 MHz) to TC3 (GCLK peripheral ID 18 = TCC2/TC3) */
-    GCLK_CLKCTRL = (uint16_t)((18u) | (0u << 8) | (1u << 14)); /* ID=18|GEN=0|CLKEN */
+    GCLK_CLKCTRL = (uint16_t)(18u | (1u << 14)); /* ID=18|GEN=0|CLKEN */
     while (GCLK_STATUS & (1u << 7)) {}
 
     /* Software reset TC3 */
@@ -91,7 +91,7 @@ void ktos_hal_InitSystemTimer(void (*timer_isr_addr)(void))
     while (TC3_CTRLA & (1u << 0)) {}   /* wait SWRST self-clear */
 
     /* 16-bit MFRQ mode, no prescaler (DIV1) */
-    TC3_CTRLA = (0u << 2) | (1u << 8) | (0u << 10); /* MODE=16b|WAVEGEN=MFRQ|PRESCALER=DIV1 */
+    TC3_CTRLA = (1u << 8); /* WAVEGEN=MFRQ; MODE=16-bit, PRESCALER=DIV1 are zero (default) */
     while (TC3_STATUS & (1u << 7)) {}
 
     /* CC0 = 47999 → 1 ms at 48 MHz */
