@@ -133,8 +133,8 @@ you through download, build, and flash.  Quick links:
 
 | Family                          | Where                                          | Highlights                                          |
 |---------------------------------|------------------------------------------------|-----------------------------------------------------|
-| Arduino (ATmega328P)            | [`examples/Arduino/`](examples/Arduino/README.md) | Bare-metal KTOS — no Arduino framework.  Builds with PlatformIO. |
-| ESP8266 (Xtensa LX106)          | [`examples/esp8266/`](examples/esp8266.md)        | KTOS bridging from the SDK's windowed ABI into CALL0. |
+| Arduino (ATmega328P)            | `examples/Arduino/` | Bare-metal KTOS — no Arduino framework.  Builds with PlatformIO. |
+| ESP8266 (Xtensa LX106)          | `examples/esp8266/` | KTOS bridging from the SDK's windowed ABI into CALL0. |
 
 ## Building Locally
 
