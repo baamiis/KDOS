@@ -169,20 +169,20 @@ Functions</h2></td></tr>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">Toolchain   </td><td class="markdownTableBodyNone">xtensa-lx106-elf-gcc (ESP8266 SDK)   </td></tr>
 </table>
-<h3><a class="anchor" id="autotoc_md20"></a>
+<h3><a class="anchor" id="autotoc_md22"></a>
 Build</h3>
 <div class="fragment"><div class="line">xtensa-lx106-elf-gcc -mlongcalls ...</div>
-</div><!-- fragment --><h3><a class="anchor" id="autotoc_md21"></a>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md23"></a>
 Status</h3>
 <ul>
 <li>C parts (interrupts, timer, stack init): <b>complete</b></li>
 <li>Assembly (ContextSwitch, StartScheduler): <b>complete</b></li>
 </ul>
-<h3><a class="anchor" id="autotoc_md22"></a>
+<h3><a class="anchor" id="autotoc_md24"></a>
 Build flag required</h3>
 <p>This BSP file <b>must</b> be compiled with <code>-mabi=call0</code> to disable Xtensa register windowing. Add to your Makefile / SDK build flags: </p><div class="fragment"><div class="line">-mabi=call0 -mno-serialize-<span class="keyword">volatile</span></div>
 </div><!-- fragment --><p> Without <code>-mabi=call0</code> the context switch will silently corrupt state because ENTRY/RETW window rotation is not handled.</p>
-<h3><a class="anchor" id="autotoc_md23"></a>
+<h3><a class="anchor" id="autotoc_md25"></a>
 Context frame layout (64 bytes, 16-byte aligned, grows downward)</h3>
 <table class="markdownTable">
 <tr class="markdownTableHead">

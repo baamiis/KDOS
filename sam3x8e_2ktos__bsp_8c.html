@@ -186,10 +186,10 @@ Functions</h2></td></tr>
 <td class="markdownTableBodyNone">Toolchain   </td><td class="markdownTableBodyNone">arm-none-eabi-gcc   </td></tr>
 </table>
 <p>The Cortex-M3 architecture is identical to the STM32F103 — the context-switch + task-frame logic in this file is byte-for-byte the same as <code><a class="el" href="stm32f103_2ktos__bsp_8c.html" title="KTOS Board Support Package — STM32F103 (ARM Cortex-M3)">bsp/stm32f103/ktos_bsp.c</a></code>. Unlike the STM32 BSPs which use SysTick, the SAM3X8E BSP drives the 1 ms tick from <b>TC0 channel 0</b> so it can coexist with Arduino-SAM's runtime (which owns SysTick to drive <code>millis()</code>).</p>
-<h3><a class="anchor" id="autotoc_md29"></a>
+<h3><a class="anchor" id="autotoc_md31"></a>
 Build</h3>
 <div class="fragment"><div class="line">arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb --specs=nosys.specs ...</div>
-</div><!-- fragment --><h3><a class="anchor" id="autotoc_md30"></a>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md32"></a>
 TC0 ISR wiring</h3>
 <p>Add this to your application (not inside the BSP): </p><div class="fragment"><div class="line"><span class="keywordtype">void</span> TC0_Handler(<span class="keywordtype">void</span>) {</div>
 <div class="line">    (void)TC0-&gt;TC_CHANNEL[0].TC_SR;   <span class="comment">// clear the compare flag</span></div>

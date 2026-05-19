@@ -96,10 +96,10 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 <div class="contents">
 <div class="textblock"><p><a class="anchor" id="md_README"></a> <a href="https://github.com/baamiis/KTOS/actions/workflows/ci.yml"><img src="https://github.com/baamiis/KTOS/actions/workflows/ci.yml/badge.svg" alt="CI Status" style="pointer-events: none;" class="inline"/></a> [<img src="https://img.shields.io/badge/license-GPL--3.0--only-blue" alt="License: GPL v3" class="inline"/>](LICENSE) <a href="https://github.com/baamiis/KTOS/graphs/contributors"><img src="https://img.shields.io/github/contributors/baamiis/KTOS" alt="Contributors" class="inline"/></a> <a href="https://www.ktos.co.uk"><img src="https://img.shields.io/badge/docs-ktos.co.uk-blue" alt="Documentation" class="inline"/></a></p>
 <p>Main website: <a href="https://www.ktos.co.uk/">https://www.ktos.co.uk/</a></p>
-<h1><a class="anchor" id="autotoc_md40"></a>
+<h1><a class="anchor" id="autotoc_md42"></a>
 What is KTOS?</h1>
 <p>KTOS is a simple cooperative task switcher for resource-constrained embedded systems. It allows different parts of a program to operate largely independently, with a footprint of around 4KB — making it an ideal alternative to heavier RTOS solutions like FreeRTOS or Zephyr on small microcontrollers.</p>
-<h1><a class="anchor" id="autotoc_md41"></a>
+<h1><a class="anchor" id="autotoc_md43"></a>
 When should you use KTOS?</h1>
 <p>KTOS is the right choice when:</p><ul>
 <li>Your MCU has <b>less than 32KB RAM</b> or <b>less than 256KB Flash</b></li>
@@ -107,7 +107,7 @@ When should you use KTOS?</h1>
 <li>A full RTOS is overkill for your use case</li>
 </ul>
 <p>Rule of thumb: *"If your application logic + KTOS fits in under 32KB RAM, KTOS is the right choice."*</p>
-<h1><a class="anchor" id="autotoc_md42"></a>
+<h1><a class="anchor" id="autotoc_md44"></a>
 Supported MCUs</h1>
 <p>KTOS provides ready-to-use Board Support Packages (BSPs) for the following microcontrollers:</p>
 <table class="markdownTable">
@@ -152,7 +152,7 @@ Supported MCUs</h1>
 <li>STM32U585 (Arduino UNO Q — MCU side)</li>
 </ul>
 <p>Plus the long-standing roadmap: ATmega2560, ATtiny85, MSP430G2553, STM32L031, PIC16F/18F.</p>
-<h1><a class="anchor" id="autotoc_md43"></a>
+<h1><a class="anchor" id="autotoc_md45"></a>
 Get Started</h1>
 <p>Visit <b><a href="https://ktos.co.uk">ktos.co.uk</a></b> to:</p><ul>
 <li>Select your dev board or bare MCU</li>
@@ -160,11 +160,11 @@ Get Started</h1>
 <li>Follow the wiring guide and datasheet notes (for bare MCU users)</li>
 </ul>
 <p>Or build manually — see below.</p>
-<h1><a class="anchor" id="autotoc_md44"></a>
+<h1><a class="anchor" id="autotoc_md46"></a>
 How does it work?</h1>
 <p>Each task has its own stack and message queue. Tasks communicate via simple messages and are executed on a round-robin basis when a message is available or their timer has expired. Once a task gets control it will not be pre-empted — no semaphores or mutexes needed for shared global variables.</p>
 <p>Each task has an associated timer with a resolution of <b>1ms</b> and a maximum sleep of <b>65 seconds</b>.</p>
-<h2><a class="anchor" id="autotoc_md45"></a>
+<h2><a class="anchor" id="autotoc_md47"></a>
 Task function</h2>
 <div class="fragment"><div class="line"><a class="code hl_typedef" href="group__ktos__types.html#ga197942eefa7db30960ae396d68339b97">WORD</a> my_task(<a class="code hl_typedef" href="group__ktos__types.html#ga197942eefa7db30960ae396d68339b97">WORD</a> MsgType, <a class="code hl_typedef" href="group__ktos__types.html#ga197942eefa7db30960ae396d68339b97">WORD</a> sParam, <a class="code hl_typedef" href="group__ktos__types.html#ga2a3e0cda5f1249bef6db47c5eb8e3813">LONG</a> lParam)</div>
 <div class="line">{</div>
@@ -188,7 +188,7 @@ Task function</h2>
 <li><code>lParam</code> — user-defined 32-bit value</li>
 </ul>
 <p>The return value is the sleep duration in milliseconds (<code>MSG_WAIT</code> to sleep until explicitly woken).</p>
-<h1><a class="anchor" id="autotoc_md46"></a>
+<h1><a class="anchor" id="autotoc_md48"></a>
 Repository Structure</h1>
 <div class="fragment"><div class="line">KTOS/</div>
 <div class="line">├── core/               # Platform-independent KTOS kernel</div>
@@ -216,7 +216,7 @@ Repository Structure</h1>
 <div class="line">    └── workflows/</div>
 <div class="line">        ├── ci.yml      # CI: builds all BSPs on every PR</div>
 <div class="line">        └── package.yml # Generates ZIP packages on merge to main</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md47"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md49"></a>
 Examples</h1>
 <p>Each <code>examples/&lt;family&gt;/</code> directory has a top-level README that walks you through download, build, and flash. Quick links:</p>
 <table class="markdownTable">
@@ -227,7 +227,7 @@ Examples</h1>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">ESP8266 (Xtensa LX106)   </td><td class="markdownTableBodyNone"><code>examples/esp8266/</code>   </td><td class="markdownTableBodyNone">KTOS bridging from the SDK's windowed ABI into CALL0.   </td></tr>
 </table>
-<h1><a class="anchor" id="autotoc_md48"></a>
+<h1><a class="anchor" id="autotoc_md50"></a>
 Building Locally</h1>
 <p><b>Install toolchains:</b> </p><div class="fragment"><div class="line"># ARM (STM32)</div>
 <div class="line">sudo apt-get install gcc-arm-none-eabi libnewlib-arm-none-eabi</div>
@@ -240,7 +240,7 @@ Building Locally</h1>
 <div class="line">make -C bsp/stm32f030</div>
 </div><!-- fragment --><p><b>Generate a firmware ZIP package:</b> </p><div class="fragment"><div class="line">python scripts/package.py --mcu atmega328p --out packages/</div>
 <div class="line">python scripts/package.py --mcu all --out packages/</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md49"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md51"></a>
 Adding a new BSP</h1>
 <ol type="1">
 <li>Create <code>bsp/&lt;mcu_name&gt;/ktos_bsp.c</code> implementing all 6 functions from <code><a class="el" href="ktos__hal_8h.html" title="KTOS Hardware Abstraction Layer (HAL) interface.">core/ktos_hal.h</a></code></li>
@@ -260,7 +260,7 @@ Adding a new BSP</h1>
 <div class="ttc" id="agroup__ktos__hal_html_gab41a95b0bdad0b96dd0957bb95e087bc"><div class="ttname"><a href="group__ktos__hal.html#gab41a95b0bdad0b96dd0957bb95e087bc">ktos_hal_ContextSwitch</a></div><div class="ttdeci">void ktos_hal_ContextSwitch(void **p_current_sp_storage, const void *next_sp)</div><div class="ttdoc">Perform a cooperative context switch between two execution contexts.</div><div class="ttdef"><b>Definition</b> <a href="atmega2560_2ktos__bsp_8c_source.html#l00161">ktos_bsp.c:161</a></div></div>
 <div class="ttc" id="agroup__ktos__hal_html_gae42df35bd10d7d6b296be9687d436a32"><div class="ttname"><a href="group__ktos__hal.html#gae42df35bd10d7d6b296be9687d436a32">ktos_hal_InitSystemTimer</a></div><div class="ttdeci">void ktos_hal_InitSystemTimer(void(*timer_isr_addr)(void))</div><div class="ttdoc">Configure and start the 1 ms system tick timer.</div><div class="ttdef"><b>Definition</b> <a href="atmega2560_2ktos__bsp_8c_source.html#l00080">ktos_bsp.c:80</a></div></div>
 <div class="ttc" id="agroup__ktos__hal_html_gaf4300bbe2d54c65f155361e713d7c56a"><div class="ttname"><a href="group__ktos__hal.html#gaf4300bbe2d54c65f155361e713d7c56a">ktos_hal_StartScheduler</a></div><div class="ttdeci">void ktos_hal_StartScheduler(const void *first_task_sp)</div><div class="ttdoc">Launch the KTOS scheduler and the first task. Never returns.</div><div class="ttdef"><b>Definition</b> <a href="atmega2560_2ktos__bsp_8c_source.html#l00249">ktos_bsp.c:249</a></div></div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md50"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md52"></a>
 CI / CD Pipeline</h1>
 <p>Every pull request automatically:</p><ol type="1">
 <li>Builds all BSPs with their correct toolchain</li>
@@ -269,7 +269,7 @@ CI / CD Pipeline</h1>
 <li>Blocks merge if any check fails</li>
 </ol>
 <p>On merge to <code>main</code>, ZIP packages are generated and uploaded as GitHub artifacts.</p>
-<h1><a class="anchor" id="autotoc_md51"></a>
+<h1><a class="anchor" id="autotoc_md53"></a>
 Contributing</h1>
 <p>We welcome contributions — especially new BSPs for unsupported MCUs!</p>
 <p>Please see <a class="el" href="md_CONTRIBUTING.html">CONTRIBUTING.md</a> for full guidelines.</p>
@@ -279,11 +279,11 @@ Contributing</h1>
 <li>New to the project? Check out issues labeled <a href="https://github.com/baamiis/KTOS/labels/good-first-issue"><code>good-first-issue</code></a></li>
 </ul>
 <p>Please read our <a class="el" href="md_CODE__OF__CONDUCT.html">Code of Conduct</a> before contributing.</p>
-<h1><a class="anchor" id="autotoc_md52"></a>
+<h1><a class="anchor" id="autotoc_md54"></a>
 Licensing</h1>
 <p>KTOS is dual-licensed by <b>Khalid Hamdou / BAAMIIS LIMITED</b>, the original author and sole copyright holder.</p>
 <hr  />
-<h2><a class="anchor" id="autotoc_md54"></a>
+<h2><a class="anchor" id="autotoc_md56"></a>
 Open Source — GPL v3</h2>
 <p>If you are building an <b>open source project</b>, KTOS is free to use under the [GNU General Public License v3](LICENSE).</p>
 <p>Under GPL v3 you must:</p><ul>
@@ -292,7 +292,7 @@ Open Source — GPL v3</h2>
 <li>State any significant changes you make to KTOS</li>
 </ul>
 <hr  />
-<h2><a class="anchor" id="autotoc_md56"></a>
+<h2><a class="anchor" id="autotoc_md58"></a>
 Commercial License</h2>
 <p>If you are building a <b>proprietary or closed-source product</b> and cannot comply with the GPL v3, you must purchase a Commercial License from BAAMIIS LIMITED.</p>
 <p>The Commercial License allows you to:</p><ul>

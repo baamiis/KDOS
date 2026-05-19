@@ -1,7 +1,7 @@
 <map id="bsp/attiny85" name="bsp/attiny85">
 <area shape="rect" id="node1" href="dir_859bf946142afa845427eae5e03deee1.html" title="attiny85" alt="" coords="27,52,103,77"/>
 <area shape="rect" id="node2" href="dir_4270bfced15e0e73154b13468c7c9ad9.html" title="core" alt="" coords="40,125,91,151"/>
-<area shape="poly" id="edge1" href="dir_000002_000004.html" alt="" coords="68,78,68,112,63,112,63,78"/>
-<area shape="rect" id="edge1-headlabel" href="dir_000002_000004.html" title="1" alt="" coords="69,100,78,114"/>
+<area shape="poly" id="edge1" href="dir_000003_000005.html" alt="" coords="68,78,68,112,63,112,63,78"/>
+<area shape="rect" id="edge1-headlabel" href="dir_000003_000005.html" title="1" alt="" coords="69,100,78,114"/>
 <area shape="rect" id="clust1" href="dir_3c5459f7c179b79c90e2565474bb2856.html" title="bsp" alt="" coords="16,16,115,88"/>
 </map>

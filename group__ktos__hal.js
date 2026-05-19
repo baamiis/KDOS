@@ -2,6 +2,7 @@ var group__ktos__hal =
 [
     [ "KTOS BSP — AVR (ATmega2560)", "group__ktos__bsp__avr2560.html", null ],
     [ "KTOS BSP — AVR (ATmega328P)", "group__ktos__bsp__avr.html", null ],
+    [ "KTOS BSP — AVR (ATmega32U4)", "group__ktos__bsp__avr32u4.html", null ],
     [ "KTOS BSP — AVR (ATtiny85)", "group__ktos__bsp__attiny85.html", null ],
     [ "KTOS BSP — Xtensa LX106 (ESP8266)", "group__ktos__bsp__xtensa.html", null ],
     [ "KTOS BSP — MSP430G2553", "group__ktos__bsp__msp430.html", null ],

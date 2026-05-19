@@ -100,7 +100,7 @@ $(document).ready(function(){initNavTree('group__ktos__hal.html',''); initResiza
 <div class="dynheader">
 Collaboration diagram for KTOS HAL — hardware abstraction layer:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="group__ktos__hal.svg" width="458" height="506"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="group__ktos__hal.svg" width="460" height="555"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="groups" name="groups"></a>
@@ -108,6 +108,8 @@ Modules</h2></td></tr>
 <tr class="memitem:group__ktos__bsp__avr2560" id="r_group__ktos__bsp__avr2560"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ktos__bsp__avr2560.html">KTOS BSP — AVR (ATmega2560)</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:group__ktos__bsp__avr" id="r_group__ktos__bsp__avr"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ktos__bsp__avr.html">KTOS BSP — AVR (ATmega328P)</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__ktos__bsp__avr32u4" id="r_group__ktos__bsp__avr32u4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ktos__bsp__avr32u4.html">KTOS BSP — AVR (ATmega32U4)</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:group__ktos__bsp__attiny85" id="r_group__ktos__bsp__attiny85"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ktos__bsp__attiny85.html">KTOS BSP — AVR (ATtiny85)</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -209,6 +211,7 @@ Cortex-M3 skeleton</h3>
 <p>Perform a cooperative context switch between two execution contexts.</p>
 <p>Saves SREG and R0-R31 of the current context onto the current stack, writes the current SP into <code>*p_current_sp_storage</code>, sets SP to <code>next_sp</code>, then restores R0-R31 and SREG of the new context and returns into it.</p>
 <dl class="section note"><dt>Note</dt><dd>AVR SP is split across two 8-bit I/O registers (<code>SPL</code> / <code>SPH</code>).</dd></dl>
+<p>Perform a cooperative context switch between two execution contexts.</p>
 <p>Perform a cooperative context switch between two execution contexts.</p>
 <p>Identical to ATmega328P.</p>
 <p>Perform a cooperative context switch between two execution contexts.</p>
@@ -376,6 +379,8 @@ Cortex-M SysTick example (72 MHz)</h3>
 <p>Configure and start the 1 ms system tick timer.</p>
 <p>Settings: prescaler 64, OCR1A = 249 → 1 ms at 16 MHz. The ISR vector <code>TIMER1_COMPA_vect</code> must be defined in the application and must call <code><a class="el" href="ktos_8c.html#a2a3876653c789ddcd5a9ccf968d98fe0" title="1 ms system tick interrupt handler.">ktos_timer_irq_handler()</a></code>.</p>
 <p>Configure and start the 1 ms system tick timer.</p>
+<p>Settings: prescaler 64, OCR1A = 249 → 1 ms at 16 MHz. Timer1 on the ATmega32U4 uses the same register layout as the ATmega328P. The ISR vector <code>TIMER1_COMPA_vect</code> must be defined in the application.</p>
+<p>Configure and start the 1 ms system tick timer.</p>
 <p>Prescaler 64, OCR0A = 124 → 1 ms at 8 MHz. ATtiny85 uses <code>TIMSK</code> (not <code>TIMSK0</code>) for the interrupt enable register.</p>
 <p>Configure and start the 1 ms system tick timer.</p>
 <p>FRC1 management is left to each example's startup.c:</p>
@@ -506,6 +511,13 @@ Here is the caller graph for this function:</div>
 <div class="line">[ exit PC high ] <span class="keywordflow">return</span> address of exit handler (AVR pushes PC as 2 bytes)</div>
 <div class="line">[ exit PC low  ]</div>
 <div class="line">[ task PC high ] entry point of the task function</div>
+<div class="line">[ task PC low  ]</div>
+</div><!-- fragment --><p>Set up the initial stack frame for a new task.</p>
+<p>The ATmega32U4 has a 2-byte program counter, identical to the ATmega328P. Stack layout (top = lowest address): </p><div class="fragment"><div class="line">[ R31..R1, R0 ]  32 GPRs</div>
+<div class="line">[ SREG ]         status <span class="keyword">register</span> (I-bit set)</div>
+<div class="line">[ exit PC high ] 2-<span class="keywordtype">byte</span> <span class="keywordflow">return</span> address</div>
+<div class="line">[ exit PC low  ]</div>
+<div class="line">[ task PC high ] 2-<span class="keywordtype">byte</span> task entry point</div>
 <div class="line">[ task PC low  ]</div>
 </div><!-- fragment --><p>Set up the initial stack frame for a new task.</p>
 <p>ATtiny85 has 8KB flash (4K words) — 2-byte PC, identical layout to the ATmega328P BSP.</p>

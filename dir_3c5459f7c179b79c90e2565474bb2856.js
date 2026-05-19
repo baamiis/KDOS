@@ -2,6 +2,7 @@ var dir_3c5459f7c179b79c90e2565474bb2856 =
 [
     [ "atmega2560", "dir_7fd06ede025f89124eee1890153e38c3.html", "dir_7fd06ede025f89124eee1890153e38c3" ],
     [ "atmega328p", "dir_b357e37434186df21fde4b75ac4ac724.html", "dir_b357e37434186df21fde4b75ac4ac724" ],
+    [ "atmega32u4", "dir_40f7277ac0720ef53ea0f24fcdcda385.html", "dir_40f7277ac0720ef53ea0f24fcdcda385" ],
     [ "attiny85", "dir_859bf946142afa845427eae5e03deee1.html", "dir_859bf946142afa845427eae5e03deee1" ],
     [ "esp8266", "dir_b76b1ae3a49d6fa6dcec0828110f1b4c.html", "dir_b76b1ae3a49d6fa6dcec0828110f1b4c" ],
     [ "msp430g2553", "dir_ab88de1e42f14eb5ad8a154fe1a59292.html", "dir_ab88de1e42f14eb5ad8a154fe1a59292" ],

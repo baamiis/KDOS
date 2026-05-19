@@ -156,11 +156,11 @@ Variables</h2></td></tr>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">Toolchain   </td><td class="markdownTableBodyNone">SDCC with &ndash;use-non-free   </td></tr>
 </table>
-<h3><a class="anchor" id="autotoc_md27"></a>
+<h3><a class="anchor" id="autotoc_md29"></a>
 Build</h3>
 <div class="fragment"><div class="line">sdcc -mpic18 -ppic18f4550 --use-non-free ...</div>
 </div><!-- fragment --><dl class="section warning"><dt>Warning</dt><dd>PIC18F context switching has a 31-level hardware call stack limit. Deep call chains across task boundaries may corrupt the hardware stack. This BSP is suitable for applications with shallow call stacks only. Toolchain: SDCC (<a href="http://sdcc.sourceforge.net">http://sdcc.sourceforge.net</a>) with &ndash;use-non-free.</dd></dl>
-<h3><a class="anchor" id="autotoc_md28"></a>
+<h3><a class="anchor" id="autotoc_md30"></a>
 Architecture constraints</h3>
 <p>PIC18 has a separate 31-level hardware return stack (not in data RAM). Only cooperative context switch is practical — saving/restoring the hardware stack contents across arbitrary task boundaries is not feasible. This BSP saves the data-RAM software stack state (FSR1 pointer) along with the key CPU registers.</p>
 <p>Context saving covers: WREG, STATUS, BSR, FSR0, FSR1, FSR2, PRODL, PRODH. The task's hardware stack depth must remain within PIC18's 31-entry limit across the lifetime of any cooperative yield. </p>

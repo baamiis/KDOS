@@ -7,8 +7,10 @@ var searchData=
   ['arm_20cortex_20m_20stm32f103_20stm32f030_4',['KTOS BSP — ARM Cortex-M (STM32F103, STM32F030)',['../group__ktos__bsp__arm.html',1,'']]],
   ['atmega2560_5',['KTOS BSP — AVR (ATmega2560)',['../group__ktos__bsp__avr2560.html',1,'']]],
   ['atmega328p_6',['KTOS BSP — AVR (ATmega328P)',['../group__ktos__bsp__avr.html',1,'']]],
-  ['attiny85_7',['KTOS BSP — AVR (ATtiny85)',['../group__ktos__bsp__attiny85.html',1,'']]],
-  ['avr_20atmega2560_8',['KTOS BSP — AVR (ATmega2560)',['../group__ktos__bsp__avr2560.html',1,'']]],
-  ['avr_20atmega328p_9',['KTOS BSP — AVR (ATmega328P)',['../group__ktos__bsp__avr.html',1,'']]],
-  ['avr_20attiny85_10',['KTOS BSP — AVR (ATtiny85)',['../group__ktos__bsp__attiny85.html',1,'']]]
+  ['atmega32u4_7',['KTOS BSP — AVR (ATmega32U4)',['../group__ktos__bsp__avr32u4.html',1,'']]],
+  ['attiny85_8',['KTOS BSP — AVR (ATtiny85)',['../group__ktos__bsp__attiny85.html',1,'']]],
+  ['avr_20atmega2560_9',['KTOS BSP — AVR (ATmega2560)',['../group__ktos__bsp__avr2560.html',1,'']]],
+  ['avr_20atmega328p_10',['KTOS BSP — AVR (ATmega328P)',['../group__ktos__bsp__avr.html',1,'']]],
+  ['avr_20atmega32u4_11',['KTOS BSP — AVR (ATmega32U4)',['../group__ktos__bsp__avr32u4.html',1,'']]],
+  ['avr_20attiny85_12',['KTOS BSP — AVR (ATtiny85)',['../group__ktos__bsp__attiny85.html',1,'']]]
 ];

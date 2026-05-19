@@ -1,12 +1,13 @@
 <map id="KTOS HAL — hardware abstraction layer" name="KTOS HAL — hardware abstraction layer">
-<area shape="rect" id="Node000009" href="$group__ktos__bsp__arm.html" title=" " alt="" coords="230,5,443,45"/>
-<area shape="rect" id="Node000004" href="$group__ktos__bsp__attiny85.html" title=" " alt="" coords="235,70,438,95"/>
-<area shape="rect" id="Node000003" href="$group__ktos__bsp__avr.html" title=" " alt="" coords="221,119,452,145"/>
-<area shape="rect" id="Node000002" href="$group__ktos__bsp__avr2560.html" title=" " alt="" coords="221,169,452,194"/>
-<area shape="rect" id="Node000006" href="$group__ktos__bsp__msp430.html" title=" " alt="" coords="237,218,437,243"/>
-<area shape="rect" id="Node000007" href="$group__ktos__bsp__pic18f.html" title=" " alt="" coords="245,268,428,308"/>
-<area shape="rect" id="Node000008" href="$group__ktos__bsp__sam3x.html" title=" " alt="" coords="252,332,421,372"/>
-<area shape="rect" id="Node000010" href="$group__ktos__bsp__stm32l031.html" title=" " alt="" coords="246,396,427,436"/>
-<area shape="rect" id="Node000005" href="$group__ktos__bsp__xtensa.html" title=" " alt="" coords="261,460,412,500"/>
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,211,173,251"/>
+<area shape="rect" id="Node000010" href="$group__ktos__bsp__arm.html" title=" " alt="" coords="231,5,445,45"/>
+<area shape="rect" id="Node000005" href="$group__ktos__bsp__attiny85.html" title=" " alt="" coords="237,70,439,95"/>
+<area shape="rect" id="Node000003" href="$group__ktos__bsp__avr.html" title=" " alt="" coords="223,119,453,145"/>
+<area shape="rect" id="Node000002" href="$group__ktos__bsp__avr2560.html" title=" " alt="" coords="223,169,453,194"/>
+<area shape="rect" id="Node000004" href="$group__ktos__bsp__avr32u4.html" title=" " alt="" coords="221,218,455,243"/>
+<area shape="rect" id="Node000007" href="$group__ktos__bsp__msp430.html" title=" " alt="" coords="238,267,438,293"/>
+<area shape="rect" id="Node000008" href="$group__ktos__bsp__pic18f.html" title=" " alt="" coords="247,317,429,357"/>
+<area shape="rect" id="Node000009" href="$group__ktos__bsp__sam3x.html" title=" " alt="" coords="253,381,423,421"/>
+<area shape="rect" id="Node000011" href="$group__ktos__bsp__stm32l031.html" title=" " alt="" coords="247,445,429,485"/>
+<area shape="rect" id="Node000006" href="$group__ktos__bsp__xtensa.html" title=" " alt="" coords="263,509,413,549"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,236,173,276"/>
 </map>

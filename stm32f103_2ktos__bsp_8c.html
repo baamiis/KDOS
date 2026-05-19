@@ -165,10 +165,10 @@ Functions</h2></td></tr>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">Toolchain   </td><td class="markdownTableBodyNone">arm-none-eabi-gcc   </td></tr>
 </table>
-<h3><a class="anchor" id="autotoc_md34"></a>
+<h3><a class="anchor" id="autotoc_md36"></a>
 Build</h3>
 <div class="fragment"><div class="line">arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb --specs=nosys.specs ...</div>
-</div><!-- fragment --><h3><a class="anchor" id="autotoc_md35"></a>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md37"></a>
 SysTick ISR wiring</h3>
 <p>Add this to your application (not inside the BSP): </p><div class="fragment"><div class="line"><span class="keywordtype">void</span> SysTick_Handler(<span class="keywordtype">void</span>) { <a class="code hl_function" href="ktos_8c.html#a2a3876653c789ddcd5a9ccf968d98fe0">ktos_timer_irq_handler</a>(); }</div>
 <div class="ttc" id="aktos_8c_html_a2a3876653c789ddcd5a9ccf968d98fe0"><div class="ttname"><a href="ktos_8c.html#a2a3876653c789ddcd5a9ccf968d98fe0">ktos_timer_irq_handler</a></div><div class="ttdeci">void ktos_timer_irq_handler(void)</div><div class="ttdoc">1 ms system tick interrupt handler.</div><div class="ttdef"><b>Definition</b> <a href="ktos_8c_source.html#l00395">ktos.c:395</a></div></div>
