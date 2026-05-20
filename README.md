@@ -24,37 +24,30 @@ Rule of thumb: *"If your application logic + KTOS fits in under 32KB RAM, KTOS i
 
 KTOS provides ready-to-use Board Support Packages (BSPs) for the following microcontrollers:
 
-| MCU | Core | RAM | Flash | Status |
-|-----|------|-----|-------|--------|
-| ATmega328P | AVR 8-bit | 2KB | 32KB | ✅ Full BSP |
-| SAM3X8E | Cortex-M3 | 96KB | 512KB | ✅ Full BSP |
-| STM32F103 | Cortex-M3 | 20KB | 64-128KB | ✅ Full BSP |
-| STM32F030 | Cortex-M0 | 4KB | 16-64KB | ✅ Full BSP |
-| ESP8266 (LX106) | Xtensa 32-bit | ~30KB free | 1MB+ | ✅ Full BSP |
-| ATmega2560 | AVR 8-bit | 8KB | 256KB | ✅ Full BSP |
-| ATtiny85 | AVR 8-bit | 512B | 8KB | ✅ Full BSP |
-| STM32L031 | Cortex-M0+ | 8KB | 32KB | ✅ Full BSP |
-| MSP430G2553 | MSP430 16-bit | 512B | 16KB | ✅ Full BSP |
-| PIC18F4550 | PIC18 8-bit | 2KB | 32KB | ⚠️ Experimental |
+| MCU | Core | RAM | Flash | BSP | Examples |
+|-----|------|-----|-------|-----|----------|
+| ATmega328P | AVR 8-bit | 2KB | 32KB | ✅ | 6 (Nano / Uno / Pro Mini) |
+| ATmega2560 | AVR 8-bit | 8KB | 256KB | ✅ | 6 (Arduino Mega 2560) |
+| ATtiny85 | AVR 8-bit | 512B | 8KB | ✅ | hello_ktos |
+| MSP430G2553 | MSP430 16-bit | 512B | 16KB | ✅ | hello_ktos |
+| STM32F030 | Cortex-M0 | 8KB | 64KB | ✅ | 6 (Nucleo-F030R8) |
+| STM32L031 | Cortex-M0+ | 8KB | 32KB | ✅ | hello_ktos |
+| STM32F103 | Cortex-M3 | 20KB | 64KB | ✅ | 6 (Blue Pill) |
+| SAM3X8E | Cortex-M3 | 96KB | 512KB | ✅ | 6 (Arduino Due) |
+| ESP8266 (LX106) | Xtensa 32-bit | ~30KB free | 1MB+ | ✅ | 6+ |
+| PIC18F4550 | PIC18 8-bit | 2KB | 32KB | ⚠️ Experimental | hello_ktos |
 
 **Compatible boards per MCU:**
 - **ATmega328P**: Arduino Uno, Arduino Nano, Arduino Pro Mini
-- **SAM3X8E**: Arduino Due
-- **STM32F103**: Blue Pill, Nucleo-F103RB, Maple Mini
-- **STM32F030**: Nucleo-F030R8
-- **ESP8266**: NodeMCU, Wemos D1 Mini, ESP-01
 - **ATmega2560**: Arduino Mega 2560
 - **ATtiny85**: Digispark
-- **STM32L031**: Nucleo-L031K6
 - **MSP430G2553**: MSP430 LaunchPad (MSP-EXP430G2)
+- **STM32F030**: Nucleo-F030R8
+- **STM32L031**: Nucleo-L031K6
+- **STM32F103**: Blue Pill, Nucleo-F103RB, Maple Mini
+- **SAM3X8E**: Arduino Due
+- **ESP8266**: NodeMCU, Wemos D1 Mini, ESP-01
 - **PIC18F4550**: Custom board (SDCC toolchain)
-- ATmega4809 (Arduino UNO WiFi Rev2)
-- SAMD21G18A (Arduino MKR WiFi 1010)
-- Renesas RA4M1 (Arduino UNO R4 WiFi)
-- STM32H747 (Arduino GIGA R1 WiFi)
-- STM32U585 (Arduino UNO Q — MCU side)
-
-Plus the long-standing roadmap: ATmega2560, ATtiny85, MSP430G2553, STM32L031, PIC16F/18F.
 
 ## Get Started
 
@@ -131,10 +124,14 @@ KTOS/
 Each `examples/<family>/` directory has a top-level README that walks
 you through download, build, and flash.  Quick links:
 
-| Family                          | Where                                          | Highlights                                          |
-|---------------------------------|------------------------------------------------|-----------------------------------------------------|
-| Arduino (ATmega328P)            | `examples/Arduino/` | Bare-metal KTOS — no Arduino framework.  Builds with PlatformIO. |
-| ESP8266 (Xtensa LX106)          | `examples/esp8266/` | KTOS bridging from the SDK's windowed ABI into CALL0. |
+| Family                          | Where                                                          | Highlights                                                        |
+|---------------------------------|----------------------------------------------------------------|-------------------------------------------------------------------|
+| Arduino (ATmega328P)            | [`examples/Arduino/`](examples/Arduino/README.md)             | Bare-metal — Nano, Uno, Pro Mini. No Arduino framework.           |
+| Arduino Mega (ATmega2560)       | [`examples/Arduino/Mega/`](examples/Arduino/Mega/README.md)   | 6 examples: uart, led, button, adc, i2c, spi. Direct registers.  |
+| Arduino Due (SAM3X8E)           | [`examples/Arduino/Due/`](examples/Arduino/Due/README.md)     | Cortex-M3 bare-metal, 96KB RAM.                                   |
+| STM32F103 Blue Pill             | [`examples/stm32f103/`](examples/stm32f103/README.md)         | 6 examples, 72 MHz, no HAL. PlatformIO + custom linker script.    |
+| STM32F030 Nucleo-F030R8         | [`examples/stm32f030/`](examples/stm32f030/README.md)         | 6 examples, 48 MHz Cortex-M0. New-style ADC/I2C/USART registers. |
+| ESP8266 (Xtensa LX106)          | [`examples/esp8266/`](examples/esp8266.md)                    | KTOS bridging from the SDK's windowed ABI into CALL0.             |
 
 ## Building Locally
 
