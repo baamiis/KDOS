@@ -112,46 +112,40 @@ Supported MCUs</h1>
 <p>KTOS provides ready-to-use Board Support Packages (BSPs) for the following microcontrollers:</p>
 <table class="markdownTable">
 <tr class="markdownTableHead">
-<th class="markdownTableHeadNone">MCU   </th><th class="markdownTableHeadNone">Core   </th><th class="markdownTableHeadNone">RAM   </th><th class="markdownTableHeadNone">Flash   </th><th class="markdownTableHeadNone">Status    </th></tr>
+<th class="markdownTableHeadNone">MCU   </th><th class="markdownTableHeadNone">Core   </th><th class="markdownTableHeadNone">RAM   </th><th class="markdownTableHeadNone">Flash   </th><th class="markdownTableHeadNone">BSP   </th><th class="markdownTableHeadNone">Examples    </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">ATmega328P   </td><td class="markdownTableBodyNone">AVR 8-bit   </td><td class="markdownTableBodyNone">2KB   </td><td class="markdownTableBodyNone">32KB   </td><td class="markdownTableBodyNone">✅ Full BSP    </td></tr>
+<td class="markdownTableBodyNone">ATmega328P   </td><td class="markdownTableBodyNone">AVR 8-bit   </td><td class="markdownTableBodyNone">2KB   </td><td class="markdownTableBodyNone">32KB   </td><td class="markdownTableBodyNone">✅   </td><td class="markdownTableBodyNone">6 (Nano / Uno / Pro Mini)    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">SAM3X8E   </td><td class="markdownTableBodyNone">Cortex-M3   </td><td class="markdownTableBodyNone">96KB   </td><td class="markdownTableBodyNone">512KB   </td><td class="markdownTableBodyNone">✅ Full BSP    </td></tr>
+<td class="markdownTableBodyNone">ATmega2560   </td><td class="markdownTableBodyNone">AVR 8-bit   </td><td class="markdownTableBodyNone">8KB   </td><td class="markdownTableBodyNone">256KB   </td><td class="markdownTableBodyNone">✅   </td><td class="markdownTableBodyNone">6 (Arduino Mega 2560)    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">STM32F103   </td><td class="markdownTableBodyNone">Cortex-M3   </td><td class="markdownTableBodyNone">20KB   </td><td class="markdownTableBodyNone">64-128KB   </td><td class="markdownTableBodyNone">✅ Full BSP    </td></tr>
+<td class="markdownTableBodyNone">ATtiny85   </td><td class="markdownTableBodyNone">AVR 8-bit   </td><td class="markdownTableBodyNone">512B   </td><td class="markdownTableBodyNone">8KB   </td><td class="markdownTableBodyNone">✅   </td><td class="markdownTableBodyNone">hello_ktos    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">STM32F030   </td><td class="markdownTableBodyNone">Cortex-M0   </td><td class="markdownTableBodyNone">4KB   </td><td class="markdownTableBodyNone">16-64KB   </td><td class="markdownTableBodyNone">✅ Full BSP    </td></tr>
+<td class="markdownTableBodyNone">MSP430G2553   </td><td class="markdownTableBodyNone">MSP430 16-bit   </td><td class="markdownTableBodyNone">512B   </td><td class="markdownTableBodyNone">16KB   </td><td class="markdownTableBodyNone">✅   </td><td class="markdownTableBodyNone">hello_ktos    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">ESP8266 (LX106)   </td><td class="markdownTableBodyNone">Xtensa 32-bit   </td><td class="markdownTableBodyNone">~30KB free   </td><td class="markdownTableBodyNone">1MB+   </td><td class="markdownTableBodyNone">✅ Full BSP    </td></tr>
+<td class="markdownTableBodyNone">STM32F030   </td><td class="markdownTableBodyNone">Cortex-M0   </td><td class="markdownTableBodyNone">8KB   </td><td class="markdownTableBodyNone">64KB   </td><td class="markdownTableBodyNone">✅   </td><td class="markdownTableBodyNone">6 (Nucleo-F030R8)    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">ATmega2560   </td><td class="markdownTableBodyNone">AVR 8-bit   </td><td class="markdownTableBodyNone">8KB   </td><td class="markdownTableBodyNone">256KB   </td><td class="markdownTableBodyNone">✅ Full BSP    </td></tr>
+<td class="markdownTableBodyNone">STM32L031   </td><td class="markdownTableBodyNone">Cortex-M0+   </td><td class="markdownTableBodyNone">8KB   </td><td class="markdownTableBodyNone">32KB   </td><td class="markdownTableBodyNone">✅   </td><td class="markdownTableBodyNone">hello_ktos    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">ATtiny85   </td><td class="markdownTableBodyNone">AVR 8-bit   </td><td class="markdownTableBodyNone">512B   </td><td class="markdownTableBodyNone">8KB   </td><td class="markdownTableBodyNone">✅ Full BSP    </td></tr>
+<td class="markdownTableBodyNone">STM32F103   </td><td class="markdownTableBodyNone">Cortex-M3   </td><td class="markdownTableBodyNone">20KB   </td><td class="markdownTableBodyNone">64KB   </td><td class="markdownTableBodyNone">✅   </td><td class="markdownTableBodyNone">6 (Blue Pill)    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">STM32L031   </td><td class="markdownTableBodyNone">Cortex-M0+   </td><td class="markdownTableBodyNone">8KB   </td><td class="markdownTableBodyNone">32KB   </td><td class="markdownTableBodyNone">✅ Full BSP    </td></tr>
+<td class="markdownTableBodyNone">SAM3X8E   </td><td class="markdownTableBodyNone">Cortex-M3   </td><td class="markdownTableBodyNone">96KB   </td><td class="markdownTableBodyNone">512KB   </td><td class="markdownTableBodyNone">✅   </td><td class="markdownTableBodyNone">6 (Arduino Due)    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">MSP430G2553   </td><td class="markdownTableBodyNone">MSP430 16-bit   </td><td class="markdownTableBodyNone">512B   </td><td class="markdownTableBodyNone">16KB   </td><td class="markdownTableBodyNone">✅ Full BSP    </td></tr>
+<td class="markdownTableBodyNone">ESP8266 (LX106)   </td><td class="markdownTableBodyNone">Xtensa 32-bit   </td><td class="markdownTableBodyNone">~30KB free   </td><td class="markdownTableBodyNone">1MB+   </td><td class="markdownTableBodyNone">✅   </td><td class="markdownTableBodyNone">6+    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">PIC18F4550   </td><td class="markdownTableBodyNone">PIC18 8-bit   </td><td class="markdownTableBodyNone">2KB   </td><td class="markdownTableBodyNone">32KB   </td><td class="markdownTableBodyNone">⚠️ Experimental   </td></tr>
+<td class="markdownTableBodyNone">PIC18F4550   </td><td class="markdownTableBodyNone">PIC18 8-bit   </td><td class="markdownTableBodyNone">2KB   </td><td class="markdownTableBodyNone">32KB   </td><td class="markdownTableBodyNone">⚠️ Experimental   </td><td class="markdownTableBodyNone">hello_ktos   </td></tr>
 </table>
 <p><b>Compatible boards per MCU:</b></p><ul>
 <li><b>ATmega328P</b>: Arduino Uno, Arduino Nano, Arduino Pro Mini</li>
-<li><b>SAM3X8E</b>: Arduino Due</li>
-<li><b>STM32F103</b>: Blue Pill, Nucleo-F103RB, Maple Mini</li>
-<li><b>STM32F030</b>: Nucleo-F030R8</li>
-<li><b>ESP8266</b>: NodeMCU, Wemos D1 Mini, ESP-01</li>
 <li><b>ATmega2560</b>: Arduino Mega 2560</li>
 <li><b>ATtiny85</b>: Digispark</li>
-<li><b>STM32L031</b>: Nucleo-L031K6</li>
 <li><b>MSP430G2553</b>: MSP430 LaunchPad (MSP-EXP430G2)</li>
+<li><b>STM32F030</b>: Nucleo-F030R8</li>
+<li><b>STM32L031</b>: Nucleo-L031K6</li>
+<li><b>STM32F103</b>: Blue Pill, Nucleo-F103RB, Maple Mini</li>
+<li><b>SAM3X8E</b>: Arduino Due</li>
+<li><b>ESP8266</b>: NodeMCU, Wemos D1 Mini, ESP-01</li>
 <li><b>PIC18F4550</b>: Custom board (SDCC toolchain)</li>
-<li>ATmega4809 (Arduino UNO WiFi Rev2)</li>
-<li>SAMD21G18A (Arduino MKR WiFi 1010)</li>
-<li>Renesas RA4M1 (Arduino UNO R4 WiFi)</li>
-<li>STM32H747 (Arduino GIGA R1 WiFi)</li>
-<li>STM32U585 (Arduino UNO Q — MCU side)</li>
 </ul>
-<p>Plus the long-standing roadmap: ATmega2560, ATtiny85, MSP430G2553, STM32L031, PIC16F/18F.</p>
 <h1><a class="anchor" id="autotoc_md46"></a>
 Get Started</h1>
 <p>Visit <b><a href="https://ktos.co.uk">ktos.co.uk</a></b> to:</p><ul>
@@ -223,7 +217,15 @@ Examples</h1>
 <tr class="markdownTableHead">
 <th class="markdownTableHeadNone">Family   </th><th class="markdownTableHeadNone">Where   </th><th class="markdownTableHeadNone">Highlights    </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">Arduino (ATmega328P)   </td><td class="markdownTableBodyNone"><code>examples/Arduino/</code>   </td><td class="markdownTableBodyNone">Bare-metal KTOS — no Arduino framework. Builds with PlatformIO.    </td></tr>
+<td class="markdownTableBodyNone">Arduino (ATmega328P)   </td><td class="markdownTableBodyNone"><code>examples/Arduino/</code>   </td><td class="markdownTableBodyNone">Bare-metal — Nano, Uno, Pro Mini. No Arduino framework.    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Arduino Mega (ATmega2560)   </td><td class="markdownTableBodyNone"><code>examples/Arduino/Mega/</code>   </td><td class="markdownTableBodyNone">6 examples: uart, led, button, adc, i2c, spi. Direct registers.    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Arduino Due (SAM3X8E)   </td><td class="markdownTableBodyNone"><code>examples/Arduino/Due/</code>   </td><td class="markdownTableBodyNone">Cortex-M3 bare-metal, 96KB RAM.    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">STM32F103 Blue Pill   </td><td class="markdownTableBodyNone"><code>examples/stm32f103/</code>   </td><td class="markdownTableBodyNone">6 examples, 72 MHz, no HAL. PlatformIO + custom linker script.    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">STM32F030 Nucleo-F030R8   </td><td class="markdownTableBodyNone"><code>examples/stm32f030/</code>   </td><td class="markdownTableBodyNone">6 examples, 48 MHz Cortex-M0. New-style ADC/I2C/USART registers.    </td></tr>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">ESP8266 (Xtensa LX106)   </td><td class="markdownTableBodyNone"><code>examples/esp8266/</code>   </td><td class="markdownTableBodyNone">KTOS bridging from the SDK's windowed ABI into CALL0.   </td></tr>
 </table>
