@@ -4,6 +4,7 @@ var stm32f103_2startup_8c =
     [ "RCC_CFGR", "stm32f103_2startup_8c.html#a8f7780f390ef4cbb05efa06554ba0998", null ],
     [ "RCC_CR", "stm32f103_2startup_8c.html#a3465fac46f8d87fc7e243765777af052", null ],
     [ "isr_t", "stm32f103_2startup_8c.html#a6d626fdf464bc6f2160d0bc92243b027", null ],
+    [ "_sbrk", "stm32f103_2startup_8c.html#a38f8394eee3a086b87ff6d431e1e5343", null ],
     [ "ADC1_2_IRQHandler", "stm32f103_2startup_8c.html#a3e8fca6e2f18e433a9fbc3d2dcc0b411", null ],
     [ "BusFault_Handler", "stm32f103_2startup_8c.html#a850cefb17a977292ae5eb4cafa9976c3", null ],
     [ "CAN_RX1_IRQHandler", "stm32f103_2startup_8c.html#ad8dd583ca045a1f77ec52880be0f70c3", null ],
