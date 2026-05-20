@@ -124,14 +124,14 @@ KTOS/
 Each `examples/<family>/` directory has a top-level README that walks
 you through download, build, and flash.  Quick links:
 
-| Family                          | Where                                                          | Highlights                                                        |
-|---------------------------------|----------------------------------------------------------------|-------------------------------------------------------------------|
-| Arduino (ATmega328P)            | [`examples/Arduino/`](examples/Arduino/README.md)             | Bare-metal — Nano, Uno, Pro Mini. No Arduino framework.           |
-| Arduino Mega (ATmega2560)       | [`examples/Arduino/Mega/`](examples/Arduino/Mega/README.md)   | 6 examples: uart, led, button, adc, i2c, spi. Direct registers.  |
-| Arduino Due (SAM3X8E)           | [`examples/Arduino/Due/`](examples/Arduino/Due/README.md)     | Cortex-M3 bare-metal, 96KB RAM.                                   |
-| STM32F103 Blue Pill             | [`examples/stm32f103/`](examples/stm32f103/README.md)         | 6 examples, 72 MHz, no HAL. PlatformIO + custom linker script.    |
-| STM32F030 Nucleo-F030R8         | [`examples/stm32f030/`](examples/stm32f030/README.md)         | 6 examples, 48 MHz Cortex-M0. New-style ADC/I2C/USART registers. |
-| ESP8266 (Xtensa LX106)          | [`examples/esp8266/`](examples/esp8266.md)                    | KTOS bridging from the SDK's windowed ABI into CALL0.             |
+| Family                          | Where                          | Highlights                                                        |
+|---------------------------------|--------------------------------|-------------------------------------------------------------------|
+| Arduino (ATmega328P)            | `examples/Arduino/`            | Bare-metal — Nano, Uno, Pro Mini. No Arduino framework.           |
+| Arduino Mega (ATmega2560)       | `examples/Arduino/Mega/`       | 6 examples: uart, led, button, adc, i2c, spi. Direct registers.  |
+| Arduino Due (SAM3X8E)           | `examples/Arduino/Due/`        | Cortex-M3 bare-metal, 96KB RAM.                                   |
+| STM32F103 Blue Pill             | `examples/stm32f103/`          | 6 examples, 72 MHz, no HAL. PlatformIO + custom linker script.    |
+| STM32F030 Nucleo-F030R8         | `examples/stm32f030/`          | 6 examples, 48 MHz Cortex-M0. New-style ADC/I2C/USART registers. |
+| ESP8266 (Xtensa LX106)          | `examples/esp8266/`            | KTOS bridging from the SDK's windowed ABI into CALL0.             |
 
 ## Building Locally
 
