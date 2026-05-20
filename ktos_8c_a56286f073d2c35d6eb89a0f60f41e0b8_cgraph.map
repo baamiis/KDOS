@@ -9,7 +9,7 @@
 <area shape="rect" id="Node000003" href="$group__ktos__core.html#ga77b699103f3ec266c0d79d849ead8c1c" title="Printf&#45;style debug logging (active only when DEBUG == 1)." alt="" coords="441,5,575,31"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="330,51,429,31,430,36,331,56"/>
 <area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="328,76,434,99,433,104,327,81"/>
-<area shape="rect" id="Node000005" href="$group__ktos__hal.html#gab41a95b0bdad0b96dd0957bb95e087bc" title="Perform a cooperative context switch between two execution contexts." alt="" coords="419,55,597,80"/>
+<area shape="rect" id="Node000005" href="$stm32f407_2ktos__bsp_8c.html#aeaa63a9b962a6dbb7ea6b11030f8ca75" title=" " alt="" coords="419,55,597,80"/>
 <area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="371,64,405,64,405,69,371,69"/>
 <area shape="rect" id="Node000007" href="$esp8266_2ktos__bsp_8c.html#ad0087b08af4998a5440320140fb300a6" title=" " alt="" coords="441,155,575,180"/>
 <area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="351,165,427,165,427,170,351,170"/>

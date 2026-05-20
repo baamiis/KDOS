@@ -183,14 +183,14 @@ Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">p_current_sp_storage</td><td>Address of the variable that holds this context's saved stack pointer (e.g. <code>&amp;TaskCurrent-&gt;StackPtr</code> or <code>&amp;OS_SP</code>). Updated on entry. </td></tr>
-    <tr><td class="paramname">next_sp</td><td>Stack pointer value of the context to switch into (from a previous call to <a class="el" href="group__ktos__hal.html#ga73dd6050479b4a96fb2f604c7fbc3e3a" title="Set up the initial stack frame for a new task.">ktos_hal_InitTaskStack()</a> or a previous <a class="el" href="group__ktos__hal.html#gab41a95b0bdad0b96dd0957bb95e087bc" title="Perform a cooperative context switch between two execution contexts.">ktos_hal_ContextSwitch()</a>).</td></tr>
+    <tr><td class="paramname">next_sp</td><td>Stack pointer value of the context to switch into (from a previous call to <a class="el" href="group__ktos__hal.html#ga73dd6050479b4a96fb2f604c7fbc3e3a" title="Set up the initial stack frame for a new task.">ktos_hal_InitTaskStack()</a> or a previous <a class="el" href="stm32f407_2ktos__bsp_8c.html#aeaa63a9b962a6dbb7ea6b11030f8ca75">ktos_hal_ContextSwitch()</a>).</td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section note"><dt>Note</dt><dd>Must be implemented in assembly. Interrupts must be disabled by the caller before invoking this function.</dd></dl>
 <h3><a class="anchor" id="autotoc_md11"></a>
 Cortex-M3 skeleton</h3>
-<div class="fragment"><div class="line">__attribute__((naked)) <span class="keywordtype">void</span> <a class="code hl_function" href="group__ktos__hal.html#gab41a95b0bdad0b96dd0957bb95e087bc">ktos_hal_ContextSwitch</a>(</div>
+<div class="fragment"><div class="line">__attribute__((naked)) <span class="keywordtype">void</span> <a class="code hl_function" href="stm32f407_2ktos__bsp_8c.html#aeaa63a9b962a6dbb7ea6b11030f8ca75">ktos_hal_ContextSwitch</a>(</div>
 <div class="line">        <span class="keywordtype">void</span> **p_current_sp_storage __attribute__((unused)),</div>
 <div class="line">        <span class="keywordtype">void</span>  *next_sp          __attribute__((unused)))</div>
 <div class="line">{</div>
@@ -202,7 +202,7 @@ Cortex-M3 skeleton</h3>
 <div class="line">        <span class="stringliteral">&quot;bx     lr                \n&quot;</span></div>
 <div class="line">    );</div>
 <div class="line">}</div>
-<div class="ttc" id="agroup__ktos__hal_html_gab41a95b0bdad0b96dd0957bb95e087bc"><div class="ttname"><a href="group__ktos__hal.html#gab41a95b0bdad0b96dd0957bb95e087bc">ktos_hal_ContextSwitch</a></div><div class="ttdeci">void ktos_hal_ContextSwitch(void **p_current_sp_storage, const void *next_sp)</div><div class="ttdoc">Perform a cooperative context switch between two execution contexts.</div><div class="ttdef"><b>Definition</b> <a href="atmega2560_2ktos__bsp_8c_source.html#l00161">ktos_bsp.c:161</a></div></div>
+<div class="ttc" id="astm32f407_2ktos__bsp_8c_html_aeaa63a9b962a6dbb7ea6b11030f8ca75"><div class="ttname"><a href="stm32f407_2ktos__bsp_8c.html#aeaa63a9b962a6dbb7ea6b11030f8ca75">ktos_hal_ContextSwitch</a></div><div class="ttdeci">void ktos_hal_ContextSwitch(void)</div><div class="ttdef"><b>Definition</b> <a href="stm32f407_2ktos__bsp_8c_source.html#l00051">ktos_bsp.c:51</a></div></div>
 </div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>On <b>Cortex-M0</b> you cannot use <code>STR</code> with SP as source. Route SP through a low register first: <div class="fragment"><div class="line"><span class="stringliteral">&quot;mov    r2, sp            \n&quot;</span></div>
 <div class="line"><span class="stringliteral">&quot;str    r2, [r0]          \n&quot;</span></div>
 </div><!-- fragment --></dd></dl>
@@ -234,13 +234,6 @@ Cortex-M3 skeleton</h3>
 <p>Identical to the STM32F030 (Cortex-M0) implementation. Cortex-M0+ has the same Thumb-2 instruction restrictions as Cortex-M0. </p>
 
 <p class="definition">Definition at line <a class="el" href="atmega2560_2ktos__bsp_8c_source.html#l00161">161</a> of file <a class="el" href="atmega2560_2ktos__bsp_8c_source.html">ktos_bsp.c</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="ktos_8c_source.html#l00118">ktos_DefaultTaskExitHandler()</a>, <a class="el" href="ktos_8c_source.html#l00355">ktos_Sleep()</a>, and <a class="el" href="ktos_8c_source.html#l00269">ktos_SwitchTask()</a>.</p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="group__ktos__hal_gab41a95b0bdad0b96dd0957bb95e087bc_icgraph.svg" width="100%" height="403"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
 
 </div>
 </div>
@@ -374,7 +367,7 @@ Cortex-M SysTick example (72 MHz)</h3>
 <div class="line">    SysTick_Config(72000); <span class="comment">// 72 MHz / 72000 = 1 kHz</span></div>
 <div class="line">}</div>
 <div class="line"><span class="keywordtype">void</span> <a class="code hl_function" href="samd21g18_2startup_8c.html#ab5e09814056d617c521549e542639b7e">SysTick_Handler</a>(<span class="keywordtype">void</span>) { g_ktos_timer_isr(); }</div>
-<div class="ttc" id="asamd21g18_2startup_8c_html_ab5e09814056d617c521549e542639b7e"><div class="ttname"><a href="samd21g18_2startup_8c.html#ab5e09814056d617c521549e542639b7e">SysTick_Handler</a></div><div class="ttdeci">void SysTick_Handler(void)</div></div>
+<div class="ttc" id="asamd21g18_2startup_8c_html_ab5e09814056d617c521549e542639b7e"><div class="ttname"><a href="samd21g18_2startup_8c.html#ab5e09814056d617c521549e542639b7e">SysTick_Handler</a></div><div class="ttdeci">void SysTick_Handler(void)</div><div class="ttdef"><b>Definition</b> <a href="stm32f407_2ktos__bsp_8c_source.html#l00110">ktos_bsp.c:110</a></div></div>
 </div><!-- fragment --><p>Configure and start the 1 ms system tick timer.</p>
 <p>Prescaler 64, OCR1A = 249 → 1 ms at 16 MHz. ISR vector <code>TIMER1_COMPA_vect</code> must be defined in the application.</p>
 <p>Configure and start the 1 ms system tick timer.</p>
@@ -478,7 +471,7 @@ Here is the caller graph for this function:</div>
 <p><code>#include &lt;<a class="el" href="ktos__hal_8h.html">core/ktos_hal.h</a>&gt;</code></p>
 
 <p>Set up the initial stack frame for a new task. </p>
-<p>This function crafts a fake "saved context" at the top of the task's stack so that when <a class="el" href="group__ktos__hal.html#gab41a95b0bdad0b96dd0957bb95e087bc" title="Perform a cooperative context switch between two execution contexts.">ktos_hal_ContextSwitch()</a> first switches to this task it begins execution at <code>task_func_addr</code> with the three initial parameters.</p>
+<p>This function crafts a fake "saved context" at the top of the task's stack so that when <a class="el" href="stm32f407_2ktos__bsp_8c.html#aeaa63a9b962a6dbb7ea6b11030f8ca75">ktos_hal_ContextSwitch()</a> first switches to this task it begins execution at <code>task_func_addr</code> with the three initial parameters.</p>
 <p>When <code>task_func_addr</code> returns, execution must transfer to <code>task_exit_handler_addr</code> with the task's return value (a <code>WORD</code>) as the sole argument. The exit handler performs the final context switch back to the OS scheduler.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -506,7 +499,7 @@ Here is the caller graph for this function:</div>
 <div class="line">[ task PCH ]</div>
 <div class="line">[ task PCEXT ]</div>
 </div><!-- fragment --><p>Set up the initial stack frame for a new task.</p>
-<p>AVR stack grows downward. The frame looks exactly like what would be left on the stack after the task function called a subroutine, so that <a class="el" href="group__ktos__hal.html#gab41a95b0bdad0b96dd0957bb95e087bc" title="Perform a cooperative context switch between two execution contexts.">ktos_hal_ContextSwitch()</a> can restore it uniformly.</p>
+<p>AVR stack grows downward. The frame looks exactly like what would be left on the stack after the task function called a subroutine, so that <a class="el" href="stm32f407_2ktos__bsp_8c.html#aeaa63a9b962a6dbb7ea6b11030f8ca75">ktos_hal_ContextSwitch()</a> can restore it uniformly.</p>
 <p>Stack layout (top = lowest address): </p><div class="fragment"><div class="line">[ R31..R1, R0 ]  32 general-purpose registers (R0 last, SREG first)</div>
 <div class="line">[ SREG ]         status <span class="keyword">register</span> (bit 7 = I, interrupts enabled)</div>
 <div class="line">[ exit PC high ] <span class="keywordflow">return</span> address of exit handler (AVR pushes PC as 2 bytes)</div>
@@ -530,7 +523,7 @@ Here is the caller graph for this function:</div>
 <div class="line">[ task PCH ]</div>
 <div class="line">[ task PCL ]</div>
 </div><!-- fragment --><p>Set up the initial stack frame for a new task.</p>
-<p>Fills in a 64-byte frame (16 words) that is indistinguishable from a frame pushed by <a class="el" href="group__ktos__hal.html#gab41a95b0bdad0b96dd0957bb95e087bc" title="Perform a cooperative context switch between two execution contexts.">ktos_hal_ContextSwitch()</a>, so the scheduler can switch to a new task the same way it switches to a running one.</p>
+<p>Fills in a 64-byte frame (16 words) that is indistinguishable from a frame pushed by <a class="el" href="stm32f407_2ktos__bsp_8c.html#aeaa63a9b962a6dbb7ea6b11030f8ca75">ktos_hal_ContextSwitch()</a>, so the scheduler can switch to a new task the same way it switches to a running one.</p>
 <p>When this frame is first restored:</p><ul>
 <li><code>ret</code> (= <code>jx</code> <code>a0</code>) jumps to ktos_task_launch</li>
 <li>ktos_task_launch moves a6 → a0 (exit handler) then <code>jx</code> <code>a5</code> (task entry)</li>
@@ -609,7 +602,7 @@ Here is the caller graph for this function:</div>
 
 <p>Launch the KTOS scheduler and the first task. Never returns. </p>
 <p>Called once by <a class="el" href="group__ktos__core.html#ga6580b57b65ece0e7bfcc48823db105f3" title="Start the KTOS scheduler. Never returns.">ktos_RunOS()</a> after all tasks have been initialised. The implementation must:</p><ol type="1">
-<li>Store the current OS stack pointer into the kernel's <code>OS_SP</code> variable so the scheduler can return to it later via <a class="el" href="group__ktos__hal.html#gab41a95b0bdad0b96dd0957bb95e087bc" title="Perform a cooperative context switch between two execution contexts.">ktos_hal_ContextSwitch()</a>.</li>
+<li>Store the current OS stack pointer into the kernel's <code>OS_SP</code> variable so the scheduler can return to it later via <a class="el" href="stm32f407_2ktos__bsp_8c.html#aeaa63a9b962a6dbb7ea6b11030f8ca75">ktos_hal_ContextSwitch()</a>.</li>
 <li>Load <code>first_task_sp</code> into the CPU stack pointer and restore the task's initial register context (as laid out by <a class="el" href="group__ktos__hal.html#ga73dd6050479b4a96fb2f604c7fbc3e3a" title="Set up the initial stack frame for a new task.">ktos_hal_InitTaskStack()</a>).</li>
 <li>Enable interrupts and begin executing the first task.</li>
 </ol>
