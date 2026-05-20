@@ -170,3 +170,6 @@ void Reset_Handler(void)
     main();
     while (1) {}
 }
+
+/* Minimal newlib stub — heap unused; prevents _sbrk link error */
+void *_sbrk(int incr) { (void)incr; return (void *)-1; }
