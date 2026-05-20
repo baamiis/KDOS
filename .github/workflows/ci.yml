@@ -36,10 +36,16 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Cache apt packages
+        uses: actions/cache@v4
+        with:
+          path: /var/cache/apt/archives
+          key: apt-${{ runner.os }}-${{ matrix.install }}
+
       - name: Install toolchain
         run: |
           sudo apt-get update -qq
-          sudo apt-get install -y ${{ matrix.install }}
+          sudo apt-get install -y --no-install-recommends ${{ matrix.install }}
 
       - name: Build BSP
         run: make -C bsp/${{ matrix.bsp }}
