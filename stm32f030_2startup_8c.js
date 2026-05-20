@@ -4,6 +4,7 @@ var stm32f030_2startup_8c =
     [ "RCC_CFGR", "stm32f030_2startup_8c.html#a8f7780f390ef4cbb05efa06554ba0998", null ],
     [ "RCC_CR", "stm32f030_2startup_8c.html#a3465fac46f8d87fc7e243765777af052", null ],
     [ "isr_t", "stm32f030_2startup_8c.html#a6d626fdf464bc6f2160d0bc92243b027", null ],
+    [ "_sbrk", "stm32f030_2startup_8c.html#a38f8394eee3a086b87ff6d431e1e5343", null ],
     [ "ADC1_IRQHandler", "stm32f030_2startup_8c.html#a88d6fd3110ac254a094cd297ec537007", null ],
     [ "clock_init_48MHz", "stm32f030_2startup_8c.html#a0b551273446a40b6642560095f9498a2", null ],
     [ "Default_Handler", "stm32f030_2startup_8c.html#a4e0c522c1bb26af24accaf20e6b87d12", null ],
