@@ -175,8 +175,9 @@ __attribute__((naked)) void ktos_hal_ContextSwitch(
         "mov    r6, r10             \n"
         "mov    r7, r11             \n"
         "push   {r4, r5, r6, r7}   \n"
-        /* Store current SP */
-        "str    sp, [r0]            \n"
+        /* Store current SP — M0+ forbids str sp,[r0]; move via low register */
+        "mov    r4, sp              \n"
+        "str    r4, [r0]            \n"
         /* Load next SP */
         "mov    sp, r1              \n"
         /* Restore R8-R11 of next context */
