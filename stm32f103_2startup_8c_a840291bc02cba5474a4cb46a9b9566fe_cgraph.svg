@@ -228,7 +228,7 @@ var sectionId = 'dynsection-2';
 <!-- Node6 -->
 <g id="Node000006" class="node">
 <title>Node6</title>
-<g id="a_Node000006"><a xlink:href="stm32f407_2ktos__bsp_8c.html#aeaa63a9b962a6dbb7ea6b11030f8ca75" target="_top" xlink:title=" ">
+<g id="a_Node000006"><a xlink:href="nrf52840_2ktos__bsp_8c.html#aeaa63a9b962a6dbb7ea6b11030f8ca75" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="731,-95 597,-95 597,-76 731,-76 731,-95"/>
 <text text-anchor="middle" x="664" y="-83" font-family="Helvetica,sans-Serif" font-size="10.00">ktos_hal_ContextSwitch</text>
 </a>
@@ -273,7 +273,7 @@ var sectionId = 'dynsection-2';
 <!-- Node10 -->
 <g id="Node000010" class="node">
 <title>Node10</title>
-<g id="a_Node000010"><a xlink:href="group__ktos__hal.html#gae42df35bd10d7d6b296be9687d436a32" target="_top" xlink:title="Configure and start the 1 ms system tick timer.">
+<g id="a_Node000010"><a xlink:href="nrf52840_2ktos__bsp_8c.html#a1be5aab413ec9e34c264ccf3dc0a24d2" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="367,-131 223,-131 223,-112 367,-112 367,-131"/>
 <text text-anchor="middle" x="295" y="-119" font-family="Helvetica,sans-Serif" font-size="10.00">ktos_hal_InitSystemTimer</text>
 </a>

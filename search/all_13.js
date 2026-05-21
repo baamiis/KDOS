@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['pendsv_5fhandler_0',['pendsv_handler',['../stm32f030_2startup_8c.html#a6303e1f258cbdc1f970ce579cc015623',1,'PendSV_Handler(void):&#160;ktos_bsp.c'],['../stm32f103_2startup_8c.html#a6303e1f258cbdc1f970ce579cc015623',1,'PendSV_Handler(void):&#160;ktos_bsp.c'],['../stm32f407_2ktos__bsp_8c.html#a6303e1f258cbdc1f970ce579cc015623',1,'PendSV_Handler(void):&#160;ktos_bsp.c'],['../samd21g18_2startup_8c.html#a6303e1f258cbdc1f970ce579cc015623',1,'PendSV_Handler(void):&#160;ktos_bsp.c']]],
+  ['pendsv_5fhandler_0',['pendsv_handler',['../samd21g18_2startup_8c.html#a6303e1f258cbdc1f970ce579cc015623',1,'PendSV_Handler(void):&#160;ktos_bsp.c'],['../stm32f030_2startup_8c.html#a6303e1f258cbdc1f970ce579cc015623',1,'PendSV_Handler(void):&#160;ktos_bsp.c'],['../stm32f103_2startup_8c.html#a6303e1f258cbdc1f970ce579cc015623',1,'PendSV_Handler(void):&#160;ktos_bsp.c'],['../stm32f407_2ktos__bsp_8c.html#a6303e1f258cbdc1f970ce579cc015623',1,'PendSV_Handler(void):&#160;ktos_bsp.c'],['../nrf52840_2ktos__bsp_8c.html#a6303e1f258cbdc1f970ce579cc015623',1,'PendSV_Handler(void):&#160;ktos_bsp.c']]],
   ['pendsv_5flowest_1',['PENDSV_LOWEST',['../stm32f407_2ktos__bsp_8c.html#a94893f10659d8b1a2aef23b7e9d66d8d',1,'ktos_bsp.c']]],
   ['pic18f4550_20experimental_2',['KTOS BSP — PIC18F4550 (Experimental)',['../group__ktos__bsp__pic18f.html',1,'']]],
   ['pipeline_3',['CI / CD Pipeline',['../index.html#autotoc_md53',1,'']]],

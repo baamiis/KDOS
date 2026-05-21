@@ -12,7 +12,7 @@ var searchData=
   ['code_20documentation_9',['Code Documentation',['../md_CODE__OF__CONDUCT.html#autotoc_md97',1,'']]],
   ['code_20of_20conduct_10',['code of conduct',['../md_CODE__OF__CONDUCT.html',1,'Code of Conduct'],['../md_CONTRIBUTING.html#autotoc_md63',1,'Code of Conduct'],['../md_CODE__OF__CONDUCT.html#autotoc_md78',1,'Code of Conduct']]],
   ['code_20organization_11',['Code Organization',['../md_CODE__OF__CONDUCT.html#autotoc_md85',1,'']]],
-  ['code_20style_12',['code style',['../md_CODE__OF__CONDUCT.html#autotoc_md84',1,'C Code Style'],['../md_CONTRIBUTING.html#autotoc_md72',1,'C Code Style']]],
+  ['code_20style_12',['code style',['../md_CONTRIBUTING.html#autotoc_md72',1,'C Code Style'],['../md_CODE__OF__CONDUCT.html#autotoc_md84',1,'C Code Style']]],
   ['code_5fof_5fconduct_2emd_13',['CODE_OF_CONDUCT.md',['../CODE__OF__CONDUCT_8md.html',1,'']]],
   ['coding_20standards_14',['coding standards',['../md_CODE__OF__CONDUCT.html#autotoc_md83',1,'Coding Standards'],['../md_CONTRIBUTING.html#autotoc_md71',1,'Coding Standards']]],
   ['commercial_20license_15',['Commercial License',['../index.html#autotoc_md59',1,'']]],
@@ -34,5 +34,6 @@ var searchData=
   ['cortex_20m0_31',['KTOS BSP — STM32L031 (Cortex-M0+)',['../group__ktos__bsp__stm32l031.html',1,'']]],
   ['cortex_20m0_20assembly_20constraints_32',['cortex m0 assembly constraints',['../stm32f030_2ktos__bsp_8c.html#autotoc_md35',1,'Cortex-M0 assembly constraints'],['../stm32l031_2ktos__bsp_8c.html#autotoc_md40',1,'Cortex-M0+ assembly constraints']]],
   ['cortex_20m3_20skeleton_33',['Cortex-M3 skeleton',['../group__ktos__hal.html#autotoc_md11',1,'']]],
-  ['ctc_20example_2016_20mhz_20prescaler_2064_20ocr1a_20249_34',['AVR Timer1 CTC example (16 MHz, prescaler 64, OCR1A = 249)',['../group__ktos__hal.html#autotoc_md12',1,'']]]
+  ['cpu_5ffreq_34',['CPU_FREQ',['../nrf52840_2ktos__bsp_8c.html#ab6b652797b16c31087c6e7fef45cc175',1,'ktos_bsp.c']]],
+  ['ctc_20example_2016_20mhz_20prescaler_2064_20ocr1a_20249_35',['AVR Timer1 CTC example (16 MHz, prescaler 64, OCR1A = 249)',['../group__ktos__hal.html#autotoc_md12',1,'']]]
 ];

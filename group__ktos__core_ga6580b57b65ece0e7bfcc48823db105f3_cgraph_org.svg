@@ -38,7 +38,7 @@
 <!-- Node3 -->
 <g id="Node000003" class="node">
 <title>Node3</title>
-<g id="a_Node000003"><a xlink:href="group__ktos__hal.html#gae42df35bd10d7d6b296be9687d436a32" target="_top" xlink:title="Configure and start the 1 ms system tick timer.">
+<g id="a_Node000003"><a xlink:href="nrf52840_2ktos__bsp_8c.html#a1be5aab413ec9e34c264ccf3dc0a24d2" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="255,-149 111,-149 111,-130 255,-130 255,-149"/>
 <text text-anchor="middle" x="183" y="-137" font-family="Helvetica,sans-Serif" font-size="10.00">ktos_hal_InitSystemTimer</text>
 </a>
@@ -110,7 +110,7 @@
 <!-- Node7 -->
 <g id="Node000007" class="node">
 <title>Node7</title>
-<g id="a_Node000007"><a xlink:href="stm32f407_2ktos__bsp_8c.html#aeaa63a9b962a6dbb7ea6b11030f8ca75" target="_top" xlink:title=" ">
+<g id="a_Node000007"><a xlink:href="nrf52840_2ktos__bsp_8c.html#aeaa63a9b962a6dbb7ea6b11030f8ca75" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="619,-131 485,-131 485,-112 619,-112 619,-131"/>
 <text text-anchor="middle" x="552" y="-119" font-family="Helvetica,sans-Serif" font-size="10.00">ktos_hal_ContextSwitch</text>
 </a>

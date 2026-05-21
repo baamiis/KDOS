@@ -2,7 +2,7 @@
 <area shape="rect" id="Node000001" title="Round&#45;robin cooperative scheduler — runs on the OS stack." alt="" coords="5,155,135,180"/>
 <area shape="rect" id="Node000002" href="$ktos_8c.html#a0472bc90096e9ce7acb6b8aebc9b127b" title="Default exit handler called when a task function returns." alt="" coords="183,53,393,79"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="87,152,129,124,182,96,222,80,224,85,184,100,132,129,90,157"/>
-<area shape="rect" id="Node000005" href="$stm32f407_2ktos__bsp_8c.html#aeaa63a9b962a6dbb7ea6b11030f8ca75" title=" " alt="" coords="441,104,620,129"/>
+<area shape="rect" id="Node000005" href="$nrf52840_2ktos__bsp_8c.html#aeaa63a9b962a6dbb7ea6b11030f8ca75" title=" " alt="" coords="441,104,620,129"/>
 <area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="119,152,182,139,310,125,428,117,428,123,310,130,183,145,120,157"/>
 <area shape="rect" id="Node000006" href="$group__ktos__hal.html#ga13869e4884f47a98d8c9b2d9902d5eda" title="Disable all maskable interrupts." alt="" coords="190,155,386,180"/>
 <area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="135,165,176,165,176,170,135,170"/>

@@ -7,7 +7,7 @@ var searchData=
   ['i2c2_5fev_5firqhandler_4',['I2C2_EV_IRQHandler',['../stm32f103_2startup_8c.html#abdb05db0781544b33e806a12940d062c',1,'startup.c']]],
   ['i2c2_5firqhandler_5',['I2C2_IRQHandler',['../stm32f030_2startup_8c.html#ae25a793674af67c6b2644af7da856457',1,'startup.c']]],
   ['i2s_5fhandler_6',['I2S_Handler',['../samd21g18_2startup_8c.html#a297c5fe9f2473775954df08f533541fb',1,'startup.c']]],
-  ['icsr_7',['ICSR',['../stm32f407_2ktos__bsp_8c.html#ac9180c607226bf043dcbb78d331f938f',1,'ktos_bsp.c']]],
+  ['icsr_7',['icsr',['../nrf52840_2ktos__bsp_8c.html#ac9180c607226bf043dcbb78d331f938f',1,'ICSR:&#160;ktos_bsp.c'],['../stm32f407_2ktos__bsp_8c.html#ac9180c607226bf043dcbb78d331f938f',1,'ICSR:&#160;ktos_bsp.c']]],
   ['implementation_20tips_8',['BSP implementation tips',['../md_CONTRIBUTING.html#autotoc_md70',1,'']]],
   ['int_9',['INT',['../group__ktos__types.html#ga392e62da233ed3e2f7c3fd4f487a3896',1,'ktos_multi.h']]],
   ['is_20ktos_10',['What is KTOS?',['../index.html#autotoc_md43',1,'']]],

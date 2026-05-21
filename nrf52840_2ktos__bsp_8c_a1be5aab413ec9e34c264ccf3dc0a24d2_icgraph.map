@@ -1,0 +1,11 @@
+<map id="ktos_hal_InitSystemTimer" name="ktos_hal_InitSystemTimer">
+<area shape="rect" id="Node000001" title=" " alt="" coords="500,31,692,56"/>
+<area shape="rect" id="Node000002" href="$nrf52840_2ktos__bsp_8c.html#a8b1b70854fd8379fc65f3e649580a026" title=" " alt="" coords="273,5,452,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="486,34,452,30,453,25,487,29"/>
+<area shape="rect" id="Node000003" href="$group__ktos__core.html#ga6580b57b65ece0e7bfcc48823db105f3" title="Start the KTOS scheduler. Never returns." alt="" coords="313,55,413,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="486,57,413,65,413,60,486,52"/>
+<area shape="rect" id="Node000004" href="$ktos__multi_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="171,55,225,80"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="299,70,226,70,226,65,299,65"/>
+<area shape="rect" id="Node000005" href="$samd21g18_2startup_8c.html#ae7ee340978f5c25f52f0cad1457c6616" title=" " alt="" coords="5,55,123,80"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="157,70,123,70,123,65,157,65"/>
+</map>

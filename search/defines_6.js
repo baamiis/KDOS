@@ -1,23 +1,5 @@
 var searchData=
 [
-  ['sam_5fpmc_5fpcer0_0',['SAM_PMC_PCER0',['../sam3x8e_2ktos__bsp_8c.html#aa022acba9cad2142e023db77ae51680c',1,'ktos_bsp.c']]],
-  ['scb_5fvtor_1',['SCB_VTOR',['../samd21g18_2startup_8c.html#a4b62b78bccb6fe6afabe8f4969f58908',1,'startup.c']]],
-  ['shpr3_2',['SHPR3',['../stm32f407_2ktos__bsp_8c.html#a64136af12f6a75b0d25f0d160899e773',1,'ktos_bsp.c']]],
-  ['sysctrl_5fdfllctrl_3',['SYSCTRL_DFLLCTRL',['../samd21g18_2startup_8c.html#ad7925c8596ff282c2df44b3876575fdf',1,'startup.c']]],
-  ['sysctrl_5fdfllmul_4',['SYSCTRL_DFLLMUL',['../samd21g18_2startup_8c.html#a025274ede9e8d30bb65e869149ce93b0',1,'startup.c']]],
-  ['sysctrl_5fdfllsync_5',['SYSCTRL_DFLLSYNC',['../samd21g18_2startup_8c.html#ae34110366e97e23e1dbeefc998624d03',1,'startup.c']]],
-  ['sysctrl_5fdfllval_6',['SYSCTRL_DFLLVAL',['../samd21g18_2startup_8c.html#ae3b4edec732fbaa5990d1469d6da8f1f',1,'startup.c']]],
-  ['sysctrl_5fosc8m_7',['SYSCTRL_OSC8M',['../samd21g18_2startup_8c.html#af51221ef1e23d3916231c5ccbdead005',1,'startup.c']]],
-  ['sysctrl_5fpclksr_8',['SYSCTRL_PCLKSR',['../samd21g18_2startup_8c.html#a82588cbff9649ed949d0ea5012b8e07e',1,'startup.c']]],
-  ['sysctrl_5fxosc32k_9',['SYSCTRL_XOSC32K',['../samd21g18_2startup_8c.html#acfb86c56a4cfeec085c89440735fa255',1,'startup.c']]],
-  ['systick_5fbase_10',['systick_base',['../stm32f030_2ktos__bsp_8c.html#a5f6ac8b4c581ebfa1f6a2013dec2396d',1,'SYSTICK_BASE:&#160;ktos_bsp.c'],['../stm32f103_2ktos__bsp_8c.html#a5f6ac8b4c581ebfa1f6a2013dec2396d',1,'SYSTICK_BASE:&#160;ktos_bsp.c'],['../stm32l031_2ktos__bsp_8c.html#a5f6ac8b4c581ebfa1f6a2013dec2396d',1,'SYSTICK_BASE:&#160;ktos_bsp.c']]],
-  ['systick_5fcalib_11',['SYSTICK_CALIB',['../stm32f407_2ktos__bsp_8c.html#aa32a343abbc3a5b80fde19d65496bcdc',1,'ktos_bsp.c']]],
-  ['systick_5fclk_5fhz_12',['SYSTICK_CLK_HZ',['../stm32f407_2ktos__bsp_8c.html#a35ad0bbcc2749c83128348a04729aa9a',1,'ktos_bsp.c']]],
-  ['systick_5fctrl_13',['systick_ctrl',['../stm32f030_2ktos__bsp_8c.html#a7051a258beea05555621a7fa2a06701f',1,'SYSTICK_CTRL:&#160;ktos_bsp.c'],['../stm32l031_2ktos__bsp_8c.html#a7051a258beea05555621a7fa2a06701f',1,'SYSTICK_CTRL:&#160;ktos_bsp.c'],['../stm32f407_2ktos__bsp_8c.html#a7051a258beea05555621a7fa2a06701f',1,'SYSTICK_CTRL:&#160;ktos_bsp.c'],['../stm32f103_2ktos__bsp_8c.html#a7051a258beea05555621a7fa2a06701f',1,'SYSTICK_CTRL:&#160;ktos_bsp.c']]],
-  ['systick_5fctrl_5fclksource_14',['SYSTICK_CTRL_CLKSOURCE',['../stm32f103_2ktos__bsp_8c.html#afc770fb4901fa50f36e1a40d148bec10',1,'ktos_bsp.c']]],
-  ['systick_5fctrl_5fenable_15',['SYSTICK_CTRL_ENABLE',['../stm32f103_2ktos__bsp_8c.html#adb87ebf713f15fbcd4bf0dd2c2c8a4fe',1,'ktos_bsp.c']]],
-  ['systick_5fctrl_5ftickint_16',['SYSTICK_CTRL_TICKINT',['../stm32f103_2ktos__bsp_8c.html#adb1b4cdff25a733736bbf4c87e781a79',1,'ktos_bsp.c']]],
-  ['systick_5fload_17',['systick_load',['../stm32f030_2ktos__bsp_8c.html#a40c03741132f793b632dfa5266f9fc48',1,'SYSTICK_LOAD:&#160;ktos_bsp.c'],['../stm32f103_2ktos__bsp_8c.html#a40c03741132f793b632dfa5266f9fc48',1,'SYSTICK_LOAD:&#160;ktos_bsp.c'],['../stm32f407_2ktos__bsp_8c.html#a40c03741132f793b632dfa5266f9fc48',1,'SYSTICK_LOAD:&#160;ktos_bsp.c'],['../stm32l031_2ktos__bsp_8c.html#a40c03741132f793b632dfa5266f9fc48',1,'SYSTICK_LOAD:&#160;ktos_bsp.c']]],
-  ['systick_5flowest_18',['SYSTICK_LOWEST',['../stm32f407_2ktos__bsp_8c.html#aad6c0b6b7de3c80fb9a6bef061077977',1,'ktos_bsp.c']]],
-  ['systick_5fval_19',['systick_val',['../stm32f030_2ktos__bsp_8c.html#a99fb4c496590d7d9f9759ff556b97bb5',1,'SYSTICK_VAL:&#160;ktos_bsp.c'],['../stm32f103_2ktos__bsp_8c.html#a99fb4c496590d7d9f9759ff556b97bb5',1,'SYSTICK_VAL:&#160;ktos_bsp.c'],['../stm32f407_2ktos__bsp_8c.html#a99fb4c496590d7d9f9759ff556b97bb5',1,'SYSTICK_VAL:&#160;ktos_bsp.c'],['../stm32l031_2ktos__bsp_8c.html#a99fb4c496590d7d9f9759ff556b97bb5',1,'SYSTICK_VAL:&#160;ktos_bsp.c']]]
+  ['rcc_5fcfgr_0',['rcc_cfgr',['../stm32f030_2startup_8c.html#a8f7780f390ef4cbb05efa06554ba0998',1,'RCC_CFGR:&#160;startup.c'],['../stm32f103_2startup_8c.html#a8f7780f390ef4cbb05efa06554ba0998',1,'RCC_CFGR:&#160;startup.c']]],
+  ['rcc_5fcr_1',['rcc_cr',['../stm32f030_2startup_8c.html#a3465fac46f8d87fc7e243765777af052',1,'RCC_CR:&#160;startup.c'],['../stm32f103_2startup_8c.html#a3465fac46f8d87fc7e243765777af052',1,'RCC_CR:&#160;startup.c']]]
 ];

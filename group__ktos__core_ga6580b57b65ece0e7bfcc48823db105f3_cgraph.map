@@ -2,7 +2,7 @@
 <area shape="rect" id="Node000001" title="Start the KTOS scheduler. Never returns." alt="" coords="5,107,105,132"/>
 <area shape="rect" id="Node000002" href="$group__ktos__core.html#ga7aca2702c8fa0e02fd05461d4f5d23fe" title="Emit a fatal&#45;error message and halt execution." alt="" coords="676,5,807,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="74,104,110,84,152,66,221,48,291,34,431,18,559,12,662,12,662,17,560,17,431,23,292,40,222,53,154,71,112,89,77,109"/>
-<area shape="rect" id="Node000003" href="$group__ktos__hal.html#gae42df35bd10d7d6b296be9687d436a32" title="Configure and start the 1 ms system tick timer." alt="" coords="153,81,345,107"/>
+<area shape="rect" id="Node000003" href="$nrf52840_2ktos__bsp_8c.html#a1be5aab413ec9e34c264ccf3dc0a24d2" title=" " alt="" coords="153,81,345,107"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="105,110,139,106,140,111,106,116"/>
 <area shape="rect" id="Node000004" href="$ktos_8c.html#ae0e8182ad311d004e6d96f8d42a70501" title="Round&#45;robin cooperative scheduler — runs on the OS stack." alt="" coords="185,131,314,156"/>
 <area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="106,123,171,131,171,136,105,128"/>
@@ -10,7 +10,7 @@
 <area shape="poly" id="edge13_Node000001_Node000012" title=" " alt="" coords="80,130,154,165,181,174,179,179,152,170,78,135"/>
 <area shape="rect" id="Node000005" href="$ktos_8c.html#a0472bc90096e9ce7acb6b8aebc9b127b" title="Default exit handler called when a task function returns." alt="" coords="393,55,604,80"/>
 <area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="302,128,344,115,392,97,440,81,441,87,394,102,346,121,303,133"/>
-<area shape="rect" id="Node000007" href="$stm32f407_2ktos__bsp_8c.html#aeaa63a9b962a6dbb7ea6b11030f8ca75" title=" " alt="" coords="652,105,831,131"/>
+<area shape="rect" id="Node000007" href="$nrf52840_2ktos__bsp_8c.html#aeaa63a9b962a6dbb7ea6b11030f8ca75" title=" " alt="" coords="652,105,831,131"/>
 <area shape="poly" id="edge8_Node000004_Node000007" title=" " alt="" coords="314,137,638,121,639,126,314,143"/>
 <area shape="rect" id="Node000008" href="$group__ktos__hal.html#ga13869e4884f47a98d8c9b2d9902d5eda" title="Disable all maskable interrupts." alt="" coords="401,156,597,181"/>
 <area shape="poly" id="edge9_Node000004_Node000008" title=" " alt="" coords="314,147,387,155,387,160,314,153"/>

@@ -101,7 +101,7 @@
 <!-- Node5 -->
 <g id="Node000005" class="node">
 <title>Node5</title>
-<g id="a_Node000005"><a xlink:href="stm32f407_2ktos__bsp_8c.html#aeaa63a9b962a6dbb7ea6b11030f8ca75" target="_top" xlink:title=" ">
+<g id="a_Node000005"><a xlink:href="nrf52840_2ktos__bsp_8c.html#aeaa63a9b962a6dbb7ea6b11030f8ca75" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="444,-94 310,-94 310,-75 444,-75 444,-94"/>
 <text text-anchor="middle" x="377" y="-82" font-family="Helvetica,sans-Serif" font-size="10.00">ktos_hal_ContextSwitch</text>
 </a>
