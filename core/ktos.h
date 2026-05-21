@@ -318,7 +318,7 @@ bool ktos_SendMsg(struct ktos_TASK   *Task,
  * // Execution resumes here after 200 ms
  * @endcode
  */
-int ktos_Sleep(unsigned short int Delay, bool TaskSwitchPermit);
+int ktos_Sleep(unsigned short int Delay, bool TaskAllowSwitch);
 
 /**
  * @ingroup ktos_core

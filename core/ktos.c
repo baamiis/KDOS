@@ -82,7 +82,7 @@ static struct ktos_TASK *TaskCurrent = NULL;
 
 /** When @c TRUE the scheduler advances to the next task on each tick.
  *  Set to @c FALSE by ktos_Sleep() with @c HALT_TASK_SWITCH. */
-static bool MultiTask = TRUE;
+static bool AllowTaskSwitch = TRUE;
 
 /** OS scheduler stack pointer.  Set by ktos_hal_StartScheduler() and used
  *  by ktos_SwitchTask() and ktos_DefaultTaskExitHandler() to return to the
@@ -257,7 +257,7 @@ void ktos_WakeUp(struct ktos_TASK *Task, INT TaskTypeWakeUp)
  * ktos_DefaultTaskExitHandler() returns here after each task yields.
  *
  * ### Scheduling algorithm
- * 1. If @c MultiTask is true, advance @c TaskCurrent to the next task in the
+ * 1. If @c AllowTaskSwitch is true, advance @c TaskCurrent to the next task in the
  *    circular ring.
  * 2. If the task is sleeping but its timer has fired, mark it ready.
  * 3. If the task is ready (not sleeping and has a message or timer event),
@@ -279,7 +279,7 @@ static void ktos_SwitchTask(void)
             return;
         }
 
-        if (MultiTask) {
+        if (AllowTaskSwitch) {
             TaskCurrent = TaskCurrent->TaskNext;
         }
 
@@ -352,7 +352,7 @@ static void ktos_SwitchTask(void)
     }
 }
 
-INT ktos_Sleep(WORD Delay, bool TaskSwitchPermit)
+INT ktos_Sleep(WORD Delay, bool TaskAllowSwitch)
 {
     ktos_hal_DisableInterrupts();
 
@@ -368,11 +368,11 @@ INT ktos_Sleep(WORD Delay, bool TaskSwitchPermit)
         TaskCurrent->CountdownTimer = Delay;
     }
 
-    MultiTask = TaskSwitchPermit;
+    AllowTaskSwitch = TaskAllowSwitch;
 
     ktos_hal_ContextSwitch((void **)&(TaskCurrent->StackPointer), OS_SP);
 
-    MultiTask = TRUE;
+    AllowTaskSwitch = TRUE;
     ktos_hal_EnableInterrupts();
     return TaskCurrent->TaskTypeWakeUp;
 }
