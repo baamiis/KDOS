@@ -184,9 +184,9 @@ WORD wifi_task(WORD MsgType, WORD sParam, LONG lParam)
     (void)sParam;
 
     /* INIT: task is live; wait for the scan-result message from ktos_app_main. */
-    if (MsgType == KTOS_MSG_TYPE_INIT) return MSG_WAIT;
+    if (MsgType == KTOS_MSG_TYPE_INIT) return KTOS_MSG_SLEEP_INDEFINITLY;
 
-    if (MsgType != MSG_SCAN_DONE) return MSG_WAIT;
+    if (MsgType != MSG_SCAN_DONE) return KTOS_MSG_SLEEP_INDEFINITLY;
 
     delay_ms(50);
     uart_puts("\033[2J\033[H"); /* clear ROM boot noise from terminal */
@@ -198,7 +198,7 @@ WORD wifi_task(WORD MsgType, WORD sParam, LONG lParam)
     struct bss_info *bss = (struct bss_info *)(uintptr_t)lParam;
     if (!bss) {
         uart_puts("Scan failed or no networks found.\r\n");
-        return MSG_WAIT;
+        return KTOS_MSG_SLEEP_INDEFINITLY;
     }
 
     uart_puts(" #   SSID                             CH   RSSI  AUTH\r\n");
@@ -243,7 +243,7 @@ WORD wifi_task(WORD MsgType, WORD sParam, LONG lParam)
     uart_putu((uint32_t)count);
     uart_puts(count == 1 ? " network found.\r\n" : " networks found.\r\n");
 
-    return MSG_WAIT;
+    return KTOS_MSG_SLEEP_INDEFINITLY;
 }
 
 /* =========================================================================

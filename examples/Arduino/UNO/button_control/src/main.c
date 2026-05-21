@@ -10,7 +10,7 @@
  *                            ktos_SendMsg(ui_task, MSG_BUTTON_EVENT,
  *                                         pressed ? 1 : 0, 0);
  *
- *   ui_task     ('I') -- sleeps with MSG_WAIT until a button event
+ *   ui_task     ('I') -- sleeps with KTOS_MSG_SLEEP_INDEFINITLY until a button event
  *                        arrives, then prints "Button pressed" or
  *                        "Button released" over USART0.
  *
@@ -113,14 +113,14 @@ static WORD ui_task(WORD MsgType, WORD sParam, LONG lParam)
         uart_puts("  Arduino UNO\r\n");
         uart_puts("=============================\r\n");
         uart_puts("Connect button: D2 to GND\r\n");
-        return MSG_WAIT;
+        return KTOS_MSG_SLEEP_INDEFINITLY;
     }
 
     if (MsgType == MSG_BUTTON_EVENT) {
         uart_puts(sParam ? "Button pressed\r\n" : "Button released\r\n");
     }
 
-    return MSG_WAIT;
+    return KTOS_MSG_SLEEP_INDEFINITLY;
 }
 
 /* =========================================================================

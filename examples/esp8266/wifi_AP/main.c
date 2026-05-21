@@ -109,8 +109,8 @@ WORD ap_task(WORD MsgType, WORD sParam, LONG lParam)
     (void)sParam;
     (void)lParam;
 
-    if (MsgType == KTOS_MSG_TYPE_INIT) return MSG_WAIT;
-    if (MsgType != MSG_AP_READY)       return MSG_WAIT;
+    if (MsgType == KTOS_MSG_TYPE_INIT) return KTOS_MSG_SLEEP_INDEFINITLY;
+    if (MsgType != MSG_AP_READY)       return KTOS_MSG_SLEEP_INDEFINITLY;
 
     delay_ms(50);
     uart_puts("\033[2J\033[H");
@@ -135,7 +135,7 @@ WORD ap_task(WORD MsgType, WORD sParam, LONG lParam)
     /* Signal the scheduler to return from ktos_RunOS().  on_sdk_ready()
      * in startup.c will then return to ets_run(), keeping the AP alive. */
     ktos_ExitOS();
-    return MSG_WAIT;
+    return KTOS_MSG_SLEEP_INDEFINITLY;
 }
 
 /* =========================================================================

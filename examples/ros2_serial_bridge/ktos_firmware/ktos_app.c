@@ -178,7 +178,7 @@ WORD task_command(WORD MsgType, WORD sParam, LONG lParam)
     (void)lParam;
 
     if (MsgType == KTOS_MSG_TYPE_INIT)
-        return MSG_WAIT;   /* sleep until a command message arrives */
+        return KTOS_MSG_SLEEP_INDEFINITLY;   /* sleep until a command message arrives */
 
     switch ((AppMsgType)MsgType) {
         case MSG_CMD_LED_ON:
@@ -207,5 +207,5 @@ WORD task_command(WORD MsgType, WORD sParam, LONG lParam)
             break;
     }
 
-    return MSG_WAIT;   /* sleep again until next message */
+    return KTOS_MSG_SLEEP_INDEFINITLY;   /* sleep again until next message */
 }

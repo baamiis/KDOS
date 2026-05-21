@@ -4,7 +4,7 @@
  *
  * ping_task sends MSG_PING to pong_task; pong_task replies with MSG_PONG.
  * Each task is a plain message handler — it receives one message per call
- * and returns MSG_WAIT to sleep until the next one arrives.
+ * and returns KTOS_MSG_SLEEP_INDEFINITLY to sleep until the next one arrives.
  *
  * Expected serial output (74880 8N1):
  * @code
@@ -133,7 +133,7 @@ WORD ping_task(WORD MsgType, WORD sParam, LONG lParam)
             break;
     }
 
-    return MSG_WAIT;
+    return KTOS_MSG_SLEEP_INDEFINITLY;
 }
 
 /* =========================================================================
@@ -151,7 +151,7 @@ WORD pong_task(WORD MsgType, WORD sParam, LONG lParam)
         ktos_SendMsg(g_ping_task, MSG_PONG, 0, 0);
     }
 
-    return MSG_WAIT;
+    return KTOS_MSG_SLEEP_INDEFINITLY;
 }
 
 /* =========================================================================

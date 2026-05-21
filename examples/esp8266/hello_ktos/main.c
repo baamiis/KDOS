@@ -116,7 +116,7 @@ WORD hello_task(WORD MsgType, WORD sParam, LONG lParam)
         delay_ms(1000);
     }
 
-    return MSG_WAIT;    /* unreachable — suppresses compiler warning */
+    return KTOS_MSG_SLEEP_INDEFINITLY;    /* unreachable — suppresses compiler warning */
 }
 
 /* =========================================================================

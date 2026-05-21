@@ -98,9 +98,9 @@ static WORD cmd_task(WORD MsgType, WORD sParam, LONG lParam)
         uart_puts("  USART2  115200 8N1\r\n");
         uart_puts("  Type HELP for commands.\r\n");
         uart_puts("=============================\r\n");
-        return MSG_WAIT;
+        return KTOS_MSG_SLEEP_INDEFINITLY;
     }
-    if (MsgType != MSG_LINE_READY) { return MSG_WAIT; }
+    if (MsgType != MSG_LINE_READY) { return KTOS_MSG_SLEEP_INDEFINITLY; }
     if (strcmp(g_line, "PING") == 0)      { uart_puts("PONG\r\n"); }
     else if (strcmp(g_line, "INFO") == 0) {
         uart_puts("Board : STM32F030R8 Nucleo\r\n");
@@ -111,7 +111,7 @@ static WORD cmd_task(WORD MsgType, WORD sParam, LONG lParam)
     }
     else if (strcmp(g_line, "HELP") == 0) { uart_puts("Commands: PING  INFO  HELP\r\n"); }
     else if (g_line[0] != '\0')           { uart_puts("Unknown. Type HELP.\r\n"); }
-    return MSG_WAIT;
+    return KTOS_MSG_SLEEP_INDEFINITLY;
 }
 
 static WORD rx_task(WORD MsgType, WORD sParam, LONG lParam)

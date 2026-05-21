@@ -11,7 +11,7 @@
  *                     in a fixed 64-byte buffer.  On '\r' or '\n' it
  *                     posts ktos_SendMsg(MSG_LINE_READY) to cmd_task.
  *
- *   cmd_task ('C') -- sleeps with MSG_WAIT.  On MSG_LINE_READY it
+ *   cmd_task ('C') -- sleeps with KTOS_MSG_SLEEP_INDEFINITLY.  On MSG_LINE_READY it
  *                     parses the first whitespace-delimited token
  *                     and dispatches:
  *
@@ -268,16 +268,16 @@ static WORD cmd_task(WORD MsgType, WORD sParam, LONG lParam)
         uart_puts("  KTOS USB-Serial CLI\r\n");
         uart_puts("=============================\r\n");
         uart_puts("Type HELP for commands.\r\n");
-        return MSG_WAIT;
+        return KTOS_MSG_SLEEP_INDEFINITLY;
     }
 
     if (MsgType != MSG_LINE_READY) {
-        return MSG_WAIT;
+        return KTOS_MSG_SLEEP_INDEFINITLY;
     }
 
     char *p = g_line_buf;
     char *cmd = next_token(&p);
-    if (cmd == NULL) { return MSG_WAIT; }
+    if (cmd == NULL) { return KTOS_MSG_SLEEP_INDEFINITLY; }
 
     if      (ci_eq(cmd, "HELP")) { cmd_help(); }
     else if (ci_eq(cmd, "INFO")) { cmd_info(); }
@@ -294,7 +294,7 @@ static WORD cmd_task(WORD MsgType, WORD sParam, LONG lParam)
         uart_puts("\r\nType HELP for commands.\r\n");
     }
 
-    return MSG_WAIT;
+    return KTOS_MSG_SLEEP_INDEFINITLY;
 }
 
 /* =========================================================================

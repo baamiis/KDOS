@@ -102,14 +102,14 @@ static WORD led_task(WORD MsgType, WORD sParam, LONG lParam)
                 if (g_level) { led_on(); } else { led_off(); }
                 return BLINK_PERIOD_MS;
             }
-            return MSG_WAIT;
+            return KTOS_MSG_SLEEP_INDEFINITLY;
         case MSG_SET_MODE:
             g_mode = (uint8_t)sParam;
-            if      (g_mode == MODE_ON)  { led_on();  uart_puts("LED ON\r\n");    return MSG_WAIT; }
-            else if (g_mode == MODE_OFF) { led_off(); uart_puts("LED OFF\r\n");   return MSG_WAIT; }
+            if      (g_mode == MODE_ON)  { led_on();  uart_puts("LED ON\r\n");    return KTOS_MSG_SLEEP_INDEFINITLY; }
+            else if (g_mode == MODE_OFF) { led_off(); uart_puts("LED OFF\r\n");   return KTOS_MSG_SLEEP_INDEFINITLY; }
             else { g_mode = MODE_BLINK; uart_puts("LED BLINK\r\n"); return BLINK_PERIOD_MS; }
     }
-    return MSG_WAIT;
+    return KTOS_MSG_SLEEP_INDEFINITLY;
 }
 
 static char    g_cmd_buf[CMD_BUF_SIZE];

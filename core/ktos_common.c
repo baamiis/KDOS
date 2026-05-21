@@ -80,5 +80,5 @@ static WORD ktos_TaskMainProc(WORD MsgType, WORD sParam, LONG lParam)
     case KTOS_MSG_TYPE_SYSTEM_START:
       break;
   }
-  return MSG_WAIT;
+  return KTOS_MSG_SLEEP_INDEFINITLY;
 }

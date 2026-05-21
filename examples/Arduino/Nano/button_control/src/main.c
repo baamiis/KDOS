@@ -10,7 +10,7 @@
  *                            ktos_SendMsg(ui_task, MSG_BUTTON_EVENT,
  *                                         pressed ? 1 : 0, 0);
  *
- *   ui_task     ('I') -- sleeps with MSG_WAIT until a button event
+ *   ui_task     ('I') -- sleeps with KTOS_MSG_SLEEP_INDEFINITLY until a button event
  *                        arrives, then prints "Button pressed" or
  *                        "Button released" over USART0.
  *
@@ -123,14 +123,14 @@ static WORD ui_task(WORD MsgType, WORD sParam, LONG lParam)
         uart_puts("  KTOS Button Control Example\r\n");
         uart_puts("=============================\r\n");
         uart_puts("Press the button on D2...\r\n");
-        return MSG_WAIT;             /* wait for events forever */
+        return KTOS_MSG_SLEEP_INDEFINITLY;             /* wait for events forever */
     }
 
     if (MsgType == MSG_BUTTON_EVENT) {
         uart_puts(sParam ? "Button pressed\r\n" : "Button released\r\n");
     }
 
-    return MSG_WAIT;
+    return KTOS_MSG_SLEEP_INDEFINITLY;
 }
 
 /* =========================================================================

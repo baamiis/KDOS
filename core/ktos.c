@@ -40,11 +40,11 @@
  *
  * @ingroup ktos_core
  *
- * @warning Using ktos_Sleep() with @c TASK_SWITCH_INHIBIT and @c MSG_WAIT:
+ * @warning Using ktos_Sleep() with @c HALT_TASK_SWITCH and @c KTOS_MSG_SLEEP_INDEFINITLY:
  *
- * When @c TASK_SWITCH_INHIBIT is passed to ktos_Sleep(), the scheduler
+ * When @c HALT_TASK_SWITCH is passed to ktos_Sleep(), the scheduler
  * focuses exclusively on the current task and will not advance to others.
- * If @c MSG_WAIT is also passed, the system **halts for all other tasks**
+ * If @c KTOS_MSG_SLEEP_INDEFINITLY is also passed, the system **halts for all other tasks**
  * until an ISR calls ktos_WakeUp() on this specific task.
  *
  * The 1 ms timer ISR (ktos_timer_irq_handler) continues to fire and update
@@ -81,7 +81,7 @@ static void ktos_DefaultTaskExitHandler(WORD task_return_value);
 static struct ktos_TASK *TaskCurrent = NULL;
 
 /** When @c TRUE the scheduler advances to the next task on each tick.
- *  Set to @c FALSE by ktos_Sleep() with @c TASK_SWITCH_INHIBIT. */
+ *  Set to @c FALSE by ktos_Sleep() with @c HALT_TASK_SWITCH. */
 static bool MultiTask = TRUE;
 
 /** OS scheduler stack pointer.  Set by ktos_hal_StartScheduler() and used
@@ -113,7 +113,7 @@ static WORD g_LastTaskReturnValue;
  * argument to ktos_hal_InitTaskStack().  Application code never calls this.
  *
  * @param task_return_value  The value returned by the task function
- *                           (sleep duration in ms, or @c MSG_WAIT).
+ *                           (sleep duration in ms, or @c KTOS_MSG_SLEEP_INDEFINITLY).
  */
 static void ktos_DefaultTaskExitHandler(WORD task_return_value)
 {
@@ -337,7 +337,7 @@ static void ktos_SwitchTask(void)
                 /* Yield — re-schedule immediately. */
                 TaskCurrent->TimerFlag = TRUE;
                 TaskCurrent->Timer     = 0;
-            } else if (Delay == MSG_WAIT) {
+            } else if (Delay == KTOS_MSG_SLEEP_INDEFINITLY) {
                 /* Sleep indefinitely until a message arrives. */
                 TaskCurrent->Timer     = 0;
                 TaskCurrent->TimerFlag = FALSE;
@@ -362,7 +362,7 @@ INT ktos_Sleep(WORD Delay, bool TaskSwitchPermit)
     if (Delay == 0) {
         TaskCurrent->TimerFlag = TRUE;
         TaskCurrent->Timer     = 0;
-    } else if (Delay == MSG_WAIT) {
+    } else if (Delay == KTOS_MSG_SLEEP_INDEFINITLY) {
         TaskCurrent->Timer = 0;
     } else {
         TaskCurrent->Timer = Delay;

@@ -87,25 +87,25 @@
  * This is the normal mode — the task sleeps and the scheduler advances
  * to the next ready task.
  */
-#define TASK_SWITCH_PERMIT  1
+#define ALLOW_TASK_SWITCH  1
 
 /**
  * @ingroup ktos_core
  * @brief Pass to ktos_Sleep() to prevent the scheduler from running any
  *        other task while this task is sleeping.
  *
- * @warning Combining with @c MSG_WAIT as the delay causes the entire system
+ * @warning Combining with @c KTOS_MSG_SLEEP_INDEFINITLY as the delay causes the entire system
  *          to halt until an ISR calls ktos_WakeUp() on this task.  Use
  *          with extreme caution and only for very short, critical sections.
  */
-#define TASK_SWITCH_INHIBIT 0
+#define HALT_TASK_SWITCH 0
 
 /**
  * @ingroup ktos_core
  * @brief Return this value from a task function to sleep indefinitely until
  *        explicitly woken by ktos_WakeUp() or an incoming message.
  */
-#define MSG_WAIT 0xffff
+#define KTOS_MSG_SLEEP_INDEFINITLY 0xffff
 
 /* =========================================================================
  * Enumerations
@@ -208,7 +208,7 @@ struct ktos_TASK
  * @param Func       Pointer to the task function.  Signature:
  *                   @code WORD task(WORD MsgType, WORD sParam, LONG lParam); @endcode
  *                   Return value is the sleep duration in milliseconds, or
- *                   @c MSG_WAIT to sleep until explicitly woken.
+ *                   @c KTOS_MSG_SLEEP_INDEFINITLY to sleep until explicitly woken.
  * @param StackSize  Stack depth in 32-bit words (not bytes).  Must be large
  *                   enough for the deepest call chain, all local variables,
  *                   and interrupt frame overhead.  Start with
@@ -301,20 +301,20 @@ bool ktos_SendMsg(struct ktos_TASK   *Task,
  * @param Delay             Sleep duration in milliseconds.
  *                          - @c 0       — yield immediately (run other tasks once, then resume).
  *                          - @c 1–65534 — sleep for that many milliseconds.
- *                          - @c MSG_WAIT — sleep indefinitely until ktos_WakeUp() is called.
- * @param TaskSwitchPermit  @c TASK_SWITCH_PERMIT (1) — allow other tasks to run while sleeping.
- *                          @c TASK_SWITCH_INHIBIT (0) — freeze scheduler; only this task
+ *                          - @c KTOS_MSG_SLEEP_INDEFINITLY — sleep indefinitely until ktos_WakeUp() is called.
+ * @param TaskSwitchPermit  @c ALLOW_TASK_SWITCH (1) — allow other tasks to run while sleeping.
+ *                          @c HALT_TASK_SWITCH (0) — freeze scheduler; only this task
  *                          can resume (requires ISR to call ktos_WakeUp()).
  * @return                  The @c WakeUpType value supplied by the ktos_WakeUp() call that
  *                          woke this task, or @c 0 if woken by the timer.
  *
- * @warning Passing both @c MSG_WAIT and @c TASK_SWITCH_INHIBIT halts all
+ * @warning Passing both @c KTOS_MSG_SLEEP_INDEFINITLY and @c HALT_TASK_SWITCH halts all
  *          other tasks until an ISR calls ktos_WakeUp().  Use with extreme caution.
  *
  * ### Example
  * @code
  * // Inside a task function — wait 200 ms then continue
- * ktos_Sleep(200, TASK_SWITCH_PERMIT);
+ * ktos_Sleep(200, ALLOW_TASK_SWITCH);
  * // Execution resumes here after 200 ms
  * @endcode
  */
@@ -342,7 +342,7 @@ int ktos_Sleep(unsigned short int Delay, bool TaskSwitchPermit);
  * }
  *
  * // Inside g_ui_task:
- * int reason = ktos_Sleep(MSG_WAIT, TASK_SWITCH_PERMIT);
+ * int reason = ktos_Sleep(KTOS_MSG_SLEEP_INDEFINITLY, ALLOW_TASK_SWITCH);
  * if (reason == WAKE_BUTTON_PRESS) { handle_button(); }
  * @endcode
  */
@@ -354,7 +354,7 @@ void ktos_WakeUp(struct ktos_TASK *Task, INT WakeUpType);
  *
  * Intended for platforms where the host event loop (e.g. ESP8266 ets_run())
  * must resume after KTOS has finished its work.  Call from task context just
- * before returning MSG_WAIT.  ktos_RunOS() returns to its caller on the next
+ * before returning KTOS_MSG_SLEEP_INDEFINITLY.  ktos_RunOS() returns to its caller on the next
  * scheduler cycle.
  *
  * Has no effect if called from ISR context or before ktos_RunOS().

@@ -88,12 +88,12 @@ static WORD led_task(WORD MsgType, WORD sParam, LONG lParam)
 {
     (void)lParam;
     static uint8_t mode = MODE_OFF;
-    if (MsgType == KTOS_MSG_TYPE_INIT) { LED_OFF(); return MSG_WAIT; }
+    if (MsgType == KTOS_MSG_TYPE_INIT) { LED_OFF(); return KTOS_MSG_SLEEP_INDEFINITLY; }
     if (MsgType == MSG_SET_MODE) {
         mode = (uint8_t)sParam;
         switch (mode) {
-        case MODE_ON:  LED_ON();  uart_puts("LED: ON\r\n");        return MSG_WAIT;
-        case MODE_OFF: LED_OFF(); uart_puts("LED: OFF\r\n");       return MSG_WAIT;
+        case MODE_ON:  LED_ON();  uart_puts("LED: ON\r\n");        return KTOS_MSG_SLEEP_INDEFINITLY;
+        case MODE_OFF: LED_OFF(); uart_puts("LED: OFF\r\n");       return KTOS_MSG_SLEEP_INDEFINITLY;
         default:                  uart_puts("LED: TOGGLE 500ms\r\n"); return TOGGLE_MS;
         }
     }

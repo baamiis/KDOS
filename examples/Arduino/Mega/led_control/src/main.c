@@ -122,7 +122,7 @@ static WORD led_task(WORD MsgType, WORD sParam, LONG lParam)
                 if (g_led_level) { led_on(); } else { led_off(); }
                 return BLINK_PERIOD_MS;
             }
-            return MSG_WAIT;
+            return KTOS_MSG_SLEEP_INDEFINITLY;
 
         case MSG_SET_MODE:
             g_led_mode = (uint8_t)sParam;
@@ -130,11 +130,11 @@ static WORD led_task(WORD MsgType, WORD sParam, LONG lParam)
                 case MODE_ON:
                     led_on();
                     uart_puts("LED ON\r\n");
-                    return MSG_WAIT;
+                    return KTOS_MSG_SLEEP_INDEFINITLY;
                 case MODE_OFF:
                     led_off();
                     uart_puts("LED OFF\r\n");
-                    return MSG_WAIT;
+                    return KTOS_MSG_SLEEP_INDEFINITLY;
                 default:
                     g_led_mode = MODE_BLINK;
                     uart_puts("LED BLINK\r\n");
@@ -142,7 +142,7 @@ static WORD led_task(WORD MsgType, WORD sParam, LONG lParam)
             }
     }
 
-    return MSG_WAIT;
+    return KTOS_MSG_SLEEP_INDEFINITLY;
 }
 
 /* =========================================================================

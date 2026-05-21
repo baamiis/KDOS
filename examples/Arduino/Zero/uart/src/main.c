@@ -4,7 +4,7 @@
  * Two cooperating KTOS tasks:
  *   rx_task  ('R') -- wakes every 10 ms, drains SERCOM5 RX, assembles
  *                     lines, posts MSG_LINE_READY to cmd_task.
- *   cmd_task ('C') -- sleeps with MSG_WAIT; on MSG_LINE_READY parses
+ *   cmd_task ('C') -- sleeps with KTOS_MSG_SLEEP_INDEFINITLY; on MSG_LINE_READY parses
  *                     PING / INFO / HELP and prints the response.
  *
  * Serial port: PROGRAMMING port (near RESET button) via on-board EDBG.
@@ -144,9 +144,9 @@ static WORD cmd_task(WORD MsgType, WORD sParam, LONG lParam)
         uart_puts("  Arduino Zero (SAMD21G18)\r\n");
         uart_puts("=============================\r\n");
         uart_puts("Type HELP for commands.\r\n");
-        return MSG_WAIT;
+        return KTOS_MSG_SLEEP_INDEFINITLY;
     }
-    if (MsgType != MSG_LINE_READY) { return MSG_WAIT; }
+    if (MsgType != MSG_LINE_READY) { return KTOS_MSG_SLEEP_INDEFINITLY; }
 
     if      (strcmp(g_line_buf, "PING") == 0) { uart_puts("PONG\r\n"); }
     else if (strcmp(g_line_buf, "INFO") == 0) { print_info(); }
@@ -154,7 +154,7 @@ static WORD cmd_task(WORD MsgType, WORD sParam, LONG lParam)
     else if (g_line_buf[0]) {
         uart_puts("Unknown: "); uart_puts(g_line_buf); uart_puts("\r\n");
     }
-    return MSG_WAIT;
+    return KTOS_MSG_SLEEP_INDEFINITLY;
 }
 
 static WORD rx_task(WORD MsgType, WORD sParam, LONG lParam)

@@ -93,12 +93,12 @@ static WORD ui_task(WORD MsgType, WORD sParam, LONG lParam)
         uart_puts("  Arduino Zero (SAMD21G18)\r\n");
         uart_puts("  Connect button: D2 (PA14) to GND\r\n");
         uart_puts("=============================\r\n");
-        return MSG_WAIT;
+        return KTOS_MSG_SLEEP_INDEFINITLY;
     }
     if (MsgType == MSG_BUTTON_EVENT) {
         uart_puts(sParam ? "Button pressed\r\n" : "Button released\r\n");
     }
-    return MSG_WAIT;
+    return KTOS_MSG_SLEEP_INDEFINITLY;
 }
 
 static bool     g_stable   = false;

@@ -12,7 +12,7 @@
  *                     copied into a shared buffer and:
  *                         ktos_SendMsg(cmd_task, MSG_LINE_READY, len, 0);
  *
- *   cmd_task ('C') -- sleeps with MSG_WAIT.  On MSG_LINE_READY it
+ *   cmd_task ('C') -- sleeps with KTOS_MSG_SLEEP_INDEFINITLY.  On MSG_LINE_READY it
  *                     parses the line (PING / INFO / HELP) and writes
  *                     the response.  Uses strcmp on a fixed char
  *                     array — no String, no heap.
@@ -132,11 +132,11 @@ static WORD cmd_task(WORD MsgType, WORD sParam, LONG lParam)
         uart_puts("  KTOS UART Example\r\n");
         uart_puts("=============================\r\n");
         uart_puts("Type HELP for commands.\r\n");
-        return MSG_WAIT;
+        return KTOS_MSG_SLEEP_INDEFINITLY;
     }
 
     if (MsgType != MSG_LINE_READY) {
-        return MSG_WAIT;
+        return KTOS_MSG_SLEEP_INDEFINITLY;
     }
 
     /* g_line_buf is guaranteed null-terminated by rx_task. */
@@ -153,7 +153,7 @@ static WORD cmd_task(WORD MsgType, WORD sParam, LONG lParam)
         uart_puts("Type HELP for commands.\r\n");
     }
 
-    return MSG_WAIT;
+    return KTOS_MSG_SLEEP_INDEFINITLY;
 }
 
 /* =========================================================================
