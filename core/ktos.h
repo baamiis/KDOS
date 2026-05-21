@@ -302,7 +302,7 @@ bool ktos_SendMsg(struct ktos_TASK   *Task,
  *                          - @c 0       — yield immediately (run other tasks once, then resume).
  *                          - @c 1–65534 — sleep for that many milliseconds.
  *                          - @c KTOS_MSG_SLEEP_INDEFINITLY — sleep indefinitely until ktos_WakeUp() is called.
- * @param TaskSwitchPermit  @c ALLOW_TASK_SWITCH (1) — allow other tasks to run while sleeping.
+ * @param TaskAllowSwitch  @c ALLOW_TASK_SWITCH (1) — allow other tasks to run while sleeping.
  *                          @c HALT_TASK_SWITCH (0) — freeze scheduler; only this task
  *                          can resume (requires ISR to call ktos_WakeUp()).
  * @return                  The @c TaskTypeWakeUp value supplied by the ktos_WakeUp() call that
