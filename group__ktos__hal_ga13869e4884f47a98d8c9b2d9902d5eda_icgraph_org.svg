@@ -20,7 +20,7 @@
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="ktos_8c.html#abdccd1793b29f0ab71047c522a9fb262" target="_top" xlink:title=" ">
+<g id="a_Node000002"><a xlink:href="ktos_8c.html#a076e0b599234575d10eb4c57183bbcba" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="288,-121 201,-121 201,-102 288,-102 288,-121"/>
 <text text-anchor="middle" x="244.5" y="-109" font-family="Helvetica,sans-Serif" font-size="10.00">ktos_SendMsg</text>
 </a>
@@ -38,7 +38,7 @@
 <!-- Node5 -->
 <g id="Node000005" class="node">
 <title>Node5</title>
-<g id="a_Node000005"><a xlink:href="ktos_8c.html#a58c939684b243c872c31ec084dba395a" target="_top" xlink:title=" ">
+<g id="a_Node000005"><a xlink:href="ktos_8c.html#a4564bc418ca633102a602de5756f3a8a" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="407.5,-93 337.5,-93 337.5,-74 407.5,-74 407.5,-93"/>
 <text text-anchor="middle" x="372.5" y="-81" font-family="Helvetica,sans-Serif" font-size="10.00">ktos_Sleep</text>
 </a>
@@ -74,7 +74,7 @@
 <!-- Node8 -->
 <g id="Node000008" class="node">
 <title>Node8</title>
-<g id="a_Node000008"><a xlink:href="group__ktos__core.html#ga36de1d506ed25f7ec37016362726b45c" target="_top" xlink:title="Wake a sleeping task immediately from an ISR or another task.">
+<g id="a_Node000008"><a xlink:href="group__ktos__core.html#ga98b1cc4f47053e3a4c00de9f2c0f0b15" target="_top" xlink:title="Wake a sleeping task immediately from an ISR or another task.">
 <polygon fill="white" stroke="#666666" points="414,-19 331,-19 331,0 414,0 414,-19"/>
 <text text-anchor="middle" x="372.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">ktos_WakeUp</text>
 </a>
@@ -92,7 +92,7 @@
 <!-- Node3 -->
 <g id="Node000003" class="node">
 <title>Node3</title>
-<g id="a_Node000003"><a xlink:href="ktos__multi_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" target="_top" xlink:title=" ">
+<g id="a_Node000003"><a xlink:href="ktos__common_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="165,-93 124,-93 124,-74 165,-74 165,-93"/>
 <text text-anchor="middle" x="144.5" y="-81" font-family="Helvetica,sans-Serif" font-size="10.00">main</text>
 </a>

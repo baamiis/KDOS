@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['false_0',['FALSE',['../group__ktos__types.html#gaa93f0eb578d23995850d61f7d61c55c1',1,'ktos_multi.h']]],
+  ['false_0',['FALSE',['../group__ktos__types.html#gaa93f0eb578d23995850d61f7d61c55c1',1,'ktos_common.h']]],
   ['flag_20required_1',['Build flag required',['../esp8266_2ktos__bsp_8c.html#autotoc_md24',1,'']]],
   ['flash_5facr_2',['flash_acr',['../stm32f030_2startup_8c.html#a17131472a9863dc9ef3fd97ec5b4dafc',1,'FLASH_ACR:&#160;startup.c'],['../stm32f103_2startup_8c.html#a17131472a9863dc9ef3fd97ec5b4dafc',1,'FLASH_ACR:&#160;startup.c']]],
   ['flash_5firqhandler_3',['flash_irqhandler',['../stm32f030_2startup_8c.html#ae5c044ed8d30b13cb7eb9df52586c64d',1,'FLASH_IRQHandler(void):&#160;startup.c'],['../stm32f103_2startup_8c.html#ae5c044ed8d30b13cb7eb9df52586c64d',1,'FLASH_IRQHandler(void):&#160;startup.c']]],
@@ -16,6 +16,6 @@ var searchData=
   ['frc1_5fticks_5fper_5fms_13',['FRC1_TICKS_PER_MS',['../esp8266_2ktos__bsp_8c.html#a8cf98a78d9f81724f3567a9810f750f9',1,'ktos_bsp.c']]],
   ['from_20a_20button_20isr_14',['Example — wake a task from a button ISR',['../group__ktos__core.html#autotoc_md5',1,'']]],
   ['from_20an_20isr_15',['Example — notify a task from an ISR',['../group__ktos__core.html#autotoc_md3',1,'']]],
-  ['func_16',['Func',['../structktos__TASK.html#a432ca8e4d5b73f1555b4c9e9dad47639',1,'ktos_TASK']]],
+  ['func_16',['Func',['../structktos__TASK.html#a90a5448984bd295cfdd8483d60af43b7',1,'ktos_TASK']]],
   ['function_17',['Task function',['../index.html#autotoc_md48',1,'']]]
 ];

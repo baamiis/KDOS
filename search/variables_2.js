@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['g_5flasttaskreturnvalue_0',['g_LastTaskReturnValue',['../ktos_8c.html#ad41da386e0487d9ef764ca15def81b71',1,'ktos.c']]]
+  ['countdowntimer_0',['CountdownTimer',['../structktos__TASK.html#a3552fc5754cffd0fe55064788a069d3d',1,'ktos_TASK']]]
 ];

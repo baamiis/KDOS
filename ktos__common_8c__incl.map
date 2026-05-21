@@ -1,0 +1,19 @@
+<map id="core/ktos_common.c" name="core/ktos_common.c">
+<area shape="rect" id="Node000001" title=" " alt="" coords="175,5,333,31"/>
+<area shape="rect" id="Node000002" href="$ktos__common_8h.html" title="Portable primitive types, constants, and utility prototypes used throughout the KTOS kernel and all B..." alt="" coords="75,152,201,177"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="229,33,196,52,167,80,152,109,144,139,139,138,147,107,163,77,193,48,226,28"/>
+<area shape="rect" id="Node000006" href="$ktos_8h.html" title="KTOS public API — include this in your application code." alt="" coords="176,79,239,104"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="249,32,225,69,220,66,244,30"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="263,79,338,104"/>
+<area shape="poly" id="edge8_Node000001_Node000007" title=" " alt="" coords="264,30,288,66,283,69,259,32"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="362,79,429,104"/>
+<area shape="poly" id="edge9_Node000001_Node000008" title=" " alt="" coords="278,28,361,70,359,75,276,33"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,225,76,251"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="124,180,69,219,66,215,121,175"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="101,225,175,251"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="141,178,141,212,135,212,135,178"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="199,225,282,251"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="156,175,214,215,211,219,153,180"/>
+<area shape="poly" id="edge7_Node000006_Node000002" title=" " alt="" coords="198,106,161,144,157,140,194,102"/>
+<area shape="poly" id="edge6_Node000006_Node000005" title=" " alt="" coords="213,104,238,211,232,213,207,105"/>
+</map>

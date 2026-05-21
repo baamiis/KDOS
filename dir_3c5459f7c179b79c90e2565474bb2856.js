@@ -13,5 +13,6 @@ var dir_3c5459f7c179b79c90e2565474bb2856 =
     [ "stm32f030", "dir_f03b531fee39210e9e9db2d57f0ec594.html", "dir_f03b531fee39210e9e9db2d57f0ec594" ],
     [ "stm32f103", "dir_7477c4cb5a87dd7ffdeaa6c1dbaa5452.html", "dir_7477c4cb5a87dd7ffdeaa6c1dbaa5452" ],
     [ "stm32f407", "dir_fd84dabccd8e0195a991462c0af409fd.html", "dir_fd84dabccd8e0195a991462c0af409fd" ],
-    [ "stm32l031", "dir_5172181ea2f7d3ce73af519456eb0856.html", "dir_5172181ea2f7d3ce73af519456eb0856" ]
+    [ "stm32l031", "dir_5172181ea2f7d3ce73af519456eb0856.html", "dir_5172181ea2f7d3ce73af519456eb0856" ],
+    [ "template", "dir_b57243a9fb0b269eaaf611023339c5e8.html", "dir_b57243a9fb0b269eaaf611023339c5e8" ]
 ];

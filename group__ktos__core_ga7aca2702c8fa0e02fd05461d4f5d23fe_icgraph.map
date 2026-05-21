@@ -2,9 +2,9 @@
 <area shape="rect" id="Node000001" title="Emit a fatal&#45;error message and halt execution." alt="" coords="857,80,988,105"/>
 <area shape="rect" id="Node000002" href="$ktos_8c.html#a0472bc90096e9ce7acb6b8aebc9b127b" title="Default exit handler called when a task function returns." alt="" coords="599,55,809,80"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="843,86,809,82,810,77,844,81"/>
-<area shape="rect" id="Node000003" href="$ktos_8c.html#a56286f073d2c35d6eb89a0f60f41e0b8" title=" " alt="" coords="433,5,539,31"/>
+<area shape="rect" id="Node000003" href="$ktos_8c.html#afa8823ac78c11cab89b800172058212c" title=" " alt="" coords="433,5,539,31"/>
 <area shape="poly" id="edge8_Node000001_Node000003" title=" " alt="" coords="886,76,850,59,809,45,737,31,664,23,539,19,540,14,664,17,737,25,810,39,852,54,889,71"/>
-<area shape="rect" id="Node000004" href="$ktos__multi_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="171,93,225,119"/>
+<area shape="rect" id="Node000004" href="$ktos__common_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="171,93,225,119"/>
 <area shape="poly" id="edge10_Node000001_Node000004" title=" " alt="" coords="844,105,810,109,592,126,373,134,323,137,273,134,225,120,226,115,274,129,323,132,373,129,591,120,809,103,843,100"/>
 <area shape="rect" id="Node000007" href="$group__ktos__core.html#ga6580b57b65ece0e7bfcc48823db105f3" title="Start the KTOS scheduler. Never returns." alt="" coords="273,93,373,119"/>
 <area shape="poly" id="edge9_Node000001_Node000007" title=" " alt="" coords="843,97,373,108,373,102,843,92"/>

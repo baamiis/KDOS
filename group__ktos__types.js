@@ -1,29 +1,29 @@
 var group__ktos__types =
 [
-    [ "ktos_multi.h", "ktos__multi_8h.html", null ],
+    [ "ktos_common.h", "ktos__common_8h.html", null ],
     [ "ktos_MSG", "structktos__MSG.html", [
-      [ "lParam", "structktos__MSG.html#a6be38fba113d81160d3cde2233d86726", null ],
       [ "MsgType", "structktos__MSG.html#a7d22f07eae9fa437950cb4133da23f18", null ],
-      [ "sParam", "structktos__MSG.html#a529a4e18918155706f8b0d3c65a641fb", null ]
+      [ "Param1", "structktos__MSG.html#afefb4da2680916035a275c0683097154", null ],
+      [ "Param2", "structktos__MSG.html#affc3d421ef06584e090cd8a1624fa2b5", null ]
     ] ],
     [ "ktos_TASK", "structktos__TASK.html", [
-      [ "Func", "structktos__TASK.html#a432ca8e4d5b73f1555b4c9e9dad47639", null ],
-      [ "MsgCount", "structktos__TASK.html#a57dc69d62ff01789c0a95910c1b1be9d", null ],
+      [ "CountdownTimer", "structktos__TASK.html#a3552fc5754cffd0fe55064788a069d3d", null ],
+      [ "Func", "structktos__TASK.html#a90a5448984bd295cfdd8483d60af43b7", null ],
+      [ "ISRTimer", "structktos__TASK.html#a9b9c11459b634c3a08a7c1d6cc6b2519", null ],
       [ "MsgQueue", "structktos__TASK.html#a987a36f6c18d1d4c9c3c8b975d5c2caf", null ],
       [ "MsgQueueEnd", "structktos__TASK.html#ac9d536c31cf647f0d45329aa7f88c549", null ],
       [ "MsgQueueIn", "structktos__TASK.html#aed87b5eb4fae69b898788d38c65add8a", null ],
       [ "MsgQueueOut", "structktos__TASK.html#a0cf80291ee43d51e55e5a09bcc9a2a51", null ],
-      [ "NeedsReinit", "structktos__TASK.html#ab30082bd7d65f763724fd035b3474a49", null ],
-      [ "QueueCapacity", "structktos__TASK.html#a3d3c07036ef7eacc386ca527e3363f84", null ],
-      [ "Sleeping", "structktos__TASK.html#a0d8f1f69c45a799eafb9cb581fe8cb51", null ],
-      [ "StackBase", "structktos__TASK.html#a91fefd222ca40a77650e54b060e9e4ce", null ],
-      [ "StackPtr", "structktos__TASK.html#afe86a61f291cc3ef6fa970720f2442f6", null ],
-      [ "StackSizeBytes", "structktos__TASK.html#a444209377b00cebf6552fecf836cfb65", null ],
+      [ "NumMessages", "structktos__TASK.html#a844858bb2cf74d5027985f57a8064291", null ],
+      [ "QCapacity", "structktos__TASK.html#ad774cc0c59e3a9c1758d99bd658eae12", null ],
+      [ "ScheduleReinit", "structktos__TASK.html#a43a89f1b0fc24c2c5dbf3a471e81165f", null ],
+      [ "StackBasePointer", "structktos__TASK.html#a5e5d12b4ad2f9815ce276e79527e5f08", null ],
+      [ "StackBufferSize", "structktos__TASK.html#aa184816a36fa824bd72625120b76d4b5", null ],
+      [ "StackPointer", "structktos__TASK.html#ac14b0b5c8391de691e8e470a0b107b3b", null ],
       [ "TaskID", "structktos__TASK.html#a679f85c5ef1757f65c7d36d58825557b", null ],
       [ "TaskNext", "structktos__TASK.html#a9843ba2346d7711ed12585b03780ffd9", null ],
-      [ "Timer", "structktos__TASK.html#acc34e7c0d5059ab7adc7e6b86a25b381", null ],
-      [ "TimerFlag", "structktos__TASK.html#a11a3a5347467e9e4e7ac8705cc3c62b2", null ],
-      [ "WakeUpType", "structktos__TASK.html#aef35b5073aed995b1a7d1d67d95c0309", null ]
+      [ "TaskSleeping", "structktos__TASK.html#a848efb881d7359b8ebe80a4323ba25e0", null ],
+      [ "TaskTypeWakeUp", "structktos__TASK.html#a85c85aa2a403a5f51fc77727e06e711c", null ]
     ] ],
     [ "FALSE", "group__ktos__types.html#gaa93f0eb578d23995850d61f7d61c55c1", null ],
     [ "TASK_MAIN_ID", "group__ktos__types.html#ga1fd8d73e86a5eb73f4e25735c5a5d945", null ],

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['func_0',['Func',['../structktos__TASK.html#a432ca8e4d5b73f1555b4c9e9dad47639',1,'ktos_TASK']]]
+  ['allowtaskswitch_0',['AllowTaskSwitch',['../ktos_8c.html#a2a36b63da263e28a620738db09cbf7ad',1,'ktos.c']]]
 ];

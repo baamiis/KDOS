@@ -84,7 +84,7 @@ var sectionId = 'dynsection-2';
 <!-- Node3 -->
 <g id="Node000003" class="node">
 <title>Node3</title>
-<g id="a_Node000003"><a xlink:href="ktos_8c.html#a56286f073d2c35d6eb89a0f60f41e0b8" target="_top" xlink:title=" ">
+<g id="a_Node000003"><a xlink:href="ktos_8c.html#afa8823ac78c11cab89b800172058212c" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="335,-205 255,-205 255,-186 335,-186 335,-205"/>
 <text text-anchor="middle" x="295" y="-193" font-family="Helvetica,sans-Serif" font-size="10.00">ktos_InitTask</text>
 </a>
@@ -120,7 +120,7 @@ var sectionId = 'dynsection-2';
 <!-- Node15 -->
 <g id="Node000015" class="node">
 <title>Node15</title>
-<g id="a_Node000015"><a xlink:href="ktos_8c.html#abdccd1793b29f0ab71047c522a9fb262" target="_top" xlink:title=" ">
+<g id="a_Node000015"><a xlink:href="ktos_8c.html#a076e0b599234575d10eb4c57183bbcba" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="338.5,-57 251.5,-57 251.5,-38 338.5,-38 338.5,-57"/>
 <text text-anchor="middle" x="295" y="-45" font-family="Helvetica,sans-Serif" font-size="10.00">ktos_SendMsg</text>
 </a>
@@ -138,7 +138,7 @@ var sectionId = 'dynsection-2';
 <!-- Node16 -->
 <g id="Node000016" class="node">
 <title>Node16</title>
-<g id="a_Node000016"><a xlink:href="ktos__multi_8c.html#a161041827d36e1daec9539403c87c20e" target="_top" xlink:title=" ">
+<g id="a_Node000016"><a xlink:href="ktos__common_8c.html#a2310d012db7ea71050ebb1e52c62ef98" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="187,-38 77,-38 77,-19 187,-19 187,-38"/>
 <text text-anchor="middle" x="132" y="-26" font-family="Helvetica,sans-Serif" font-size="10.00">ktos_TaskMainProc</text>
 </a>

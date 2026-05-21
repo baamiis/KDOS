@@ -160,7 +160,7 @@ How does it work?</h1>
 <p>Each task has an associated timer with a resolution of <b>1ms</b> and a maximum sleep of <b>65 seconds</b>.</p>
 <h2><a class="anchor" id="autotoc_md48"></a>
 Task function</h2>
-<div class="fragment"><div class="line"><a class="code hl_typedef" href="group__ktos__types.html#ga197942eefa7db30960ae396d68339b97">WORD</a> my_task(<a class="code hl_typedef" href="group__ktos__types.html#ga197942eefa7db30960ae396d68339b97">WORD</a> MsgType, <a class="code hl_typedef" href="group__ktos__types.html#ga197942eefa7db30960ae396d68339b97">WORD</a> sParam, <a class="code hl_typedef" href="group__ktos__types.html#ga2a3e0cda5f1249bef6db47c5eb8e3813">LONG</a> lParam)</div>
+<div class="fragment"><div class="line"><a class="code hl_typedef" href="group__ktos__types.html#ga197942eefa7db30960ae396d68339b97">WORD</a> my_task(<a class="code hl_typedef" href="group__ktos__types.html#ga197942eefa7db30960ae396d68339b97">WORD</a> MsgType, <a class="code hl_typedef" href="group__ktos__types.html#ga197942eefa7db30960ae396d68339b97">WORD</a> Param1, <a class="code hl_typedef" href="group__ktos__types.html#ga2a3e0cda5f1249bef6db47c5eb8e3813">LONG</a> Param2)</div>
 <div class="line">{</div>
 <div class="line">    <span class="keywordflow">switch</span> (MsgType) {</div>
 <div class="line">        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="group__ktos__types.html#gga7c3dfdbcd730c74a49f47ef8e70bff72a1c2c8a120610bd3ad538727a97e4f8b7">KTOS_MSG_TYPE_INIT</a>:</div>
@@ -172,16 +172,16 @@ Task function</h2>
 <div class="line">    }</div>
 <div class="line">    <span class="keywordflow">return</span> 500; <span class="comment">/* sleep 500ms */</span></div>
 <div class="line">}</div>
-<div class="ttc" id="agroup__ktos__types_html_ga197942eefa7db30960ae396d68339b97"><div class="ttname"><a href="group__ktos__types.html#ga197942eefa7db30960ae396d68339b97">WORD</a></div><div class="ttdeci">unsigned short WORD</div><div class="ttdoc">Enable (1) or disable (0) debug-level logging.</div><div class="ttdef"><b>Definition</b> <a href="ktos__multi_8h_source.html#l00078">ktos_multi.h:78</a></div></div>
-<div class="ttc" id="agroup__ktos__types_html_ga2a3e0cda5f1249bef6db47c5eb8e3813"><div class="ttname"><a href="group__ktos__types.html#ga2a3e0cda5f1249bef6db47c5eb8e3813">LONG</a></div><div class="ttdeci">long LONG</div><div class="ttdoc">32-bit signed long — used for the wide message parameter lParam.</div><div class="ttdef"><b>Definition</b> <a href="ktos__multi_8h_source.html#l00084">ktos_multi.h:84</a></div></div>
+<div class="ttc" id="agroup__ktos__types_html_ga197942eefa7db30960ae396d68339b97"><div class="ttname"><a href="group__ktos__types.html#ga197942eefa7db30960ae396d68339b97">WORD</a></div><div class="ttdeci">unsigned short WORD</div><div class="ttdoc">Enable (1) or disable (0) debug-level logging.</div><div class="ttdef"><b>Definition</b> <a href="ktos__common_8h_source.html#l00078">ktos_common.h:78</a></div></div>
+<div class="ttc" id="agroup__ktos__types_html_ga2a3e0cda5f1249bef6db47c5eb8e3813"><div class="ttname"><a href="group__ktos__types.html#ga2a3e0cda5f1249bef6db47c5eb8e3813">LONG</a></div><div class="ttdeci">long LONG</div><div class="ttdoc">32-bit signed long — used for the wide message parameter Param2.</div><div class="ttdef"><b>Definition</b> <a href="ktos__common_8h_source.html#l00084">ktos_common.h:84</a></div></div>
 <div class="ttc" id="agroup__ktos__types_html_gga7c3dfdbcd730c74a49f47ef8e70bff72a1c2c8a120610bd3ad538727a97e4f8b7"><div class="ttname"><a href="group__ktos__types.html#gga7c3dfdbcd730c74a49f47ef8e70bff72a1c2c8a120610bd3ad538727a97e4f8b7">KTOS_MSG_TYPE_INIT</a></div><div class="ttdeci">@ KTOS_MSG_TYPE_INIT</div><div class="ttdef"><b>Definition</b> <a href="ktos_8h_source.html#l00138">ktos.h:138</a></div></div>
 <div class="ttc" id="agroup__ktos__types_html_gga7c3dfdbcd730c74a49f47ef8e70bff72ad71262172d8ddd249d07c0e8d534d76c"><div class="ttname"><a href="group__ktos__types.html#gga7c3dfdbcd730c74a49f47ef8e70bff72ad71262172d8ddd249d07c0e8d534d76c">KTOS_MSG_TYPE_TIMER</a></div><div class="ttdeci">@ KTOS_MSG_TYPE_TIMER</div><div class="ttdef"><b>Definition</b> <a href="ktos_8h_source.html#l00139">ktos.h:139</a></div></div>
 </div><!-- fragment --><p>The task function takes 3 parameters:</p><ul>
 <li><code>MsgType</code> — 16-bit message type (<code>KTOS_MSG_TYPE_INIT</code>, <code>KTOS_MSG_TYPE_TIMER</code>, or user-defined)</li>
-<li><code>sParam</code> — user-defined 16-bit value</li>
-<li><code>lParam</code> — user-defined 32-bit value</li>
+<li><code>Param1</code> — user-defined 16-bit value</li>
+<li><code>Param2</code> — user-defined 32-bit value</li>
 </ul>
-<p>The return value is the sleep duration in milliseconds (<code>MSG_WAIT</code> to sleep until explicitly woken).</p>
+<p>The return value is the sleep duration in milliseconds (<code>KTOS_MSG_SLEEP_INDEFINITLY</code> to sleep until explicitly woken).</p>
 <h1><a class="anchor" id="autotoc_md49"></a>
 Repository Structure</h1>
 <div class="fragment"><div class="line">KTOS/</div>
@@ -189,8 +189,8 @@ Repository Structure</h1>
 <div class="line">│   ├── ktos.c          # Scheduler, task management</div>
 <div class="line">│   ├── ktos.h          # Public API</div>
 <div class="line">│   ├── ktos_hal.h      # Hardware abstraction interface</div>
-<div class="line">│   ├── ktos_multi.c    # Utilities and type definitions</div>
-<div class="line">│   └── ktos_multi.h</div>
+<div class="line">│   ├── ktos_common.c    # Utilities and type definitions</div>
+<div class="line">│   └── ktos_common.h</div>
 <div class="line">├── bsp/                # Board Support Packages (one per MCU)</div>
 <div class="line">│   ├── atmega328p/     # AVR ATmega328P BSP + Makefile</div>
 <div class="line">│   ├── stm32f103/      # STM32F103 Cortex-M3 BSP + Makefile</div>

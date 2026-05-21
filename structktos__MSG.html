@@ -107,36 +107,17 @@ $(document).ready(function(){initNavTree('structktos__MSG.html',''); initResizab
 Public Attributes</h2></td></tr>
 <tr class="memitem:a7d22f07eae9fa437950cb4133da23f18" id="r_a7d22f07eae9fa437950cb4133da23f18"><td class="memItemLeft" align="right" valign="top">unsigned short int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structktos__MSG.html#a7d22f07eae9fa437950cb4133da23f18">MsgType</a></td></tr>
 <tr class="separator:a7d22f07eae9fa437950cb4133da23f18"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a529a4e18918155706f8b0d3c65a641fb" id="r_a529a4e18918155706f8b0d3c65a641fb"><td class="memItemLeft" align="right" valign="top">unsigned short int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structktos__MSG.html#a529a4e18918155706f8b0d3c65a641fb">sParam</a></td></tr>
-<tr class="separator:a529a4e18918155706f8b0d3c65a641fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6be38fba113d81160d3cde2233d86726" id="r_a6be38fba113d81160d3cde2233d86726"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structktos__MSG.html#a6be38fba113d81160d3cde2233d86726">lParam</a></td></tr>
-<tr class="separator:a6be38fba113d81160d3cde2233d86726"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afefb4da2680916035a275c0683097154" id="r_afefb4da2680916035a275c0683097154"><td class="memItemLeft" align="right" valign="top">unsigned short int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structktos__MSG.html#afefb4da2680916035a275c0683097154">Param1</a></td></tr>
+<tr class="separator:afefb4da2680916035a275c0683097154"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:affc3d421ef06584e090cd8a1624fa2b5" id="r_affc3d421ef06584e090cd8a1624fa2b5"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structktos__MSG.html#affc3d421ef06584e090cd8a1624fa2b5">Param2</a></td></tr>
+<tr class="separator:affc3d421ef06584e090cd8a1624fa2b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Represents a single message in a task's queue. </p>
-<p>Messages are queued via <a class="el" href="ktos_8c.html#abdccd1793b29f0ab71047c522a9fb262">ktos_SendMsg()</a> and consumed by the scheduler before each task invocation. </p>
+<p>Messages are queued via <a class="el" href="ktos_8c.html#a076e0b599234575d10eb4c57183bbcba">ktos_SendMsg()</a> and consumed by the scheduler before each task invocation. </p>
 
 <p class="definition">Definition at line <a class="el" href="ktos_8h_source.html#l00155">155</a> of file <a class="el" href="ktos_8h_source.html">ktos.h</a>.</p>
 </div><h2 class="groupheader">Member Data Documentation</h2>
-<a id="a6be38fba113d81160d3cde2233d86726" name="a6be38fba113d81160d3cde2233d86726"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6be38fba113d81160d3cde2233d86726">&#9670;&#160;</a></span>lParam</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">long ktos_MSG::lParam</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>32-bit user-defined parameter. </p>
-
-<p class="definition">Definition at line <a class="el" href="ktos_8h_source.html#l00159">159</a> of file <a class="el" href="ktos_8h_source.html">ktos.h</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="ktos_8c_source.html#l00213">ktos_SendMsg()</a>, and <a class="el" href="ktos_8c_source.html#l00269">ktos_SwitchTask()</a>.</p>
-
-</div>
-</div>
 <a id="a7d22f07eae9fa437950cb4133da23f18" name="a7d22f07eae9fa437950cb4133da23f18"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7d22f07eae9fa437950cb4133da23f18">&#9670;&#160;</a></span>MsgType</h2>
 
@@ -156,20 +137,39 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a529a4e18918155706f8b0d3c65a641fb" name="a529a4e18918155706f8b0d3c65a641fb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a529a4e18918155706f8b0d3c65a641fb">&#9670;&#160;</a></span>sParam</h2>
+<a id="afefb4da2680916035a275c0683097154" name="afefb4da2680916035a275c0683097154"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afefb4da2680916035a275c0683097154">&#9670;&#160;</a></span>Param1</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">unsigned short int ktos_MSG::sParam</td>
+          <td class="memname">unsigned short int ktos_MSG::Param1</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>16-bit user-defined parameter. </p>
 
 <p class="definition">Definition at line <a class="el" href="ktos_8h_source.html#l00158">158</a> of file <a class="el" href="ktos_8h_source.html">ktos.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="ktos_8c_source.html#l00213">ktos_SendMsg()</a>, and <a class="el" href="ktos_8c_source.html#l00269">ktos_SwitchTask()</a>.</p>
+
+</div>
+</div>
+<a id="affc3d421ef06584e090cd8a1624fa2b5" name="affc3d421ef06584e090cd8a1624fa2b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#affc3d421ef06584e090cd8a1624fa2b5">&#9670;&#160;</a></span>Param2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">long ktos_MSG::Param2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>32-bit user-defined parameter. </p>
+
+<p class="definition">Definition at line <a class="el" href="ktos_8h_source.html#l00159">159</a> of file <a class="el" href="ktos_8h_source.html">ktos.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="ktos_8c_source.html#l00213">ktos_SendMsg()</a>, and <a class="el" href="ktos_8c_source.html#l00269">ktos_SwitchTask()</a>.</p>
 

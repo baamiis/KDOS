@@ -100,7 +100,7 @@ $(document).ready(function(){initNavTree('ktos_8c.html',''); initResizable(); })
 
 <p>KTOS cooperative scheduler implementation.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="ktos__multi_8h_source.html">ktos_multi.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="ktos__common_8h_source.html">ktos_common.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="ktos_8h_source.html">ktos.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="ktos__hal_8h_source.html">ktos_hal.h</a>&quot;</code><br />
 <code>#include &lt;stdlib.h&gt;</code><br />
@@ -108,7 +108,7 @@ $(document).ready(function(){initNavTree('ktos_8c.html',''); initResizable(); })
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for ktos.c:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="ktos_8c__incl.svg" width="428" height="330"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="ktos_8c__incl.svg" width="436" height="330"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
 <p><a href="ktos_8c_source.html">Go to the source code of this file.</a></p>
@@ -124,28 +124,28 @@ Functions</h2></td></tr>
 <tr class="memitem:a0472bc90096e9ce7acb6b8aebc9b127b" id="r_a0472bc90096e9ce7acb6b8aebc9b127b"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ktos_8c.html#a0472bc90096e9ce7acb6b8aebc9b127b">ktos_DefaultTaskExitHandler</a> (<a class="el" href="group__ktos__types.html#ga197942eefa7db30960ae396d68339b97">WORD</a> task_return_value)</td></tr>
 <tr class="memdesc:a0472bc90096e9ce7acb6b8aebc9b127b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default exit handler called when a task function returns.  <br /></td></tr>
 <tr class="separator:a0472bc90096e9ce7acb6b8aebc9b127b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a56286f073d2c35d6eb89a0f60f41e0b8" id="r_a56286f073d2c35d6eb89a0f60f41e0b8"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structktos__TASK.html">ktos_TASK</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ktos_8c.html#a56286f073d2c35d6eb89a0f60f41e0b8">ktos_InitTask</a> (<a class="el" href="group__ktos__types.html#ga197942eefa7db30960ae396d68339b97">WORD</a>(*Func)(<a class="el" href="group__ktos__types.html#ga197942eefa7db30960ae396d68339b97">WORD</a> MsgType, <a class="el" href="group__ktos__types.html#ga197942eefa7db30960ae396d68339b97">WORD</a> sParam, <a class="el" href="group__ktos__types.html#ga2a3e0cda5f1249bef6db47c5eb8e3813">LONG</a> lParam), <a class="el" href="group__ktos__types.html#ga392e62da233ed3e2f7c3fd4f487a3896">INT</a> StackSize, <a class="el" href="group__ktos__types.html#ga392e62da233ed3e2f7c3fd4f487a3896">INT</a> QueueSize, <a class="el" href="group__ktos__types.html#ga4ae1dab0fb4b072a66584546209e7d58">BYTE</a> TaskIDVal)</td></tr>
-<tr class="separator:a56286f073d2c35d6eb89a0f60f41e0b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa8823ac78c11cab89b800172058212c" id="r_afa8823ac78c11cab89b800172058212c"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structktos__TASK.html">ktos_TASK</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ktos_8c.html#afa8823ac78c11cab89b800172058212c">ktos_InitTask</a> (<a class="el" href="group__ktos__types.html#ga197942eefa7db30960ae396d68339b97">WORD</a>(*Func)(<a class="el" href="group__ktos__types.html#ga197942eefa7db30960ae396d68339b97">WORD</a> MsgType, <a class="el" href="group__ktos__types.html#ga197942eefa7db30960ae396d68339b97">WORD</a> Param1, <a class="el" href="group__ktos__types.html#ga2a3e0cda5f1249bef6db47c5eb8e3813">LONG</a> Param2), <a class="el" href="group__ktos__types.html#ga392e62da233ed3e2f7c3fd4f487a3896">INT</a> StackSize, <a class="el" href="group__ktos__types.html#ga392e62da233ed3e2f7c3fd4f487a3896">INT</a> QueueSize, <a class="el" href="group__ktos__types.html#ga4ae1dab0fb4b072a66584546209e7d58">BYTE</a> TaskIDVal)</td></tr>
+<tr class="separator:afa8823ac78c11cab89b800172058212c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga8f78fa1da33bb60620e50d418b6d5f6e" id="r_ga8f78fa1da33bb60620e50d418b6d5f6e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ktos__core.html#ga8f78fa1da33bb60620e50d418b6d5f6e">ktos_ExitOS</a> (void)</td></tr>
 <tr class="memdesc:ga8f78fa1da33bb60620e50d418b6d5f6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal the scheduler to exit <a class="el" href="group__ktos__core.html#ga6580b57b65ece0e7bfcc48823db105f3" title="Start the KTOS scheduler. Never returns.">ktos_RunOS()</a> after the current task yields.  <br /></td></tr>
 <tr class="separator:ga8f78fa1da33bb60620e50d418b6d5f6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga6580b57b65ece0e7bfcc48823db105f3" id="r_ga6580b57b65ece0e7bfcc48823db105f3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ktos__core.html#ga6580b57b65ece0e7bfcc48823db105f3">ktos_RunOS</a> (void)</td></tr>
 <tr class="memdesc:ga6580b57b65ece0e7bfcc48823db105f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start the KTOS scheduler. Never returns.  <br /></td></tr>
 <tr class="separator:ga6580b57b65ece0e7bfcc48823db105f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abdccd1793b29f0ab71047c522a9fb262" id="r_abdccd1793b29f0ab71047c522a9fb262"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ktos_8c.html#abdccd1793b29f0ab71047c522a9fb262">ktos_SendMsg</a> (struct <a class="el" href="structktos__TASK.html">ktos_TASK</a> *Task, <a class="el" href="group__ktos__types.html#ga197942eefa7db30960ae396d68339b97">WORD</a> MsgType, <a class="el" href="group__ktos__types.html#ga197942eefa7db30960ae396d68339b97">WORD</a> sParam, <a class="el" href="group__ktos__types.html#ga2a3e0cda5f1249bef6db47c5eb8e3813">LONG</a> lParam)</td></tr>
-<tr class="separator:abdccd1793b29f0ab71047c522a9fb262"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga36de1d506ed25f7ec37016362726b45c" id="r_ga36de1d506ed25f7ec37016362726b45c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ktos__core.html#ga36de1d506ed25f7ec37016362726b45c">ktos_WakeUp</a> (struct <a class="el" href="structktos__TASK.html">ktos_TASK</a> *Task, <a class="el" href="group__ktos__types.html#ga392e62da233ed3e2f7c3fd4f487a3896">INT</a> WakeUpType)</td></tr>
-<tr class="memdesc:ga36de1d506ed25f7ec37016362726b45c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wake a sleeping task immediately from an ISR or another task.  <br /></td></tr>
-<tr class="separator:ga36de1d506ed25f7ec37016362726b45c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a58c939684b243c872c31ec084dba395a" id="r_a58c939684b243c872c31ec084dba395a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__ktos__types.html#ga392e62da233ed3e2f7c3fd4f487a3896">INT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ktos_8c.html#a58c939684b243c872c31ec084dba395a">ktos_Sleep</a> (<a class="el" href="group__ktos__types.html#ga197942eefa7db30960ae396d68339b97">WORD</a> Delay, bool TaskSwitchPermit)</td></tr>
-<tr class="separator:a58c939684b243c872c31ec084dba395a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a076e0b599234575d10eb4c57183bbcba" id="r_a076e0b599234575d10eb4c57183bbcba"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ktos_8c.html#a076e0b599234575d10eb4c57183bbcba">ktos_SendMsg</a> (struct <a class="el" href="structktos__TASK.html">ktos_TASK</a> *Task, <a class="el" href="group__ktos__types.html#ga197942eefa7db30960ae396d68339b97">WORD</a> MsgType, <a class="el" href="group__ktos__types.html#ga197942eefa7db30960ae396d68339b97">WORD</a> Param1, <a class="el" href="group__ktos__types.html#ga2a3e0cda5f1249bef6db47c5eb8e3813">LONG</a> Param2)</td></tr>
+<tr class="separator:a076e0b599234575d10eb4c57183bbcba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga98b1cc4f47053e3a4c00de9f2c0f0b15" id="r_ga98b1cc4f47053e3a4c00de9f2c0f0b15"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ktos__core.html#ga98b1cc4f47053e3a4c00de9f2c0f0b15">ktos_WakeUp</a> (struct <a class="el" href="structktos__TASK.html">ktos_TASK</a> *Task, <a class="el" href="group__ktos__types.html#ga392e62da233ed3e2f7c3fd4f487a3896">INT</a> TaskTypeWakeUp)</td></tr>
+<tr class="memdesc:ga98b1cc4f47053e3a4c00de9f2c0f0b15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wake a sleeping task immediately from an ISR or another task.  <br /></td></tr>
+<tr class="separator:ga98b1cc4f47053e3a4c00de9f2c0f0b15"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4564bc418ca633102a602de5756f3a8a" id="r_a4564bc418ca633102a602de5756f3a8a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__ktos__types.html#ga392e62da233ed3e2f7c3fd4f487a3896">INT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ktos_8c.html#a4564bc418ca633102a602de5756f3a8a">ktos_Sleep</a> (<a class="el" href="group__ktos__types.html#ga197942eefa7db30960ae396d68339b97">WORD</a> Delay, bool TaskAllowSwitch)</td></tr>
+<tr class="separator:a4564bc418ca633102a602de5756f3a8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
 <tr class="memitem:ad2fabfed9e86c73fb690fdb0619a823e" id="r_ad2fabfed9e86c73fb690fdb0619a823e"><td class="memItemLeft" align="right" valign="top">static struct <a class="el" href="structktos__TASK.html">ktos_TASK</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ktos_8c.html#ad2fabfed9e86c73fb690fdb0619a823e">TaskCurrent</a> = NULL</td></tr>
 <tr class="separator:ad2fabfed9e86c73fb690fdb0619a823e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a372513539a70e214d30309defea94e58" id="r_a372513539a70e214d30309defea94e58"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ktos_8c.html#a372513539a70e214d30309defea94e58">MultiTask</a> = <a class="el" href="group__ktos__types.html#gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a></td></tr>
-<tr class="separator:a372513539a70e214d30309defea94e58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a36b63da263e28a620738db09cbf7ad" id="r_a2a36b63da263e28a620738db09cbf7ad"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ktos_8c.html#a2a36b63da263e28a620738db09cbf7ad">AllowTaskSwitch</a> = <a class="el" href="group__ktos__types.html#gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a></td></tr>
+<tr class="separator:a2a36b63da263e28a620738db09cbf7ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adc28a92b0f2dcafb08df29723e6d03f4" id="r_adc28a92b0f2dcafb08df29723e6d03f4"><td class="memItemLeft" align="right" valign="top">static int32_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ktos_8c.html#adc28a92b0f2dcafb08df29723e6d03f4">OS_SP</a> = NULL</td></tr>
 <tr class="separator:adc28a92b0f2dcafb08df29723e6d03f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0783ac55020de4adc0b7d388e3d85964" id="r_a0783ac55020de4adc0b7d388e3d85964"><td class="memItemLeft" align="right" valign="top">static volatile bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ktos_8c.html#a0783ac55020de4adc0b7d388e3d85964">ktos_exit_requested</a></td></tr>
@@ -156,10 +156,10 @@ Variables</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>KTOS cooperative scheduler implementation. </p>
 <p>This file contains the kernel internals: task initialisation, the round-robin scheduler (ktos_SwitchTask), the 1 ms timer ISR, message queuing, and cooperative sleep/wake. Application code should not call any of the static functions declared here — use the public API in <a class="el" href="ktos_8h.html" title="KTOS public API — include this in your application code.">ktos.h</a>.</p>
-<dl class="section warning"><dt>Warning</dt><dd>Using <a class="el" href="ktos_8c.html#a58c939684b243c872c31ec084dba395a">ktos_Sleep()</a> with <code>TASK_SWITCH_INHIBIT</code> and <code>MSG_WAIT:</code> </dd></dl>
-<p>When <code>TASK_SWITCH_INHIBIT</code> is passed to <a class="el" href="ktos_8c.html#a58c939684b243c872c31ec084dba395a">ktos_Sleep()</a>, the scheduler focuses exclusively on the current task and will not advance to others. If <code>MSG_WAIT</code> is also passed, the system <b>halts for all other tasks</b> until an ISR calls <a class="el" href="group__ktos__core.html#ga36de1d506ed25f7ec37016362726b45c" title="Wake a sleeping task immediately from an ISR or another task.">ktos_WakeUp()</a> on this specific task.</p>
+<dl class="section warning"><dt>Warning</dt><dd>Using <a class="el" href="ktos_8c.html#a4564bc418ca633102a602de5756f3a8a">ktos_Sleep()</a> with <code>HALT_TASK_SWITCH</code> and <code>KTOS_MSG_SLEEP_INDEFINITLY:</code> </dd></dl>
+<p>When <code>HALT_TASK_SWITCH</code> is passed to <a class="el" href="ktos_8c.html#a4564bc418ca633102a602de5756f3a8a">ktos_Sleep()</a>, the scheduler focuses exclusively on the current task and will not advance to others. If <code>KTOS_MSG_SLEEP_INDEFINITLY</code> is also passed, the system <b>halts for all other tasks</b> until an ISR calls <a class="el" href="group__ktos__core.html#ga98b1cc4f47053e3a4c00de9f2c0f0b15" title="Wake a sleeping task immediately from an ISR or another task.">ktos_WakeUp()</a> on this specific task.</p>
 <p>The 1 ms timer ISR (ktos_timer_irq_handler) continues to fire and update task timers, but no other task will be dispatched until this task resumes.</p>
-<p>Use only for very short, critical sections where an ISR is guaranteed to call <a class="el" href="group__ktos__core.html#ga36de1d506ed25f7ec37016362726b45c" title="Wake a sleeping task immediately from an ISR or another task.">ktos_WakeUp()</a>. Improper use leads to an unresponsive system. </p>
+<p>Use only for very short, critical sections where an ISR is guaranteed to call <a class="el" href="group__ktos__core.html#ga98b1cc4f47053e3a4c00de9f2c0f0b15" title="Wake a sleeping task immediately from an ISR or another task.">ktos_WakeUp()</a>. Improper use leads to an unresponsive system. </p>
 
 <p class="definition">Definition in file <a class="el" href="ktos_8c_source.html">ktos.c</a>.</p>
 </div><h2 class="groupheader">Function Documentation</h2>
@@ -189,17 +189,17 @@ Variables</h2></td></tr>
 
 <p>Default exit handler called when a task function returns. </p>
 <p>Captures the task's return value into <code>g_LastTaskReturnValue</code>, then context-switches back to the OS scheduler (ktos_SwitchTask). The scheduler reads <code>g_LastTaskReturnValue</code> to determine the task's next sleep duration.</p>
-<p>Installed automatically by <a class="el" href="ktos_8c.html#a56286f073d2c35d6eb89a0f60f41e0b8">ktos_InitTask()</a> as the <code>task_exit_handler_addr</code> argument to <a class="el" href="group__ktos__hal.html#ga73dd6050479b4a96fb2f604c7fbc3e3a" title="Set up the initial stack frame for a new task.">ktos_hal_InitTaskStack()</a>. Application code never calls this.</p>
+<p>Installed automatically by <a class="el" href="ktos_8c.html#afa8823ac78c11cab89b800172058212c">ktos_InitTask()</a> as the <code>task_exit_handler_addr</code> argument to <a class="el" href="group__ktos__hal.html#ga73dd6050479b4a96fb2f604c7fbc3e3a" title="Set up the initial stack frame for a new task.">ktos_hal_InitTaskStack()</a>. Application code never calls this.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">task_return_value</td><td>The value returned by the task function (sleep duration in ms, or <code>MSG_WAIT</code>). </td></tr>
+    <tr><td class="paramname">task_return_value</td><td>The value returned by the task function (sleep duration in ms, or <code>KTOS_MSG_SLEEP_INDEFINITLY</code>). </td></tr>
   </table>
   </dd>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="ktos_8c_source.html#l00118">118</a> of file <a class="el" href="ktos_8c_source.html">ktos.c</a>.</p>
 
-<p class="reference">References <a class="el" href="ktos_8c_source.html#l00098">g_LastTaskReturnValue</a>, <a class="el" href="ktos__multi_8c_source.html#l00049">ktos_DebugPrintf()</a>, <a class="el" href="ktos__multi_8c_source.html#l00043">ktos_Emergency()</a>, <a class="el" href="nrf52840_2ktos__bsp_8c_source.html#l00046">ktos_hal_ContextSwitch()</a>, <a class="el" href="ktos_8h_source.html#l00181">ktos_TASK::NeedsReinit</a>, <a class="el" href="ktos_8c_source.html#l00090">OS_SP</a>, <a class="el" href="ktos_8h_source.html#l00178">ktos_TASK::StackPtr</a>, <a class="el" href="ktos_8c_source.html#l00081">TaskCurrent</a>, <a class="el" href="ktos_8h_source.html#l00188">ktos_TASK::TaskID</a>, and <a class="el" href="ktos__multi_8h_source.html#l00103">TRUE</a>.</p>
+<p class="reference">References <a class="el" href="ktos_8c_source.html#l00098">g_LastTaskReturnValue</a>, <a class="el" href="ktos__common_8c_source.html#l00049">ktos_DebugPrintf()</a>, <a class="el" href="ktos__common_8c_source.html#l00043">ktos_Emergency()</a>, <a class="el" href="nrf52840_2ktos__bsp_8c_source.html#l00046">ktos_hal_ContextSwitch()</a>, <a class="el" href="ktos_8c_source.html#l00090">OS_SP</a>, <a class="el" href="ktos_8h_source.html#l00181">ktos_TASK::ScheduleReinit</a>, <a class="el" href="ktos_8h_source.html#l00178">ktos_TASK::StackPointer</a>, <a class="el" href="ktos_8c_source.html#l00081">TaskCurrent</a>, <a class="el" href="ktos_8h_source.html#l00188">ktos_TASK::TaskID</a>, and <a class="el" href="ktos__common_8h_source.html#l00103">TRUE</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="ktos_8c_source.html#l00142">ktos_InitTask()</a>, and <a class="el" href="ktos_8c_source.html#l00269">ktos_SwitchTask()</a>.</p>
 <div class="dynheader">
@@ -215,8 +215,8 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="a56286f073d2c35d6eb89a0f60f41e0b8" name="a56286f073d2c35d6eb89a0f60f41e0b8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a56286f073d2c35d6eb89a0f60f41e0b8">&#9670;&#160;</a></span>ktos_InitTask()</h2>
+<a id="afa8823ac78c11cab89b800172058212c" name="afa8823ac78c11cab89b800172058212c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa8823ac78c11cab89b800172058212c">&#9670;&#160;</a></span>ktos_InitTask()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -224,7 +224,7 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="memname">struct <a class="el" href="structktos__TASK.html">ktos_TASK</a> * ktos_InitTask </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__ktos__types.html#ga197942eefa7db30960ae396d68339b97">WORD</a>(*)(<a class="el" href="group__ktos__types.html#ga197942eefa7db30960ae396d68339b97">WORD</a> MsgType, <a class="el" href="group__ktos__types.html#ga197942eefa7db30960ae396d68339b97">WORD</a> sParam, <a class="el" href="group__ktos__types.html#ga2a3e0cda5f1249bef6db47c5eb8e3813">LONG</a> lParam)&#160;</td>
+          <td class="paramtype"><a class="el" href="group__ktos__types.html#ga197942eefa7db30960ae396d68339b97">WORD</a>(*)(<a class="el" href="group__ktos__types.html#ga197942eefa7db30960ae396d68339b97">WORD</a> MsgType, <a class="el" href="group__ktos__types.html#ga197942eefa7db30960ae396d68339b97">WORD</a> Param1, <a class="el" href="group__ktos__types.html#ga2a3e0cda5f1249bef6db47c5eb8e3813">LONG</a> Param2)&#160;</td>
           <td class="paramname"><em>Func</em>, </td>
         </tr>
         <tr>
@@ -255,24 +255,24 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="ktos_8c_source.html#l00142">142</a> of file <a class="el" href="ktos_8c_source.html">ktos.c</a>.</p>
 
-<p class="reference">References <a class="el" href="ktos__multi_8h_source.html#l00106">FALSE</a>, <a class="el" href="ktos_8h_source.html#l00175">ktos_TASK::Func</a>, <a class="el" href="ktos_8c_source.html#l00118">ktos_DefaultTaskExitHandler()</a>, <a class="el" href="ktos__multi_8c_source.html#l00043">ktos_Emergency()</a>, <a class="el" href="atmega2560_2ktos__bsp_8c_source.html#l00108">ktos_hal_InitTaskStack()</a>, <a class="el" href="ktos_8h_source.html#l00138">KTOS_MSG_TYPE_INIT</a>, <a class="el" href="ktos_8h_source.html#l00186">ktos_TASK::MsgCount</a>, <a class="el" href="ktos_8h_source.html#l00182">ktos_TASK::MsgQueue</a>, <a class="el" href="ktos_8h_source.html#l00185">ktos_TASK::MsgQueueEnd</a>, <a class="el" href="ktos_8h_source.html#l00183">ktos_TASK::MsgQueueIn</a>, <a class="el" href="ktos_8h_source.html#l00184">ktos_TASK::MsgQueueOut</a>, <a class="el" href="ktos_8h_source.html#l00181">ktos_TASK::NeedsReinit</a>, <a class="el" href="ktos_8h_source.html#l00187">ktos_TASK::QueueCapacity</a>, <a class="el" href="ktos_8h_source.html#l00191">ktos_TASK::Sleeping</a>, <a class="el" href="ktos_8h_source.html#l00179">ktos_TASK::StackBase</a>, <a class="el" href="ktos_8h_source.html#l00178">ktos_TASK::StackPtr</a>, <a class="el" href="ktos_8h_source.html#l00180">ktos_TASK::StackSizeBytes</a>, <a class="el" href="ktos_8c_source.html#l00081">TaskCurrent</a>, <a class="el" href="ktos_8h_source.html#l00188">ktos_TASK::TaskID</a>, <a class="el" href="ktos_8h_source.html#l00192">ktos_TASK::TaskNext</a>, <a class="el" href="ktos_8h_source.html#l00189">ktos_TASK::Timer</a>, <a class="el" href="ktos_8h_source.html#l00190">ktos_TASK::TimerFlag</a>, and <a class="el" href="ktos__multi_8h_source.html#l00103">TRUE</a>.</p>
+<p class="reference">References <a class="el" href="ktos_8h_source.html#l00189">ktos_TASK::CountdownTimer</a>, <a class="el" href="ktos__common_8h_source.html#l00106">FALSE</a>, <a class="el" href="ktos_8h_source.html#l00175">ktos_TASK::Func</a>, <a class="el" href="ktos_8h_source.html#l00190">ktos_TASK::ISRTimer</a>, <a class="el" href="ktos_8c_source.html#l00118">ktos_DefaultTaskExitHandler()</a>, <a class="el" href="ktos__common_8c_source.html#l00043">ktos_Emergency()</a>, <a class="el" href="atmega2560_2ktos__bsp_8c_source.html#l00108">ktos_hal_InitTaskStack()</a>, <a class="el" href="ktos_8h_source.html#l00138">KTOS_MSG_TYPE_INIT</a>, <a class="el" href="ktos_8h_source.html#l00182">ktos_TASK::MsgQueue</a>, <a class="el" href="ktos_8h_source.html#l00185">ktos_TASK::MsgQueueEnd</a>, <a class="el" href="ktos_8h_source.html#l00183">ktos_TASK::MsgQueueIn</a>, <a class="el" href="ktos_8h_source.html#l00184">ktos_TASK::MsgQueueOut</a>, <a class="el" href="ktos_8h_source.html#l00186">ktos_TASK::NumMessages</a>, <a class="el" href="ktos_8h_source.html#l00187">ktos_TASK::QCapacity</a>, <a class="el" href="ktos_8h_source.html#l00181">ktos_TASK::ScheduleReinit</a>, <a class="el" href="ktos_8h_source.html#l00179">ktos_TASK::StackBasePointer</a>, <a class="el" href="ktos_8h_source.html#l00180">ktos_TASK::StackBufferSize</a>, <a class="el" href="ktos_8h_source.html#l00178">ktos_TASK::StackPointer</a>, <a class="el" href="ktos_8c_source.html#l00081">TaskCurrent</a>, <a class="el" href="ktos_8h_source.html#l00188">ktos_TASK::TaskID</a>, <a class="el" href="ktos_8h_source.html#l00192">ktos_TASK::TaskNext</a>, <a class="el" href="ktos_8h_source.html#l00191">ktos_TASK::TaskSleeping</a>, and <a class="el" href="ktos__common_8h_source.html#l00103">TRUE</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="ktos__multi_8c_source.html#l00056">main()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ktos__common_8c_source.html#l00056">main()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="ktos_8c_a56286f073d2c35d6eb89a0f60f41e0b8_cgraph.svg" width="603" height="186"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="ktos_8c_afa8823ac78c11cab89b800172058212c_cgraph.svg" width="603" height="186"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="ktos_8c_a56286f073d2c35d6eb89a0f60f41e0b8_icgraph.svg" width="386" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="ktos_8c_afa8823ac78c11cab89b800172058212c_icgraph.svg" width="386" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
 </div>
-<a id="abdccd1793b29f0ab71047c522a9fb262" name="abdccd1793b29f0ab71047c522a9fb262"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abdccd1793b29f0ab71047c522a9fb262">&#9670;&#160;</a></span>ktos_SendMsg()</h2>
+<a id="a076e0b599234575d10eb4c57183bbcba" name="a076e0b599234575d10eb4c57183bbcba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a076e0b599234575d10eb4c57183bbcba">&#9670;&#160;</a></span>ktos_SendMsg()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -293,13 +293,13 @@ Here is the caller graph for this function:</div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="group__ktos__types.html#ga197942eefa7db30960ae396d68339b97">WORD</a>&#160;</td>
-          <td class="paramname"><em>sParam</em>, </td>
+          <td class="paramname"><em>Param1</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="group__ktos__types.html#ga2a3e0cda5f1249bef6db47c5eb8e3813">LONG</a>&#160;</td>
-          <td class="paramname"><em>lParam</em>&#160;</td>
+          <td class="paramname"><em>Param2</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -311,24 +311,24 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="ktos_8c_source.html#l00213">213</a> of file <a class="el" href="ktos_8c_source.html">ktos.c</a>.</p>
 
-<p class="reference">References <a class="el" href="atmega2560_2ktos__bsp_8c_source.html#l00069">ktos_hal_DisableInterrupts()</a>, <a class="el" href="atmega2560_2ktos__bsp_8c_source.html#l00072">ktos_hal_EnableInterrupts()</a>, <a class="el" href="ktos_8h_source.html#l00159">ktos_MSG::lParam</a>, <a class="el" href="ktos_8h_source.html#l00186">ktos_TASK::MsgCount</a>, <a class="el" href="ktos_8h_source.html#l00182">ktos_TASK::MsgQueue</a>, <a class="el" href="ktos_8h_source.html#l00185">ktos_TASK::MsgQueueEnd</a>, <a class="el" href="ktos_8h_source.html#l00183">ktos_TASK::MsgQueueIn</a>, <a class="el" href="ktos_8h_source.html#l00157">ktos_MSG::MsgType</a>, <a class="el" href="ktos_8h_source.html#l00187">ktos_TASK::QueueCapacity</a>, and <a class="el" href="ktos_8h_source.html#l00158">ktos_MSG::sParam</a>.</p>
+<p class="reference">References <a class="el" href="atmega2560_2ktos__bsp_8c_source.html#l00069">ktos_hal_DisableInterrupts()</a>, <a class="el" href="atmega2560_2ktos__bsp_8c_source.html#l00072">ktos_hal_EnableInterrupts()</a>, <a class="el" href="ktos_8h_source.html#l00182">ktos_TASK::MsgQueue</a>, <a class="el" href="ktos_8h_source.html#l00185">ktos_TASK::MsgQueueEnd</a>, <a class="el" href="ktos_8h_source.html#l00183">ktos_TASK::MsgQueueIn</a>, <a class="el" href="ktos_8h_source.html#l00157">ktos_MSG::MsgType</a>, <a class="el" href="ktos_8h_source.html#l00186">ktos_TASK::NumMessages</a>, <a class="el" href="ktos_8h_source.html#l00158">ktos_MSG::Param1</a>, <a class="el" href="ktos_8h_source.html#l00159">ktos_MSG::Param2</a>, and <a class="el" href="ktos_8h_source.html#l00187">ktos_TASK::QCapacity</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="ktos__multi_8c_source.html#l00056">main()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ktos__common_8c_source.html#l00056">main()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="ktos_8c_abdccd1793b29f0ab71047c522a9fb262_cgraph.svg" width="371" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="ktos_8c_a076e0b599234575d10eb4c57183bbcba_cgraph.svg" width="371" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="ktos_8c_abdccd1793b29f0ab71047c522a9fb262_icgraph.svg" width="395" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="ktos_8c_a076e0b599234575d10eb4c57183bbcba_icgraph.svg" width="395" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
 </div>
-<a id="a58c939684b243c872c31ec084dba395a" name="a58c939684b243c872c31ec084dba395a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a58c939684b243c872c31ec084dba395a">&#9670;&#160;</a></span>ktos_Sleep()</h2>
+<a id="a4564bc418ca633102a602de5756f3a8a" name="a4564bc418ca633102a602de5756f3a8a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4564bc418ca633102a602de5756f3a8a">&#9670;&#160;</a></span>ktos_Sleep()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -343,7 +343,7 @@ Here is the caller graph for this function:</div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>TaskSwitchPermit</em>&#160;</td>
+          <td class="paramname"><em>TaskAllowSwitch</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -355,11 +355,11 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="ktos_8c_source.html#l00355">355</a> of file <a class="el" href="ktos_8c_source.html">ktos.c</a>.</p>
 
-<p class="reference">References <a class="el" href="nrf52840_2ktos__bsp_8c_source.html#l00046">ktos_hal_ContextSwitch()</a>, <a class="el" href="atmega2560_2ktos__bsp_8c_source.html#l00069">ktos_hal_DisableInterrupts()</a>, <a class="el" href="atmega2560_2ktos__bsp_8c_source.html#l00072">ktos_hal_EnableInterrupts()</a>, <a class="el" href="ktos_8h_source.html#l00108">MSG_WAIT</a>, <a class="el" href="ktos_8c_source.html#l00085">MultiTask</a>, <a class="el" href="ktos_8c_source.html#l00090">OS_SP</a>, <a class="el" href="ktos_8h_source.html#l00191">ktos_TASK::Sleeping</a>, <a class="el" href="ktos_8h_source.html#l00178">ktos_TASK::StackPtr</a>, <a class="el" href="ktos_8c_source.html#l00081">TaskCurrent</a>, <a class="el" href="ktos_8h_source.html#l00189">ktos_TASK::Timer</a>, <a class="el" href="ktos_8h_source.html#l00190">ktos_TASK::TimerFlag</a>, <a class="el" href="ktos__multi_8h_source.html#l00103">TRUE</a>, and <a class="el" href="ktos_8h_source.html#l00193">ktos_TASK::WakeUpType</a>.</p>
+<p class="reference">References <a class="el" href="ktos_8c_source.html#l00085">AllowTaskSwitch</a>, <a class="el" href="ktos_8h_source.html#l00189">ktos_TASK::CountdownTimer</a>, <a class="el" href="ktos_8h_source.html#l00190">ktos_TASK::ISRTimer</a>, <a class="el" href="nrf52840_2ktos__bsp_8c_source.html#l00046">ktos_hal_ContextSwitch()</a>, <a class="el" href="atmega2560_2ktos__bsp_8c_source.html#l00069">ktos_hal_DisableInterrupts()</a>, <a class="el" href="atmega2560_2ktos__bsp_8c_source.html#l00072">ktos_hal_EnableInterrupts()</a>, <a class="el" href="ktos_8h_source.html#l00108">KTOS_MSG_SLEEP_INDEFINITLY</a>, <a class="el" href="ktos_8c_source.html#l00090">OS_SP</a>, <a class="el" href="ktos_8h_source.html#l00178">ktos_TASK::StackPointer</a>, <a class="el" href="ktos_8c_source.html#l00081">TaskCurrent</a>, <a class="el" href="ktos_8h_source.html#l00191">ktos_TASK::TaskSleeping</a>, <a class="el" href="ktos_8h_source.html#l00193">ktos_TASK::TaskTypeWakeUp</a>, and <a class="el" href="ktos__common_8h_source.html#l00103">TRUE</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="ktos_8c_a58c939684b243c872c31ec084dba395a_cgraph.svg" width="348" height="135"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="ktos_8c_a4564bc418ca633102a602de5756f3a8a_cgraph.svg" width="348" height="135"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -393,7 +393,7 @@ Here is the call graph for this function:</div>
 <h3><a class="anchor" id="autotoc_md0"></a>
 Scheduling algorithm</h3>
 <ol type="1">
-<li>If <code>MultiTask</code> is true, advance <code>TaskCurrent</code> to the next task in the circular ring.</li>
+<li>If <code>AllowTaskSwitch</code> is true, advance <code>TaskCurrent</code> to the next task in the circular ring.</li>
 <li>If the task is sleeping but its timer has fired, mark it ready.</li>
 <li>If the task is ready (not sleeping and has a message or timer event), context-switch into it.</li>
 <li>On return from the task, read <code>g_LastTaskReturnValue</code> and update the task's timer accordingly.</li>
@@ -402,7 +402,7 @@ Scheduling algorithm</h3>
 
 <p class="definition">Definition at line <a class="el" href="ktos_8c_source.html#l00269">269</a> of file <a class="el" href="ktos_8c_source.html">ktos.c</a>.</p>
 
-<p class="reference">References <a class="el" href="ktos__multi_8h_source.html#l00106">FALSE</a>, <a class="el" href="ktos_8h_source.html#l00175">ktos_TASK::Func</a>, <a class="el" href="ktos_8c_source.html#l00098">g_LastTaskReturnValue</a>, <a class="el" href="ktos_8c_source.html#l00118">ktos_DefaultTaskExitHandler()</a>, <a class="el" href="ktos_8c_source.html#l00093">ktos_exit_requested</a>, <a class="el" href="nrf52840_2ktos__bsp_8c_source.html#l00046">ktos_hal_ContextSwitch()</a>, <a class="el" href="atmega2560_2ktos__bsp_8c_source.html#l00069">ktos_hal_DisableInterrupts()</a>, <a class="el" href="atmega2560_2ktos__bsp_8c_source.html#l00072">ktos_hal_EnableInterrupts()</a>, <a class="el" href="atmega2560_2ktos__bsp_8c_source.html#l00108">ktos_hal_InitTaskStack()</a>, <a class="el" href="ktos_8h_source.html#l00139">KTOS_MSG_TYPE_TIMER</a>, <a class="el" href="ktos_8h_source.html#l00159">ktos_MSG::lParam</a>, <a class="el" href="ktos_8h_source.html#l00108">MSG_WAIT</a>, <a class="el" href="ktos_8h_source.html#l00186">ktos_TASK::MsgCount</a>, <a class="el" href="ktos_8h_source.html#l00182">ktos_TASK::MsgQueue</a>, <a class="el" href="ktos_8h_source.html#l00185">ktos_TASK::MsgQueueEnd</a>, <a class="el" href="ktos_8h_source.html#l00184">ktos_TASK::MsgQueueOut</a>, <a class="el" href="ktos_8h_source.html#l00157">ktos_MSG::MsgType</a>, <a class="el" href="ktos_8c_source.html#l00085">MultiTask</a>, <a class="el" href="ktos_8h_source.html#l00181">ktos_TASK::NeedsReinit</a>, <a class="el" href="ktos_8c_source.html#l00090">OS_SP</a>, <a class="el" href="ktos_8h_source.html#l00191">ktos_TASK::Sleeping</a>, <a class="el" href="ktos_8h_source.html#l00158">ktos_MSG::sParam</a>, <a class="el" href="ktos_8h_source.html#l00179">ktos_TASK::StackBase</a>, <a class="el" href="ktos_8h_source.html#l00178">ktos_TASK::StackPtr</a>, <a class="el" href="ktos_8h_source.html#l00180">ktos_TASK::StackSizeBytes</a>, <a class="el" href="ktos_8c_source.html#l00081">TaskCurrent</a>, <a class="el" href="ktos_8h_source.html#l00192">ktos_TASK::TaskNext</a>, <a class="el" href="ktos_8h_source.html#l00189">ktos_TASK::Timer</a>, <a class="el" href="ktos_8h_source.html#l00190">ktos_TASK::TimerFlag</a>, and <a class="el" href="ktos__multi_8h_source.html#l00103">TRUE</a>.</p>
+<p class="reference">References <a class="el" href="ktos_8c_source.html#l00085">AllowTaskSwitch</a>, <a class="el" href="ktos_8h_source.html#l00189">ktos_TASK::CountdownTimer</a>, <a class="el" href="ktos__common_8h_source.html#l00106">FALSE</a>, <a class="el" href="ktos_8h_source.html#l00175">ktos_TASK::Func</a>, <a class="el" href="ktos_8c_source.html#l00098">g_LastTaskReturnValue</a>, <a class="el" href="ktos_8h_source.html#l00190">ktos_TASK::ISRTimer</a>, <a class="el" href="ktos_8c_source.html#l00118">ktos_DefaultTaskExitHandler()</a>, <a class="el" href="ktos_8c_source.html#l00093">ktos_exit_requested</a>, <a class="el" href="nrf52840_2ktos__bsp_8c_source.html#l00046">ktos_hal_ContextSwitch()</a>, <a class="el" href="atmega2560_2ktos__bsp_8c_source.html#l00069">ktos_hal_DisableInterrupts()</a>, <a class="el" href="atmega2560_2ktos__bsp_8c_source.html#l00072">ktos_hal_EnableInterrupts()</a>, <a class="el" href="atmega2560_2ktos__bsp_8c_source.html#l00108">ktos_hal_InitTaskStack()</a>, <a class="el" href="ktos_8h_source.html#l00108">KTOS_MSG_SLEEP_INDEFINITLY</a>, <a class="el" href="ktos_8h_source.html#l00139">KTOS_MSG_TYPE_TIMER</a>, <a class="el" href="ktos_8h_source.html#l00182">ktos_TASK::MsgQueue</a>, <a class="el" href="ktos_8h_source.html#l00185">ktos_TASK::MsgQueueEnd</a>, <a class="el" href="ktos_8h_source.html#l00184">ktos_TASK::MsgQueueOut</a>, <a class="el" href="ktos_8h_source.html#l00157">ktos_MSG::MsgType</a>, <a class="el" href="ktos_8h_source.html#l00186">ktos_TASK::NumMessages</a>, <a class="el" href="ktos_8c_source.html#l00090">OS_SP</a>, <a class="el" href="ktos_8h_source.html#l00158">ktos_MSG::Param1</a>, <a class="el" href="ktos_8h_source.html#l00159">ktos_MSG::Param2</a>, <a class="el" href="ktos_8h_source.html#l00181">ktos_TASK::ScheduleReinit</a>, <a class="el" href="ktos_8h_source.html#l00179">ktos_TASK::StackBasePointer</a>, <a class="el" href="ktos_8h_source.html#l00180">ktos_TASK::StackBufferSize</a>, <a class="el" href="ktos_8h_source.html#l00178">ktos_TASK::StackPointer</a>, <a class="el" href="ktos_8c_source.html#l00081">TaskCurrent</a>, <a class="el" href="ktos_8h_source.html#l00192">ktos_TASK::TaskNext</a>, <a class="el" href="ktos_8h_source.html#l00191">ktos_TASK::TaskSleeping</a>, and <a class="el" href="ktos__common_8h_source.html#l00103">TRUE</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="ktos_8c_source.html#l00203">ktos_RunOS()</a>.</p>
 <div class="dynheader">
@@ -435,12 +435,12 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p>1 ms system tick interrupt handler. </p>
-<p>Called by the BSP's hardware timer ISR every millisecond. Walks the circular task ring and decrements each task's <code>Timer</code> counter. When a counter reaches zero, <code>TimerFlag</code> is set so the scheduler dispatches the task on the next scheduling cycle.</p>
+<p>Called by the BSP's hardware timer ISR every millisecond. Walks the circular task ring and decrements each task's <code>CountdownTimer</code> counter. When a counter reaches zero, <code>ISRTimer</code> is set so the scheduler dispatches the task on the next scheduling cycle.</p>
 <dl class="section note"><dt>Note</dt><dd>This function is registered with the BSP via <a class="el" href="nrf52840_2ktos__bsp_8c.html#a1be5aab413ec9e34c264ccf3dc0a24d2">ktos_hal_InitSystemTimer()</a> and must not be called directly from application code. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="ktos_8c_source.html#l00395">395</a> of file <a class="el" href="ktos_8c_source.html">ktos.c</a>.</p>
 
-<p class="reference">References <a class="el" href="ktos_8c_source.html#l00081">TaskCurrent</a>, <a class="el" href="ktos_8h_source.html#l00192">ktos_TASK::TaskNext</a>, <a class="el" href="ktos_8h_source.html#l00189">ktos_TASK::Timer</a>, <a class="el" href="ktos_8h_source.html#l00190">ktos_TASK::TimerFlag</a>, and <a class="el" href="ktos__multi_8h_source.html#l00103">TRUE</a>.</p>
+<p class="reference">References <a class="el" href="ktos_8h_source.html#l00189">ktos_TASK::CountdownTimer</a>, <a class="el" href="ktos_8h_source.html#l00190">ktos_TASK::ISRTimer</a>, <a class="el" href="ktos_8c_source.html#l00081">TaskCurrent</a>, <a class="el" href="ktos_8h_source.html#l00192">ktos_TASK::TaskNext</a>, and <a class="el" href="ktos__common_8h_source.html#l00103">TRUE</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="ktos_8c_source.html#l00203">ktos_RunOS()</a>.</p>
 <div class="dynheader">
@@ -452,6 +452,33 @@ Here is the caller graph for this function:</div>
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
+<a id="a2a36b63da263e28a620738db09cbf7ad" name="a2a36b63da263e28a620738db09cbf7ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a36b63da263e28a620738db09cbf7ad">&#9670;&#160;</a></span>AllowTaskSwitch</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool AllowTaskSwitch = <a class="el" href="group__ktos__types.html#gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>When <code>TRUE</code> the scheduler advances to the next task on each tick. Set to <code>FALSE</code> by <a class="el" href="ktos_8c.html#a4564bc418ca633102a602de5756f3a8a">ktos_Sleep()</a> with <code>HALT_TASK_SWITCH</code>. </p>
+
+<p class="definition">Definition at line <a class="el" href="ktos_8c_source.html#l00085">85</a> of file <a class="el" href="ktos_8c_source.html">ktos.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="ktos_8c_source.html#l00355">ktos_Sleep()</a>, and <a class="el" href="ktos_8c_source.html#l00269">ktos_SwitchTask()</a>.</p>
+
+</div>
+</div>
 <a id="ad41da386e0487d9ef764ca15def81b71" name="ad41da386e0487d9ef764ca15def81b71"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad41da386e0487d9ef764ca15def81b71">&#9670;&#160;</a></span>g_LastTaskReturnValue</h2>
 
@@ -503,33 +530,6 @@ Here is the caller graph for this function:</div>
 <p class="definition">Definition at line <a class="el" href="ktos_8c_source.html#l00093">93</a> of file <a class="el" href="ktos_8c_source.html">ktos.c</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="ktos_8c_source.html#l00198">ktos_ExitOS()</a>, <a class="el" href="ktos_8c_source.html#l00203">ktos_RunOS()</a>, and <a class="el" href="ktos_8c_source.html#l00269">ktos_SwitchTask()</a>.</p>
-
-</div>
-</div>
-<a id="a372513539a70e214d30309defea94e58" name="a372513539a70e214d30309defea94e58"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a372513539a70e214d30309defea94e58">&#9670;&#160;</a></span>MultiTask</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool MultiTask = <a class="el" href="group__ktos__types.html#gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>When <code>TRUE</code> the scheduler advances to the next task on each tick. Set to <code>FALSE</code> by <a class="el" href="ktos_8c.html#a58c939684b243c872c31ec084dba395a">ktos_Sleep()</a> with <code>TASK_SWITCH_INHIBIT</code>. </p>
-
-<p class="definition">Definition at line <a class="el" href="ktos_8c_source.html#l00085">85</a> of file <a class="el" href="ktos_8c_source.html">ktos.c</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="ktos_8c_source.html#l00355">ktos_Sleep()</a>, and <a class="el" href="ktos_8c_source.html#l00269">ktos_SwitchTask()</a>.</p>
 
 </div>
 </div>

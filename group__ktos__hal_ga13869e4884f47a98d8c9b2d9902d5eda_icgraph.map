@@ -1,14 +1,14 @@
 <map id="ktos_hal_DisableInterrupts" name="ktos_hal_DisableInterrupts">
 <area shape="rect" id="Node000001" title="Disable all maskable interrupts." alt="" coords="615,68,811,93"/>
-<area shape="rect" id="Node000002" href="$ktos_8c.html#abdccd1793b29f0ab71047c522a9fb262" title=" " alt="" coords="273,5,389,31"/>
+<area shape="rect" id="Node000002" href="$ktos_8c.html#a076e0b599234575d10eb4c57183bbcba" title=" " alt="" coords="273,5,389,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="669,65,620,47,566,33,473,21,389,19,390,14,474,16,567,27,622,42,671,60"/>
-<area shape="rect" id="Node000005" href="$ktos_8c.html#a58c939684b243c872c31ec084dba395a" title=" " alt="" coords="455,43,549,68"/>
+<area shape="rect" id="Node000005" href="$ktos_8c.html#a4564bc418ca633102a602de5756f3a8a" title=" " alt="" coords="455,43,549,68"/>
 <area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="601,70,549,64,549,58,602,65"/>
 <area shape="rect" id="Node000006" href="$ktos_8c.html#ae0e8182ad311d004e6d96f8d42a70501" title="Round&#45;robin cooperative scheduler — runs on the OS stack." alt="" coords="437,92,567,117"/>
 <area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="602,96,567,100,567,95,601,91"/>
-<area shape="rect" id="Node000008" href="$group__ktos__core.html#ga36de1d506ed25f7ec37016362726b45c" title="Wake a sleeping task immediately from an ISR or another task." alt="" coords="447,141,557,167"/>
+<area shape="rect" id="Node000008" href="$group__ktos__core.html#ga98b1cc4f47053e3a4c00de9f2c0f0b15" title="Wake a sleeping task immediately from an ISR or another task." alt="" coords="447,141,557,167"/>
 <area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="663,100,540,144,539,139,662,95"/>
-<area shape="rect" id="Node000003" href="$ktos__multi_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="171,43,225,68"/>
+<area shape="rect" id="Node000003" href="$ktos__common_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="171,43,225,68"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="273,37,226,50,225,45,272,32"/>
 <area shape="rect" id="Node000004" href="$samd21g18_2startup_8c.html#ae7ee340978f5c25f52f0cad1457c6616" title=" " alt="" coords="5,43,123,68"/>
 <area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="157,58,123,58,123,53,157,53"/>

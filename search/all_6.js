@@ -17,7 +17,7 @@ var searchData=
   ['building_20locally_14',['Building Locally',['../index.html#autotoc_md51',1,'']]],
   ['busfault_5fhandler_15',['BusFault_Handler',['../stm32f103_2startup_8c.html#a850cefb17a977292ae5eb4cafa9976c3',1,'startup.c']]],
   ['button_20isr_16',['Example — wake a task from a button ISR',['../group__ktos__core.html#autotoc_md5',1,'']]],
-  ['byte_17',['BYTE',['../group__ktos__types.html#ga4ae1dab0fb4b072a66584546209e7d58',1,'ktos_multi.h']]],
+  ['byte_17',['BYTE',['../group__ktos__types.html#ga4ae1dab0fb4b072a66584546209e7d58',1,'ktos_common.h']]],
   ['byte_20aligned_20grows_20downward_18',['Context frame layout (64 bytes, 16-byte aligned, grows downward)',['../esp8266_2ktos__bsp_8c.html#autotoc_md25',1,'']]],
   ['bytes_2016_20byte_20aligned_20grows_20downward_19',['Context frame layout (64 bytes, 16-byte aligned, grows downward)',['../esp8266_2ktos__bsp_8c.html#autotoc_md25',1,'']]]
 ];

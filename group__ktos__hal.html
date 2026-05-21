@@ -182,7 +182,7 @@ Functions</h2></td></tr>
 <p>From the C caller's perspective this function appears to return normally; execution actually continues in the next context and only "returns" here when the scheduler switches back to this context later.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">p_current_sp_storage</td><td>Address of the variable that holds this context's saved stack pointer (e.g. <code>&amp;TaskCurrent-&gt;StackPtr</code> or <code>&amp;OS_SP</code>). Updated on entry. </td></tr>
+    <tr><td class="paramname">p_current_sp_storage</td><td>Address of the variable that holds this context's saved stack pointer (e.g. <code>&amp;TaskCurrent-&gt;StackPointer</code> or <code>&amp;OS_SP</code>). Updated on entry. </td></tr>
     <tr><td class="paramname">next_sp</td><td>Stack pointer value of the context to switch into (from a previous call to <a class="el" href="group__ktos__hal.html#ga73dd6050479b4a96fb2f604c7fbc3e3a" title="Set up the initial stack frame for a new task.">ktos_hal_InitTaskStack()</a> or a previous <a class="el" href="nrf52840_2ktos__bsp_8c.html#aeaa63a9b962a6dbb7ea6b11030f8ca75">ktos_hal_ContextSwitch()</a>).</td></tr>
   </table>
   </dd>
@@ -473,12 +473,12 @@ Cortex-M SysTick example (72 MHz)</h3>
     <tr><td class="paramname">task_func_addr</td><td>Entry point of the task function. </td></tr>
     <tr><td class="paramname">task_exit_handler_addr</td><td>Called when the task function returns; receives the task's <code>WORD</code> return value. </td></tr>
     <tr><td class="paramname">initial_msg_type</td><td><code>MsgType</code> passed to the task on first dispatch (always <code>KTOS_MSG_TYPE_INIT</code> on startup). </td></tr>
-    <tr><td class="paramname">initial_sparam</td><td><code>sParam</code> for the first dispatch. </td></tr>
-    <tr><td class="paramname">initial_lparam</td><td><code>lParam</code> for the first dispatch. </td></tr>
+    <tr><td class="paramname">initial_sparam</td><td><code>Param1</code> for the first dispatch. </td></tr>
+    <tr><td class="paramname">initial_lparam</td><td><code>Param2</code> for the first dispatch. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The initial stack pointer value to store in <code>Task-&gt;StackPtr</code>. Returns <code>NULL</code> if the stack is too small for the frame.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The initial stack pointer value to store in <code>Task-&gt;StackPointer</code>. Returns <code>NULL</code> if the stack is too small for the frame.</dd></dl>
 <dl class="section note"><dt>Note</dt><dd>The stack layout is architecture-specific. Study an existing BSP (e.g. <code><a class="el" href="stm32f103_2ktos__bsp_8c.html" title="KTOS Board Support Package — STM32F103 (ARM Cortex-M3)">bsp/stm32f103/ktos_bsp.c</a></code>) before writing a new one.</dd></dl>
 <p>Set up the initial stack frame for a new task.</p>
 <p>ATmega2560 has 256KB flash, so the hardware uses a 3-byte PC on CALL/RET. Each return address consumes 3 bytes on the stack (PCL, PCH, PCEXT).</p>
@@ -508,7 +508,7 @@ Cortex-M SysTick example (72 MHz)</h3>
 <div class="line">[ task PC low  ]</div>
 </div><!-- fragment --><p>Set up the initial stack frame for a new task.</p>
 <p>ATtiny85 has 8KB flash (4K words) — 2-byte PC, identical layout to the ATmega328P BSP.</p>
-<p>Stack layout (top = lowest address): </p><div class="fragment"><div class="line">[ R31..R18 ]   R24:R25=MsgType, R22:R23=sParam, R18:R21=lParam</div>
+<p>Stack layout (top = lowest address): </p><div class="fragment"><div class="line">[ R31..R18 ]   R24:R25=MsgType, R22:R23=Param1, R18:R21=Param2</div>
 <div class="line">[ R17..R1, R0 ]</div>
 <div class="line">[ SREG ]       I-bit set</div>
 <div class="line">[ exit PCH ]</div>
@@ -520,7 +520,7 @@ Cortex-M SysTick example (72 MHz)</h3>
 <p>When this frame is first restored:</p><ul>
 <li><code>ret</code> (= <code>jx</code> <code>a0</code>) jumps to ktos_task_launch</li>
 <li>ktos_task_launch moves a6 → a0 (exit handler) then <code>jx</code> <code>a5</code> (task entry)</li>
-<li>The task runs with a2=MsgType, a3=sParam, a4=lParam, a0=exit_handler</li>
+<li>The task runs with a2=MsgType, a3=Param1, a4=Param2, a0=exit_handler</li>
 </ul>
 <p>Set up the initial stack frame for a new task.</p>
 <p>Stack layout (SP points to bottom entry after setup, first POP gives SR): </p><div class="fragment"><div class="line">high addr → [task_exit_handler_addr]   on stack when task returns</div>
@@ -529,8 +529,8 @@ Cortex-M SysTick example (72 MHz)</h3>
 <div class="line">            [R10 = 0]</div>
 <div class="line">            [R9  = 0]</div>
 <div class="line">            [R8  = task_func_addr]</div>
-<div class="line">            [R7  = lParam &gt;&gt; 16]</div>
-<div class="line">            [R6  = lParam &amp; 0xFFFF]</div>
+<div class="line">            [R7  = Param2 &gt;&gt; 16]</div>
+<div class="line">            [R6  = Param2 &amp; 0xFFFF]</div>
 <div class="line">            [R5  = initial_sparam]</div>
 <div class="line">            [R4  = initial_msg_type]</div>
 <div class="line">low addr  → [SR  = 0x0008 (GIE)]       ← SP after setup, popped first</div>
@@ -544,9 +544,9 @@ Cortex-M SysTick example (72 MHz)</h3>
 <p>Cortex-M hardware automatically pushes/pops R0-R3, R12, LR, PC, xPSR on exceptions. KTOS manually saves/restores R4-R11. The synthesised frame: </p><div class="fragment"><div class="line">(low address / top of stack)</div>
 <div class="line">  R4-R11   (zeroed)      ← software-saved, restored by ContextSwitch</div>
 <div class="line">  R0       (MsgType)     ← first task argument</div>
-<div class="line">  R1       (sParam)</div>
-<div class="line">  R2       (lParam low)</div>
-<div class="line">  R3       (lParam high)</div>
+<div class="line">  R1       (Param1)</div>
+<div class="line">  R2       (Param2 low)</div>
+<div class="line">  R3       (Param2 high)</div>
 <div class="line">  R12      (0)</div>
 <div class="line">  LR       (exit handler)</div>
 <div class="line">  PC       (task entry)</div>

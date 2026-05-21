@@ -1,17 +1,17 @@
 <map id="bsp/sam3x8e/ktos_bsp.c" name="bsp/sam3x8e/ktos_bsp.c">
-<area shape="rect" id="Node000001" title="KTOS Board Support Package — Atmel SAM3X8E (ARM Cortex&#45;M3)" alt="" coords="99,5,282,31"/>
-<area shape="rect" id="Node000002" href="$ktos__hal_8h.html" title="KTOS Hardware Abstraction Layer (HAL) interface." alt="" coords="63,79,209,104"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="184,33,155,69,151,66,180,29"/>
-<area shape="rect" id="Node000006" title=" " alt="" coords="211,299,282,324"/>
-<area shape="poly" id="edge8_Node000001_Node000006" title=" " alt="" coords="200,29,212,51,223,78,236,135,244,193,249,285,244,285,238,193,230,136,217,79,207,54,195,32"/>
-<area shape="rect" id="Node000003" href="$ktos_8h.html" title="KTOS public API — include this in your application code." alt="" coords="105,152,167,177"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="139,104,139,138,133,138,133,104"/>
+<area shape="rect" id="Node000001" title="KTOS Board Support Package — Atmel SAM3X8E (ARM Cortex&#45;M3)" alt="" coords="102,5,285,31"/>
+<area shape="rect" id="Node000002" href="$ktos__hal_8h.html" title="KTOS Hardware Abstraction Layer (HAL) interface." alt="" coords="66,79,211,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="186,33,158,69,154,66,182,29"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="213,299,283,324"/>
+<area shape="poly" id="edge8_Node000001_Node000006" title=" " alt="" coords="203,30,215,52,225,78,238,135,246,193,251,285,245,285,241,193,233,136,220,79,210,54,198,32"/>
+<area shape="rect" id="Node000003" href="$ktos_8h.html" title="KTOS public API — include this in your application code." alt="" coords="107,152,170,177"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="141,104,141,138,136,138,136,104"/>
 <area shape="rect" id="Node000004" title=" " alt="" coords="5,299,88,324"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="124,179,102,200,81,227,66,257,56,286,51,284,61,255,76,224,98,197,120,176"/>
-<area shape="rect" id="Node000005" href="$ktos__multi_8h.html" title="Portable primitive types, constants, and utility prototypes used throughout the KTOS kernel and all B..." alt="" coords="91,225,194,251"/>
-<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="140,177,143,212,138,212,134,178"/>
-<area shape="poly" id="edge7_Node000005_Node000004" title=" " alt="" coords="129,253,75,292,72,288,126,249"/>
-<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="161,248,220,288,217,293,158,253"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="123,180,97,200,74,227,61,256,53,286,48,284,56,254,70,224,94,196,119,176"/>
+<area shape="rect" id="Node000005" href="$ktos__common_8h.html" title="Portable primitive types, constants, and utility prototypes used throughout the KTOS kernel and all B..." alt="" coords="85,225,211,251"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="143,177,147,211,142,212,138,178"/>
+<area shape="poly" id="edge7_Node000005_Node000004" title=" " alt="" coords="133,253,76,293,73,288,130,248"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="166,249,222,288,219,293,163,253"/>
 <area shape="rect" id="Node000007" title=" " alt="" coords="112,299,187,324"/>
-<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="146,251,150,285,144,285,141,251"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="151,251,152,285,146,285,146,251"/>
 </map>

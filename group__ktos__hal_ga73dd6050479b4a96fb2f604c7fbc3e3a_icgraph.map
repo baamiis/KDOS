@@ -1,10 +1,10 @@
 <map id="ktos_hal_InitTaskStack" name="ktos_hal_InitTaskStack">
 <area shape="rect" id="Node000001" title="Set up the initial stack frame for a new task." alt="" coords="605,29,776,55"/>
-<area shape="rect" id="Node000002" href="$ktos_8c.html#a56286f073d2c35d6eb89a0f60f41e0b8" title=" " alt="" coords="273,5,380,31"/>
+<area shape="rect" id="Node000002" href="$ktos_8c.html#afa8823ac78c11cab89b800172058212c" title=" " alt="" coords="273,5,380,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="592,38,380,24,381,19,592,33"/>
 <area shape="rect" id="Node000005" href="$ktos_8c.html#ae0e8182ad311d004e6d96f8d42a70501" title="Round&#45;robin cooperative scheduler — runs on the OS stack." alt="" coords="428,55,557,80"/>
 <area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="592,57,558,62,557,56,591,52"/>
-<area shape="rect" id="Node000003" href="$ktos__multi_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="171,31,225,56"/>
+<area shape="rect" id="Node000003" href="$ktos__common_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="171,31,225,56"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="260,34,226,41,225,35,259,29"/>
 <area shape="rect" id="Node000004" href="$samd21g18_2startup_8c.html#ae7ee340978f5c25f52f0cad1457c6616" title=" " alt="" coords="5,31,123,56"/>
 <area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="157,46,123,46,123,41,157,41"/>

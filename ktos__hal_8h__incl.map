@@ -1,14 +1,14 @@
 <map id="core/ktos_hal.h" name="core/ktos_hal.h">
-<area shape="rect" id="Node000001" title="KTOS Hardware Abstraction Layer (HAL) interface." alt="" coords="35,5,157,31"/>
-<area shape="rect" id="Node000002" href="$ktos_8h.html" title="KTOS public API — include this in your application code." alt="" coords="65,79,127,104"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="99,31,99,65,93,65,93,31"/>
+<area shape="rect" id="Node000001" title="KTOS Hardware Abstraction Layer (HAL) interface." alt="" coords="37,5,158,31"/>
+<area shape="rect" id="Node000002" href="$ktos_8h.html" title="KTOS public API — include this in your application code." alt="" coords="66,79,129,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="100,31,100,65,95,65,95,31"/>
 <area shape="rect" id="Node000003" title=" " alt="" coords="5,225,88,251"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="94,105,57,213,52,212,89,104"/>
-<area shape="rect" id="Node000004" href="$ktos__multi_8h.html" title="Portable primitive types, constants, and utility prototypes used throughout the KTOS kernel and all B..." alt="" coords="93,152,195,177"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="106,103,131,139,126,142,102,106"/>
-<area shape="poly" id="edge6_Node000004_Node000003" title=" " alt="" coords="130,180,75,219,72,215,127,175"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="94,105,75,153,56,213,51,211,69,151,89,103"/>
+<area shape="rect" id="Node000004" href="$ktos__common_8h.html" title="Portable primitive types, constants, and utility prototypes used throughout the KTOS kernel and all B..." alt="" coords="85,152,211,177"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="108,103,134,139,130,142,104,106"/>
+<area shape="poly" id="edge6_Node000004_Node000003" title=" " alt="" coords="133,180,76,219,73,215,130,175"/>
 <area shape="rect" id="Node000005" title=" " alt="" coords="113,225,183,251"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="147,178,149,212,144,212,142,178"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="151,178,151,212,145,212,145,178"/>
 <area shape="rect" id="Node000006" title=" " alt="" coords="208,225,283,251"/>
-<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="162,175,219,215,216,219,159,180"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="165,175,220,215,217,219,162,180"/>
 </map>
