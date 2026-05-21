@@ -4,7 +4,7 @@ CFLAGS  = -mpic18 -p$(MCU) --use-non-free -I../../core
 
 SRCS    = ktos_bsp.c \
           ../../core/ktos.c \
-          ../../core/ktos_multi.c
+          ../../core/ktos_common.c
 
 TARGET  = ktos_$(MCU)
 

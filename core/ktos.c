@@ -54,7 +54,7 @@
  * call ktos_WakeUp().  Improper use leads to an unresponsive system.
  */
 
-#include "ktos_multi.h"
+#include "ktos_common.h"
 #include "ktos.h"
 #include "ktos_hal.h"
 #include <stdlib.h>

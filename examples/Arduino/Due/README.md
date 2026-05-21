@@ -195,7 +195,7 @@ build_flags =
 - `core/ktos.c` — the platform-independent KTOS scheduler.
 - `bsp/sam3x8e/ktos_bsp.c` — TC0 init, context switch, stack frame
   builder.  Cortex-M3 assembly identical to `bsp/stm32f103/`.
-- `core/ktos_multi.c` is **deliberately excluded** — it defines its
+- `core/ktos_common.c` is **deliberately excluded** — it defines its
   own `main()` and stub callbacks that would collide with the
   Arduino-SAM core's `main()` and with each example's own callbacks.
 

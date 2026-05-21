@@ -96,8 +96,8 @@ KTOS/
 │   ├── ktos.c          # Scheduler, task management
 │   ├── ktos.h          # Public API
 │   ├── ktos_hal.h      # Hardware abstraction interface
-│   ├── ktos_multi.c    # Utilities and type definitions
-│   └── ktos_multi.h
+│   ├── ktos_common.c    # Utilities and type definitions
+│   └── ktos_common.h
 ├── bsp/                # Board Support Packages (one per MCU)
 │   ├── atmega328p/     # AVR ATmega328P BSP + Makefile
 │   ├── stm32f103/      # STM32F103 Cortex-M3 BSP + Makefile

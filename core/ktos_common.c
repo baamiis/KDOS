@@ -29,7 +29,7 @@
  * may claim authorship or ownership of this software.
  */
 
-#include "ktos_multi.h"
+#include "ktos_common.h"
 #include "ktos.h"
 #include <stdarg.h>
 #include <stdio.h>

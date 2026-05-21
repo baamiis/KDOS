@@ -73,7 +73,7 @@
 #define _KTOS
 
 #include <stdbool.h>
-#include "ktos_multi.h"
+#include "ktos_common.h"
 
 /* =========================================================================
  * Constants

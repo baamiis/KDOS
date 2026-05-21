@@ -196,7 +196,7 @@ build_src_filter =
 - `core/ktos.c` — the platform-independent KTOS scheduler.
 - `bsp/atmega328p/ktos_bsp.c` — Timer1 init, context switch, stack frame
   builder.
-- `core/ktos_multi.c` is **deliberately excluded** — it defines its own
+- `core/ktos_common.c` is **deliberately excluded** — it defines its own
   `main()` and stub callbacks that would collide with each example.
 
 No Arduino framework is pulled in.  The only runtime is **avr-libc**

@@ -55,7 +55,7 @@
 #ifndef ktos_hal_H_INCLUDED
 #define ktos_hal_H_INCLUDED
 
-#include "ktos.h" /* provides WORD, LONG, INT, BYTE via ktos_multi.h */
+#include "ktos.h" /* provides WORD, LONG, INT, BYTE via ktos_common.h */
 
 /* =========================================================================
  * Interrupt control
