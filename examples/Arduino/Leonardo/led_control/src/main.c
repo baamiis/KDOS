@@ -103,9 +103,9 @@ static struct ktos_TASK *g_led_task = NULL;
 static uint8_t g_led_mode  = MODE_BLINK;
 static bool    g_led_level = false;
 
-static WORD led_task(WORD MsgType, WORD sParam, LONG lParam)
+static WORD led_task(WORD MsgType, WORD Param1, LONG Param2)
 {
-    (void)lParam;
+    (void)Param2;
 
     switch (MsgType) {
         case KTOS_MSG_TYPE_INIT:
@@ -124,7 +124,7 @@ static WORD led_task(WORD MsgType, WORD sParam, LONG lParam)
             return KTOS_MSG_SLEEP_INDEFINITLY;
 
         case MSG_SET_MODE:
-            g_led_mode = (uint8_t)sParam;
+            g_led_mode = (uint8_t)Param1;
             switch (g_led_mode) {
                 case MODE_ON:
                     led_on();
@@ -164,10 +164,10 @@ static void dispatch_line(const char *line)
     }
 }
 
-static WORD uart_task(WORD MsgType, WORD sParam, LONG lParam)
+static WORD uart_task(WORD MsgType, WORD Param1, LONG Param2)
 {
-    (void)sParam;
-    (void)lParam;
+    (void)Param1;
+    (void)Param2;
 
     if (MsgType == KTOS_MSG_TYPE_INIT) {
         uart_puts("=============================\r\n");

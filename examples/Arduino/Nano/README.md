@@ -57,7 +57,7 @@ void ktos_InitSys(void) { }
 ISR(TIMER1_COMPA_vect) { ktos_timer_irq_handler(); }
 
 /* 4. Your task(s) --------------------------------------------------- */
-static WORD my_task(WORD MsgType, WORD sParam, LONG lParam) {
+static WORD my_task(WORD MsgType, WORD Param1, LONG Param2) {
     switch (MsgType) {
         case KTOS_MSG_TYPE_INIT:  /* one-shot init  */ break;
         case KTOS_MSG_TYPE_TIMER: /* periodic work  */ break;
@@ -82,7 +82,7 @@ Key points:
 - **Timer1 is KTOS's tick.**  The AVR BSP configures Timer1 CTC for a
   1 ms interrupt; `ISR(TIMER1_COMPA_vect)` in the application hands
   control to `ktos_timer_irq_handler()`.
-- **Tasks never block.**  Return a sleep value in ms (or `MSG_WAIT` for
+- **Tasks never block.**  Return a sleep value in ms (or `KTOS_MSG_SLEEP_INDEFINITLY` for
   "wake me only when a message arrives").
 - **Cooperative ⇒ no mutexes.**  Two tasks cannot run simultaneously,
   so a shared global between them needs no lock.

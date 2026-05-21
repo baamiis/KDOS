@@ -92,10 +92,10 @@ ISR(TIMER1_COMPA_vect) { ktos_timer_irq_handler(); }
  * ADC task
  * ========================================================================= */
 
-static WORD adc_task(WORD MsgType, WORD sParam, LONG lParam)
+static WORD adc_task(WORD MsgType, WORD Param1, LONG Param2)
 {
-    (void)sParam;
-    (void)lParam;
+    (void)Param1;
+    (void)Param2;
 
     if (MsgType == KTOS_MSG_TYPE_INIT) {
         adc_init();

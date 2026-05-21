@@ -161,7 +161,7 @@ extern void ktos_task_launch(void);
  * When this frame is first restored:
  * - @c ret (= @c jx @c a0) jumps to ktos_task_launch
  * - ktos_task_launch moves a6 → a0 (exit handler) then @c jx @c a5 (task entry)
- * - The task runs with a2=MsgType, a3=sParam, a4=lParam, a0=exit_handler
+ * - The task runs with a2=MsgType, a3=Param1, a4=Param2, a0=exit_handler
  */
 void *ktos_hal_InitTaskStack(void *p_stack_base,
                               unsigned int stack_size_bytes,

@@ -117,10 +117,10 @@ void ktos_InitSys(void) {}
  * connect_task — waits for MSG_CONNECTED, prints connection info
  * ========================================================================= */
 
-WORD connect_task(WORD MsgType, WORD sParam, LONG lParam)
+WORD connect_task(WORD MsgType, WORD Param1, LONG Param2)
 {
-    (void)sParam;
-    (void)lParam;
+    (void)Param1;
+    (void)Param2;
 
     if (MsgType == KTOS_MSG_TYPE_INIT) return KTOS_MSG_SLEEP_INDEFINITLY;
     if (MsgType != MSG_CONNECTED)      return KTOS_MSG_SLEEP_INDEFINITLY;

@@ -86,9 +86,9 @@ static char    g_line[LINE_BUF_SIZE];
 static uint8_t g_line_len;
 static struct ktos_TASK *g_cmd_task;
 
-static WORD cmd_task(WORD MsgType, WORD sParam, LONG lParam)
+static WORD cmd_task(WORD MsgType, WORD Param1, LONG Param2)
 {
-    (void)sParam; (void)lParam;
+    (void)Param1; (void)Param2;
     if (MsgType == KTOS_MSG_TYPE_INIT) {
         uart_puts("=============================\r\n");
         uart_puts("  KTOS UART — Blue Pill\r\n");
@@ -115,9 +115,9 @@ static WORD cmd_task(WORD MsgType, WORD sParam, LONG lParam)
     return KTOS_MSG_SLEEP_INDEFINITLY;
 }
 
-static WORD rx_task(WORD MsgType, WORD sParam, LONG lParam)
+static WORD rx_task(WORD MsgType, WORD Param1, LONG Param2)
 {
-    (void)sParam; (void)lParam;
+    (void)Param1; (void)Param2;
     if (MsgType == KTOS_MSG_TYPE_INIT) { g_line_len = 0; return RX_POLL_MS; }
     int16_t b;
     while ((b = uart_getc()) >= 0) {

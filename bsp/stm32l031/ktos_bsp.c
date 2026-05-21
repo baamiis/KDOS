@@ -120,7 +120,7 @@ void *ktos_hal_InitTaskStack(void *p_stack_base,
     *--sp = (uint32_t)task_exit_handler_addr;          /* LR */
     *--sp = 0;                                         /* R12 */
     *--sp = 0;                                         /* R3 */
-    *--sp = (uint32_t)((initial_lparam >> 16) & 0xFFFF); /* R2 = lParam high */
+    *--sp = (uint32_t)((initial_lparam >> 16) & 0xFFFF); /* R2 = Param2 high */
     *--sp = (uint32_t)(initial_sparam);                /* R1 */
     *--sp = (uint32_t)(initial_msg_type);              /* R0 */
 

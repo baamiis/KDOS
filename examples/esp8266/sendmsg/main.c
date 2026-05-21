@@ -106,10 +106,10 @@ static struct ktos_TASK *g_pong_task;
 
 static uint16_t g_count;
 
-WORD ping_task(WORD MsgType, WORD sParam, LONG lParam)
+WORD ping_task(WORD MsgType, WORD Param1, LONG Param2)
 {
-    (void)sParam;
-    (void)lParam;
+    (void)Param1;
+    (void)Param2;
 
     switch (MsgType) {
         case KTOS_MSG_TYPE_INIT:
@@ -140,13 +140,13 @@ WORD ping_task(WORD MsgType, WORD sParam, LONG lParam)
  * Pong task — echoes each ping back as a pong
  * ========================================================================= */
 
-WORD pong_task(WORD MsgType, WORD sParam, LONG lParam)
+WORD pong_task(WORD MsgType, WORD Param1, LONG Param2)
 {
-    (void)lParam;
+    (void)Param2;
 
     if (MsgType == MSG_PING) {
         uart_puts("[PONG] got ping #");
-        uart_putu16(sParam);
+        uart_putu16(Param1);
         uart_puts(" -- sending pong\r\n");
         ktos_SendMsg(g_ping_task, MSG_PONG, 0, 0);
     }

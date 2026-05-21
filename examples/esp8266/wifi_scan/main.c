@@ -31,7 +31,7 @@
 #include "../../../core/ktos.h"
 #include <stdint.h>
 
-/* Application-defined message type: scan complete, lParam = bss_info pointer. */
+/* Application-defined message type: scan complete, Param2 = bss_info pointer. */
 #define MSG_SCAN_DONE  ((WORD)(KTOS_MSG_TYPE_SYSTEM_START))
 
 /* =========================================================================
@@ -179,9 +179,9 @@ void ktos_InitSys(void) {}
  * wifi_task — INIT sleeps waiting for MSG_SCAN_DONE; MSG_SCAN_DONE prints BSS list
  * ========================================================================= */
 
-WORD wifi_task(WORD MsgType, WORD sParam, LONG lParam)
+WORD wifi_task(WORD MsgType, WORD Param1, LONG Param2)
 {
-    (void)sParam;
+    (void)Param1;
 
     /* INIT: task is live; wait for the scan-result message from ktos_app_main. */
     if (MsgType == KTOS_MSG_TYPE_INIT) return KTOS_MSG_SLEEP_INDEFINITLY;
@@ -195,7 +195,7 @@ WORD wifi_task(WORD MsgType, WORD sParam, LONG lParam)
     uart_puts("   KTOS WiFi Scan\r\n");
     uart_puts("=============================\r\n");
 
-    struct bss_info *bss = (struct bss_info *)(uintptr_t)lParam;
+    struct bss_info *bss = (struct bss_info *)(uintptr_t)Param2;
     if (!bss) {
         uart_puts("Scan failed or no networks found.\r\n");
         return KTOS_MSG_SLEEP_INDEFINITLY;

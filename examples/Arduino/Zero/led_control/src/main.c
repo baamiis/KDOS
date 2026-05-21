@@ -87,9 +87,9 @@ static struct ktos_TASK *g_led_task = NULL;
 static uint8_t g_mode  = MODE_BLINK;
 static bool    g_level = false;
 
-static WORD led_task(WORD MsgType, WORD sParam, LONG lParam)
+static WORD led_task(WORD MsgType, WORD Param1, LONG Param2)
 {
-    (void)lParam;
+    (void)Param2;
     switch (MsgType) {
         case KTOS_MSG_TYPE_INIT:
             led_init(); led_off();
@@ -104,7 +104,7 @@ static WORD led_task(WORD MsgType, WORD sParam, LONG lParam)
             }
             return KTOS_MSG_SLEEP_INDEFINITLY;
         case MSG_SET_MODE:
-            g_mode = (uint8_t)sParam;
+            g_mode = (uint8_t)Param1;
             if      (g_mode == MODE_ON)  { led_on();  uart_puts("LED ON\r\n");    return KTOS_MSG_SLEEP_INDEFINITLY; }
             else if (g_mode == MODE_OFF) { led_off(); uart_puts("LED OFF\r\n");   return KTOS_MSG_SLEEP_INDEFINITLY; }
             else { g_mode = MODE_BLINK; uart_puts("LED BLINK\r\n"); return BLINK_PERIOD_MS; }
@@ -123,9 +123,9 @@ static void dispatch(const char *line)
     else if (line[0])                    { uart_puts("Unknown. Try ON, OFF, BLINK.\r\n"); }
 }
 
-static WORD uart_task(WORD MsgType, WORD sParam, LONG lParam)
+static WORD uart_task(WORD MsgType, WORD Param1, LONG Param2)
 {
-    (void)sParam; (void)lParam;
+    (void)Param1; (void)Param2;
     if (MsgType == KTOS_MSG_TYPE_INIT) {
         uart_puts("=============================\r\n");
         uart_puts("  KTOS LED Control\r\n");

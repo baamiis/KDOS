@@ -97,7 +97,7 @@ void ktos_hal_InitSystemTimer(void (*timer_isr_addr)(void))
  *
  * Stack layout (top = lowest address):
  * ```
- * [ R31..R18 ]   R24:R25=MsgType, R22:R23=sParam, R18:R21=lParam
+ * [ R31..R18 ]   R24:R25=MsgType, R22:R23=Param1, R18:R21=Param2
  * [ R17..R1, R0 ]
  * [ SREG ]       I-bit set
  * [ exit PCH ]

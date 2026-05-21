@@ -32,7 +32,7 @@ KTOS is the operating system - no Arduino framework, no `Serial`, no
   every byte (so the user sees what they typed), and assembles
   characters into a 64-byte line buffer.  On `\r` or `\n` it posts
   `MSG_LINE_READY` to `cmd_task`.
-- **`cmd_task`** sleeps with `MSG_WAIT` - **zero CPU between events**.
+- **`cmd_task`** sleeps with `KTOS_MSG_SLEEP_INDEFINITLY` - **zero CPU between events**.
   On `MSG_LINE_READY` it parses the first whitespace-delimited token
   and dispatches to one of the handlers.
 
@@ -114,7 +114,7 @@ None required for the LED.  Optional:
    ```
 
 3. On `KTOS_MSG_TYPE_INIT`:
-   - `cmd_task` prints the banner and returns `MSG_WAIT`.
+   - `cmd_task` prints the banner and returns `KTOS_MSG_SLEEP_INDEFINITLY`.
    - `rx_task` clears its line-assembly state and returns `10`.
 
 4. Every 10 ms `rx_task` wakes with `KTOS_MSG_TYPE_TIMER`:
@@ -126,7 +126,7 @@ None required for the LED.  Optional:
 
 5. KTOS marks `cmd_task` ready and dispatches it on the next
    scheduling pass.  It tokenises the line, dispatches to the right
-   handler, writes the response, and returns `MSG_WAIT`.
+   handler, writes the response, and returns `KTOS_MSG_SLEEP_INDEFINITLY`.
 
 The receive buffer is fixed-size and never allocated.  Lines longer
 than 63 characters are silently truncated - the buffer cannot overrun.

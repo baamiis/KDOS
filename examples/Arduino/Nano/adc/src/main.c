@@ -120,10 +120,10 @@ ISR(TIMER1_COMPA_vect)
 #define ADC_CHANNEL_A0  0
 #define SAMPLE_PERIOD_MS 1000U
 
-static WORD adc_task(WORD MsgType, WORD sParam, LONG lParam)
+static WORD adc_task(WORD MsgType, WORD Param1, LONG Param2)
 {
-    (void)sParam;
-    (void)lParam;
+    (void)Param1;
+    (void)Param2;
 
     if (MsgType == KTOS_MSG_TYPE_INIT) {
         uart_puts("=============================\r\n");

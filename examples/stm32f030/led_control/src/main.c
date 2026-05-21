@@ -84,13 +84,13 @@ void ktos_InitSys(void) {}
 
 static struct ktos_TASK *g_led_task;
 
-static WORD led_task(WORD MsgType, WORD sParam, LONG lParam)
+static WORD led_task(WORD MsgType, WORD Param1, LONG Param2)
 {
-    (void)lParam;
+    (void)Param2;
     static uint8_t mode = MODE_OFF;
     if (MsgType == KTOS_MSG_TYPE_INIT) { LED_OFF(); return KTOS_MSG_SLEEP_INDEFINITLY; }
     if (MsgType == MSG_SET_MODE) {
-        mode = (uint8_t)sParam;
+        mode = (uint8_t)Param1;
         switch (mode) {
         case MODE_ON:  LED_ON();  uart_puts("LED: ON\r\n");        return KTOS_MSG_SLEEP_INDEFINITLY;
         case MODE_OFF: LED_OFF(); uart_puts("LED: OFF\r\n");       return KTOS_MSG_SLEEP_INDEFINITLY;
@@ -101,9 +101,9 @@ static WORD led_task(WORD MsgType, WORD sParam, LONG lParam)
     return TOGGLE_MS;
 }
 
-static WORD uart_task(WORD MsgType, WORD sParam, LONG lParam)
+static WORD uart_task(WORD MsgType, WORD Param1, LONG Param2)
 {
-    (void)sParam; (void)lParam;
+    (void)Param1; (void)Param2;
     static char buf[LINE_BUF];
     static uint8_t len = 0;
     if (MsgType == KTOS_MSG_TYPE_INIT) {

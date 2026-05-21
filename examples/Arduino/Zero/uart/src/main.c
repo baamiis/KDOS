@@ -135,9 +135,9 @@ static void print_help(void)
     uart_puts("  HELP  - this list\r\n");
 }
 
-static WORD cmd_task(WORD MsgType, WORD sParam, LONG lParam)
+static WORD cmd_task(WORD MsgType, WORD Param1, LONG Param2)
 {
-    (void)sParam; (void)lParam;
+    (void)Param1; (void)Param2;
     if (MsgType == KTOS_MSG_TYPE_INIT) {
         uart_puts("=============================\r\n");
         uart_puts("  KTOS UART Example\r\n");
@@ -157,9 +157,9 @@ static WORD cmd_task(WORD MsgType, WORD sParam, LONG lParam)
     return KTOS_MSG_SLEEP_INDEFINITLY;
 }
 
-static WORD rx_task(WORD MsgType, WORD sParam, LONG lParam)
+static WORD rx_task(WORD MsgType, WORD Param1, LONG Param2)
 {
-    (void)sParam; (void)lParam;
+    (void)Param1; (void)Param2;
     if (MsgType == KTOS_MSG_TYPE_INIT) { g_asm_len = 0; return RX_POLL_MS; }
 
     int b;

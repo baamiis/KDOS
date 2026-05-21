@@ -12,7 +12,7 @@
  * @brief Application task declarations for the KTOS ROS 2 Serial Bridge demo.
  *
  * Each function below is a KTOS task conforming to the signature:
- *   WORD task_name(WORD MsgType, WORD sParam, LONG lParam)
+ *   WORD task_name(WORD MsgType, WORD Param1, LONG Param2)
  *
  * Register all tasks in main() via ktos_InitTask() before calling ktos_RunOS().
  */
@@ -57,19 +57,19 @@ extern struct ktos_TASK *g_task_command;
  * ========================================================================= */
 
 /** Sends HEARTBEAT,<n> every 1000 ms. */
-WORD task_heartbeat(WORD MsgType, WORD sParam, LONG lParam);
+WORD task_heartbeat(WORD MsgType, WORD Param1, LONG Param2);
 
 /** Updates fake sensor value every 500 ms. */
-WORD task_sensor(WORD MsgType, WORD sParam, LONG lParam);
+WORD task_sensor(WORD MsgType, WORD Param1, LONG Param2);
 
 /** Sends STATUS,... every 2000 ms. */
-WORD task_status(WORD MsgType, WORD sParam, LONG lParam);
+WORD task_status(WORD MsgType, WORD Param1, LONG Param2);
 
 /** Polls serial RX and dispatches parsed commands. */
-WORD task_serial_rx(WORD MsgType, WORD sParam, LONG lParam);
+WORD task_serial_rx(WORD MsgType, WORD Param1, LONG Param2);
 
 /** Applies LED / motor commands received from the serial RX task. */
-WORD task_command(WORD MsgType, WORD sParam, LONG lParam);
+WORD task_command(WORD MsgType, WORD Param1, LONG Param2);
 
 /* =========================================================================
  * KTOS mandatory platform callbacks (implemented in main.c)

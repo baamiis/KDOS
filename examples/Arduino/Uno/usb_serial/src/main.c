@@ -258,10 +258,10 @@ static void cmd_echo(const char *rest)
  * cmd_task - the shell
  * ========================================================================= */
 
-static WORD cmd_task(WORD MsgType, WORD sParam, LONG lParam)
+static WORD cmd_task(WORD MsgType, WORD Param1, LONG Param2)
 {
-    (void)sParam;
-    (void)lParam;
+    (void)Param1;
+    (void)Param2;
 
     if (MsgType == KTOS_MSG_TYPE_INIT) {
         uart_puts("=============================\r\n");
@@ -301,10 +301,10 @@ static WORD cmd_task(WORD MsgType, WORD sParam, LONG lParam)
  * rx_task - drains USART0, echoes, assembles a line
  * ========================================================================= */
 
-static WORD rx_task(WORD MsgType, WORD sParam, LONG lParam)
+static WORD rx_task(WORD MsgType, WORD Param1, LONG Param2)
 {
-    (void)sParam;
-    (void)lParam;
+    (void)Param1;
+    (void)Param2;
 
     if (MsgType == KTOS_MSG_TYPE_INIT) {
         g_line_len = 0;

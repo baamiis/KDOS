@@ -134,9 +134,9 @@ void ktos_InitSys(void) {}
 
 #define SAMPLE_MS 1000U
 
-static WORD adc_task(WORD MsgType, WORD sParam, LONG lParam)
+static WORD adc_task(WORD MsgType, WORD Param1, LONG Param2)
 {
-    (void)sParam; (void)lParam;
+    (void)Param1; (void)Param2;
     if (MsgType == KTOS_MSG_TYPE_INIT) {
         adc_init();
         uart_puts("=============================\r\n");

@@ -84,9 +84,9 @@ void ktos_InitSys(void) {}
 
 static struct ktos_TASK *g_ui_task = NULL;
 
-static WORD ui_task(WORD MsgType, WORD sParam, LONG lParam)
+static WORD ui_task(WORD MsgType, WORD Param1, LONG Param2)
 {
-    (void)lParam;
+    (void)Param2;
     if (MsgType == KTOS_MSG_TYPE_INIT) {
         uart_puts("=============================\r\n");
         uart_puts("  KTOS Button Control\r\n");
@@ -96,7 +96,7 @@ static WORD ui_task(WORD MsgType, WORD sParam, LONG lParam)
         return KTOS_MSG_SLEEP_INDEFINITLY;
     }
     if (MsgType == MSG_BUTTON_EVENT) {
-        uart_puts(sParam ? "Button pressed\r\n" : "Button released\r\n");
+        uart_puts(Param1 ? "Button pressed\r\n" : "Button released\r\n");
     }
     return KTOS_MSG_SLEEP_INDEFINITLY;
 }
@@ -105,9 +105,9 @@ static bool     g_stable   = false;
 static bool     g_last_hi  = true;
 static uint16_t g_debounce = 0;
 
-static WORD button_task(WORD MsgType, WORD sParam, LONG lParam)
+static WORD button_task(WORD MsgType, WORD Param1, LONG Param2)
 {
-    (void)sParam; (void)lParam;
+    (void)Param1; (void)Param2;
     if (MsgType == KTOS_MSG_TYPE_INIT) {
         btn_init();
         g_last_hi  = btn_high();

@@ -144,10 +144,10 @@ static const char *print_line(const char *p, const char *end)
  * http_task
  * ========================================================================= */
 
-WORD http_task(WORD MsgType, WORD sParam, LONG lParam)
+WORD http_task(WORD MsgType, WORD Param1, LONG Param2)
 {
-    (void)sParam;
-    (void)lParam;
+    (void)Param1;
+    (void)Param2;
 
     if (MsgType == KTOS_MSG_TYPE_INIT) return KTOS_MSG_SLEEP_INDEFINITLY;
     if (MsgType != MSG_HTTP_DONE)      return KTOS_MSG_SLEEP_INDEFINITLY;

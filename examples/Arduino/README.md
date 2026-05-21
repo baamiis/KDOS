@@ -73,7 +73,7 @@ void ktos_InitSys(void) { }
 ISR(TIMER1_COMPA_vect) { ktos_timer_irq_handler(); }
 
 /* Your task(s) ------------------------------------------------------ */
-static WORD my_task(WORD MsgType, WORD sParam, LONG lParam) {
+static WORD my_task(WORD MsgType, WORD Param1, LONG Param2) {
     switch (MsgType) {
         case KTOS_MSG_TYPE_INIT:  break;
         case KTOS_MSG_TYPE_TIMER: break;

@@ -123,9 +123,9 @@ void ktos_hal_InitSystemTimer(void (*timer_isr_addr)(void))
  * (low address / top of stack)
  *   R4-R11   (zeroed)      ← software-saved, restored by ContextSwitch
  *   R0       (MsgType)     ← first task argument
- *   R1       (sParam)
- *   R2       (lParam low)
- *   R3       (lParam high)
+ *   R1       (Param1)
+ *   R2       (Param2 low)
+ *   R3       (Param2 high)
  *   R12      (0)
  *   LR       (exit handler)
  *   PC       (task entry)

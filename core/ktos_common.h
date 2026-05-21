@@ -79,7 +79,7 @@ typedef unsigned short WORD;
 
 /**
  * @ingroup ktos_types
- * @brief 32-bit signed long — used for the wide message parameter @c lParam.
+ * @brief 32-bit signed long — used for the wide message parameter @c Param2.
  */
 typedef long LONG;
 

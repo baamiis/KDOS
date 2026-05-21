@@ -100,9 +100,9 @@ void ktos_InitSys(void) {}
 
 #define TEST_PERIOD_MS 2000U
 
-static WORD spi_task(WORD MsgType, WORD sParam, LONG lParam)
+static WORD spi_task(WORD MsgType, WORD Param1, LONG Param2)
 {
-    (void)sParam; (void)lParam;
+    (void)Param1; (void)Param2;
     if (MsgType == KTOS_MSG_TYPE_INIT) {
         uart_puts("=============================\r\n");
         uart_puts("  KTOS SPI Loopback\r\n");

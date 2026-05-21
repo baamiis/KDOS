@@ -34,7 +34,7 @@
 #include <stdarg.h>
 #include <stdio.h>
 
-static WORD ktos_TaskMainProc(WORD MsgType, WORD sParam, LONG lParam);
+static WORD ktos_TaskMainProc(WORD MsgType, WORD Param1, LONG Param2);
 
 struct ktos_TASK *TaskMain;
 extern struct ktos_TASK *TaskSerial;
@@ -68,10 +68,10 @@ int main()
   return 0;
 }
 
-static WORD ktos_TaskMainProc(WORD MsgType, WORD sParam, LONG lParam)
+static WORD ktos_TaskMainProc(WORD MsgType, WORD Param1, LONG Param2)
 {
-  (void)sParam;
-  (void)lParam;
+  (void)Param1;
+  (void)Param2;
 
   switch(MsgType) {
     case KTOS_MSG_TYPE_INIT:

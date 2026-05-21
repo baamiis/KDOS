@@ -114,10 +114,10 @@ void ktos_InitSys(void)
  * Hello task
  * ========================================================================= */
 
-WORD hello_task(WORD MsgType, WORD sParam, LONG lParam)
+WORD hello_task(WORD MsgType, WORD Param1, LONG Param2)
 {
-    (void)sParam;
-    (void)lParam;
+    (void)Param1;
+    (void)Param2;
 
     if (MsgType == KTOS_MSG_TYPE_INIT) {
         uart_init();

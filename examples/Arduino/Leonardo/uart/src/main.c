@@ -116,10 +116,10 @@ static void print_help(void)
     uart_puts("  HELP  - this list\r\n");
 }
 
-static WORD cmd_task(WORD MsgType, WORD sParam, LONG lParam)
+static WORD cmd_task(WORD MsgType, WORD Param1, LONG Param2)
 {
-    (void)sParam;
-    (void)lParam;
+    (void)Param1;
+    (void)Param2;
 
     if (MsgType == KTOS_MSG_TYPE_INIT) {
         uart_puts("=============================\r\n");
@@ -153,10 +153,10 @@ static WORD cmd_task(WORD MsgType, WORD sParam, LONG lParam)
  * RX task — drains USART1, echoes, assembles lines
  * ========================================================================= */
 
-static WORD rx_task(WORD MsgType, WORD sParam, LONG lParam)
+static WORD rx_task(WORD MsgType, WORD Param1, LONG Param2)
 {
-    (void)sParam;
-    (void)lParam;
+    (void)Param1;
+    (void)Param2;
 
     if (MsgType == KTOS_MSG_TYPE_INIT) {
         g_assembling_len = 0;

@@ -98,10 +98,10 @@ void ktos_InitSys(void) {}
  * To add a second task later, replace the for(;;) loop with
  * @c return 1000 and see @c examples/esp8266.md for the multi-task notes.
  */
-WORD hello_task(WORD MsgType, WORD sParam, LONG lParam)
+WORD hello_task(WORD MsgType, WORD Param1, LONG Param2)
 {
-    (void)sParam;
-    (void)lParam;
+    (void)Param1;
+    (void)Param2;
 
     if (MsgType == KTOS_MSG_TYPE_INIT) {
         delay_ms(50);

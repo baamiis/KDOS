@@ -196,10 +196,10 @@ static void run_loopback_test(void)
     }
 }
 
-static WORD spi_task(WORD MsgType, WORD sParam, LONG lParam)
+static WORD spi_task(WORD MsgType, WORD Param1, LONG Param2)
 {
-    (void)sParam;
-    (void)lParam;
+    (void)Param1;
+    (void)Param2;
 
     switch (MsgType) {
         case KTOS_MSG_TYPE_INIT:

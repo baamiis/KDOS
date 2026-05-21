@@ -67,7 +67,7 @@ Each task has an associated timer with a resolution of **1ms** and a maximum sle
 ### Task function
 
 ```c
-WORD my_task(WORD MsgType, WORD sParam, LONG lParam)
+WORD my_task(WORD MsgType, WORD Param1, LONG Param2)
 {
     switch (MsgType) {
         case KTOS_MSG_TYPE_INIT:
@@ -83,10 +83,10 @@ WORD my_task(WORD MsgType, WORD sParam, LONG lParam)
 
 The task function takes 3 parameters:
 - `MsgType` — 16-bit message type (`KTOS_MSG_TYPE_INIT`, `KTOS_MSG_TYPE_TIMER`, or user-defined)
-- `sParam` — user-defined 16-bit value
-- `lParam` — user-defined 32-bit value
+- `Param1` — user-defined 16-bit value
+- `Param2` — user-defined 32-bit value
 
-The return value is the sleep duration in milliseconds (`MSG_WAIT` to sleep until explicitly woken).
+The return value is the sleep duration in milliseconds (`KTOS_MSG_SLEEP_INDEFINITLY` to sleep until explicitly woken).
 
 ## Repository Structure
 

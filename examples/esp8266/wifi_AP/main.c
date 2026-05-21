@@ -104,10 +104,10 @@ void ktos_InitSys(void) {}
  * ap_task — waits for MSG_AP_READY, prints AP info, sleeps forever
  * ========================================================================= */
 
-WORD ap_task(WORD MsgType, WORD sParam, LONG lParam)
+WORD ap_task(WORD MsgType, WORD Param1, LONG Param2)
 {
-    (void)sParam;
-    (void)lParam;
+    (void)Param1;
+    (void)Param2;
 
     if (MsgType == KTOS_MSG_TYPE_INIT) return KTOS_MSG_SLEEP_INDEFINITLY;
     if (MsgType != MSG_AP_READY)       return KTOS_MSG_SLEEP_INDEFINITLY;

@@ -54,9 +54,9 @@ struct ktos_TASK *g_task_command    = NULL;
  * task_heartbeat — sends HEARTBEAT,<n> every 1000 ms
  * ========================================================================= */
 
-WORD task_heartbeat(WORD MsgType, WORD sParam, LONG lParam)
+WORD task_heartbeat(WORD MsgType, WORD Param1, LONG Param2)
 {
-    (void)sParam; (void)lParam;
+    (void)Param1; (void)Param2;
 
     static uint32_t counter = 0;
 
@@ -75,9 +75,9 @@ WORD task_heartbeat(WORD MsgType, WORD sParam, LONG lParam)
  * task_sensor — updates simulated sensor value every 500 ms
  * ========================================================================= */
 
-WORD task_sensor(WORD MsgType, WORD sParam, LONG lParam)
+WORD task_sensor(WORD MsgType, WORD Param1, LONG Param2)
 {
-    (void)sParam; (void)lParam;
+    (void)Param1; (void)Param2;
 
     if (MsgType == KTOS_MSG_TYPE_INIT)
         return 500;
@@ -100,9 +100,9 @@ WORD task_sensor(WORD MsgType, WORD sParam, LONG lParam)
  * task_status — sends STATUS,... every 2000 ms
  * ========================================================================= */
 
-WORD task_status(WORD MsgType, WORD sParam, LONG lParam)
+WORD task_status(WORD MsgType, WORD Param1, LONG Param2)
 {
-    (void)sParam; (void)lParam;
+    (void)Param1; (void)Param2;
 
     if (MsgType == KTOS_MSG_TYPE_INIT)
         return 2000;
@@ -142,7 +142,7 @@ static void on_serial_line(const char *line)
 
     if (strncmp(line, "MOTOR,", 6) == 0) {
         int speed = atoi(line + 6);
-        /* sParam carries the speed (fits in a WORD as signed via cast) */
+        /* Param1 carries the speed (fits in a WORD as signed via cast) */
         ktos_SendMsg(g_task_command, MSG_CMD_MOTOR, (WORD)(short)speed, 0);
         return;
     }
@@ -154,9 +154,9 @@ static void on_serial_line(const char *line)
  * task_serial_rx — polls UART RX every 20 ms
  * ========================================================================= */
 
-WORD task_serial_rx(WORD MsgType, WORD sParam, LONG lParam)
+WORD task_serial_rx(WORD MsgType, WORD Param1, LONG Param2)
 {
-    (void)sParam; (void)lParam;
+    (void)Param1; (void)Param2;
 
     if (MsgType == KTOS_MSG_TYPE_INIT) {
         ktos_serial_init(on_serial_line);
@@ -173,9 +173,9 @@ WORD task_serial_rx(WORD MsgType, WORD sParam, LONG lParam)
  * task_command — applies LED / motor commands
  * ========================================================================= */
 
-WORD task_command(WORD MsgType, WORD sParam, LONG lParam)
+WORD task_command(WORD MsgType, WORD Param1, LONG Param2)
 {
-    (void)lParam;
+    (void)Param2;
 
     if (MsgType == KTOS_MSG_TYPE_INIT)
         return KTOS_MSG_SLEEP_INDEFINITLY;   /* sleep until a command message arrives */
@@ -192,7 +192,7 @@ WORD task_command(WORD MsgType, WORD sParam, LONG lParam)
             break;
 
         case MSG_CMD_MOTOR: {
-            int speed = (int)(short)sParam;   /* recover signed value */
+            int speed = (int)(short)Param1;   /* recover signed value */
             g_motor_speed = speed;
             board_motor_set(speed);
             break;
