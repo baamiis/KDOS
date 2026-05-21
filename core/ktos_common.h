@@ -30,7 +30,7 @@
  */
 
 /**
- * @file ktos_multi.h
+ * @file ktos_common.h
  * @brief Portable primitive types, constants, and utility prototypes used
  *        throughout the KTOS kernel and all BSPs.
  *
@@ -79,7 +79,7 @@ typedef unsigned short WORD;
 
 /**
  * @ingroup ktos_types
- * @brief 32-bit signed long — used for the wide message parameter @c lParam.
+ * @brief 32-bit signed long — used for the wide message parameter @c Param2.
  */
 typedef long LONG;
 
@@ -106,7 +106,7 @@ typedef unsigned char BYTE;
 #define FALSE 0
 
 /* =========================================================================
- * Utility functions (implemented per platform in ktos_multi.c or BSP)
+ * Utility functions (implemented per platform in ktos_common.c or BSP)
  * ========================================================================= */
 
 /**

@@ -144,13 +144,13 @@ static const char *print_line(const char *p, const char *end)
  * http_task
  * ========================================================================= */
 
-WORD http_task(WORD MsgType, WORD sParam, LONG lParam)
+WORD http_task(WORD MsgType, WORD Param1, LONG Param2)
 {
-    (void)sParam;
-    (void)lParam;
+    (void)Param1;
+    (void)Param2;
 
-    if (MsgType == KTOS_MSG_TYPE_INIT) return MSG_WAIT;
-    if (MsgType != MSG_HTTP_DONE)      return MSG_WAIT;
+    if (MsgType == KTOS_MSG_TYPE_INIT) return KTOS_MSG_SLEEP_INDEFINITLY;
+    if (MsgType != MSG_HTTP_DONE)      return KTOS_MSG_SLEEP_INDEFINITLY;
 
     delay_ms(50);
     uart_puts("\033[2J\033[H");
@@ -182,7 +182,7 @@ WORD http_task(WORD MsgType, WORD sParam, LONG lParam)
     /* Error cases */
     if (g_resp_err == 1) {
         uart_puts("Error  : DNS resolution failed for " HTTP_HOST "\r\n");
-        return MSG_WAIT;
+        return KTOS_MSG_SLEEP_INDEFINITLY;
     }
     if (g_resp_err == 2) {
 #if HTTP_USE_SSL
@@ -192,18 +192,18 @@ WORD http_task(WORD MsgType, WORD sParam, LONG lParam)
 #else
         uart_puts("Error  : TCP connection failed.\r\n");
 #endif
-        return MSG_WAIT;
+        return KTOS_MSG_SLEEP_INDEFINITLY;
     }
     if (g_resp_err == 3) {
         uart_puts("Error  : SNTP time sync timed out.\r\n");
         uart_puts("         CA verification requires a valid clock.\r\n");
         uart_puts("         Check that UDP port 123 is reachable or increase\r\n");
         uart_puts("         HTTP_SNTP_TIMEOUT_MS in http_config.h.\r\n");
-        return MSG_WAIT;
+        return KTOS_MSG_SLEEP_INDEFINITLY;
     }
     if (g_resp_len == 0) {
         uart_puts("Error  : Empty response.\r\n");
-        return MSG_WAIT;
+        return KTOS_MSG_SLEEP_INDEFINITLY;
     }
 
     const char *buf = g_resp_buf;
@@ -234,7 +234,7 @@ WORD http_task(WORD MsgType, WORD sParam, LONG lParam)
     uart_putu(g_resp_len);
     uart_puts(" bytes total)\r\n");
 
-    return MSG_WAIT;
+    return KTOS_MSG_SLEEP_INDEFINITLY;
 }
 
 /* =========================================================================

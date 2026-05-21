@@ -136,11 +136,11 @@ void *ktos_hal_InitTaskStack(void *p_stack_base,
     *sp-- = (uint8_t)(initial_msg_type & 0xFF);
     *sp-- = (uint8_t)((initial_msg_type >> 8) & 0xFF);
 
-    /* R22:R23 = sParam (second arg) */
+    /* R22:R23 = Param1 (second arg) */
     *sp-- = (uint8_t)(initial_sparam & 0xFF);
     *sp-- = (uint8_t)((initial_sparam >> 8) & 0xFF);
 
-    /* R18:R21 = lParam (third arg, 32-bit) */
+    /* R18:R21 = Param2 (third arg, 32-bit) */
     *sp-- = (uint8_t)(initial_lparam & 0xFF);
     *sp-- = (uint8_t)((initial_lparam >> 8) & 0xFF);
     *sp-- = (uint8_t)((initial_lparam >> 16) & 0xFF);

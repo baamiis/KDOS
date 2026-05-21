@@ -193,9 +193,9 @@ static void run_scan(void)
     uart_puts("\r\n");
 }
 
-static WORD scanner_task(WORD MsgType, WORD sParam, LONG lParam)
+static WORD scanner_task(WORD MsgType, WORD Param1, LONG Param2)
 {
-    (void)sParam; (void)lParam;
+    (void)Param1; (void)Param2;
     if (MsgType == KTOS_MSG_TYPE_INIT) {
         i2c_init();
         uart_puts("=============================\r\n");

@@ -29,7 +29,7 @@ no `Serial` — both peripherals are driven through ATmega328P registers.
   and walks a small state machine.  Only when the line has been stable
   for 30 ms (6 successive identical samples) does it commit the change
   and `ktos_SendMsg(MSG_BUTTON_EVENT)`.
-- **`ui_task`** sleeps with `MSG_WAIT` — it consumes **zero CPU** until
+- **`ui_task`** sleeps with `KTOS_MSG_SLEEP_INDEFINITLY` — it consumes **zero CPU** until
   a confirmed event arrives.
 
 Because KTOS is cooperative, USART0's transmit busy-wait inside
@@ -42,7 +42,7 @@ runs first, schedules itself to wake in 5 ms, and only then does
 ## What it shows about KTOS
 
 - **Cooperative is not the same as polled.**  `ui_task` is purely
-  event-driven (`MSG_WAIT`), wakes only on `MSG_BUTTON_EVENT`, and
+  event-driven (`KTOS_MSG_SLEEP_INDEFINITLY`), wakes only on `MSG_BUTTON_EVENT`, and
   never burns CPU.
 - **A debouncer is a state machine, not a delay.**  It returns
   `POLL_PERIOD_MS` (5) on every dispatch — KTOS guarantees the next
@@ -96,7 +96,7 @@ internal pull-up (≈ 20–50 kΩ) on PD2.
    - `button_task` configures PD2 as input + pull-up
      (`DDRD &= ~(1<<2); PORTD |= (1<<2);`), reads the pin once to
      anchor the initial state, and returns `5`.
-   - `ui_task` prints the banner and returns `MSG_WAIT` — it now
+   - `ui_task` prints the banner and returns `KTOS_MSG_SLEEP_INDEFINITLY` — it now
      consumes zero CPU.
 
 4. Every 5 ms `button_task` wakes with `KTOS_MSG_TYPE_TIMER`:
@@ -113,7 +113,7 @@ internal pull-up (≈ 20–50 kΩ) on PD2.
 
 5. KTOS marks `ui_task` ready and dispatches it on the next
    scheduling pass.  `ui_task` prints `Button pressed` or
-   `Button released` and returns `MSG_WAIT` again.
+   `Button released` and returns `KTOS_MSG_SLEEP_INDEFINITLY` again.
 
 ---
 

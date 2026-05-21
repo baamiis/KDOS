@@ -4,7 +4,7 @@
  *
  * ping_task sends MSG_PING to pong_task; pong_task replies with MSG_PONG.
  * Each task is a plain message handler — it receives one message per call
- * and returns MSG_WAIT to sleep until the next one arrives.
+ * and returns KTOS_MSG_SLEEP_INDEFINITLY to sleep until the next one arrives.
  *
  * Expected serial output (74880 8N1):
  * @code
@@ -106,10 +106,10 @@ static struct ktos_TASK *g_pong_task;
 
 static uint16_t g_count;
 
-WORD ping_task(WORD MsgType, WORD sParam, LONG lParam)
+WORD ping_task(WORD MsgType, WORD Param1, LONG Param2)
 {
-    (void)sParam;
-    (void)lParam;
+    (void)Param1;
+    (void)Param2;
 
     switch (MsgType) {
         case KTOS_MSG_TYPE_INIT:
@@ -133,25 +133,25 @@ WORD ping_task(WORD MsgType, WORD sParam, LONG lParam)
             break;
     }
 
-    return MSG_WAIT;
+    return KTOS_MSG_SLEEP_INDEFINITLY;
 }
 
 /* =========================================================================
  * Pong task — echoes each ping back as a pong
  * ========================================================================= */
 
-WORD pong_task(WORD MsgType, WORD sParam, LONG lParam)
+WORD pong_task(WORD MsgType, WORD Param1, LONG Param2)
 {
-    (void)lParam;
+    (void)Param2;
 
     if (MsgType == MSG_PING) {
         uart_puts("[PONG] got ping #");
-        uart_putu16(sParam);
+        uart_putu16(Param1);
         uart_puts(" -- sending pong\r\n");
         ktos_SendMsg(g_ping_task, MSG_PONG, 0, 0);
     }
 
-    return MSG_WAIT;
+    return KTOS_MSG_SLEEP_INDEFINITLY;
 }
 
 /* =========================================================================

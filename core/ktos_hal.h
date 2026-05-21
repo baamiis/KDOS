@@ -55,7 +55,7 @@
 #ifndef ktos_hal_H_INCLUDED
 #define ktos_hal_H_INCLUDED
 
-#include "ktos.h" /* provides WORD, LONG, INT, BYTE via ktos_multi.h */
+#include "ktos.h" /* provides WORD, LONG, INT, BYTE via ktos_common.h */
 
 /* =========================================================================
  * Interrupt control
@@ -124,9 +124,9 @@ void ktos_hal_EnableInterrupts(void);
  *                                the task's @c WORD return value.
  * @param initial_msg_type        @c MsgType passed to the task on first dispatch
  *                                (always @c KTOS_MSG_TYPE_INIT on startup).
- * @param initial_sparam          @c sParam for the first dispatch.
- * @param initial_lparam          @c lParam for the first dispatch.
- * @return  The initial stack pointer value to store in @c Task->StackPtr.
+ * @param initial_sparam          @c Param1 for the first dispatch.
+ * @param initial_lparam          @c Param2 for the first dispatch.
+ * @return  The initial stack pointer value to store in @c Task->StackPointer.
  *          Returns @c NULL if the stack is too small for the frame.
  *
  * @note The stack layout is architecture-specific.  Study an existing BSP
@@ -155,7 +155,7 @@ void *ktos_hal_InitTaskStack(void          *p_stack_base,
  *
  * @param p_current_sp_storage  Address of the variable that holds this
  *                                   context's saved stack pointer
- *                                   (e.g. @c &TaskCurrent->StackPtr or
+ *                                   (e.g. @c &TaskCurrent->StackPointer or
  *                                   @c &OS_SP).  Updated on entry.
  * @param next_sp           Stack pointer value of the context to
  *                                   switch into (from a previous call to

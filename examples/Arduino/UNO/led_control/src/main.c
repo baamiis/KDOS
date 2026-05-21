@@ -11,7 +11,7 @@
  *                        between OFF / ON / BLINK.  In BLINK mode it
  *                        returns 500 ms to toggle the LED on every
  *                        KTOS_MSG_TYPE_TIMER; in ON / OFF it returns
- *                        MSG_WAIT and stays idle until the next msg.
+ *                        KTOS_MSG_SLEEP_INDEFINITLY and stays idle until the next msg.
  *
  * No Arduino framework — direct register access to USART0 and PORTB.
  *
@@ -108,9 +108,9 @@ static struct ktos_TASK *g_led_task = NULL;
 static uint8_t g_led_mode  = MODE_BLINK;
 static bool    g_led_level = false;
 
-static WORD led_task(WORD MsgType, WORD sParam, LONG lParam)
+static WORD led_task(WORD MsgType, WORD Param1, LONG Param2)
 {
-    (void)lParam;
+    (void)Param2;
 
     switch (MsgType) {
         case KTOS_MSG_TYPE_INIT:
@@ -126,19 +126,19 @@ static WORD led_task(WORD MsgType, WORD sParam, LONG lParam)
                 if (g_led_level) { led_on(); } else { led_off(); }
                 return BLINK_PERIOD_MS;
             }
-            return MSG_WAIT;
+            return KTOS_MSG_SLEEP_INDEFINITLY;
 
         case MSG_SET_MODE:
-            g_led_mode = (uint8_t)sParam;
+            g_led_mode = (uint8_t)Param1;
             switch (g_led_mode) {
                 case MODE_ON:
                     led_on();
                     uart_puts("LED ON\r\n");
-                    return MSG_WAIT;
+                    return KTOS_MSG_SLEEP_INDEFINITLY;
                 case MODE_OFF:
                     led_off();
                     uart_puts("LED OFF\r\n");
-                    return MSG_WAIT;
+                    return KTOS_MSG_SLEEP_INDEFINITLY;
                 default:
                     g_led_mode = MODE_BLINK;
                     uart_puts("LED BLINK\r\n");
@@ -146,7 +146,7 @@ static WORD led_task(WORD MsgType, WORD sParam, LONG lParam)
             }
     }
 
-    return MSG_WAIT;
+    return KTOS_MSG_SLEEP_INDEFINITLY;
 }
 
 /* =========================================================================
@@ -169,10 +169,10 @@ static void dispatch_line(const char *line)
     }
 }
 
-static WORD uart_task(WORD MsgType, WORD sParam, LONG lParam)
+static WORD uart_task(WORD MsgType, WORD Param1, LONG Param2)
 {
-    (void)sParam;
-    (void)lParam;
+    (void)Param1;
+    (void)Param2;
 
     if (MsgType == KTOS_MSG_TYPE_INIT) {
         uart_puts("=============================\r\n");

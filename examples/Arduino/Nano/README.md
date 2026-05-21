@@ -57,7 +57,7 @@ void ktos_InitSys(void) { }
 ISR(TIMER1_COMPA_vect) { ktos_timer_irq_handler(); }
 
 /* 4. Your task(s) --------------------------------------------------- */
-static WORD my_task(WORD MsgType, WORD sParam, LONG lParam) {
+static WORD my_task(WORD MsgType, WORD Param1, LONG Param2) {
     switch (MsgType) {
         case KTOS_MSG_TYPE_INIT:  /* one-shot init  */ break;
         case KTOS_MSG_TYPE_TIMER: /* periodic work  */ break;
@@ -82,7 +82,7 @@ Key points:
 - **Timer1 is KTOS's tick.**  The AVR BSP configures Timer1 CTC for a
   1 ms interrupt; `ISR(TIMER1_COMPA_vect)` in the application hands
   control to `ktos_timer_irq_handler()`.
-- **Tasks never block.**  Return a sleep value in ms (or `MSG_WAIT` for
+- **Tasks never block.**  Return a sleep value in ms (or `KTOS_MSG_SLEEP_INDEFINITLY` for
   "wake me only when a message arrives").
 - **Cooperative ⇒ no mutexes.**  Two tasks cannot run simultaneously,
   so a shared global between them needs no lock.
@@ -196,7 +196,7 @@ build_src_filter =
 - `core/ktos.c` — the platform-independent KTOS scheduler.
 - `bsp/atmega328p/ktos_bsp.c` — Timer1 init, context switch, stack frame
   builder.
-- `core/ktos_multi.c` is **deliberately excluded** — it defines its own
+- `core/ktos_common.c` is **deliberately excluded** — it defines its own
   `main()` and stub callbacks that would collide with each example.
 
 No Arduino framework is pulled in.  The only runtime is **avr-libc**

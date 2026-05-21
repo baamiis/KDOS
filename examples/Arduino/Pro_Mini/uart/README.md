@@ -26,7 +26,7 @@ KTOS is the operating system — no Arduino framework, no `Serial`, no
   FIFO, echoes every byte, and assembles characters into a 64-byte
   buffer.  When `\r` or `\n` arrives it posts `MSG_LINE_READY` to
   `cmd_task`.
-- **`cmd_task`** sleeps with `MSG_WAIT` — zero CPU between events.
+- **`cmd_task`** sleeps with `KTOS_MSG_SLEEP_INDEFINITLY` — zero CPU between events.
   On `MSG_LINE_READY` it runs `strcmp` against three commands and
   prints the appropriate reply.
 
@@ -46,11 +46,11 @@ Any unknown line is echoed back with `Unknown:` prepended.
   `cmd_task` cannot delay the RX path because `rx_task` is scheduled
   independently and reschedules itself every 10 ms.
 - **A shared buffer is safe.**  KTOS is cooperative — `cmd_task` reads
-  `g_line_buf` between `MSG_LINE_READY` and its `return MSG_WAIT`;
+  `g_line_buf` between `MSG_LINE_READY` and its `return KTOS_MSG_SLEEP_INDEFINITLY`;
   `rx_task` cannot overwrite the buffer in that window because it
   only runs when `cmd_task` has yielded.  No mutex needed.
-- **`ktos_SendMsg()` carries 48 bits of payload** (16-bit `sParam` +
-  32-bit `lParam`).  Here we pass the line length as `sParam` so
+- **`ktos_SendMsg()` carries 48 bits of payload** (16-bit `Param1` +
+  32-bit `Param2`).  Here we pass the line length as `Param1` so
   `cmd_task` knows how many bytes to read.
 
 ---
@@ -92,7 +92,7 @@ MCU, …) instead of USB, wire as follows:
 2. `cmd_task` is created first so `rx_task` has a valid handle.
 
 3. On `KTOS_MSG_TYPE_INIT`:
-   - `cmd_task` prints the banner and returns `MSG_WAIT`.
+   - `cmd_task` prints the banner and returns `KTOS_MSG_SLEEP_INDEFINITLY`.
    - `rx_task` clears its line-assembly state and returns `10`.
 
 4. Every 10 ms `rx_task` wakes with `KTOS_MSG_TYPE_TIMER`:
@@ -108,7 +108,7 @@ MCU, …) instead of USB, wire as follows:
 
 5. KTOS marks `cmd_task` ready and dispatches it on the next
    scheduling pass.  It runs `strcmp`, writes the response, and
-   returns `MSG_WAIT`.
+   returns `KTOS_MSG_SLEEP_INDEFINITLY`.
 
 The receive buffer is fixed-size and never allocated.  Lines longer
 than 63 characters are silently truncated — the buffer cannot overrun.

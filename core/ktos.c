@@ -40,11 +40,11 @@
  *
  * @ingroup ktos_core
  *
- * @warning Using ktos_Sleep() with @c TASK_SWITCH_INHIBIT and @c MSG_WAIT:
+ * @warning Using ktos_Sleep() with @c HALT_TASK_SWITCH and @c KTOS_MSG_SLEEP_INDEFINITLY:
  *
- * When @c TASK_SWITCH_INHIBIT is passed to ktos_Sleep(), the scheduler
+ * When @c HALT_TASK_SWITCH is passed to ktos_Sleep(), the scheduler
  * focuses exclusively on the current task and will not advance to others.
- * If @c MSG_WAIT is also passed, the system **halts for all other tasks**
+ * If @c KTOS_MSG_SLEEP_INDEFINITLY is also passed, the system **halts for all other tasks**
  * until an ISR calls ktos_WakeUp() on this specific task.
  *
  * The 1 ms timer ISR (ktos_timer_irq_handler) continues to fire and update
@@ -54,7 +54,7 @@
  * call ktos_WakeUp().  Improper use leads to an unresponsive system.
  */
 
-#include "ktos_multi.h"
+#include "ktos_common.h"
 #include "ktos.h"
 #include "ktos_hal.h"
 #include <stdlib.h>
@@ -81,8 +81,8 @@ static void ktos_DefaultTaskExitHandler(WORD task_return_value);
 static struct ktos_TASK *TaskCurrent = NULL;
 
 /** When @c TRUE the scheduler advances to the next task on each tick.
- *  Set to @c FALSE by ktos_Sleep() with @c TASK_SWITCH_INHIBIT. */
-static bool MultiTask = TRUE;
+ *  Set to @c FALSE by ktos_Sleep() with @c HALT_TASK_SWITCH. */
+static bool AllowTaskSwitch = TRUE;
 
 /** OS scheduler stack pointer.  Set by ktos_hal_StartScheduler() and used
  *  by ktos_SwitchTask() and ktos_DefaultTaskExitHandler() to return to the
@@ -113,7 +113,7 @@ static WORD g_LastTaskReturnValue;
  * argument to ktos_hal_InitTaskStack().  Application code never calls this.
  *
  * @param task_return_value  The value returned by the task function
- *                           (sleep duration in ms, or @c MSG_WAIT).
+ *                           (sleep duration in ms, or @c KTOS_MSG_SLEEP_INDEFINITLY).
  */
 static void ktos_DefaultTaskExitHandler(WORD task_return_value)
 {
@@ -127,10 +127,10 @@ static void ktos_DefaultTaskExitHandler(WORD task_return_value)
 #endif
 
     g_LastTaskReturnValue = task_return_value;
-    TaskCurrent->NeedsReinit = TRUE;
+    TaskCurrent->ScheduleReinit = TRUE;
 
     /* Return to the OS scheduler context. */
-    ktos_hal_ContextSwitch((void **)&(TaskCurrent->StackPtr), OS_SP);
+    ktos_hal_ContextSwitch((void **)&(TaskCurrent->StackPointer), OS_SP);
 
     ktos_Emergency("ExitHandler_CtxSwitch_Failed");
 }
@@ -140,7 +140,7 @@ static void ktos_DefaultTaskExitHandler(WORD task_return_value)
  * ========================================================================= */
 
 struct ktos_TASK *ktos_InitTask(
-    WORD (*Func)(WORD MsgType, WORD sParam, LONG lParam),
+    WORD (*Func)(WORD MsgType, WORD Param1, LONG Param2),
     INT  StackSize,
     INT  QueueSize,
     BYTE TaskIDVal)
@@ -159,12 +159,12 @@ struct ktos_TASK *ktos_InitTask(
 
     Task->Func           = Func;
     Task->TaskID         = TaskIDVal;
-    Task->QueueCapacity  = QueueSize;
-    Task->StackBase      = Stack;
-    Task->StackSizeBytes = (unsigned int)((unsigned int)StackSize * sizeof(int32_t));
-    Task->NeedsReinit    = FALSE;
+    Task->QCapacity  = QueueSize;
+    Task->StackBasePointer      = Stack;
+    Task->StackBufferSize = (unsigned int)((unsigned int)StackSize * sizeof(int32_t));
+    Task->ScheduleReinit    = FALSE;
 
-    Task->StackPtr = ktos_hal_InitTaskStack(
+    Task->StackPointer = ktos_hal_InitTaskStack(
         Stack,
         StackSize * sizeof(int32_t),
         Func,
@@ -173,15 +173,15 @@ struct ktos_TASK *ktos_InitTask(
         (WORD)0,
         (LONG)0L);
 
-    if (Task->StackPtr == NULL) { ktos_Emergency("StackInit Failed"); }
+    if (Task->StackPointer == NULL) { ktos_Emergency("StackInit Failed"); }
 
     Task->MsgQueueIn  = Task->MsgQueue;
     Task->MsgQueueOut = Task->MsgQueue;
     Task->MsgQueueEnd = Task->MsgQueue + QueueSize;
-    Task->Timer       = 0;
-    Task->TimerFlag   = TRUE;   /* ready for initial INIT dispatch */
-    Task->Sleeping    = FALSE;
-    Task->MsgCount    = 0;
+    Task->CountdownTimer       = 0;
+    Task->ISRTimer   = TRUE;   /* ready for initial INIT dispatch */
+    Task->TaskSleeping    = FALSE;
+    Task->NumMessages    = 0;
 
     /* Insert into the circular task ring. */
     if (TaskCurrent == NULL) {
@@ -212,33 +212,33 @@ void ktos_RunOS(void)
 
 bool ktos_SendMsg(struct ktos_TASK *Task,
                   WORD              MsgType,
-                  WORD              sParam,
-                  LONG              lParam)
+                  WORD              Param1,
+                  LONG              Param2)
 {
     if (Task) {
-        if (Task->MsgCount >= Task->QueueCapacity) { return false; }
+        if (Task->NumMessages >= Task->QCapacity) { return false; }
         ktos_hal_DisableInterrupts();
         struct ktos_MSG *Msg = Task->MsgQueueIn;
         Msg->MsgType = MsgType;
-        Msg->sParam  = sParam;
-        Msg->lParam  = lParam;
+        Msg->Param1  = Param1;
+        Msg->Param2  = Param2;
         if (++Task->MsgQueueIn >= Task->MsgQueueEnd) {
             Task->MsgQueueIn = Task->MsgQueue;
         }
-        ++Task->MsgCount;
+        ++Task->NumMessages;
         ktos_hal_EnableInterrupts();
         return true;
     }
     return false;
 }
 
-void ktos_WakeUp(struct ktos_TASK *Task, INT WakeUpType)
+void ktos_WakeUp(struct ktos_TASK *Task, INT TaskTypeWakeUp)
 {
     if (Task) {
         ktos_hal_DisableInterrupts();
-        if (Task->Sleeping && !Task->TimerFlag) {
-            Task->TimerFlag  = TRUE;
-            Task->WakeUpType = WakeUpType;
+        if (Task->TaskSleeping && !Task->ISRTimer) {
+            Task->ISRTimer  = TRUE;
+            Task->TaskTypeWakeUp = TaskTypeWakeUp;
         }
         ktos_hal_EnableInterrupts();
     }
@@ -257,7 +257,7 @@ void ktos_WakeUp(struct ktos_TASK *Task, INT WakeUpType)
  * ktos_DefaultTaskExitHandler() returns here after each task yields.
  *
  * ### Scheduling algorithm
- * 1. If @c MultiTask is true, advance @c TaskCurrent to the next task in the
+ * 1. If @c AllowTaskSwitch is true, advance @c TaskCurrent to the next task in the
  *    circular ring.
  * 2. If the task is sleeping but its timer has fired, mark it ready.
  * 3. If the task is ready (not sleeping and has a message or timer event),
@@ -279,72 +279,72 @@ static void ktos_SwitchTask(void)
             return;
         }
 
-        if (MultiTask) {
+        if (AllowTaskSwitch) {
             TaskCurrent = TaskCurrent->TaskNext;
         }
 
-        if (TaskCurrent->Sleeping) {
-            if (TaskCurrent->TimerFlag) {
+        if (TaskCurrent->TaskSleeping) {
+            if (TaskCurrent->ISRTimer) {
                 /* Sleep timer expired — mark the task ready. */
-                TaskCurrent->Timer     = 0;
-                TaskCurrent->TimerFlag = FALSE;
-                TaskCurrent->Sleeping  = FALSE;
+                TaskCurrent->CountdownTimer     = 0;
+                TaskCurrent->ISRTimer = FALSE;
+                TaskCurrent->TaskSleeping  = FALSE;
             }
         }
 
-        if (!TaskCurrent->Sleeping &&
-            (TaskCurrent->MsgCount != 0 || TaskCurrent->TimerFlag))
+        if (!TaskCurrent->TaskSleeping &&
+            (TaskCurrent->NumMessages != 0 || TaskCurrent->ISRTimer))
         {
-            if (TaskCurrent->NeedsReinit) {
+            if (TaskCurrent->ScheduleReinit) {
                 /*
                  * Handler model: task previously returned a value.
                  * Re-initialise the stack with the next pending message so
-                 * the task is called fresh as task_func(MsgType, sParam, lParam).
+                 * the task is called fresh as task_func(MsgType, Param1, Param2).
                  */
                 WORD msg_type = KTOS_MSG_TYPE_TIMER;
                 WORD s_param  = 0;
                 LONG l_param  = 0;
 
-                if (TaskCurrent->MsgCount != 0) {
+                if (TaskCurrent->NumMessages != 0) {
                     /* Read message content before consuming. */
                     msg_type = TaskCurrent->MsgQueueOut->MsgType;
-                    s_param  = TaskCurrent->MsgQueueOut->sParam;
-                    l_param  = TaskCurrent->MsgQueueOut->lParam;
+                    s_param  = TaskCurrent->MsgQueueOut->Param1;
+                    l_param  = TaskCurrent->MsgQueueOut->Param2;
                     if (++TaskCurrent->MsgQueueOut >= TaskCurrent->MsgQueueEnd) {
                         TaskCurrent->MsgQueueOut = TaskCurrent->MsgQueue;
                     }
-                    --TaskCurrent->MsgCount;
+                    --TaskCurrent->NumMessages;
                 }
 
-                TaskCurrent->NeedsReinit = FALSE;
-                TaskCurrent->StackPtr = (int32_t *)ktos_hal_InitTaskStack(
-                    TaskCurrent->StackBase,
-                    TaskCurrent->StackSizeBytes,
+                TaskCurrent->ScheduleReinit = FALSE;
+                TaskCurrent->StackPointer = (int32_t *)ktos_hal_InitTaskStack(
+                    TaskCurrent->StackBasePointer,
+                    TaskCurrent->StackBufferSize,
                     TaskCurrent->Func,
                     ktos_DefaultTaskExitHandler,
                     msg_type, s_param, l_param);
             }
             /* else: coroutine model (ktos_Sleep) or fresh first-run — restore
-             * existing StackPtr as-is; do not consume from the message queue. */
+             * existing StackPointer as-is; do not consume from the message queue. */
 
             /* Switch into the task; returns when the task yields back. */
-            ktos_hal_ContextSwitch((void **)&OS_SP, TaskCurrent->StackPtr);
+            ktos_hal_ContextSwitch((void **)&OS_SP, TaskCurrent->StackPointer);
             /* Interrupts assumed disabled on return. */
 
             Delay = g_LastTaskReturnValue;
 
             if (Delay == 0) {
                 /* Yield — re-schedule immediately. */
-                TaskCurrent->TimerFlag = TRUE;
-                TaskCurrent->Timer     = 0;
-            } else if (Delay == MSG_WAIT) {
+                TaskCurrent->ISRTimer = TRUE;
+                TaskCurrent->CountdownTimer     = 0;
+            } else if (Delay == KTOS_MSG_SLEEP_INDEFINITLY) {
                 /* Sleep indefinitely until a message arrives. */
-                TaskCurrent->Timer     = 0;
-                TaskCurrent->TimerFlag = FALSE;
+                TaskCurrent->CountdownTimer     = 0;
+                TaskCurrent->ISRTimer = FALSE;
             } else {
                 /* Sleep for Delay milliseconds. */
-                TaskCurrent->Timer     = Delay;
-                TaskCurrent->TimerFlag = FALSE;
+                TaskCurrent->CountdownTimer     = Delay;
+                TaskCurrent->ISRTimer = FALSE;
             }
         }
 
@@ -352,29 +352,29 @@ static void ktos_SwitchTask(void)
     }
 }
 
-INT ktos_Sleep(WORD Delay, bool TaskSwitchPermit)
+INT ktos_Sleep(WORD Delay, bool TaskAllowSwitch)
 {
     ktos_hal_DisableInterrupts();
 
-    TaskCurrent->Sleeping  = TRUE;
-    TaskCurrent->WakeUpType = 0;
+    TaskCurrent->TaskSleeping  = TRUE;
+    TaskCurrent->TaskTypeWakeUp = 0;
 
     if (Delay == 0) {
-        TaskCurrent->TimerFlag = TRUE;
-        TaskCurrent->Timer     = 0;
-    } else if (Delay == MSG_WAIT) {
-        TaskCurrent->Timer = 0;
+        TaskCurrent->ISRTimer = TRUE;
+        TaskCurrent->CountdownTimer     = 0;
+    } else if (Delay == KTOS_MSG_SLEEP_INDEFINITLY) {
+        TaskCurrent->CountdownTimer = 0;
     } else {
-        TaskCurrent->Timer = Delay;
+        TaskCurrent->CountdownTimer = Delay;
     }
 
-    MultiTask = TaskSwitchPermit;
+    AllowTaskSwitch = TaskAllowSwitch;
 
-    ktos_hal_ContextSwitch((void **)&(TaskCurrent->StackPtr), OS_SP);
+    ktos_hal_ContextSwitch((void **)&(TaskCurrent->StackPointer), OS_SP);
 
-    MultiTask = TRUE;
+    AllowTaskSwitch = TRUE;
     ktos_hal_EnableInterrupts();
-    return TaskCurrent->WakeUpType;
+    return TaskCurrent->TaskTypeWakeUp;
 }
 
 /* =========================================================================
@@ -385,8 +385,8 @@ INT ktos_Sleep(WORD Delay, bool TaskSwitchPermit)
  * @brief 1 ms system tick interrupt handler.
  *
  * Called by the BSP's hardware timer ISR every millisecond.
- * Walks the circular task ring and decrements each task's @c Timer counter.
- * When a counter reaches zero, @c TimerFlag is set so the scheduler
+ * Walks the circular task ring and decrements each task's @c CountdownTimer counter.
+ * When a counter reaches zero, @c ISRTimer is set so the scheduler
  * dispatches the task on the next scheduling cycle.
  *
  * @note This function is registered with the BSP via ktos_hal_InitSystemTimer()
@@ -397,9 +397,9 @@ void ktos_timer_irq_handler(void)
     struct ktos_TASK *Task = TaskCurrent;
     if (!Task) return;
     do {
-        if (Task->Timer) {
-            if (--Task->Timer == 0) {
-                Task->TimerFlag = TRUE;
+        if (Task->CountdownTimer) {
+            if (--Task->CountdownTimer == 0) {
+                Task->ISRTimer = TRUE;
             }
         }
         Task = Task->TaskNext;

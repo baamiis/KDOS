@@ -147,9 +147,9 @@ static void run_scan(void)
 
 #define SCAN_PERIOD_MS 5000U
 
-static WORD scanner_task(WORD MsgType, WORD sParam, LONG lParam)
+static WORD scanner_task(WORD MsgType, WORD Param1, LONG Param2)
 {
-    (void)sParam; (void)lParam;
+    (void)Param1; (void)Param2;
     if (MsgType == KTOS_MSG_TYPE_INIT) {
         uart_puts("=============================\r\n");
         uart_puts("  KTOS I2C Scanner\r\n");

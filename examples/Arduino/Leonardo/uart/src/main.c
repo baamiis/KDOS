@@ -8,7 +8,7 @@
  *                     echoes received bytes, assembles lines, and
  *                     posts MSG_LINE_READY to cmd_task.
  *
- *   cmd_task ('C') -- sleeps with MSG_WAIT.  On MSG_LINE_READY it
+ *   cmd_task ('C') -- sleeps with KTOS_MSG_SLEEP_INDEFINITLY.  On MSG_LINE_READY it
  *                     parses PING / INFO / HELP and prints the response.
  *
  * *** Leonardo UART note ***
@@ -116,10 +116,10 @@ static void print_help(void)
     uart_puts("  HELP  - this list\r\n");
 }
 
-static WORD cmd_task(WORD MsgType, WORD sParam, LONG lParam)
+static WORD cmd_task(WORD MsgType, WORD Param1, LONG Param2)
 {
-    (void)sParam;
-    (void)lParam;
+    (void)Param1;
+    (void)Param2;
 
     if (MsgType == KTOS_MSG_TYPE_INIT) {
         uart_puts("=============================\r\n");
@@ -128,10 +128,10 @@ static WORD cmd_task(WORD MsgType, WORD sParam, LONG lParam)
         uart_puts("  USART1: D0(RX), D1(TX)\r\n");
         uart_puts("=============================\r\n");
         uart_puts("Type HELP for commands.\r\n");
-        return MSG_WAIT;
+        return KTOS_MSG_SLEEP_INDEFINITLY;
     }
 
-    if (MsgType != MSG_LINE_READY) { return MSG_WAIT; }
+    if (MsgType != MSG_LINE_READY) { return KTOS_MSG_SLEEP_INDEFINITLY; }
 
     if (strcmp(g_line_buf, "PING") == 0) {
         uart_puts("PONG\r\n");
@@ -146,17 +146,17 @@ static WORD cmd_task(WORD MsgType, WORD sParam, LONG lParam)
         uart_puts("Type HELP for commands.\r\n");
     }
 
-    return MSG_WAIT;
+    return KTOS_MSG_SLEEP_INDEFINITLY;
 }
 
 /* =========================================================================
  * RX task — drains USART1, echoes, assembles lines
  * ========================================================================= */
 
-static WORD rx_task(WORD MsgType, WORD sParam, LONG lParam)
+static WORD rx_task(WORD MsgType, WORD Param1, LONG Param2)
 {
-    (void)sParam;
-    (void)lParam;
+    (void)Param1;
+    (void)Param2;
 
     if (MsgType == KTOS_MSG_TYPE_INIT) {
         g_assembling_len = 0;

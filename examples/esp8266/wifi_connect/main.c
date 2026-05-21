@@ -117,13 +117,13 @@ void ktos_InitSys(void) {}
  * connect_task — waits for MSG_CONNECTED, prints connection info
  * ========================================================================= */
 
-WORD connect_task(WORD MsgType, WORD sParam, LONG lParam)
+WORD connect_task(WORD MsgType, WORD Param1, LONG Param2)
 {
-    (void)sParam;
-    (void)lParam;
+    (void)Param1;
+    (void)Param2;
 
-    if (MsgType == KTOS_MSG_TYPE_INIT) return MSG_WAIT;
-    if (MsgType != MSG_CONNECTED)      return MSG_WAIT;
+    if (MsgType == KTOS_MSG_TYPE_INIT) return KTOS_MSG_SLEEP_INDEFINITLY;
+    if (MsgType != MSG_CONNECTED)      return KTOS_MSG_SLEEP_INDEFINITLY;
 
     delay_ms(50);
     uart_puts("\033[2J\033[H");
@@ -153,7 +153,7 @@ WORD connect_task(WORD MsgType, WORD sParam, LONG lParam)
     uart_puts("----\r\n");
     uart_puts("Connected.\r\n");
 
-    return MSG_WAIT;
+    return KTOS_MSG_SLEEP_INDEFINITLY;
 }
 
 /* =========================================================================

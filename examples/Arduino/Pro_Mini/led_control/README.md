@@ -27,7 +27,7 @@ This is the showcase example for the KTOS message-passing model.
   receive FIFO into a 16-byte buffer, and on each complete line sends
   `MSG_SET_MODE` to `led_task`.
 - **`led_task`** owns the LED state.  In `BLINK` mode it returns 500 ms
-  to keep toggling; in `ON` / `OFF` it returns `MSG_WAIT` and stays
+  to keep toggling; in `ON` / `OFF` it returns `KTOS_MSG_SLEEP_INDEFINITLY` and stays
   idle until the next message arrives.
 
 The two tasks share **no mutable state** beyond the message queue —
@@ -37,12 +37,12 @@ because KTOS is cooperative, the message handler is naturally atomic.
 
 ## What it shows about KTOS
 
-- `ktos_SendMsg(task, msgType, sParam, lParam)` queues a message — the
+- `ktos_SendMsg(task, msgType, Param1, Param2)` queues a message — the
   receiver picks it up next time the scheduler dispatches it.
-- A task can return `MSG_WAIT` to sleep **forever** until a message
+- A task can return `KTOS_MSG_SLEEP_INDEFINITLY` to sleep **forever** until a message
   arrives.  No CPU is wasted polling.
 - Switching a task between periodic (`return 500`) and event-driven
-  (`return MSG_WAIT`) is a single return value — no scheduler config.
+  (`return KTOS_MSG_SLEEP_INDEFINITLY`) is a single return value — no scheduler config.
 - User-defined message types live above `KTOS_MSG_TYPE_SYSTEM_START`.
 
 ---
@@ -88,7 +88,7 @@ indicator.
    ```
 
 5. KTOS marks `led_task` ready (even though it was sleeping with
-   `MSG_WAIT`) and dispatches it on the next scheduling pass.
+   `KTOS_MSG_SLEEP_INDEFINITLY`) and dispatches it on the next scheduling pass.
    `led_task` updates `PORTB` and the mode flag, then returns the
    appropriate sleep value.
 

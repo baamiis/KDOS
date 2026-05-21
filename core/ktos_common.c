@@ -29,18 +29,18 @@
  * may claim authorship or ownership of this software.
  */
 
-#include "ktos_multi.h"
+#include "ktos_common.h"
 #include "ktos.h"
 #include <stdarg.h>
 #include <stdio.h>
 
-static WORD ktos_TaskMainProc(WORD MsgType, WORD sParam, LONG lParam);
+static WORD ktos_TaskMainProc(WORD MsgType, WORD Param1, LONG Param2);
 
 struct ktos_TASK *TaskMain;
 extern struct ktos_TASK *TaskSerial;
 extern struct ktos_TASK *TaskCheckSum;
 
-void ktos_Emergency(const char *Msg) {
+__attribute__((noreturn)) void ktos_Emergency(const char *Msg) {
   (void)Msg;
   while (1) {
   }
@@ -68,10 +68,10 @@ int main()
   return 0;
 }
 
-static WORD ktos_TaskMainProc(WORD MsgType, WORD sParam, LONG lParam)
+static WORD ktos_TaskMainProc(WORD MsgType, WORD Param1, LONG Param2)
 {
-  (void)sParam;
-  (void)lParam;
+  (void)Param1;
+  (void)Param2;
 
   switch(MsgType) {
     case KTOS_MSG_TYPE_INIT:
@@ -80,5 +80,5 @@ static WORD ktos_TaskMainProc(WORD MsgType, WORD sParam, LONG lParam)
     case KTOS_MSG_TYPE_SYSTEM_START:
       break;
   }
-  return MSG_WAIT;
+  return KTOS_MSG_SLEEP_INDEFINITLY;
 }

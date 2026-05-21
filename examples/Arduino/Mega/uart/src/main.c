@@ -12,7 +12,7 @@
  *                     copied into a shared buffer and:
  *                         ktos_SendMsg(cmd_task, MSG_LINE_READY, len, 0);
  *
- *   cmd_task ('C') -- sleeps with MSG_WAIT.  On MSG_LINE_READY it
+ *   cmd_task ('C') -- sleeps with KTOS_MSG_SLEEP_INDEFINITLY.  On MSG_LINE_READY it
  *                     parses the line (PING / INFO / HELP) and writes
  *                     the response.
  *
@@ -120,10 +120,10 @@ static void print_help(void)
     uart_puts("  HELP  - this list\r\n");
 }
 
-static WORD cmd_task(WORD MsgType, WORD sParam, LONG lParam)
+static WORD cmd_task(WORD MsgType, WORD Param1, LONG Param2)
 {
-    (void)sParam;
-    (void)lParam;
+    (void)Param1;
+    (void)Param2;
 
     if (MsgType == KTOS_MSG_TYPE_INIT) {
         uart_puts("=============================\r\n");
@@ -131,10 +131,10 @@ static WORD cmd_task(WORD MsgType, WORD sParam, LONG lParam)
         uart_puts("  Arduino Mega 2560\r\n");
         uart_puts("=============================\r\n");
         uart_puts("Type HELP for commands.\r\n");
-        return MSG_WAIT;
+        return KTOS_MSG_SLEEP_INDEFINITLY;
     }
 
-    if (MsgType != MSG_LINE_READY) { return MSG_WAIT; }
+    if (MsgType != MSG_LINE_READY) { return KTOS_MSG_SLEEP_INDEFINITLY; }
 
     if (strcmp(g_line_buf, "PING") == 0) {
         uart_puts("PONG\r\n");
@@ -149,17 +149,17 @@ static WORD cmd_task(WORD MsgType, WORD sParam, LONG lParam)
         uart_puts("Type HELP for commands.\r\n");
     }
 
-    return MSG_WAIT;
+    return KTOS_MSG_SLEEP_INDEFINITLY;
 }
 
 /* =========================================================================
  * RX task
  * ========================================================================= */
 
-static WORD rx_task(WORD MsgType, WORD sParam, LONG lParam)
+static WORD rx_task(WORD MsgType, WORD Param1, LONG Param2)
 {
-    (void)sParam;
-    (void)lParam;
+    (void)Param1;
+    (void)Param2;
 
     if (MsgType == KTOS_MSG_TYPE_INIT) {
         g_assembling_len = 0;

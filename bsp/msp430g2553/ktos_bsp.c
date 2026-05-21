@@ -51,7 +51,7 @@
  * ### Architecture notes
  * - R0=PC, R1=SP, R2=SR, R3=CG (constant generator)
  * - Callee-saved: R4-R11.  Caller-saved / args: R12-R15.
- * - Calling convention: MsgType(WORD)→R12, sParam(WORD)→R13, lParam(LONG)→R14:R15.
+ * - Calling convention: MsgType(WORD)→R12, Param1(WORD)→R13, Param2(LONG)→R14:R15.
  * - Context switch saves R4-R11 + SR (R2).
  * - A trampoline (@c ktos_task_launch in ktos_bsp_asm.S) is needed for the
  *   first dispatch because R12-R15 are not preserved across context switches.
@@ -116,8 +116,8 @@ void ktos_hal_InitSystemTimer(void (*timer_isr_addr)(void))
  *             [R10 = 0]
  *             [R9  = 0]
  *             [R8  = task_func_addr]
- *             [R7  = lParam >> 16]
- *             [R6  = lParam & 0xFFFF]
+ *             [R7  = Param2 >> 16]
+ *             [R6  = Param2 & 0xFFFF]
  *             [R5  = initial_sparam]
  *             [R4  = initial_msg_type]
  * low addr  → [SR  = 0x0008 (GIE)]       ← SP after setup, popped first
@@ -144,8 +144,8 @@ void *ktos_hal_InitTaskStack(void *p_stack_base,
     *--sp = 0;                                           /* R10 */
     *--sp = 0;                                           /* R9  */
     *--sp = (uint16_t)(uintptr_t)task_func_addr;         /* R8  */
-    *--sp = (uint16_t)((uint32_t)initial_lparam >> 16);  /* R7 = lParam high */
-    *--sp = (uint16_t)((uint32_t)initial_lparam & 0xFFFF); /* R6 = lParam low */
+    *--sp = (uint16_t)((uint32_t)initial_lparam >> 16);  /* R7 = Param2 high */
+    *--sp = (uint16_t)((uint32_t)initial_lparam & 0xFFFF); /* R6 = Param2 low */
     *--sp = (uint16_t)initial_sparam;                    /* R5  */
     *--sp = (uint16_t)initial_msg_type;                  /* R4  */
     *--sp = 0x0008U;                                     /* SR with GIE */

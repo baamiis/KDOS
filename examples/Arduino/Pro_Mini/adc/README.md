@@ -33,7 +33,7 @@ to initialise both peripherals, register the task, and call
 ## What it shows about KTOS
 
 - A task is a plain function with signature
-  `WORD task(WORD MsgType, WORD sParam, LONG lParam)`.
+  `WORD task(WORD MsgType, WORD Param1, LONG Param2)`.
 - The **return value is a sleep duration in milliseconds**.
   `return 1000` → wake me in one second with `KTOS_MSG_TYPE_TIMER`.
 - `KTOS_MSG_TYPE_INIT` is delivered exactly once, on the first dispatch.

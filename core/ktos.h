@@ -44,7 +44,7 @@
  *
  * static struct ktos_TASK *g_led_task;
  *
- * WORD led_task(WORD MsgType, WORD sParam, LONG lParam)
+ * WORD led_task(WORD MsgType, WORD Param1, LONG Param2)
  * {
  *     switch (MsgType) {
  *         case KTOS_MSG_TYPE_INIT:
@@ -73,7 +73,7 @@
 #define _KTOS
 
 #include <stdbool.h>
-#include "ktos_multi.h"
+#include "ktos_common.h"
 
 /* =========================================================================
  * Constants
@@ -87,25 +87,25 @@
  * This is the normal mode — the task sleeps and the scheduler advances
  * to the next ready task.
  */
-#define TASK_SWITCH_PERMIT  1
+#define ALLOW_TASK_SWITCH  1
 
 /**
  * @ingroup ktos_core
  * @brief Pass to ktos_Sleep() to prevent the scheduler from running any
  *        other task while this task is sleeping.
  *
- * @warning Combining with @c MSG_WAIT as the delay causes the entire system
+ * @warning Combining with @c KTOS_MSG_SLEEP_INDEFINITLY as the delay causes the entire system
  *          to halt until an ISR calls ktos_WakeUp() on this task.  Use
  *          with extreme caution and only for very short, critical sections.
  */
-#define TASK_SWITCH_INHIBIT 0
+#define HALT_TASK_SWITCH 0
 
 /**
  * @ingroup ktos_core
  * @brief Return this value from a task function to sleep indefinitely until
  *        explicitly woken by ktos_WakeUp() or an incoming message.
  */
-#define MSG_WAIT 0xffff
+#define KTOS_MSG_SLEEP_INDEFINITLY 0xffff
 
 /* =========================================================================
  * Enumerations
@@ -119,7 +119,7 @@
  * Values above @c KTOS_MSG_TYPE_SYSTEM_START are free for application use.
  *
  * @code
- * WORD my_task(WORD MsgType, WORD sParam, LONG lParam)
+ * WORD my_task(WORD MsgType, WORD Param1, LONG Param2)
  * {
  *     switch (MsgType) {
  *         case KTOS_MSG_TYPE_INIT:  // first call — hardware init
@@ -155,8 +155,8 @@ enum ktos_MSG_TYPE
 struct ktos_MSG
 {
     unsigned short int MsgType; /**< Message type — built-in or user-defined. */
-    unsigned short int sParam;  /**< 16-bit user-defined parameter. */
-    long               lParam;  /**< 32-bit user-defined parameter. */
+    unsigned short int Param1;  /**< 16-bit user-defined parameter. */
+    long               Param2;  /**< 32-bit user-defined parameter. */
 };
 
 /**
@@ -173,24 +173,24 @@ struct ktos_MSG
 struct ktos_TASK
 {
     unsigned short int (*Func)(unsigned short int MsgType,
-                               unsigned short int sParam,
-                               long               lParam); /**< Task entry function. */
-    int32_t          *StackPtr;      /**< Current stack pointer (updated on each context switch). */
-    int32_t          *StackBase;     /**< Base of allocated stack buffer (used to reinitialise for each message). */
-    unsigned int      StackSizeBytes;/**< Size of the stack buffer in bytes. */
-    bool              NeedsReinit;   /**< Set after task returns; cleared when scheduler reinitialises the stack. */
+                               unsigned short int Param1,
+                               long               Param2); /**< Task entry function. */
+    int32_t          *StackPointer;      /**< Current stack pointer (updated on each context switch). */
+    int32_t          *StackBasePointer;     /**< Base of allocated stack buffer (used to reinitialise for each message). */
+    unsigned int      StackBufferSize;/**< Size of the stack buffer in bytes. */
+    bool              ScheduleReinit;   /**< Set after task returns; cleared when scheduler reinitialises the stack. */
     struct ktos_MSG  *MsgQueue;      /**< Base of the circular message queue. */
     struct ktos_MSG  *MsgQueueIn;    /**< Write pointer into the message queue. */
     struct ktos_MSG  *MsgQueueOut;   /**< Read pointer out of the message queue. */
     struct ktos_MSG  *MsgQueueEnd;   /**< One-past-end sentinel for wrap-around. */
-    int               MsgCount;      /**< Number of messages currently queued. */
-    INT               QueueCapacity; /**< Maximum number of messages the queue can hold. */
+    int               NumMessages;      /**< Number of messages currently queued. */
+    INT               QCapacity; /**< Maximum number of messages the queue can hold. */
     BYTE              TaskID;        /**< User-assigned single-byte task identifier (e.g. 'M'). */
-    unsigned short int Timer;        /**< Countdown timer in milliseconds (decremented by ISR). */
-    bool              TimerFlag;     /**< Set by the ISR when @c Timer reaches zero. */
-    bool              Sleeping;      /**< True when the task is waiting for a timer or message. */
+    unsigned short int CountdownTimer;        /**< Countdown timer in milliseconds (decremented by ISR). */
+    bool              ISRTimer;     /**< Set by the ISR when @c CountdownTimer reaches zero. */
+    bool              TaskSleeping;      /**< True when the task is waiting for a timer or message. */
     struct ktos_TASK *TaskNext;      /**< Next task in the circular scheduling ring. */
-    int               WakeUpType;    /**< Value passed by the most recent ktos_WakeUp() call. */
+    int               TaskTypeWakeUp;    /**< Value passed by the most recent ktos_WakeUp() call. */
 };
 
 /* =========================================================================
@@ -206,9 +206,9 @@ struct ktos_TASK
  * Call this for every task before calling ktos_RunOS().
  *
  * @param Func       Pointer to the task function.  Signature:
- *                   @code WORD task(WORD MsgType, WORD sParam, LONG lParam); @endcode
+ *                   @code WORD task(WORD MsgType, WORD Param1, LONG Param2); @endcode
  *                   Return value is the sleep duration in milliseconds, or
- *                   @c MSG_WAIT to sleep until explicitly woken.
+ *                   @c KTOS_MSG_SLEEP_INDEFINITLY to sleep until explicitly woken.
  * @param StackSize  Stack depth in 32-bit words (not bytes).  Must be large
  *                   enough for the deepest call chain, all local variables,
  *                   and interrupt frame overhead.  Start with
@@ -233,8 +233,8 @@ struct ktos_TASK
  */
 struct ktos_TASK *ktos_InitTask(
     unsigned short int (*Func)(unsigned short int MsgType,
-                               unsigned short int sParam,
-                               long               lParam),
+                               unsigned short int Param1,
+                               long               Param2),
     INT  StackSize,
     INT  QueueSize,
     BYTE TaskID);
@@ -268,8 +268,8 @@ void ktos_RunOS(void);
  *
  * @param Task     Target task (returned by ktos_InitTask()).
  * @param MsgType  Message type identifier (built-in or user-defined WORD).
- * @param sParam   16-bit user-defined parameter.
- * @param lParam   32-bit user-defined parameter.
+ * @param Param1   16-bit user-defined parameter.
+ * @param Param2   32-bit user-defined parameter.
  * @return         @c true  — message queued successfully.
  * @return         @c false — queue full or @p Task is NULL; message dropped.
  *
@@ -284,8 +284,8 @@ void ktos_RunOS(void);
  */
 bool ktos_SendMsg(struct ktos_TASK   *Task,
                   unsigned short int  MsgType,
-                  unsigned short int  sParam,
-                  long                lParam);
+                  unsigned short int  Param1,
+                  long                Param2);
 
 /**
  * @ingroup ktos_core
@@ -301,36 +301,36 @@ bool ktos_SendMsg(struct ktos_TASK   *Task,
  * @param Delay             Sleep duration in milliseconds.
  *                          - @c 0       — yield immediately (run other tasks once, then resume).
  *                          - @c 1–65534 — sleep for that many milliseconds.
- *                          - @c MSG_WAIT — sleep indefinitely until ktos_WakeUp() is called.
- * @param TaskSwitchPermit  @c TASK_SWITCH_PERMIT (1) — allow other tasks to run while sleeping.
- *                          @c TASK_SWITCH_INHIBIT (0) — freeze scheduler; only this task
+ *                          - @c KTOS_MSG_SLEEP_INDEFINITLY — sleep indefinitely until ktos_WakeUp() is called.
+ * @param TaskSwitchPermit  @c ALLOW_TASK_SWITCH (1) — allow other tasks to run while sleeping.
+ *                          @c HALT_TASK_SWITCH (0) — freeze scheduler; only this task
  *                          can resume (requires ISR to call ktos_WakeUp()).
- * @return                  The @c WakeUpType value supplied by the ktos_WakeUp() call that
+ * @return                  The @c TaskTypeWakeUp value supplied by the ktos_WakeUp() call that
  *                          woke this task, or @c 0 if woken by the timer.
  *
- * @warning Passing both @c MSG_WAIT and @c TASK_SWITCH_INHIBIT halts all
+ * @warning Passing both @c KTOS_MSG_SLEEP_INDEFINITLY and @c HALT_TASK_SWITCH halts all
  *          other tasks until an ISR calls ktos_WakeUp().  Use with extreme caution.
  *
  * ### Example
  * @code
  * // Inside a task function — wait 200 ms then continue
- * ktos_Sleep(200, TASK_SWITCH_PERMIT);
+ * ktos_Sleep(200, ALLOW_TASK_SWITCH);
  * // Execution resumes here after 200 ms
  * @endcode
  */
-int ktos_Sleep(unsigned short int Delay, bool TaskSwitchPermit);
+int ktos_Sleep(unsigned short int Delay, bool TaskAllowSwitch);
 
 /**
  * @ingroup ktos_core
  * @brief Wake a sleeping task immediately from an ISR or another task.
  *
- * Sets the task's @c TimerFlag so the scheduler will dispatch it on the
+ * Sets the task's @c ISRTimer so the scheduler will dispatch it on the
  * next scheduling cycle.  Safe to call from ISR context.
  *
  * Has no effect if the task is not currently sleeping.
  *
  * @param Task       Task to wake (returned by ktos_InitTask()).
- * @param WakeUpType Arbitrary value returned to the sleeping task by
+ * @param TaskTypeWakeUp Arbitrary value returned to the sleeping task by
  *                   ktos_Sleep().  Use this to communicate *why* the task
  *                   was woken (e.g. which peripheral triggered the event).
  *
@@ -342,11 +342,11 @@ int ktos_Sleep(unsigned short int Delay, bool TaskSwitchPermit);
  * }
  *
  * // Inside g_ui_task:
- * int reason = ktos_Sleep(MSG_WAIT, TASK_SWITCH_PERMIT);
+ * int reason = ktos_Sleep(KTOS_MSG_SLEEP_INDEFINITLY, ALLOW_TASK_SWITCH);
  * if (reason == WAKE_BUTTON_PRESS) { handle_button(); }
  * @endcode
  */
-void ktos_WakeUp(struct ktos_TASK *Task, INT WakeUpType);
+void ktos_WakeUp(struct ktos_TASK *Task, INT TaskTypeWakeUp);
 
 /**
  * @ingroup ktos_core
@@ -354,7 +354,7 @@ void ktos_WakeUp(struct ktos_TASK *Task, INT WakeUpType);
  *
  * Intended for platforms where the host event loop (e.g. ESP8266 ets_run())
  * must resume after KTOS has finished its work.  Call from task context just
- * before returning MSG_WAIT.  ktos_RunOS() returns to its caller on the next
+ * before returning KTOS_MSG_SLEEP_INDEFINITLY.  ktos_RunOS() returns to its caller on the next
  * scheduler cycle.
  *
  * Has no effect if called from ISR context or before ktos_RunOS().

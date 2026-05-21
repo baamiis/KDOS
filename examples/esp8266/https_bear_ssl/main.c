@@ -133,12 +133,12 @@ static const char *print_line(const char *p, const char *end)
  * https_task
  * ========================================================================= */
 
-WORD https_task(WORD MsgType, WORD sParam, LONG lParam)
+WORD https_task(WORD MsgType, WORD Param1, LONG Param2)
 {
-    (void)sParam; (void)lParam;
+    (void)Param1; (void)Param2;
 
-    if (MsgType == KTOS_MSG_TYPE_INIT) return MSG_WAIT;
-    if (MsgType != MSG_HTTPS_DONE)     return MSG_WAIT;
+    if (MsgType == KTOS_MSG_TYPE_INIT) return KTOS_MSG_SLEEP_INDEFINITLY;
+    if (MsgType != MSG_HTTPS_DONE)     return KTOS_MSG_SLEEP_INDEFINITLY;
 
     delay_ms(50);
     uart_puts("\033[2J\033[H");
@@ -153,19 +153,19 @@ WORD https_task(WORD MsgType, WORD sParam, LONG lParam)
 
     if (g_resp_err == 1) {
         uart_puts("Error  : DNS resolution failed for " HTTP_HOST "\r\n");
-        return MSG_WAIT;
+        return KTOS_MSG_SLEEP_INDEFINITLY;
     }
     if (g_resp_err == 2) {
         uart_puts("Error  : TLS 1.2 handshake or TCP connection failed.\r\n");
         uart_puts("         BearSSL err=");
         uart_putu((uint32_t)g_ssl_err);
         uart_puts("\r\n");
-        return MSG_WAIT;
+        return KTOS_MSG_SLEEP_INDEFINITLY;
     }
 
     if (g_resp_len == 0) {
         uart_puts("Error  : Empty response.\r\n");
-        return MSG_WAIT;
+        return KTOS_MSG_SLEEP_INDEFINITLY;
     }
 
     const char *buf = g_resp_buf;
@@ -193,7 +193,7 @@ WORD https_task(WORD MsgType, WORD sParam, LONG lParam)
     uart_putu(g_resp_len);
     uart_puts(" bytes total)\r\n");
 
-    return MSG_WAIT;
+    return KTOS_MSG_SLEEP_INDEFINITLY;
 }
 
 /* =========================================================================

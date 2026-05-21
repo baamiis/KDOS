@@ -86,11 +86,11 @@ void ktos_InitSys(void) {}
 static struct ktos_TASK *g_led_task;
 static uint32_t g_press_count;
 
-static WORD led_task(WORD MsgType, WORD sParam, LONG lParam)
+static WORD led_task(WORD MsgType, WORD Param1, LONG Param2)
 {
-    (void)sParam; (void)lParam;
-    if (MsgType == KTOS_MSG_TYPE_INIT) { LED_OFF(); return MSG_WAIT; }
-    if (MsgType != MSG_BUTTON_EVENT)   { return MSG_WAIT; }
+    (void)Param1; (void)Param2;
+    if (MsgType == KTOS_MSG_TYPE_INIT) { LED_OFF(); return KTOS_MSG_SLEEP_INDEFINITLY; }
+    if (MsgType != MSG_BUTTON_EVENT)   { return KTOS_MSG_SLEEP_INDEFINITLY; }
     ++g_press_count;
     GPIOC_ODR ^= (1u << LED_PIN);
     uart_puts("Button press #");
@@ -99,12 +99,12 @@ static WORD led_task(WORD MsgType, WORD sParam, LONG lParam)
     do { buf[i++] = (char)('0' + n % 10u); n /= 10u; } while (n);
     while (i--) uart_putc(buf[i]);
     uart_puts(" — LED toggled\r\n");
-    return MSG_WAIT;
+    return KTOS_MSG_SLEEP_INDEFINITLY;
 }
 
-static WORD btn_task(WORD MsgType, WORD sParam, LONG lParam)
+static WORD btn_task(WORD MsgType, WORD Param1, LONG Param2)
 {
-    (void)sParam; (void)lParam;
+    (void)Param1; (void)Param2;
     static uint8_t last_state  = 0;  /* 0=released */
     static uint8_t debounce_ms = 0;
 

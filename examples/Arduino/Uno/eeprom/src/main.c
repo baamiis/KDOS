@@ -299,10 +299,10 @@ static void cmd_dump(void)
  * counter_task - owns EEPROM, the boot counter, and command dispatch
  * ========================================================================= */
 
-static WORD counter_task(WORD MsgType, WORD sParam, LONG lParam)
+static WORD counter_task(WORD MsgType, WORD Param1, LONG Param2)
 {
-    (void)sParam;
-    (void)lParam;
+    (void)Param1;
+    (void)Param2;
 
     if (MsgType == KTOS_MSG_TYPE_INIT) {
         uint16_t cnt = eeprom_read16(EEPROM_BOOT_COUNTER_ADDR);
@@ -357,10 +357,10 @@ static WORD counter_task(WORD MsgType, WORD sParam, LONG lParam)
  * rx_task - drains USART0, echoes, assembles a line
  * ========================================================================= */
 
-static WORD rx_task(WORD MsgType, WORD sParam, LONG lParam)
+static WORD rx_task(WORD MsgType, WORD Param1, LONG Param2)
 {
-    (void)sParam;
-    (void)lParam;
+    (void)Param1;
+    (void)Param2;
 
     if (MsgType == KTOS_MSG_TYPE_INIT) {
         g_line_len = 0;

@@ -106,7 +106,7 @@ void *ktos_hal_InitTaskStack(void *p_stack_base,
     //    `task_exit_handler_addr` and then branches to `task_exit_handler_addr`.
     //
     // 4. Return the final value of the stack pointer (after all initial context is pushed).
-    //    This will be the value stored in `Task->StackPtr`.
+    //    This will be the value stored in `Task->StackPointer`.
     //
     // Example (conceptual for ARM Cortex-M - actual implementation is more complex):
     //   unsigned long *stack_ptr = (unsigned long*)(((unsigned char*)p_stack_base + stack_size_bytes) & ~0x7UL); // Ensure 8-byte alignment

@@ -11,7 +11,7 @@
  *                     in a fixed 64-byte buffer.  On '\r' or '\n' it
  *                     posts ktos_SendMsg(MSG_LINE_READY) to cmd_task.
  *
- *   cmd_task ('C') -- sleeps with MSG_WAIT.  On MSG_LINE_READY it
+ *   cmd_task ('C') -- sleeps with KTOS_MSG_SLEEP_INDEFINITLY.  On MSG_LINE_READY it
  *                     parses the first whitespace-delimited token
  *                     and dispatches:
  *
@@ -258,26 +258,26 @@ static void cmd_echo(const char *rest)
  * cmd_task - the shell
  * ========================================================================= */
 
-static WORD cmd_task(WORD MsgType, WORD sParam, LONG lParam)
+static WORD cmd_task(WORD MsgType, WORD Param1, LONG Param2)
 {
-    (void)sParam;
-    (void)lParam;
+    (void)Param1;
+    (void)Param2;
 
     if (MsgType == KTOS_MSG_TYPE_INIT) {
         uart_puts("=============================\r\n");
         uart_puts("  KTOS USB-Serial CLI\r\n");
         uart_puts("=============================\r\n");
         uart_puts("Type HELP for commands.\r\n");
-        return MSG_WAIT;
+        return KTOS_MSG_SLEEP_INDEFINITLY;
     }
 
     if (MsgType != MSG_LINE_READY) {
-        return MSG_WAIT;
+        return KTOS_MSG_SLEEP_INDEFINITLY;
     }
 
     char *p = g_line_buf;
     char *cmd = next_token(&p);
-    if (cmd == NULL) { return MSG_WAIT; }
+    if (cmd == NULL) { return KTOS_MSG_SLEEP_INDEFINITLY; }
 
     if      (ci_eq(cmd, "HELP")) { cmd_help(); }
     else if (ci_eq(cmd, "INFO")) { cmd_info(); }
@@ -294,17 +294,17 @@ static WORD cmd_task(WORD MsgType, WORD sParam, LONG lParam)
         uart_puts("\r\nType HELP for commands.\r\n");
     }
 
-    return MSG_WAIT;
+    return KTOS_MSG_SLEEP_INDEFINITLY;
 }
 
 /* =========================================================================
  * rx_task - drains USART0, echoes, assembles a line
  * ========================================================================= */
 
-static WORD rx_task(WORD MsgType, WORD sParam, LONG lParam)
+static WORD rx_task(WORD MsgType, WORD Param1, LONG Param2)
 {
-    (void)sParam;
-    (void)lParam;
+    (void)Param1;
+    (void)Param2;
 
     if (MsgType == KTOS_MSG_TYPE_INIT) {
         g_line_len = 0;
