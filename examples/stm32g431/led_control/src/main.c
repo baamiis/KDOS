@@ -1,30 +1,44 @@
-#include <stdint.h>
+/*
+ * KTOS LED Control Example — STM32G431
+ * Blinks the onboard LED (PA5) every 500 ms using a KTOS task.
+ */
 #include "ktos.h"
 
-/* PA5 = LD2 on Nucleo-G431RB */
-#define RCC_AHB2ENR  (*(volatile uint32_t*)0x4002104C)
-#define GPIOA_MODER  (*(volatile uint32_t*)0x48000000)
-#define GPIOA_ODR    (*(volatile uint32_t*)0x48000014)
+/* GPIOA registers */
+#define RCC_AHB2ENR   (*((volatile unsigned int *)0x4002104C))
+#define GPIOA_MODER   (*((volatile unsigned int *)0x48000000))
+#define GPIOA_ODR     (*((volatile unsigned int *)0x48000014))
+#define GPIOA_BSRR    (*((volatile unsigned int *)0x48000018))
 
-#define STACK_SIZE 128
-static uint32_t led_stack[STACK_SIZE];
+#define LED_PIN 5u
 
-static WORD led_task(WORD msg, WORD p1, LONG p2) {
-    (void)p1; (void)p2;
-    if (msg == KTOS_MSG_TYPE_INIT) {
-        RCC_AHB2ENR |= (1u << 0);
-        GPIOA_MODER  = (GPIOA_MODER & ~(3u << 10)) | (1u << 10);
-    } else {
-        GPIOA_ODR ^= (1u << 5);
+static void led_init(void) {
+    RCC_AHB2ENR |= (1u << 0);                      /* GPIOA clock */
+    GPIOA_MODER &= ~(3u << (LED_PIN * 2u));
+    GPIOA_MODER |=  (1u << (LED_PIN * 2u));        /* output */
+}
+
+WORD task_led(WORD MsgType, WORD Param1, LONG Param2) {
+    (void)Param1; (void)Param2;
+    switch (MsgType) {
+        case KTOS_MSG_TYPE_INIT:
+            led_init();
+            break;
+        case KTOS_MSG_TYPE_TIMER:
+            GPIOA_ODR ^= (1u << LED_PIN);           /* toggle */
+            break;
+        default:
+            break;
     }
     return 500;
 }
 
-static KTOS_TASK tasks[1];
+#define LED_STACK_SIZE 256u
+static unsigned char led_stack[LED_STACK_SIZE];
 
 int main(void) {
-    KTOS_Init(tasks, 1);
-    KTOS_CreateTask(led_task, led_stack, sizeof(led_stack));
-    KTOS_Start();
-    for (;;);
+    ktos_Init();
+    ktos_TaskCreate(task_led, led_stack, LED_STACK_SIZE);
+    ktos_RunOS();
+    for (;;) {}
 }
