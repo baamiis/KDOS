@@ -119,8 +119,8 @@ KTOS/
 │   │   ├── Nano/          # 5 examples (adc, i2c, led_control, button_control, uart)
 │   │   ├── Uno/           # 2 Uno-specific (usb_serial, eeprom) — Nano examples portable
 │   │   └── Pro_Mini/      # 5 examples (same source as Nano, programmed via USB-TTL)
-│   ├── esp8266/           # Xtensa LX106 examples
-│   └── stm32g431/         # STM32G431 Cortex-M4F examples
+│   ├── stm32g431/         # STM32G431 examples (led_control, uart)
+│   └── esp8266/           # Xtensa LX106 examples
 ├── scripts/
 │   ├── build_all.sh    # Local build verification script
 │   ├── package.py      # ZIP package generator for website
