@@ -28,24 +28,32 @@ KTOS provides ready-to-use Board Support Packages (BSPs) for the following micro
 |-----|------|-----|-------|-----|----------|
 | ATmega328P | AVR 8-bit | 2KB | 32KB | ✅ | 6 (Nano / Uno / Pro Mini) |
 | ATmega2560 | AVR 8-bit | 8KB | 256KB | ✅ | 6 (Arduino Mega 2560) |
+| ATmega32U4 | AVR 8-bit | 2.5KB | 32KB | ✅ | 6 (Leonardo / Micro) |
 | ATtiny85 | AVR 8-bit | 512B | 8KB | ✅ | hello_ktos |
 | MSP430G2553 | MSP430 16-bit | 512B | 16KB | ✅ | hello_ktos |
 | STM32F030 | Cortex-M0 | 8KB | 64KB | ✅ | 6 (Nucleo-F030R8) |
 | STM32L031 | Cortex-M0+ | 8KB | 32KB | ✅ | hello_ktos |
 | STM32F103 | Cortex-M3 | 20KB | 64KB | ✅ | 6 (Blue Pill) |
+| STM32F407 | Cortex-M4F | 192KB | 1MB | ✅ | hello_ktos |
 | SAM3X8E | Cortex-M3 | 96KB | 512KB | ✅ | 6 (Arduino Due) |
+| ATSAMD21G18 | Cortex-M0+ | 32KB | 256KB | ✅ | 6 (Arduino Zero) |
+| nRF52840 | Cortex-M4F | 256KB | 1MB | ✅ | hello_ktos |
 | ESP8266 (LX106) | Xtensa 32-bit | ~30KB free | 1MB+ | ✅ | 6+ |
 | PIC18F4550 | PIC18 8-bit | 2KB | 32KB | ⚠️ Experimental | hello_ktos |
 
 **Compatible boards per MCU:**
 - **ATmega328P**: Arduino Uno, Arduino Nano, Arduino Pro Mini
 - **ATmega2560**: Arduino Mega 2560
+- **ATmega32U4**: Arduino Leonardo, Arduino Micro
 - **ATtiny85**: Digispark
 - **MSP430G2553**: MSP430 LaunchPad (MSP-EXP430G2)
 - **STM32F030**: Nucleo-F030R8
 - **STM32L031**: Nucleo-L031K6
 - **STM32F103**: Blue Pill, Nucleo-F103RB, Maple Mini
+- **STM32F407**: STM32F4-Discovery, Nucleo-F407ZG
 - **SAM3X8E**: Arduino Due
+- **ATSAMD21G18**: Arduino Zero
+- **nRF52840**: Nordic nRF52840-DK, Adafruit Feather nRF52840
 - **ESP8266**: NodeMCU, Wemos D1 Mini, ESP-01
 - **PIC18F4550**: Custom board (SDCC toolchain)
 

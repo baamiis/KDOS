@@ -22,10 +22,19 @@ jobs:
           - bsp: atmega328p
             toolchain: avr
             install: gcc-avr avr-libc binutils-avr
+          - bsp: atmega32u4
+            toolchain: avr
+            install: gcc-avr avr-libc binutils-avr
+          - bsp: attiny85
+            toolchain: avr
+            install: gcc-avr avr-libc binutils-avr
           - bsp: stm32f103
             toolchain: arm
             install: gcc-arm-none-eabi libnewlib-arm-none-eabi binutils-arm-none-eabi
           - bsp: stm32f030
+            toolchain: arm
+            install: gcc-arm-none-eabi libnewlib-arm-none-eabi binutils-arm-none-eabi
+          - bsp: stm32l031
             toolchain: arm
             install: gcc-arm-none-eabi libnewlib-arm-none-eabi binutils-arm-none-eabi
           - bsp: sam3x8e
