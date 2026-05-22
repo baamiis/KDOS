@@ -1,53 +1,62 @@
-#include <stdint.h>
+/*
+ * KTOS UART Example — STM32G431
+ * Sends "KTOS\r\n" over LPUART1 (PA2/PA3) every 1 second.
+ */
 #include "ktos.h"
 
-/* USART2 on PA2/PA3, default clock HSI 16 MHz */
-#define RCC_AHB2ENR   (*(volatile uint32_t*)0x4002104C)
-#define RCC_APB1ENR1  (*(volatile uint32_t*)0x40021058)
-#define GPIOA_MODER   (*(volatile uint32_t*)0x48000000)
-#define GPIOA_AFRL    (*(volatile uint32_t*)0x48000020)
-#define USART2_CR1    (*(volatile uint32_t*)0x40004400)
-#define USART2_BRR    (*(volatile uint32_t*)0x4000440C)
-#define USART2_TDR    (*(volatile uint32_t*)0x40004428)
-#define USART2_ISR    (*(volatile uint32_t*)0x4000441C)
+/* RCC */
+#define RCC_AHB2ENR   (*((volatile unsigned int *)0x4002104C))
+#define RCC_APB1ENR2  (*((volatile unsigned int *)0x40021060))
+/* GPIOA */
+#define GPIOA_MODER   (*((volatile unsigned int *)0x48000000))
+#define GPIOA_AFRL    (*((volatile unsigned int *)0x48000020))
+/* LPUART1 */
+#define LPUART1_CR1   (*((volatile unsigned int *)0x40008000))
+#define LPUART1_BRR   (*((volatile unsigned int *)0x40008008))
+#define LPUART1_ISR   (*((volatile unsigned int *)0x4000801C))
+#define LPUART1_TDR   (*((volatile unsigned int *)0x40008028))
 
 static void uart_init(void) {
-    RCC_AHB2ENR  |= (1u << 0);
-    RCC_APB1ENR1 |= (1u << 17);
-    GPIOA_MODER   = (GPIOA_MODER & ~(0xFu << 4)) | (0xAu << 4);
-    GPIOA_AFRL    = (GPIOA_AFRL  & ~(0xFFu << 8)) | (0x77u << 8);
-    USART2_BRR    = 16000000UL / 115200UL;
-    USART2_CR1    = (1u << 3) | (1u << 0);
+    RCC_AHB2ENR  |= (1u << 0);   /* GPIOA */
+    RCC_APB1ENR2 |= (1u << 0);   /* LPUART1 */
+    /* PA2 AF12, PA3 AF12 */
+    GPIOA_MODER &= ~(0xFu << 4);
+    GPIOA_MODER |=  (0xAu << 4); /* alternate function */
+    GPIOA_AFRL  &= ~(0xFFu << 8);
+    GPIOA_AFRL  |=  (0xCCu << 8); /* AF12 for PA2 and PA3 */
+    /* 115200 @ 170 MHz: BRR = 170000000*256/115200 = 377778 */
+    LPUART1_BRR  = 377778u;
+    LPUART1_CR1  = (1u << 3) | (1u << 2) | (1u << 0); /* TE | RE | UE */
 }
 
-static void uart_putc(char c) {
-    while (!(USART2_ISR & (1u << 7)));
-    USART2_TDR = (uint8_t)c;
+static void uart_send(const char *s) {
+    while (*s) {
+        while (!(LPUART1_ISR & (1u << 7))) {}
+        LPUART1_TDR = (unsigned int)*s++;
+    }
 }
 
-static void uart_puts(const char *s) {
-    while (*s) uart_putc(*s++);
-}
-
-#define STACK_SIZE 128
-static uint32_t uart_stack[STACK_SIZE];
-
-static WORD uart_task(WORD msg, WORD p1, LONG p2) {
-    (void)p1; (void)p2;
-    if (msg == KTOS_MSG_TYPE_INIT) {
-        uart_init();
-        uart_puts("KTOS STM32G431 UART ready\r\n");
-    } else {
-        uart_puts("hello from KTOS\r\n");
+WORD task_uart(WORD MsgType, WORD Param1, LONG Param2) {
+    (void)Param1; (void)Param2;
+    switch (MsgType) {
+        case KTOS_MSG_TYPE_INIT:
+            uart_init();
+            break;
+        case KTOS_MSG_TYPE_TIMER:
+            uart_send("KTOS\r\n");
+            break;
+        default:
+            break;
     }
     return 1000;
 }
 
-static KTOS_TASK tasks[1];
+#define UART_STACK_SIZE 256u
+static unsigned char uart_stack[UART_STACK_SIZE];
 
 int main(void) {
-    KTOS_Init(tasks, 1);
-    KTOS_CreateTask(uart_task, uart_stack, sizeof(uart_stack));
-    KTOS_Start();
-    for (;;);
+    ktos_Init();
+    ktos_TaskCreate(task_uart, uart_stack, UART_STACK_SIZE);
+    ktos_RunOS();
+    for (;;) {}
 }
