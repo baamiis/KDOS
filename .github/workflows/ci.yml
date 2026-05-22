@@ -37,6 +37,9 @@ jobs:
           - bsp: stm32l031
             toolchain: arm
             install: gcc-arm-none-eabi libnewlib-arm-none-eabi binutils-arm-none-eabi
+          - bsp: stm32g431
+            toolchain: arm
+            install: gcc-arm-none-eabi libnewlib-arm-none-eabi binutils-arm-none-eabi
           - bsp: sam3x8e
             toolchain: arm
             install: gcc-arm-none-eabi libnewlib-arm-none-eabi binutils-arm-none-eabi
