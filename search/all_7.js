@@ -1,24 +1,24 @@
 var searchData=
 [
-  ['c_20code_20style_0',['c code style',['../md_CONTRIBUTING.html#autotoc_md72',1,'C Code Style'],['../md_CODE__OF__CONDUCT.html#autotoc_md84',1,'C Code Style']]],
+  ['c_20code_20style_0',['c code style',['../md_CODE__OF__CONDUCT.html#autotoc_md84',1,'C Code Style'],['../md_CONTRIBUTING.html#autotoc_md72',1,'C Code Style']]],
   ['can_5frx1_5firqhandler_1',['CAN_RX1_IRQHandler',['../stm32f103_2startup_8c.html#ad8dd583ca045a1f77ec52880be0f70c3',1,'startup.c']]],
   ['can_5fsce_5firqhandler_2',['CAN_SCE_IRQHandler',['../stm32f103_2startup_8c.html#a65fed1e67588930062fcf01b4af5d4d8',1,'startup.c']]],
   ['cd_20pipeline_3',['CI / CD Pipeline',['../index.html#autotoc_md53',1,'']]],
   ['checklist_4',['Porting checklist',['../ktos__hal_8h.html#autotoc_md6',1,'']]],
   ['ci_20cd_20pipeline_5',['CI / CD Pipeline',['../index.html#autotoc_md53',1,'']]],
-  ['clock_5finit_5f48mhz_6',['clock_init_48mhz',['../stm32f030_2startup_8c.html#a0b551273446a40b6642560095f9498a2',1,'clock_init_48MHz(void):&#160;startup.c'],['../samd21g18_2startup_8c.html#a0b551273446a40b6642560095f9498a2',1,'clock_init_48MHz(void):&#160;startup.c']]],
+  ['clock_5finit_5f48mhz_6',['clock_init_48mhz',['../samd21g18_2startup_8c.html#a0b551273446a40b6642560095f9498a2',1,'clock_init_48MHz(void):&#160;startup.c'],['../stm32f030_2startup_8c.html#a0b551273446a40b6642560095f9498a2',1,'clock_init_48MHz(void):&#160;startup.c']]],
   ['clock_5finit_5f72mhz_7',['clock_init_72MHz',['../stm32f103_2startup_8c.html#ae8cff84077382734bc31c9a569aa388d',1,'startup.c']]],
   ['code_8',['Platform-Specific Code',['../md_CODE__OF__CONDUCT.html#autotoc_md87',1,'']]],
   ['code_20documentation_9',['Code Documentation',['../md_CODE__OF__CONDUCT.html#autotoc_md97',1,'']]],
-  ['code_20of_20conduct_10',['code of conduct',['../md_CONTRIBUTING.html#autotoc_md63',1,'Code of Conduct'],['../md_CODE__OF__CONDUCT.html',1,'Code of Conduct'],['../md_CODE__OF__CONDUCT.html#autotoc_md78',1,'Code of Conduct']]],
+  ['code_20of_20conduct_10',['code of conduct',['../md_CODE__OF__CONDUCT.html#autotoc_md78',1,'Code of Conduct'],['../md_CODE__OF__CONDUCT.html',1,'Code of Conduct'],['../md_CONTRIBUTING.html#autotoc_md63',1,'Code of Conduct']]],
   ['code_20organization_11',['Code Organization',['../md_CODE__OF__CONDUCT.html#autotoc_md85',1,'']]],
-  ['code_20style_12',['code style',['../md_CONTRIBUTING.html#autotoc_md72',1,'C Code Style'],['../md_CODE__OF__CONDUCT.html#autotoc_md84',1,'C Code Style']]],
+  ['code_20style_12',['code style',['../md_CODE__OF__CONDUCT.html#autotoc_md84',1,'C Code Style'],['../md_CONTRIBUTING.html#autotoc_md72',1,'C Code Style']]],
   ['code_5fof_5fconduct_2emd_13',['CODE_OF_CONDUCT.md',['../CODE__OF__CONDUCT_8md.html',1,'']]],
   ['coding_20standards_14',['coding standards',['../md_CONTRIBUTING.html#autotoc_md71',1,'Coding Standards'],['../md_CODE__OF__CONDUCT.html#autotoc_md83',1,'Coding Standards']]],
   ['commercial_20license_15',['Commercial License',['../index.html#autotoc_md59',1,'']]],
   ['commit_20guidelines_16',['commit guidelines',['../md_CONTRIBUTING.html#autotoc_md73',1,'Commit Guidelines'],['../md_CODE__OF__CONDUCT.html#autotoc_md88',1,'Commit Guidelines']]],
   ['commit_20message_20format_17',['Commit Message Format',['../md_CODE__OF__CONDUCT.html#autotoc_md89',1,'']]],
-  ['conduct_18',['conduct',['../md_CODE__OF__CONDUCT.html#autotoc_md78',1,'Code of Conduct'],['../md_CODE__OF__CONDUCT.html',1,'Code of Conduct'],['../md_CONTRIBUTING.html#autotoc_md63',1,'Code of Conduct']]],
+  ['conduct_18',['conduct',['../md_CONTRIBUTING.html#autotoc_md63',1,'Code of Conduct'],['../md_CODE__OF__CONDUCT.html',1,'Code of Conduct'],['../md_CODE__OF__CONDUCT.html#autotoc_md78',1,'Code of Conduct']]],
   ['constants_19',['KTOS Types — structs, enums, and constants',['../group__ktos__types.html',1,'']]],
   ['constraints_20',['constraints',['../pic18f_2ktos__bsp_8c.html#autotoc_md30',1,'Architecture constraints'],['../stm32f030_2ktos__bsp_8c.html#autotoc_md35',1,'Cortex-M0 assembly constraints'],['../stm32l031_2ktos__bsp_8c.html#autotoc_md40',1,'Cortex-M0+ assembly constraints']]],
   ['contents_21',['contents',['../md_CONTRIBUTING.html#autotoc_md62',1,'Table of Contents'],['../md_CODE__OF__CONDUCT.html#autotoc_md77',1,'Table of Contents']]],
@@ -36,5 +36,6 @@ var searchData=
   ['cortex_20m3_20skeleton_33',['Cortex-M3 skeleton',['../group__ktos__hal.html#autotoc_md11',1,'']]],
   ['countdowntimer_34',['CountdownTimer',['../structktos__TASK.html#a3552fc5754cffd0fe55064788a069d3d',1,'ktos_TASK']]],
   ['cpu_5ffreq_35',['CPU_FREQ',['../nrf52840_2ktos__bsp_8c.html#ab6b652797b16c31087c6e7fef45cc175',1,'ktos_bsp.c']]],
-  ['ctc_20example_2016_20mhz_20prescaler_2064_20ocr1a_20249_36',['AVR Timer1 CTC example (16 MHz, prescaler 64, OCR1A = 249)',['../group__ktos__hal.html#autotoc_md12',1,'']]]
+  ['cpu_5fhz_36',['CPU_HZ',['../stm32g071_2ktos__bsp_8c.html#aba8a0d43a5485a31890e7840ddd9fb63',1,'ktos_bsp.c']]],
+  ['ctc_20example_2016_20mhz_20prescaler_2064_20ocr1a_20249_37',['AVR Timer1 CTC example (16 MHz, prescaler 64, OCR1A = 249)',['../group__ktos__hal.html#autotoc_md12',1,'']]]
 ];

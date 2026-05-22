@@ -83,6 +83,7 @@ var menudata={children:[
 {text:"g",url:"globals_vars.html#index_g"},
 {text:"k",url:"globals_vars.html#index_k"},
 {text:"o",url:"globals_vars.html#index_o"},
+{text:"s",url:"globals_vars.html#index_s"},
 {text:"t",url:"globals_vars.html#index_t"},
 {text:"v",url:"globals_vars.html#index_v"}]},
 {text:"Typedefs",url:"globals_type.html"},

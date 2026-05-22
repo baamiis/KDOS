@@ -12,8 +12,9 @@ var searchData=
   ['porting_20checklist_9',['Porting checklist',['../ktos__hal_8h.html#autotoc_md6',1,'']]],
   ['prerequisites_10',['prerequisites',['../md_CONTRIBUTING.html#autotoc_md65',1,'Prerequisites'],['../md_CODE__OF__CONDUCT.html#autotoc_md80',1,'Prerequisites']]],
   ['prescaler_2064_20ocr1a_20249_11',['AVR Timer1 CTC example (16 MHz, prescaler 64, OCR1A = 249)',['../group__ktos__hal.html#autotoc_md12',1,'']]],
-  ['process_12',['process',['../md_CODE__OF__CONDUCT.html#autotoc_md91',1,'Pull Request Process'],['../md_CONTRIBUTING.html#autotoc_md74',1,'Pull Request Process']]],
-  ['ptc_5fhandler_13',['PTC_Handler',['../samd21g18_2startup_8c.html#a1d86b5af01af9f6a15c23a6406dbc31b',1,'startup.c']]],
-  ['pull_20request_20process_14',['pull request process',['../md_CONTRIBUTING.html#autotoc_md74',1,'Pull Request Process'],['../md_CODE__OF__CONDUCT.html#autotoc_md91',1,'Pull Request Process']]],
-  ['pvd_5firqhandler_15',['PVD_IRQHandler',['../stm32f103_2startup_8c.html#a63228cf68d44f021736001cc85c56e3b',1,'startup.c']]]
+  ['primask_5fie_12',['PRIMASK_IE',['../stm32g071_2ktos__bsp_8c.html#a517398a2d878d58dd492678481201ef5',1,'ktos_bsp.c']]],
+  ['process_13',['process',['../md_CODE__OF__CONDUCT.html#autotoc_md91',1,'Pull Request Process'],['../md_CONTRIBUTING.html#autotoc_md74',1,'Pull Request Process']]],
+  ['ptc_5fhandler_14',['PTC_Handler',['../samd21g18_2startup_8c.html#a1d86b5af01af9f6a15c23a6406dbc31b',1,'startup.c']]],
+  ['pull_20request_20process_15',['pull request process',['../md_CONTRIBUTING.html#autotoc_md74',1,'Pull Request Process'],['../md_CODE__OF__CONDUCT.html#autotoc_md91',1,'Pull Request Process']]],
+  ['pvd_5firqhandler_16',['PVD_IRQHandler',['../stm32f103_2startup_8c.html#a63228cf68d44f021736001cc85c56e3b',1,'startup.c']]]
 ];
