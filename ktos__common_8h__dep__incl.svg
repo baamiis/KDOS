@@ -46,7 +46,7 @@
   </g>
 </defs>
 <script type="application/ecmascript">
-var viewWidth = 2063;
+var viewWidth = 2197;
 var viewHeight = 214;
 var sectionId = 'dynsection-1';
 </script>
@@ -58,8 +58,8 @@ var sectionId = 'dynsection-1';
 <g id="Node000001" class="node">
 <title>Node1</title>
 <g id="a_Node000001"><a xlink:title="Portable primitive types, constants, and utility prototypes used throughout the KTOS kernel and all B...">
-<polygon fill="#999999" stroke="#666666" points="1533.5,-206 1414.5,-206 1414.5,-187 1533.5,-187 1533.5,-206"/>
-<text text-anchor="middle" x="1474" y="-194" font-family="Helvetica,sans-Serif" font-size="10.00">core/ktos_common.h</text>
+<polygon fill="#999999" stroke="#666666" points="1568.5,-206 1449.5,-206 1449.5,-187 1568.5,-187 1568.5,-206"/>
+<text text-anchor="middle" x="1509" y="-194" font-family="Helvetica,sans-Serif" font-size="10.00">core/ktos_common.h</text>
 </a>
 </g>
 </g>
@@ -67,8 +67,8 @@ var sectionId = 'dynsection-1';
 <g id="Node000002" class="node">
 <title>Node2</title>
 <g id="a_Node000002"><a xlink:href="ktos_8c.html" target="_top" xlink:title="KTOS cooperative scheduler implementation.">
-<polygon fill="white" stroke="#666666" points="2055,-24.5 1985,-24.5 1985,-5.5 2055,-5.5 2055,-24.5"/>
-<text text-anchor="middle" x="2020" y="-12.5" font-family="Helvetica,sans-Serif" font-size="10.00">core/ktos.c</text>
+<polygon fill="white" stroke="#666666" points="70,-24.5 0,-24.5 0,-5.5 70,-5.5 70,-24.5"/>
+<text text-anchor="middle" x="35" y="-12.5" font-family="Helvetica,sans-Serif" font-size="10.00">core/ktos.c</text>
 </a>
 </g>
 </g>
@@ -76,8 +76,8 @@ var sectionId = 'dynsection-1';
 <g id="edge1_Node000001_Node000002" class="edge">
 <title>Node1&#45;&gt;Node2</title>
 <g id="a_edge1_Node000001_Node000002"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M1509.52,-183.82C1611.68,-150.24 1904.62,-53.93 1993.87,-24.59"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="1508.37,-180.51 1499.97,-186.96 1510.56,-187.16 1508.37,-180.51"/>
+<path fill="none" stroke="#63b8ff" d="M1439.19,-192.51C1261.32,-184.2 776.95,-157.32 378,-96 243.49,-75.33 210.42,-65.33 79,-30 72.96,-28.38 66.52,-26.44 60.48,-24.54"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1439.05,-196 1449.2,-192.97 1439.37,-189.01 1439.05,-196"/>
 </a>
 </g>
 </g>
@@ -85,8 +85,8 @@ var sectionId = 'dynsection-1';
 <g id="Node000003" class="node">
 <title>Node3</title>
 <g id="a_Node000003"><a xlink:href="ktos_8h.html" target="_top" xlink:title="KTOS public API — include this in your application code.">
-<polygon fill="white" stroke="#666666" points="1194.5,-151 1123.5,-151 1123.5,-132 1194.5,-132 1194.5,-151"/>
-<text text-anchor="middle" x="1159" y="-139" font-family="Helvetica,sans-Serif" font-size="10.00">core/ktos.h</text>
+<polygon fill="white" stroke="#666666" points="1544.5,-151 1473.5,-151 1473.5,-132 1544.5,-132 1544.5,-151"/>
+<text text-anchor="middle" x="1509" y="-139" font-family="Helvetica,sans-Serif" font-size="10.00">core/ktos.h</text>
 </a>
 </g>
 </g>
@@ -94,35 +94,35 @@ var sectionId = 'dynsection-1';
 <g id="edge2_Node000001_Node000003" class="edge">
 <title>Node1&#45;&gt;Node3</title>
 <g id="a_edge2_Node000001_Node000003"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M1413.31,-185.29C1348.5,-174.38 1247.96,-157.47 1194.79,-148.52"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="1412.95,-188.78 1423.39,-186.98 1414.11,-181.87 1412.95,-188.78"/>
+<path fill="none" stroke="#63b8ff" d="M1509,-176.66C1509,-167.93 1509,-157.99 1509,-151.09"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1505.5,-176.75 1509,-186.75 1512.5,-176.75 1505.5,-176.75"/>
 </a>
 </g>
 </g>
-<!-- Node9 -->
-<g id="Node000009" class="node">
-<title>Node9</title>
-<g id="a_Node000009"><a xlink:href="ktos__common_8c.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#666666" points="1533,-90.5 1415,-90.5 1415,-71.5 1533,-71.5 1533,-90.5"/>
-<text text-anchor="middle" x="1474" y="-78.5" font-family="Helvetica,sans-Serif" font-size="10.00">core/ktos_common.c</text>
+<!-- Node10 -->
+<g id="Node000010" class="node">
+<title>Node10</title>
+<g id="a_Node000010"><a xlink:href="ktos__common_8c.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="#666666" points="1921,-90.5 1803,-90.5 1803,-71.5 1921,-71.5 1921,-90.5"/>
+<text text-anchor="middle" x="1862" y="-78.5" font-family="Helvetica,sans-Serif" font-size="10.00">core/ktos_common.c</text>
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node9 -->
-<g id="edge26_Node000001_Node000009" class="edge">
-<title>Node1&#45;&gt;Node9</title>
-<g id="a_edge26_Node000001_Node000009"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M1474,-176.65C1474,-151.74 1474,-108.88 1474,-90.63"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="1470.5,-176.97 1474,-186.97 1477.5,-176.97 1470.5,-176.97"/>
+<!-- Node1&#45;&gt;Node10 -->
+<g id="edge28_Node000001_Node000010" class="edge">
+<title>Node1&#45;&gt;Node10</title>
+<g id="a_edge28_Node000001_Node000010"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M1545.39,-183.8C1616.52,-160.93 1772.5,-110.78 1835.16,-90.63"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1543.98,-180.58 1535.53,-186.97 1546.12,-187.24 1543.98,-180.58"/>
 </a>
 </g>
 </g>
 <!-- Node3&#45;&gt;Node2 -->
-<g id="edge8_Node000003_Node000002" class="edge">
+<g id="edge9_Node000003_Node000002" class="edge">
 <title>Node3&#45;&gt;Node2</title>
-<g id="a_edge8_Node000003_Node000002"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M1177.32,-125.34C1203.15,-104.05 1247.63,-67.66 1252,-66 1402.62,-8.87 1817.48,-58.66 1976,-30 1982.94,-28.74 1990.31,-26.7 1996.99,-24.55"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="1174.84,-122.85 1169.36,-131.92 1179.3,-128.25 1174.84,-122.85"/>
+<g id="a_edge9_Node000003_Node000002"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M1463.13,-138.38C1249.85,-128.32 353.89,-83.6 79,-30 72.23,-28.68 65.05,-26.67 58.49,-24.58"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1463.19,-141.89 1473.34,-138.86 1463.52,-134.9 1463.19,-141.89"/>
 </a>
 </g>
 </g>
@@ -130,8 +130,8 @@ var sectionId = 'dynsection-1';
 <g id="Node000004" class="node">
 <title>Node4</title>
 <g id="a_Node000004"><a xlink:href="nrf52840_2ktos__bsp_8c.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#666666" points="1396.5,-90.5 1261.5,-90.5 1261.5,-71.5 1396.5,-71.5 1396.5,-90.5"/>
-<text text-anchor="middle" x="1329" y="-78.5" font-family="Helvetica,sans-Serif" font-size="10.00">bsp/nrf52840/ktos_bsp.c</text>
+<polygon fill="white" stroke="#666666" points="1291.5,-90.5 1156.5,-90.5 1156.5,-71.5 1291.5,-71.5 1291.5,-90.5"/>
+<text text-anchor="middle" x="1224" y="-78.5" font-family="Helvetica,sans-Serif" font-size="10.00">bsp/nrf52840/ktos_bsp.c</text>
 </a>
 </g>
 </g>
@@ -139,8 +139,8 @@ var sectionId = 'dynsection-1';
 <g id="edge3_Node000003_Node000004" class="edge">
 <title>Node3&#45;&gt;Node4</title>
 <g id="a_edge3_Node000003_Node000004"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M1193.37,-128.67C1226.25,-117.36 1275.03,-100.57 1304.25,-90.52"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="1192.04,-125.43 1183.72,-131.99 1194.31,-132.05 1192.04,-125.43"/>
+<path fill="none" stroke="#63b8ff" d="M1463.4,-131.14C1408.82,-119.94 1318.22,-101.34 1265.52,-90.52"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1462.98,-134.63 1473.48,-133.21 1464.39,-127.77 1462.98,-134.63"/>
 </a>
 </g>
 </g>
@@ -148,9 +148,9 @@ var sectionId = 'dynsection-1';
 <g id="Node000005" class="node">
 <title>Node5</title>
 <g id="a_Node000005"><a xlink:href="stm32f103c8_2ktos__bsp_8c.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#666666" points="821.5,-96 696.5,-96 696.5,-66 821.5,-66 821.5,-96"/>
-<text text-anchor="start" x="704.5" y="-84" font-family="Helvetica,sans-Serif" font-size="10.00">bsp/stm32f103c8/ktos</text>
-<text text-anchor="middle" x="759" y="-73" font-family="Helvetica,sans-Serif" font-size="10.00">_bsp.c</text>
+<polygon fill="white" stroke="#666666" points="1434.5,-96 1309.5,-96 1309.5,-66 1434.5,-66 1434.5,-96"/>
+<text text-anchor="start" x="1317.5" y="-84" font-family="Helvetica,sans-Serif" font-size="10.00">bsp/stm32f103c8/ktos</text>
+<text text-anchor="middle" x="1372" y="-73" font-family="Helvetica,sans-Serif" font-size="10.00">_bsp.c</text>
 </a>
 </g>
 </g>
@@ -158,8 +158,8 @@ var sectionId = 'dynsection-1';
 <g id="edge4_Node000003_Node000005" class="edge">
 <title>Node3&#45;&gt;Node5</title>
 <g id="a_edge4_Node000003_Node000005"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M1113.25,-135.19C1049.58,-127.61 930.72,-112.73 830,-96 827.27,-95.55 824.49,-95.07 821.68,-94.57"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="1113.01,-138.69 1123.35,-136.39 1113.84,-131.74 1113.01,-138.69"/>
+<path fill="none" stroke="#63b8ff" d="M1479.62,-127.95C1457.68,-118.59 1427.69,-105.78 1404.94,-96.06"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1478.51,-131.29 1489.08,-131.99 1481.26,-124.85 1478.51,-131.29"/>
 </a>
 </g>
 </g>
@@ -167,9 +167,9 @@ var sectionId = 'dynsection-1';
 <g id="Node000006" class="node">
 <title>Node6</title>
 <g id="a_Node000006"><a xlink:href="stm32f407_2ktos__bsp_8c.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#666666" points="952.5,-96 839.5,-96 839.5,-66 952.5,-66 952.5,-96"/>
-<text text-anchor="start" x="847.5" y="-84" font-family="Helvetica,sans-Serif" font-size="10.00">bsp/stm32f407/ktos</text>
-<text text-anchor="middle" x="896" y="-73" font-family="Helvetica,sans-Serif" font-size="10.00">_bsp.c</text>
+<polygon fill="white" stroke="#666666" points="1565.5,-96 1452.5,-96 1452.5,-66 1565.5,-66 1565.5,-96"/>
+<text text-anchor="start" x="1460.5" y="-84" font-family="Helvetica,sans-Serif" font-size="10.00">bsp/stm32f407/ktos</text>
+<text text-anchor="middle" x="1509" y="-73" font-family="Helvetica,sans-Serif" font-size="10.00">_bsp.c</text>
 </a>
 </g>
 </g>
@@ -177,8 +177,8 @@ var sectionId = 'dynsection-1';
 <g id="edge5_Node000003_Node000006" class="edge">
 <title>Node3&#45;&gt;Node6</title>
 <g id="a_edge5_Node000003_Node000006"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M1113.29,-130.33C1068.75,-120.42 1000.89,-105.33 952.88,-94.65"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="1112.74,-133.79 1123.26,-132.55 1114.26,-126.96 1112.74,-133.79"/>
+<path fill="none" stroke="#63b8ff" d="M1509,-121.65C1509,-113.36 1509,-103.78 1509,-96.11"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1505.5,-121.87 1509,-131.87 1512.5,-121.87 1505.5,-121.87"/>
 </a>
 </g>
 </g>
@@ -186,9 +186,9 @@ var sectionId = 'dynsection-1';
 <g id="Node000007" class="node">
 <title>Node7</title>
 <g id="a_Node000007"><a xlink:href="stm32f411ce_2ktos__bsp_8c.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#666666" points="1095.5,-96 970.5,-96 970.5,-66 1095.5,-66 1095.5,-96"/>
-<text text-anchor="start" x="978.5" y="-84" font-family="Helvetica,sans-Serif" font-size="10.00">bsp/stm32f411ce/ktos</text>
-<text text-anchor="middle" x="1033" y="-73" font-family="Helvetica,sans-Serif" font-size="10.00">_bsp.c</text>
+<polygon fill="white" stroke="#666666" points="1708.5,-96 1583.5,-96 1583.5,-66 1708.5,-66 1708.5,-96"/>
+<text text-anchor="start" x="1591.5" y="-84" font-family="Helvetica,sans-Serif" font-size="10.00">bsp/stm32f411ce/ktos</text>
+<text text-anchor="middle" x="1646" y="-73" font-family="Helvetica,sans-Serif" font-size="10.00">_bsp.c</text>
 </a>
 </g>
 </g>
@@ -196,17 +196,18 @@ var sectionId = 'dynsection-1';
 <g id="edge6_Node000003_Node000007" class="edge">
 <title>Node3&#45;&gt;Node7</title>
 <g id="a_edge6_Node000003_Node000007"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M1131.47,-127.72C1111.41,-118.41 1084.25,-105.8 1063.54,-96.18"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="1130.13,-130.96 1140.68,-131.99 1133.08,-124.61 1130.13,-130.96"/>
+<path fill="none" stroke="#63b8ff" d="M1538.38,-127.95C1560.32,-118.59 1590.31,-105.78 1613.06,-96.06"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1536.74,-124.85 1528.92,-131.99 1539.49,-131.29 1536.74,-124.85"/>
 </a>
 </g>
 </g>
 <!-- Node8 -->
 <g id="Node000008" class="node">
 <title>Node8</title>
-<g id="a_Node000008"><a xlink:href="template_2ktos__bsp_8c.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#666666" points="136,-24.5 0,-24.5 0,-5.5 136,-5.5 136,-24.5"/>
-<text text-anchor="middle" x="68" y="-12.5" font-family="Helvetica,sans-Serif" font-size="10.00">bsp/template/ktos_bsp.c</text>
+<g id="a_Node000008"><a xlink:href="stm32g431_2ktos__bsp_8c.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="#666666" points="2035,-30 1919,-30 1919,0 2035,0 2035,-30"/>
+<text text-anchor="start" x="1927" y="-18" font-family="Helvetica,sans-Serif" font-size="10.00">bsp/stm32g431/ktos</text>
+<text text-anchor="middle" x="1977" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">_bsp.c</text>
 </a>
 </g>
 </g>
@@ -214,26 +215,26 @@ var sectionId = 'dynsection-1';
 <g id="edge7_Node000003_Node000008" class="edge">
 <title>Node3&#45;&gt;Node8</title>
 <g id="a_edge7_Node000003_Node000008"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M1113.21,-136.89C969.83,-125.29 516.93,-86.41 145,-30 134.39,-28.39 122.99,-26.44 112.31,-24.51"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="1113.14,-140.39 1123.39,-137.71 1113.7,-133.42 1113.14,-140.39"/>
+<path fill="none" stroke="#63b8ff" d="M1554.8,-135.86C1598,-130.31 1663.89,-118.74 1717,-96 1738.76,-86.68 1739.32,-75.5 1761,-66 1775.45,-59.67 1860.04,-40.93 1918.96,-28.28"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1554.36,-132.39 1544.86,-137.09 1555.22,-139.34 1554.36,-132.39"/>
+</a>
+</g>
+</g>
+<!-- Node9 -->
+<g id="Node000009" class="node">
+<title>Node9</title>
+<g id="a_Node000009"><a xlink:href="template_2ktos__bsp_8c.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="#666666" points="2189,-24.5 2053,-24.5 2053,-5.5 2189,-5.5 2189,-24.5"/>
+<text text-anchor="middle" x="2121" y="-12.5" font-family="Helvetica,sans-Serif" font-size="10.00">bsp/template/ktos_bsp.c</text>
 </a>
 </g>
 </g>
 <!-- Node3&#45;&gt;Node9 -->
-<g id="edge9_Node000003_Node000009" class="edge">
+<g id="edge8_Node000003_Node000009" class="edge">
 <title>Node3&#45;&gt;Node9</title>
-<g id="a_edge9_Node000003_Node000009"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M1204.96,-132.49C1254.41,-123.79 1335.36,-109.36 1405,-96 1414,-94.27 1423.65,-92.36 1432.8,-90.51"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="1204.14,-129.08 1194.9,-134.25 1205.35,-135.97 1204.14,-129.08"/>
-</a>
-</g>
-</g>
-<!-- Node10 -->
-<g id="Node000010" class="node">
-<title>Node10</title>
-<g id="a_Node000010"><a xlink:href="ktos__hal_8h.html" target="_top" xlink:title="KTOS Hardware Abstraction Layer (HAL) interface.">
-<polygon fill="white" stroke="#666666" points="1204.5,-90.5 1113.5,-90.5 1113.5,-71.5 1204.5,-71.5 1204.5,-90.5"/>
-<text text-anchor="middle" x="1159" y="-78.5" font-family="Helvetica,sans-Serif" font-size="10.00">core/ktos_hal.h</text>
+<g id="a_edge8_Node000003_Node000009"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M1555.03,-138.25C1605.45,-134.41 1687.82,-124.03 1753,-96 1773.74,-87.08 1773.09,-74.53 1794,-66 1897.94,-23.6 1933.2,-48.04 2044,-30 2054.19,-28.34 2065.12,-26.43 2075.45,-24.57"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1554.51,-134.78 1544.78,-138.98 1555,-141.76 1554.51,-134.78"/>
 </a>
 </g>
 </g>
@@ -241,269 +242,296 @@ var sectionId = 'dynsection-1';
 <g id="edge10_Node000003_Node000010" class="edge">
 <title>Node3&#45;&gt;Node10</title>
 <g id="a_edge10_Node000003_Node000010"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M1159,-121.66C1159,-111.24 1159,-98.8 1159,-90.67"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="1155.5,-121.87 1159,-131.87 1162.5,-121.87 1155.5,-121.87"/>
-</a>
-</g>
-</g>
-<!-- Node10&#45;&gt;Node2 -->
-<g id="edge25_Node000010_Node000002" class="edge">
-<title>Node10&#45;&gt;Node2</title>
-<g id="a_edge25_Node000010_Node000002"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M1200.87,-69.21C1206.92,-67.95 1213.1,-66.82 1219,-66 1552.61,-19.54 1644.48,-89.57 1976,-30 1982.94,-28.75 1990.31,-26.71 1996.99,-24.56"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="1199.87,-65.85 1190.87,-71.43 1201.39,-72.68 1199.87,-65.85"/>
-</a>
-</g>
-</g>
-<!-- Node10&#45;&gt;Node8 -->
-<g id="edge24_Node000010_Node000008" class="edge">
-<title>Node10&#45;&gt;Node8</title>
-<g id="a_edge24_Node000010_Node000008"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M1120.63,-69.14C1115.09,-67.89 1109.42,-66.78 1104,-66 681.85,-5.05 569.01,-76.27 145,-30 133.25,-28.72 120.59,-26.69 109,-24.57"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="1119.86,-72.55 1130.4,-71.5 1121.5,-65.75 1119.86,-72.55"/>
+<path fill="none" stroke="#63b8ff" d="M1555.08,-133.64C1610.64,-125.26 1706.79,-110.41 1789,-96 1798.66,-94.31 1809.02,-92.38 1818.81,-90.52"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1554.23,-130.23 1544.86,-135.17 1555.27,-137.15 1554.23,-130.23"/>
 </a>
 </g>
 </g>
 <!-- Node11 -->
 <g id="Node000011" class="node">
 <title>Node11</title>
-<g id="a_Node000011"><a xlink:href="atmega2560_2ktos__bsp_8c.html" target="_top" xlink:title="KTOS Board Support Package — ATmega2560 (AVR 8&#45;bit)">
-<polygon fill="white" stroke="#666666" points="276,-30 154,-30 154,0 276,0 276,-30"/>
-<text text-anchor="start" x="162" y="-18" font-family="Helvetica,sans-Serif" font-size="10.00">bsp/atmega2560/ktos</text>
-<text text-anchor="middle" x="215" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">_bsp.c</text>
+<g id="a_Node000011"><a xlink:href="ktos__hal_8h.html" target="_top" xlink:title="KTOS Hardware Abstraction Layer (HAL) interface.">
+<polygon fill="white" stroke="#666666" points="1138.5,-90.5 1047.5,-90.5 1047.5,-71.5 1138.5,-71.5 1138.5,-90.5"/>
+<text text-anchor="middle" x="1093" y="-78.5" font-family="Helvetica,sans-Serif" font-size="10.00">core/ktos_hal.h</text>
 </a>
 </g>
 </g>
-<!-- Node10&#45;&gt;Node11 -->
-<g id="edge11_Node000010_Node000011" class="edge">
-<title>Node10&#45;&gt;Node11</title>
-<g id="a_edge11_Node000010_Node000011"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M1120.03,-69.03C1114.68,-67.83 1109.23,-66.77 1104,-66 743.56,-12.78 646.7,-73.86 285,-30 282.17,-29.66 279.28,-29.26 276.37,-28.83"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="1119.57,-72.52 1130.11,-71.46 1121.21,-65.72 1119.57,-72.52"/>
+<!-- Node3&#45;&gt;Node11 -->
+<g id="edge11_Node000003_Node000011" class="edge">
+<title>Node3&#45;&gt;Node11</title>
+<g id="a_edge11_Node000003_Node000011"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M1463.21,-136.81C1394.23,-130.82 1259.71,-117.44 1147,-96 1139.2,-94.52 1130.85,-92.55 1123.12,-90.55"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1463.04,-140.31 1473.31,-137.68 1463.64,-133.34 1463.04,-140.31"/>
+</a>
+</g>
+</g>
+<!-- Node11&#45;&gt;Node2 -->
+<g id="edge27_Node000011_Node000002" class="edge">
+<title>Node11&#45;&gt;Node2</title>
+<g id="a_edge27_Node000011_Node000002"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M1037.16,-77.16C981.03,-74.32 892.02,-69.82 815,-66 487.9,-49.76 401.3,-88.14 79,-30 72.06,-28.75 64.69,-26.7 58.01,-24.56"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1037.09,-80.66 1047.25,-77.68 1037.44,-73.67 1037.09,-80.66"/>
+</a>
+</g>
+</g>
+<!-- Node11&#45;&gt;Node8 -->
+<g id="edge24_Node000011_Node000008" class="edge">
+<title>Node11&#45;&gt;Node8</title>
+<g id="a_edge24_Node000011_Node000008"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M1131.26,-69.04C1136.51,-67.84 1141.87,-66.78 1147,-66 1482.21,-15.19 1572.61,-72.31 1909,-30 1912.23,-29.59 1915.53,-29.12 1918.86,-28.59"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1130.23,-65.69 1121.36,-71.48 1131.9,-72.49 1130.23,-65.69"/>
+</a>
+</g>
+</g>
+<!-- Node11&#45;&gt;Node9 -->
+<g id="edge26_Node000011_Node000009" class="edge">
+<title>Node11&#45;&gt;Node9</title>
+<g id="a_edge26_Node000011_Node000009"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M1131.25,-69.01C1136.51,-67.82 1141.86,-66.76 1147,-66 1541.69,-7.6 1647.42,-73.79 2044,-30 2055.75,-28.7 2068.41,-26.67 2080,-24.55"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1130.23,-65.66 1121.35,-71.44 1131.9,-72.46 1130.23,-65.66"/>
 </a>
 </g>
 </g>
 <!-- Node12 -->
 <g id="Node000012" class="node">
 <title>Node12</title>
-<g id="a_Node000012"><a xlink:href="atmega328p_2ktos__bsp_8c.html" target="_top" xlink:title="KTOS Board Support Package — ATmega328P (AVR 8&#45;bit)">
-<polygon fill="white" stroke="#666666" points="416,-30 294,-30 294,0 416,0 416,-30"/>
-<text text-anchor="start" x="302" y="-18" font-family="Helvetica,sans-Serif" font-size="10.00">bsp/atmega328p/ktos</text>
-<text text-anchor="middle" x="355" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">_bsp.c</text>
+<g id="a_Node000012"><a xlink:href="atmega2560_2ktos__bsp_8c.html" target="_top" xlink:title="KTOS Board Support Package — ATmega2560 (AVR 8&#45;bit)">
+<polygon fill="white" stroke="#666666" points="210,-30 88,-30 88,0 210,0 210,-30"/>
+<text text-anchor="start" x="96" y="-18" font-family="Helvetica,sans-Serif" font-size="10.00">bsp/atmega2560/ktos</text>
+<text text-anchor="middle" x="149" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">_bsp.c</text>
 </a>
 </g>
 </g>
-<!-- Node10&#45;&gt;Node12 -->
-<g id="edge12_Node000010_Node000012" class="edge">
-<title>Node10&#45;&gt;Node12</title>
-<g id="a_edge12_Node000010_Node000012"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M1119.84,-69.04C1114.55,-67.85 1109.16,-66.79 1104,-66 805.24,-20.51 724.84,-67.73 425,-30 422.17,-29.64 419.29,-29.24 416.38,-28.8"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="1119.28,-72.5 1129.82,-71.44 1120.92,-65.69 1119.28,-72.5"/>
+<!-- Node11&#45;&gt;Node12 -->
+<g id="edge12_Node000011_Node000012" class="edge">
+<title>Node11&#45;&gt;Node12</title>
+<g id="a_edge12_Node000011_Node000012"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M1037.16,-77.02C850.79,-67.05 259.6,-35.19 219,-30 216.05,-29.62 213.04,-29.19 210,-28.72"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1037.11,-80.52 1047.29,-77.56 1037.49,-73.53 1037.11,-80.52"/>
 </a>
 </g>
 </g>
 <!-- Node13 -->
 <g id="Node000013" class="node">
 <title>Node13</title>
-<g id="a_Node000013"><a xlink:href="atmega32u4_2ktos__bsp_8c.html" target="_top" xlink:title="KTOS Board Support Package — ATmega32U4 (AVR 8&#45;bit)">
-<polygon fill="white" stroke="#666666" points="556,-30 434,-30 434,0 556,0 556,-30"/>
-<text text-anchor="start" x="442" y="-18" font-family="Helvetica,sans-Serif" font-size="10.00">bsp/atmega32u4/ktos</text>
-<text text-anchor="middle" x="495" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">_bsp.c</text>
+<g id="a_Node000013"><a xlink:href="atmega328p_2ktos__bsp_8c.html" target="_top" xlink:title="KTOS Board Support Package — ATmega328P (AVR 8&#45;bit)">
+<polygon fill="white" stroke="#666666" points="350,-30 228,-30 228,0 350,0 350,-30"/>
+<text text-anchor="start" x="236" y="-18" font-family="Helvetica,sans-Serif" font-size="10.00">bsp/atmega328p/ktos</text>
+<text text-anchor="middle" x="289" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">_bsp.c</text>
 </a>
 </g>
 </g>
-<!-- Node10&#45;&gt;Node13 -->
-<g id="edge13_Node000010_Node000013" class="edge">
-<title>Node10&#45;&gt;Node13</title>
-<g id="a_edge13_Node000010_Node000013"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M1119.65,-69.06C1114.42,-67.88 1109.1,-66.81 1104,-66 866.9,-28.23 803,-61.61 565,-30 562.05,-29.61 559.04,-29.17 556,-28.69"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="1118.98,-72.5 1129.52,-71.44 1120.62,-65.7 1118.98,-72.5"/>
+<!-- Node11&#45;&gt;Node13 -->
+<g id="edge13_Node000011_Node000013" class="edge">
+<title>Node11&#45;&gt;Node13</title>
+<g id="a_edge13_Node000011_Node000013"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M1037.09,-77.13C889.19,-69.39 490.05,-47.49 359,-30 356.05,-29.61 353.04,-29.16 350.01,-28.68"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1037.13,-80.64 1047.3,-77.66 1037.49,-73.65 1037.13,-80.64"/>
 </a>
 </g>
 </g>
 <!-- Node14 -->
 <g id="Node000014" class="node">
 <title>Node14</title>
-<g id="a_Node000014"><a xlink:href="attiny85_2ktos__bsp_8c.html" target="_top" xlink:title="KTOS Board Support Package — ATtiny85 (AVR 8&#45;bit)">
-<polygon fill="white" stroke="#666666" points="706,-24.5 574,-24.5 574,-5.5 706,-5.5 706,-24.5"/>
-<text text-anchor="middle" x="640" y="-12.5" font-family="Helvetica,sans-Serif" font-size="10.00">bsp/attiny85/ktos_bsp.c</text>
+<g id="a_Node000014"><a xlink:href="atmega32u4_2ktos__bsp_8c.html" target="_top" xlink:title="KTOS Board Support Package — ATmega32U4 (AVR 8&#45;bit)">
+<polygon fill="white" stroke="#666666" points="490,-30 368,-30 368,0 490,0 490,-30"/>
+<text text-anchor="start" x="376" y="-18" font-family="Helvetica,sans-Serif" font-size="10.00">bsp/atmega32u4/ktos</text>
+<text text-anchor="middle" x="429" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">_bsp.c</text>
 </a>
 </g>
 </g>
-<!-- Node10&#45;&gt;Node14 -->
-<g id="edge14_Node000010_Node000014" class="edge">
-<title>Node10&#45;&gt;Node14</title>
-<g id="a_edge14_Node000010_Node000014"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M1118.87,-69.01C1113.89,-67.88 1108.84,-66.84 1104,-66 932.9,-36.49 886.97,-53.96 715,-30 704.24,-28.5 692.68,-26.53 681.94,-24.53"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="1118.38,-72.49 1128.92,-71.44 1120.02,-65.69 1118.38,-72.49"/>
+<!-- Node11&#45;&gt;Node14 -->
+<g id="edge14_Node000011_Node000014" class="edge">
+<title>Node11&#45;&gt;Node14</title>
+<g id="a_edge14_Node000011_Node000014"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M1037.25,-77.42C931.75,-72.07 695.84,-57.88 499,-30 496.05,-29.58 493.05,-29.12 490.01,-28.63"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1037.18,-80.92 1047.34,-77.93 1037.53,-73.93 1037.18,-80.92"/>
 </a>
 </g>
 </g>
 <!-- Node15 -->
 <g id="Node000015" class="node">
 <title>Node15</title>
-<g id="a_Node000015"><a xlink:href="esp8266_2ktos__bsp_8c.html" target="_top" xlink:title="KTOS Board Support Package — ESP8266 (Xtensa LX106) — partial.">
-<polygon fill="white" stroke="#666666" points="857.5,-24.5 724.5,-24.5 724.5,-5.5 857.5,-5.5 857.5,-24.5"/>
-<text text-anchor="middle" x="791" y="-12.5" font-family="Helvetica,sans-Serif" font-size="10.00">bsp/esp8266/ktos_bsp.c</text>
+<g id="a_Node000015"><a xlink:href="attiny85_2ktos__bsp_8c.html" target="_top" xlink:title="KTOS Board Support Package — ATtiny85 (AVR 8&#45;bit)">
+<polygon fill="white" stroke="#666666" points="640,-24.5 508,-24.5 508,-5.5 640,-5.5 640,-24.5"/>
+<text text-anchor="middle" x="574" y="-12.5" font-family="Helvetica,sans-Serif" font-size="10.00">bsp/attiny85/ktos_bsp.c</text>
 </a>
 </g>
 </g>
-<!-- Node10&#45;&gt;Node15 -->
-<g id="edge15_Node000010_Node000015" class="edge">
-<title>Node10&#45;&gt;Node15</title>
-<g id="a_edge15_Node000010_Node000015"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M1117.73,-69.03C1113.11,-67.94 1108.47,-66.91 1104,-66 999.58,-44.83 972.07,-47.65 867,-30 856.94,-28.31 846.16,-26.39 835.97,-24.53"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="1117.17,-72.49 1127.71,-71.47 1118.83,-65.69 1117.17,-72.49"/>
+<!-- Node11&#45;&gt;Node15 -->
+<g id="edge15_Node000011_Node000015" class="edge">
+<title>Node11&#45;&gt;Node15</title>
+<g id="a_edge15_Node000011_Node000015"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M1037.36,-75.04C953.1,-67.23 788.19,-50.8 649,-30 638.52,-28.43 627.27,-26.48 616.74,-24.53"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1037.2,-78.54 1047.48,-75.97 1037.84,-71.57 1037.2,-78.54"/>
 </a>
 </g>
 </g>
 <!-- Node16 -->
 <g id="Node000016" class="node">
 <title>Node16</title>
-<g id="a_Node000016"><a xlink:href="msp430g2553_2ktos__bsp_8c.html" target="_top" xlink:title="KTOS Board Support Package — MSP430G2553 (MSP430 16&#45;bit)">
-<polygon fill="white" stroke="#666666" points="1006,-30 876,-30 876,0 1006,0 1006,-30"/>
-<text text-anchor="start" x="884" y="-18" font-family="Helvetica,sans-Serif" font-size="10.00">bsp/msp430g2553/ktos</text>
-<text text-anchor="middle" x="941" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">_bsp.c</text>
+<g id="a_Node000016"><a xlink:href="esp8266_2ktos__bsp_8c.html" target="_top" xlink:title="KTOS Board Support Package — ESP8266 (Xtensa LX106) — partial.">
+<polygon fill="white" stroke="#666666" points="791.5,-24.5 658.5,-24.5 658.5,-5.5 791.5,-5.5 791.5,-24.5"/>
+<text text-anchor="middle" x="725" y="-12.5" font-family="Helvetica,sans-Serif" font-size="10.00">bsp/esp8266/ktos_bsp.c</text>
 </a>
 </g>
 </g>
-<!-- Node10&#45;&gt;Node16 -->
-<g id="edge16_Node000010_Node000016" class="edge">
-<title>Node10&#45;&gt;Node16</title>
-<g id="a_edge16_Node000010_Node000016"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M1119.77,-68.48C1083.13,-57.73 1028.34,-41.64 989.08,-30.12"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="1119.02,-71.91 1129.6,-71.37 1120.99,-65.19 1119.02,-71.91"/>
+<!-- Node11&#45;&gt;Node16 -->
+<g id="edge16_Node000011_Node000016" class="edge">
+<title>Node11&#45;&gt;Node16</title>
+<g id="a_edge16_Node000011_Node000016"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M1037.27,-70.67C978.48,-60.78 883.17,-44.6 801,-30 791.22,-28.26 780.75,-26.36 770.8,-24.53"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1037.01,-74.18 1047.45,-72.38 1038.17,-67.27 1037.01,-74.18"/>
 </a>
 </g>
 </g>
 <!-- Node17 -->
 <g id="Node000017" class="node">
 <title>Node17</title>
-<g id="a_Node000017"><a xlink:href="pic18f_2ktos__bsp_8c.html" target="_top" xlink:title="KTOS Board Support Package — PIC18F4550 (PIC18 8&#45;bit) [Experimental].">
-<polygon fill="white" stroke="#666666" points="1146,-24.5 1024,-24.5 1024,-5.5 1146,-5.5 1146,-24.5"/>
-<text text-anchor="middle" x="1085" y="-12.5" font-family="Helvetica,sans-Serif" font-size="10.00">bsp/pic18f/ktos_bsp.c</text>
+<g id="a_Node000017"><a xlink:href="msp430g2553_2ktos__bsp_8c.html" target="_top" xlink:title="KTOS Board Support Package — MSP430G2553 (MSP430 16&#45;bit)">
+<polygon fill="white" stroke="#666666" points="940,-30 810,-30 810,0 940,0 940,-30"/>
+<text text-anchor="start" x="818" y="-18" font-family="Helvetica,sans-Serif" font-size="10.00">bsp/msp430g2553/ktos</text>
+<text text-anchor="middle" x="875" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">_bsp.c</text>
 </a>
 </g>
 </g>
-<!-- Node10&#45;&gt;Node17 -->
-<g id="edge17_Node000010_Node000017" class="edge">
-<title>Node10&#45;&gt;Node17</title>
-<g id="a_edge17_Node000010_Node000017"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M1141.29,-64.68C1126.92,-52.26 1107.18,-35.18 1095.3,-24.91"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="1139.17,-67.47 1149.02,-71.37 1143.75,-62.18 1139.17,-67.47"/>
+<!-- Node11&#45;&gt;Node17 -->
+<g id="edge17_Node000011_Node000017" class="edge">
+<title>Node11&#45;&gt;Node17</title>
+<g id="a_edge17_Node000011_Node000017"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M1053.77,-68.48C1017.13,-57.73 962.34,-41.64 923.08,-30.12"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1053.02,-71.91 1063.6,-71.37 1054.99,-65.19 1053.02,-71.91"/>
 </a>
 </g>
 </g>
 <!-- Node18 -->
 <g id="Node000018" class="node">
 <title>Node18</title>
-<g id="a_Node000018"><a xlink:href="sam3x8e_2ktos__bsp_8c.html" target="_top" xlink:title="KTOS Board Support Package — Atmel SAM3X8E (ARM Cortex&#45;M3)">
-<polygon fill="white" stroke="#666666" points="1301.5,-24.5 1164.5,-24.5 1164.5,-5.5 1301.5,-5.5 1301.5,-24.5"/>
-<text text-anchor="middle" x="1233" y="-12.5" font-family="Helvetica,sans-Serif" font-size="10.00">bsp/sam3x8e/ktos_bsp.c</text>
+<g id="a_Node000018"><a xlink:href="pic18f_2ktos__bsp_8c.html" target="_top" xlink:title="KTOS Board Support Package — PIC18F4550 (PIC18 8&#45;bit) [Experimental].">
+<polygon fill="white" stroke="#666666" points="1080,-24.5 958,-24.5 958,-5.5 1080,-5.5 1080,-24.5"/>
+<text text-anchor="middle" x="1019" y="-12.5" font-family="Helvetica,sans-Serif" font-size="10.00">bsp/pic18f/ktos_bsp.c</text>
 </a>
 </g>
 </g>
-<!-- Node10&#45;&gt;Node18 -->
-<g id="edge18_Node000010_Node000018" class="edge">
-<title>Node10&#45;&gt;Node18</title>
-<g id="a_edge18_Node000010_Node000018"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M1176.71,-64.68C1191.08,-52.26 1210.82,-35.18 1222.7,-24.91"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="1174.25,-62.18 1168.98,-71.37 1178.83,-67.47 1174.25,-62.18"/>
+<!-- Node11&#45;&gt;Node18 -->
+<g id="edge18_Node000011_Node000018" class="edge">
+<title>Node11&#45;&gt;Node18</title>
+<g id="a_edge18_Node000011_Node000018"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M1075.29,-64.68C1060.92,-52.26 1041.18,-35.18 1029.3,-24.91"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1073.17,-67.47 1083.02,-71.37 1077.75,-62.18 1073.17,-67.47"/>
 </a>
 </g>
 </g>
 <!-- Node19 -->
 <g id="Node000019" class="node">
 <title>Node19</title>
-<g id="a_Node000019"><a xlink:href="samd21g18_2ktos__bsp_8c.html" target="_top" xlink:title="KTOS Board Support Package — Atmel ATSAMD21G18 (ARM Cortex&#45;M0+)">
-<polygon fill="white" stroke="#666666" points="1438,-30 1320,-30 1320,0 1438,0 1438,-30"/>
-<text text-anchor="start" x="1328" y="-18" font-family="Helvetica,sans-Serif" font-size="10.00">bsp/samd21g18/ktos</text>
-<text text-anchor="middle" x="1379" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">_bsp.c</text>
+<g id="a_Node000019"><a xlink:href="sam3x8e_2ktos__bsp_8c.html" target="_top" xlink:title="KTOS Board Support Package — Atmel SAM3X8E (ARM Cortex&#45;M3)">
+<polygon fill="white" stroke="#666666" points="1235.5,-24.5 1098.5,-24.5 1098.5,-5.5 1235.5,-5.5 1235.5,-24.5"/>
+<text text-anchor="middle" x="1167" y="-12.5" font-family="Helvetica,sans-Serif" font-size="10.00">bsp/sam3x8e/ktos_bsp.c</text>
 </a>
 </g>
 </g>
-<!-- Node10&#45;&gt;Node19 -->
-<g id="edge19_Node000010_Node000019" class="edge">
-<title>Node10&#45;&gt;Node19</title>
-<g id="a_edge19_Node000010_Node000019"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M1198.59,-68.48C1235.56,-57.73 1290.86,-41.64 1330.48,-30.12"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="1197.29,-65.21 1188.67,-71.37 1199.25,-71.94 1197.29,-65.21"/>
+<!-- Node11&#45;&gt;Node19 -->
+<g id="edge19_Node000011_Node000019" class="edge">
+<title>Node11&#45;&gt;Node19</title>
+<g id="a_edge19_Node000011_Node000019"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M1110.71,-64.68C1125.08,-52.26 1144.82,-35.18 1156.7,-24.91"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1108.25,-62.18 1102.98,-71.37 1112.83,-67.47 1108.25,-62.18"/>
 </a>
 </g>
 </g>
 <!-- Node20 -->
 <g id="Node000020" class="node">
 <title>Node20</title>
-<g id="a_Node000020"><a xlink:href="stm32f030_2ktos__bsp_8c.html" target="_top" xlink:title="KTOS Board Support Package — STM32F030 (ARM Cortex&#45;M0)">
-<polygon fill="white" stroke="#666666" points="1569.5,-30 1456.5,-30 1456.5,0 1569.5,0 1569.5,-30"/>
-<text text-anchor="start" x="1464.5" y="-18" font-family="Helvetica,sans-Serif" font-size="10.00">bsp/stm32f030/ktos</text>
-<text text-anchor="middle" x="1513" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">_bsp.c</text>
+<g id="a_Node000020"><a xlink:href="samd21g18_2ktos__bsp_8c.html" target="_top" xlink:title="KTOS Board Support Package — Atmel ATSAMD21G18 (ARM Cortex&#45;M0+)">
+<polygon fill="white" stroke="#666666" points="1372,-30 1254,-30 1254,0 1372,0 1372,-30"/>
+<text text-anchor="start" x="1262" y="-18" font-family="Helvetica,sans-Serif" font-size="10.00">bsp/samd21g18/ktos</text>
+<text text-anchor="middle" x="1313" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">_bsp.c</text>
 </a>
 </g>
 </g>
-<!-- Node10&#45;&gt;Node20 -->
-<g id="edge20_Node000010_Node000020" class="edge">
-<title>Node10&#45;&gt;Node20</title>
-<g id="a_edge20_Node000010_Node000020"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M1203.64,-69.21C1208.8,-68.07 1214.01,-66.97 1219,-66 1319.69,-46.33 1346.12,-48.65 1447,-30 1449.99,-29.45 1453.06,-28.86 1456.16,-28.26"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="1202.79,-65.81 1193.81,-71.43 1204.33,-72.64 1202.79,-65.81"/>
+<!-- Node11&#45;&gt;Node20 -->
+<g id="edge20_Node000011_Node000020" class="edge">
+<title>Node11&#45;&gt;Node20</title>
+<g id="a_edge20_Node000011_Node000020"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M1132.59,-68.48C1169.56,-57.73 1224.86,-41.64 1264.48,-30.12"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1131.29,-65.21 1122.67,-71.37 1133.25,-71.94 1131.29,-65.21"/>
 </a>
 </g>
 </g>
 <!-- Node21 -->
 <g id="Node000021" class="node">
 <title>Node21</title>
-<g id="a_Node000021"><a xlink:href="stm32f103_2ktos__bsp_8c.html" target="_top" xlink:title="KTOS Board Support Package — STM32F103 (ARM Cortex&#45;M3)">
-<polygon fill="white" stroke="#666666" points="1700.5,-30 1587.5,-30 1587.5,0 1700.5,0 1700.5,-30"/>
-<text text-anchor="start" x="1595.5" y="-18" font-family="Helvetica,sans-Serif" font-size="10.00">bsp/stm32f103/ktos</text>
-<text text-anchor="middle" x="1644" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">_bsp.c</text>
+<g id="a_Node000021"><a xlink:href="stm32f030_2ktos__bsp_8c.html" target="_top" xlink:title="KTOS Board Support Package — STM32F030 (ARM Cortex&#45;M0)">
+<polygon fill="white" stroke="#666666" points="1503.5,-30 1390.5,-30 1390.5,0 1503.5,0 1503.5,-30"/>
+<text text-anchor="start" x="1398.5" y="-18" font-family="Helvetica,sans-Serif" font-size="10.00">bsp/stm32f030/ktos</text>
+<text text-anchor="middle" x="1447" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">_bsp.c</text>
 </a>
 </g>
 </g>
-<!-- Node10&#45;&gt;Node21 -->
-<g id="edge21_Node000010_Node000021" class="edge">
-<title>Node10&#45;&gt;Node21</title>
-<g id="a_edge21_Node000010_Node000021"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M1202.17,-69.23C1207.81,-68.02 1213.53,-66.91 1219,-66 1377.19,-39.73 1419.55,-54.67 1578,-30 1581.01,-29.53 1584.09,-29.01 1587.19,-28.46"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="1201.17,-65.86 1192.17,-71.45 1202.69,-72.69 1201.17,-65.86"/>
+<!-- Node11&#45;&gt;Node21 -->
+<g id="edge21_Node000011_Node000021" class="edge">
+<title>Node11&#45;&gt;Node21</title>
+<g id="a_edge21_Node000011_Node000021"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M1133.51,-69.03C1138.05,-67.94 1142.61,-66.9 1147,-66 1250.06,-44.77 1277.49,-48.92 1381,-30 1384,-29.45 1387.06,-28.87 1390.16,-28.27"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1132.57,-65.65 1123.72,-71.46 1134.26,-72.45 1132.57,-65.65"/>
 </a>
 </g>
 </g>
 <!-- Node22 -->
 <g id="Node000022" class="node">
 <title>Node22</title>
-<g id="a_Node000022"><a xlink:href="stm32g071_2ktos__bsp_8c.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#666666" points="1835,-30 1719,-30 1719,0 1835,0 1835,-30"/>
-<text text-anchor="start" x="1727" y="-18" font-family="Helvetica,sans-Serif" font-size="10.00">bsp/stm32g071/ktos</text>
-<text text-anchor="middle" x="1777" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">_bsp.c</text>
+<g id="a_Node000022"><a xlink:href="stm32f103_2ktos__bsp_8c.html" target="_top" xlink:title="KTOS Board Support Package — STM32F103 (ARM Cortex&#45;M3)">
+<polygon fill="white" stroke="#666666" points="1634.5,-30 1521.5,-30 1521.5,0 1634.5,0 1634.5,-30"/>
+<text text-anchor="start" x="1529.5" y="-18" font-family="Helvetica,sans-Serif" font-size="10.00">bsp/stm32f103/ktos</text>
+<text text-anchor="middle" x="1578" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">_bsp.c</text>
 </a>
 </g>
 </g>
-<!-- Node10&#45;&gt;Node22 -->
-<g id="edge22_Node000010_Node000022" class="edge">
-<title>Node10&#45;&gt;Node22</title>
-<g id="a_edge22_Node000010_Node000022"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M1201.3,-69.26C1207.22,-68.02 1213.24,-66.88 1219,-66 1434.87,-33.09 1492.72,-60.08 1709,-30 1712.22,-29.55 1715.52,-29.04 1718.85,-28.49"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="1200.52,-65.85 1191.52,-71.44 1202.04,-72.69 1200.52,-65.85"/>
+<!-- Node11&#45;&gt;Node22 -->
+<g id="edge22_Node000011_Node000022" class="edge">
+<title>Node11&#45;&gt;Node22</title>
+<g id="a_edge22_Node000011_Node000022"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M1132.4,-69.03C1137.29,-67.89 1142.24,-66.85 1147,-66 1307.49,-37.46 1350.91,-54.95 1512,-30 1515.01,-29.53 1518.09,-29.02 1521.19,-28.47"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1131.4,-65.67 1122.53,-71.46 1133.07,-72.47 1131.4,-65.67"/>
 </a>
 </g>
 </g>
 <!-- Node23 -->
 <g id="Node000023" class="node">
 <title>Node23</title>
-<g id="a_Node000023"><a xlink:href="stm32l031_2ktos__bsp_8c.html" target="_top" xlink:title="KTOS Board Support Package — STM32L031 (ARM Cortex&#45;M0+)">
-<polygon fill="white" stroke="#666666" points="1966.5,-30 1853.5,-30 1853.5,0 1966.5,0 1966.5,-30"/>
-<text text-anchor="start" x="1861.5" y="-18" font-family="Helvetica,sans-Serif" font-size="10.00">bsp/stm32l031/ktos</text>
-<text text-anchor="middle" x="1910" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">_bsp.c</text>
+<g id="a_Node000023"><a xlink:href="stm32g071_2ktos__bsp_8c.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="#666666" points="1769,-30 1653,-30 1653,0 1769,0 1769,-30"/>
+<text text-anchor="start" x="1661" y="-18" font-family="Helvetica,sans-Serif" font-size="10.00">bsp/stm32g071/ktos</text>
+<text text-anchor="middle" x="1711" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">_bsp.c</text>
 </a>
 </g>
 </g>
-<!-- Node10&#45;&gt;Node23 -->
-<g id="edge23_Node000010_Node000023" class="edge">
-<title>Node10&#45;&gt;Node23</title>
-<g id="a_edge23_Node000010_Node000023"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M1200.87,-69.27C1206.92,-68 1213.1,-66.85 1219,-66 1494.38,-26.24 1568.23,-66.97 1844,-30 1847.02,-29.6 1850.1,-29.13 1853.21,-28.62"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="1199.88,-65.9 1190.88,-71.49 1201.4,-72.73 1199.88,-65.9"/>
+<!-- Node11&#45;&gt;Node23 -->
+<g id="edge23_Node000011_Node000023" class="edge">
+<title>Node11&#45;&gt;Node23</title>
+<g id="a_edge23_Node000011_Node000023"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M1132.03,-68.99C1137.04,-67.84 1142.12,-66.8 1147,-66 1365.09,-30.12 1424.07,-60.35 1643,-30 1646.22,-29.55 1649.52,-29.04 1652.85,-28.49"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1130.82,-65.69 1121.94,-71.47 1132.49,-72.48 1130.82,-65.69"/>
+</a>
+</g>
+</g>
+<!-- Node24 -->
+<g id="Node000024" class="node">
+<title>Node24</title>
+<g id="a_Node000024"><a xlink:href="stm32l031_2ktos__bsp_8c.html" target="_top" xlink:title="KTOS Board Support Package — STM32L031 (ARM Cortex&#45;M0+)">
+<polygon fill="white" stroke="#666666" points="1900.5,-30 1787.5,-30 1787.5,0 1900.5,0 1900.5,-30"/>
+<text text-anchor="start" x="1795.5" y="-18" font-family="Helvetica,sans-Serif" font-size="10.00">bsp/stm32l031/ktos</text>
+<text text-anchor="middle" x="1844" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">_bsp.c</text>
+</a>
+</g>
+</g>
+<!-- Node11&#45;&gt;Node24 -->
+<g id="edge25_Node000011_Node000024" class="edge">
+<title>Node11&#45;&gt;Node24</title>
+<g id="a_edge25_Node000011_Node000024"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M1131.44,-69.05C1136.64,-67.86 1141.93,-66.79 1147,-66 1424.52,-22.54 1499.58,-67.25 1778,-30 1781.02,-29.6 1784.1,-29.13 1787.21,-28.62"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1130.52,-65.67 1121.65,-71.46 1132.19,-72.47 1130.52,-65.67"/>
 </a>
 </g>
 </g>

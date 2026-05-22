@@ -1,0 +1,18 @@
+<map id="bsp/stm32g431/ktos_bsp.c" name="bsp/stm32g431/ktos_bsp.c">
+<area shape="rect" id="Node000001" title=" " alt="" coords="13,5,167,45"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,313,76,339"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="89,46,47,300,42,299,84,45"/>
+<area shape="rect" id="Node000003" href="$ktos_8h.html" title="KTOS public API — include this in your application code." alt="" coords="125,167,188,192"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="96,45,104,80,118,118,141,154,136,157,113,120,99,81,91,46"/>
+<area shape="rect" id="Node000007" href="$ktos__hal_8h.html" title="KTOS Hardware Abstraction Layer (HAL) interface." alt="" coords="128,93,217,119"/>
+<area shape="poly" id="edge8_Node000001_Node000007" title=" " alt="" coords="112,44,152,82,149,86,108,47"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="201,313,283,339"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="174,190,197,211,219,239,233,269,241,299,235,301,228,271,214,241,193,215,170,194"/>
+<area shape="rect" id="Node000005" href="$ktos__common_8h.html" title="Portable primitive types, constants, and utility prototypes used throughout the KTOS kernel and all B..." alt="" coords="77,240,204,265"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="157,193,149,227,144,226,151,192"/>
+<area shape="poly" id="edge5_Node000005_Node000002" title=" " alt="" coords="126,268,70,307,67,303,123,263"/>
+<area shape="poly" id="edge7_Node000005_Node000004" title=" " alt="" coords="158,263,216,303,213,307,155,268"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="102,313,177,339"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="143,266,142,300,137,300,138,266"/>
+<area shape="poly" id="edge9_Node000007_Node000003" title=" " alt="" coords="173,120,165,154,160,153,167,118"/>
+</map>
