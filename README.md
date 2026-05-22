@@ -35,7 +35,7 @@ KTOS provides ready-to-use Board Support Packages (BSPs) for the following micro
 | STM32L031 | Cortex-M0+ | 8KB | 32KB | ✅ | hello_ktos |
 | STM32F103 | Cortex-M3 | 20KB | 64KB | ✅ | 6 (Blue Pill) |
 | STM32F407 | Cortex-M4F | 192KB | 1MB | ✅ | hello_ktos |
-| STM32G431 | Cortex-M4F | 32KB | 128KB | ✅ | led_control, uart |
+| STM32G431 | Cortex-M4F | 32KB | 128KB | ✅ | led_control, uart (Nucleo-G431RB) |
 | SAM3X8E | Cortex-M3 | 96KB | 512KB | ✅ | 6 (Arduino Due) |
 | ATSAMD21G18 | Cortex-M0+ | 32KB | 256KB | ✅ | 6 (Arduino Zero) |
 | nRF52840 | Cortex-M4F | 256KB | 1MB | ✅ | hello_ktos |
@@ -116,9 +116,6 @@ KTOS/
 │   └── esp8266/        # ESP8266 Xtensa BSP + Makefile
 ├── examples/              # Ready-to-flash KTOS demos
 │   ├── Arduino/           # ATmega328P boards (PlatformIO, bare-metal)
-│   │   ├── Nano/          # 5 examples (adc, i2c, led_control, button_control, uart)
-│   │   ├── Uno/           # 2 Uno-specific (usb_serial, eeprom) — Nano examples portable
-│   │   └── Pro_Mini/      # 5 examples (same source as Nano, programmed via USB-TTL)
 │   ├── stm32g431/         # STM32G431 examples (led_control, uart)
 │   └── esp8266/           # Xtensa LX106 examples
 ├── scripts/
@@ -143,7 +140,7 @@ you through download, build, and flash.  Quick links:
 | Arduino Due (SAM3X8E)           | `examples/Arduino/Due/`        | Cortex-M3 bare-metal, 96KB RAM.                                   |
 | STM32F103 Blue Pill             | `examples/stm32f103/`          | 6 examples, 72 MHz, no HAL. PlatformIO + custom linker script.    |
 | STM32F030 Nucleo-F030R8         | `examples/stm32f030/`          | 6 examples, 48 MHz Cortex-M0. New-style ADC/I2C/USART registers. |
-| STM32G431 Nucleo-G431RB         | `examples/stm32g431/`          | led_control, uart. 170 MHz Cortex-M4F, no HAL.                   |
+| STM32G431 Nucleo-G431RB         | `examples/stm32g431/`          | led_control, uart. 170 MHz Cortex-M4F, bare-metal registers.     |
 | ESP8266 (Xtensa LX106)          | `examples/esp8266/`            | KTOS bridging from the SDK's windowed ABI into CALL0.             |
 
 ## Building Locally
