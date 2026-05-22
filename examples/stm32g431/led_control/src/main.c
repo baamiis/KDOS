@@ -9,24 +9,22 @@
 #define STACK_SIZE 128
 static uint32_t led_stack[STACK_SIZE];
 
-static WORD led_task(WORD MsgType, WORD Param1, LONG Param2) {
-    (void)Param1; (void)Param2;
-    switch (MsgType) {
-        case KTOS_MSG_TYPE_INIT:
-            RCC_AHB2ENR |= (1 << 0);          /* GPIOAEN */
-            GPIOA_MODER &= ~(3 << 10);
-            GPIOA_MODER |=  (1 << 10);        /* PA5 output */
-            break;
-        case KTOS_MSG_TYPE_TIMER:
-            GPIOA_ODR ^= (1 << 5);            /* toggle LED */
-            break;
+static WORD led_task(WORD msg, WORD p1, LONG p2) {
+    (void)p1; (void)p2;
+    if (msg == KTOS_MSG_TYPE_INIT) {
+        RCC_AHB2ENR |= (1u << 0);
+        GPIOA_MODER  = (GPIOA_MODER & ~(3u << 10)) | (1u << 10);
+    } else {
+        GPIOA_ODR ^= (1u << 5);
     }
     return 500;
 }
 
+static KTOS_TASK tasks[1];
+
 int main(void) {
-    ktos_Init();
-    ktos_CreateTask(led_task, led_stack + STACK_SIZE);
-    ktos_Start();
+    KTOS_Init(tasks, 1);
+    KTOS_CreateTask(led_task, led_stack, sizeof(led_stack));
+    KTOS_Start();
     for (;;);
 }
