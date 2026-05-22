@@ -1,11 +1,13 @@
 <map id="ktos_hal_ContextSwitch" name="ktos_hal_ContextSwitch">
-<area shape="rect" id="Node000001" title=" " alt="" coords="864,56,1043,81"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="864,81,1043,107"/>
 <area shape="rect" id="Node000002" href="$ktos_8c.html#a0472bc90096e9ce7acb6b8aebc9b127b" title="Default exit handler called when a task function returns." alt="" coords="605,5,816,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="878,56,772,33,773,28,879,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="899,80,815,53,753,33,755,28,817,47,901,74"/>
 <area shape="rect" id="Node000006" href="$ktos_8c.html#ae0e8182ad311d004e6d96f8d42a70501" title="Round&#45;robin cooperative scheduler — runs on the OS stack." alt="" coords="428,56,557,81"/>
-<area shape="poly" id="edge9_Node000001_Node000006" title=" " alt="" coords="850,71,557,71,557,66,850,66"/>
+<area shape="poly" id="edge9_Node000001_Node000006" title=" " alt="" coords="850,91,557,75,558,70,850,86"/>
 <area shape="rect" id="Node000008" href="$ktos_8c.html#a4564bc418ca633102a602de5756f3a8a" title=" " alt="" coords="664,107,757,132"/>
-<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="879,87,758,112,757,107,878,82"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="851,107,758,117,757,112,850,102"/>
+<area shape="rect" id="Node000009" href="$stm32f411ce_2ktos__bsp_8c.html#ab5e09814056d617c521549e542639b7e" title=" " alt="" coords="645,156,776,181"/>
+<area shape="poly" id="edge10_Node000001_Node000009" title=" " alt="" coords="909,114,817,147,774,158,773,153,815,142,908,109"/>
 <area shape="rect" id="Node000003" href="$ktos_8c.html#afa8823ac78c11cab89b800172058212c" title=" " alt="" coords="273,7,380,32"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="592,21,380,22,380,16,592,16"/>
 <area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="643,36,549,59,547,53,641,31"/>

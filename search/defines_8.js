@@ -22,5 +22,5 @@ var searchData=
   ['tc_5fcmr_5fwave_19',['TC_CMR_WAVE',['../sam3x8e_2ktos__bsp_8c.html#aeb92866fb982814f6e7afbb19052842a',1,'ktos_bsp.c']]],
   ['tc_5fcmr_5fwavsel_5fup_5frc_20',['TC_CMR_WAVSEL_UP_RC',['../sam3x8e_2ktos__bsp_8c.html#a9a1a224dcd2cefaccb15c9e9881085e0',1,'ktos_bsp.c']]],
   ['tc_5fier_5fcpcs_21',['TC_IER_CPCS',['../sam3x8e_2ktos__bsp_8c.html#a6b0e5b25ddd28d50f17e0091555ae706',1,'ktos_bsp.c']]],
-  ['tick_5fhz_22',['TICK_HZ',['../nrf52840_2ktos__bsp_8c.html#a6df2aff0b3ae02cf824bfad9a740a1ce',1,'ktos_bsp.c']]]
+  ['tick_5fhz_22',['tick_hz',['../nrf52840_2ktos__bsp_8c.html#a6df2aff0b3ae02cf824bfad9a740a1ce',1,'TICK_HZ:&#160;ktos_bsp.c'],['../stm32f411ce_2ktos__bsp_8c.html#a6df2aff0b3ae02cf824bfad9a740a1ce',1,'TICK_HZ:&#160;ktos_bsp.c']]]
 ];

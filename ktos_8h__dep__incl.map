@@ -1,43 +1,45 @@
 <map id="core/ktos.h" name="core/ktos.h">
-<area shape="rect" id="Node000001" title="KTOS public API — include this in your application code." alt="" coords="541,5,636,31"/>
+<area shape="rect" id="Node000001" title="KTOS public API — include this in your application code." alt="" coords="671,5,765,31"/>
 <area shape="rect" id="Node000002" href="$nrf52840_2ktos__bsp_8c.html" title=" " alt="" coords="5,86,185,111"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="528,31,197,81,156,89,155,83,196,76,527,25"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="657,28,453,49,197,81,154,89,153,83,196,76,452,43,656,22"/>
 <area shape="rect" id="Node000003" href="$stm32f103c8_2ktos__bsp_8c.html" title=" " alt="" coords="209,79,376,119"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="533,37,365,81,363,76,532,31"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="657,33,388,81,377,83,376,78,387,76,656,27"/>
 <area shape="rect" id="Node000004" href="$stm32f407_2ktos__bsp_8c.html" title=" " alt="" coords="400,79,551,119"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="562,41,504,81,501,76,559,36"/>
-<area shape="rect" id="Node000005" href="$template_2ktos__bsp_8c.html" title=" " alt="" coords="75,174,257,199"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="592,45,586,84,578,104,565,121,540,136,506,146,422,158,336,163,269,169,228,177,227,171,268,164,335,158,422,153,505,141,538,131,562,117,574,101,581,83,587,44"/>
-<area shape="rect" id="Node000006" href="$ktos_8c.html" title="KTOS cooperative scheduler implementation." alt="" coords="281,174,374,199"/>
-<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="605,42,618,81,618,102,610,120,585,144,561,158,536,164,509,165,453,162,421,163,387,169,362,176,361,171,385,164,421,158,453,157,509,160,535,159,559,153,582,140,605,117,613,100,613,82,600,44"/>
-<area shape="rect" id="Node000007" href="$ktos__common_8c.html" title=" " alt="" coords="1222,86,1379,111"/>
-<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="650,20,895,39,1052,55,1210,76,1251,83,1250,89,1210,81,1052,61,895,45,649,26"/>
-<area shape="rect" id="Node000008" href="$ktos__hal_8h.html" title="KTOS Hardware Abstraction Layer (HAL) interface." alt="" coords="1076,86,1197,111"/>
-<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="650,25,1076,86,1076,91,650,31"/>
-<area shape="poly" id="edge20_Node000008_Node000005" title=" " alt="" coords="1063,106,719,126,495,144,269,169,223,177,222,171,268,164,495,139,719,121,1062,100"/>
-<area shape="poly" id="edge21_Node000008_Node000006" title=" " alt="" coords="1062,104,934,109,765,119,576,139,387,169,359,177,358,171,385,164,575,134,765,114,934,103,1062,99"/>
-<area shape="rect" id="Node000009" href="$atmega2560_2ktos__bsp_8c.html" title="KTOS Board Support Package — ATmega2560 (AVR 8&#45;bit)" alt="" coords="1499,167,1662,207"/>
-<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="1193,112,1211,116,1349,141,1488,164,1500,166,1499,172,1487,169,1348,146,1209,121,1192,117"/>
-<area shape="rect" id="Node000010" href="$atmega328p_2ktos__bsp_8c.html" title="KTOS Board Support Package — ATmega328P (AVR 8&#45;bit)" alt="" coords="1686,167,1849,207"/>
-<area shape="poly" id="edge9_Node000008_Node000010" title=" " alt="" coords="1191,112,1210,116,1340,134,1442,142,1544,149,1674,164,1686,166,1686,171,1674,169,1543,154,1441,147,1339,140,1210,121,1190,117"/>
-<area shape="rect" id="Node000011" href="$atmega32u4_2ktos__bsp_8c.html" title="KTOS Board Support Package — ATmega32U4 (AVR 8&#45;bit)" alt="" coords="1873,167,2035,207"/>
-<area shape="poly" id="edge10_Node000008_Node000011" title=" " alt="" coords="1190,112,1210,116,1309,130,1392,138,1535,143,1678,147,1762,153,1861,164,1873,166,1872,171,1860,169,1762,158,1678,152,1535,148,1392,143,1308,135,1210,121,1189,117"/>
-<area shape="rect" id="Node000012" href="$attiny85_2ktos__bsp_8c.html" title="KTOS Board Support Package — ATtiny85 (AVR 8&#45;bit)" alt="" coords="2059,174,2235,199"/>
-<area shape="poly" id="edge11_Node000008_Node000012" title=" " alt="" coords="1189,112,1210,116,1337,133,1444,141,1628,144,1812,146,1920,151,2048,164,2094,171,2093,177,2047,169,1920,157,1812,151,1628,150,1444,147,1336,138,1210,121,1188,117"/>
-<area shape="rect" id="Node000013" href="$esp8266_2ktos__bsp_8c.html" title="KTOS Board Support Package — ESP8266 (Xtensa LX106) — partial." alt="" coords="2260,174,2437,199"/>
-<area shape="poly" id="edge12_Node000008_Node000013" title=" " alt="" coords="1189,112,1210,116,1367,135,1500,145,1618,147,1728,146,1956,144,2090,150,2248,164,2295,171,2294,177,2247,169,2090,155,1956,149,1728,151,1618,153,1500,150,1367,141,1210,121,1188,117"/>
-<area shape="rect" id="Node000014" href="$msp430g2553_2ktos__bsp_8c.html" title="KTOS Board Support Package — MSP430G2553 (MSP430 16&#45;bit)" alt="" coords="2462,167,2635,207"/>
-<area shape="poly" id="edge13_Node000008_Node000014" title=" " alt="" coords="1189,112,1210,116,1398,138,1557,148,1698,150,1829,146,1961,142,2102,141,2262,147,2450,164,2462,165,2461,171,2450,169,2262,153,2102,147,1961,148,1829,152,1698,155,1557,153,1397,144,1210,121,1188,117"/>
-<area shape="rect" id="Node000015" href="$pic18f_2ktos__bsp_8c.html" title="KTOS Board Support Package — PIC18F4550 (PIC18 8&#45;bit) [Experimental]." alt="" coords="398,174,561,199"/>
-<area shape="poly" id="edge14_Node000008_Node000015" title=" " alt="" coords="1063,110,843,133,574,169,534,177,533,171,574,164,843,128,1062,104"/>
-<area shape="rect" id="Node000016" href="$sam3x8e_2ktos__bsp_8c.html" title="KTOS Board Support Package — Atmel SAM3X8E (ARM Cortex&#45;M3)" alt="" coords="585,174,768,199"/>
-<area shape="poly" id="edge15_Node000008_Node000016" title=" " alt="" coords="1063,116,738,177,738,171,1062,111"/>
-<area shape="rect" id="Node000017" href="$samd21g18_2ktos__bsp_8c.html" title="KTOS Board Support Package — Atmel ATSAMD21G18 (ARM Cortex&#45;M0+)" alt="" coords="793,167,950,207"/>
-<area shape="poly" id="edge16_Node000008_Node000017" title=" " alt="" coords="1089,118,931,169,929,164,1087,113"/>
-<area shape="rect" id="Node000018" href="$stm32f030_2ktos__bsp_8c.html" title="KTOS Board Support Package — STM32F030 (ARM Cortex&#45;M0)" alt="" coords="975,167,1125,207"/>
-<area shape="poly" id="edge17_Node000008_Node000018" title=" " alt="" coords="1117,123,1071,168,1068,164,1113,119"/>
-<area shape="rect" id="Node000019" href="$stm32f103_2ktos__bsp_8c.html" title="KTOS Board Support Package — STM32F103 (ARM Cortex&#45;M3)" alt="" coords="1149,167,1300,207"/>
-<area shape="poly" id="edge18_Node000008_Node000019" title=" " alt="" coords="1160,119,1207,165,1203,168,1157,123"/>
-<area shape="rect" id="Node000020" href="$stm32l031_2ktos__bsp_8c.html" title="KTOS Board Support Package — STM32L031 (ARM Cortex&#45;M0+)" alt="" coords="1324,167,1475,207"/>
-<area shape="poly" id="edge19_Node000008_Node000020" title=" " alt="" coords="1186,113,1342,164,1341,169,1184,118"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="670,37,534,81,533,76,669,32"/>
+<area shape="rect" id="Node000005" href="$stm32f411ce_2ktos__bsp_8c.html" title=" " alt="" coords="575,79,741,119"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="703,43,675,80,670,77,699,40"/>
+<area shape="rect" id="Node000006" href="$template_2ktos__bsp_8c.html" title=" " alt="" coords="266,174,447,199"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="740,40,752,59,762,79,764,101,756,120,733,137,700,149,615,160,527,164,460,169,418,177,418,171,459,164,527,159,615,155,698,143,730,132,752,117,759,100,757,81,748,61,736,43"/>
+<area shape="rect" id="Node000007" href="$ktos_8c.html" title="KTOS cooperative scheduler implementation." alt="" coords="471,174,565,199"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="758,35,782,53,800,77,808,99,806,110,800,120,776,144,751,158,726,164,700,165,643,162,612,163,577,169,553,176,551,171,576,164,611,158,643,157,700,160,725,159,749,153,773,140,796,117,801,108,803,100,796,80,778,57,754,40"/>
+<area shape="rect" id="Node000008" href="$ktos__common_8c.html" title=" " alt="" coords="1413,86,1570,111"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="779,20,1049,38,1224,54,1401,76,1442,83,1441,89,1400,81,1224,59,1049,43,779,25"/>
+<area shape="rect" id="Node000009" href="$ktos__hal_8h.html" title="KTOS Hardware Abstraction Layer (HAL) interface." alt="" coords="1267,86,1388,111"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="780,25,1267,87,1266,92,779,30"/>
+<area shape="poly" id="edge21_Node000009_Node000006" title=" " alt="" coords="1253,106,910,126,686,144,460,169,414,177,413,171,459,164,685,139,909,121,1253,100"/>
+<area shape="poly" id="edge22_Node000009_Node000007" title=" " alt="" coords="1253,104,1125,109,956,119,767,139,577,169,550,177,549,171,576,164,766,134,955,114,1124,103,1253,99"/>
+<area shape="rect" id="Node000010" href="$atmega2560_2ktos__bsp_8c.html" title="KTOS Board Support Package — ATmega2560 (AVR 8&#45;bit)" alt="" coords="1690,167,1853,207"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="1383,112,1401,116,1540,141,1678,164,1690,166,1689,172,1678,169,1539,146,1400,121,1382,117"/>
+<area shape="rect" id="Node000011" href="$atmega328p_2ktos__bsp_8c.html" title="KTOS Board Support Package — ATmega328P (AVR 8&#45;bit)" alt="" coords="1877,167,2039,207"/>
+<area shape="poly" id="edge10_Node000009_Node000011" title=" " alt="" coords="1381,112,1401,116,1531,134,1633,142,1735,149,1865,164,1877,166,1876,171,1864,169,1734,154,1632,147,1530,140,1400,121,1380,117"/>
+<area shape="rect" id="Node000012" href="$atmega32u4_2ktos__bsp_8c.html" title="KTOS Board Support Package — ATmega32U4 (AVR 8&#45;bit)" alt="" coords="2063,167,2226,207"/>
+<area shape="poly" id="edge11_Node000009_Node000012" title=" " alt="" coords="1380,112,1401,116,1499,130,1583,138,1726,143,1869,147,1953,153,2052,164,2064,166,2063,171,2051,169,1952,158,1869,152,1726,148,1582,143,1499,135,1400,121,1379,117"/>
+<area shape="rect" id="Node000013" href="$attiny85_2ktos__bsp_8c.html" title="KTOS Board Support Package — ATtiny85 (AVR 8&#45;bit)" alt="" coords="2250,174,2426,199"/>
+<area shape="poly" id="edge12_Node000009_Node000013" title=" " alt="" coords="1380,112,1401,116,1528,133,1635,141,1819,144,2003,146,2111,151,2238,164,2285,171,2284,177,2238,169,2111,157,2003,151,1819,150,1635,147,1527,138,1400,121,1379,117"/>
+<area shape="rect" id="Node000014" href="$esp8266_2ktos__bsp_8c.html" title="KTOS Board Support Package — ESP8266 (Xtensa LX106) — partial." alt="" coords="2451,174,2628,199"/>
+<area shape="poly" id="edge13_Node000009_Node000014" title=" " alt="" coords="1380,112,1401,116,1558,135,1691,145,1809,147,1919,146,2147,144,2281,150,2438,164,2486,171,2485,177,2438,169,2280,155,2147,149,1919,151,1809,153,1691,150,1557,141,1400,121,1379,117"/>
+<area shape="rect" id="Node000015" href="$msp430g2553_2ktos__bsp_8c.html" title="KTOS Board Support Package — MSP430G2553 (MSP430 16&#45;bit)" alt="" coords="2653,167,2826,207"/>
+<area shape="poly" id="edge14_Node000009_Node000015" title=" " alt="" coords="1380,112,1401,116,1588,138,1748,148,1888,150,2020,146,2151,142,2293,141,2453,147,2641,164,2653,165,2652,171,2640,169,2452,153,2292,147,2151,148,2020,152,1888,155,1748,153,1588,144,1400,121,1379,117"/>
+<area shape="rect" id="Node000016" href="$pic18f_2ktos__bsp_8c.html" title="KTOS Board Support Package — PIC18F4550 (PIC18 8&#45;bit) [Experimental]." alt="" coords="589,174,751,199"/>
+<area shape="poly" id="edge15_Node000009_Node000016" title=" " alt="" coords="1253,110,1034,133,765,169,724,177,723,171,764,164,1033,128,1253,104"/>
+<area shape="rect" id="Node000017" href="$sam3x8e_2ktos__bsp_8c.html" title="KTOS Board Support Package — Atmel SAM3X8E (ARM Cortex&#45;M3)" alt="" coords="776,174,959,199"/>
+<area shape="poly" id="edge16_Node000009_Node000017" title=" " alt="" coords="1253,116,929,177,928,171,1252,111"/>
+<area shape="rect" id="Node000018" href="$samd21g18_2ktos__bsp_8c.html" title="KTOS Board Support Package — Atmel ATSAMD21G18 (ARM Cortex&#45;M0+)" alt="" coords="983,167,1141,207"/>
+<area shape="poly" id="edge17_Node000009_Node000018" title=" " alt="" coords="1279,118,1121,169,1120,164,1278,113"/>
+<area shape="rect" id="Node000019" href="$stm32f030_2ktos__bsp_8c.html" title="KTOS Board Support Package — STM32F030 (ARM Cortex&#45;M0)" alt="" coords="1165,167,1316,207"/>
+<area shape="poly" id="edge18_Node000009_Node000019" title=" " alt="" coords="1308,123,1262,168,1258,164,1304,119"/>
+<area shape="rect" id="Node000020" href="$stm32f103_2ktos__bsp_8c.html" title="KTOS Board Support Package — STM32F103 (ARM Cortex&#45;M3)" alt="" coords="1340,167,1491,207"/>
+<area shape="poly" id="edge19_Node000009_Node000020" title=" " alt="" coords="1351,119,1398,165,1394,168,1347,123"/>
+<area shape="rect" id="Node000021" href="$stm32l031_2ktos__bsp_8c.html" title="KTOS Board Support Package — STM32L031 (ARM Cortex&#45;M0+)" alt="" coords="1515,167,1665,207"/>
+<area shape="poly" id="edge20_Node000009_Node000021" title=" " alt="" coords="1377,113,1533,164,1531,169,1375,118"/>
 </map>

@@ -1,5 +1,6 @@
 var NAVTREEINDEX1 =
 {
+"samd21g18_2ktos__bsp_8c.html#a1192febab2f27d83727a1b65e1781c66":[5,0,0,9,0,5],
 "samd21g18_2ktos__bsp_8c.html#a490d41ded0f31d146f79e29c9c2b5b9d":[5,0,0,9,0,10],
 "samd21g18_2ktos__bsp_8c.html#a7a5cf2360f629466cb57660864c215eb":[5,0,0,9,0,7],
 "samd21g18_2ktos__bsp_8c.html#a863d5ccc0b8f35b86168fdfb044285f8":[5,0,0,9,0,3],
@@ -237,17 +238,16 @@ var NAVTREEINDEX1 =
 "stm32f407_2ktos__bsp_8c.html#aeaa63a9b962a6dbb7ea6b11030f8ca75":[5,0,0,13,0,9],
 "stm32f407_2ktos__bsp_8c.html#aee4146f7272fc470d79c864f1ceeb586":[5,0,0,13,0,12],
 "stm32f407_2ktos__bsp_8c_source.html":[5,0,0,13,0],
-"stm32l031_2ktos__bsp_8c.html":[5,0,0,14,0],
-"stm32l031_2ktos__bsp_8c.html#a40c03741132f793b632dfa5266f9fc48":[5,0,0,14,0,2],
-"stm32l031_2ktos__bsp_8c.html#a5f6ac8b4c581ebfa1f6a2013dec2396d":[5,0,0,14,0,0],
-"stm32l031_2ktos__bsp_8c.html#a7051a258beea05555621a7fa2a06701f":[5,0,0,14,0,1],
-"stm32l031_2ktos__bsp_8c.html#a99fb4c496590d7d9f9759ff556b97bb5":[5,0,0,14,0,3],
-"stm32l031_2ktos__bsp_8c_source.html":[5,0,0,14,0],
-"structktos__MSG.html":[3,1,1],
-"structktos__MSG.html#a7d22f07eae9fa437950cb4133da23f18":[3,1,1,0],
-"structktos__MSG.html#afefb4da2680916035a275c0683097154":[3,1,1,1],
-"structktos__MSG.html#affc3d421ef06584e090cd8a1624fa2b5":[3,1,1,2],
-"structktos__TASK.html":[3,1,2],
-"structktos__TASK.html#a0cf80291ee43d51e55e5a09bcc9a2a51":[3,1,2,6],
-"structktos__TASK.html#a3552fc5754cffd0fe55064788a069d3d":[3,1,2,0]
+"stm32f411ce_2ktos__bsp_8c.html":[5,0,0,14,0],
+"stm32f411ce_2ktos__bsp_8c.html#a1be5aab413ec9e34c264ccf3dc0a24d2":[5,0,0,14,0,10],
+"stm32f411ce_2ktos__bsp_8c.html#a4e8efcc1f2b551dbf3cb0aae1231e380":[5,0,0,14,0,5],
+"stm32f411ce_2ktos__bsp_8c.html#a6df2aff0b3ae02cf824bfad9a740a1ce":[5,0,0,14,0,6],
+"stm32f411ce_2ktos__bsp_8c.html#a7f8564488243827944de74c4db24b732":[5,0,0,14,0,1],
+"stm32f411ce_2ktos__bsp_8c.html#a8a3aad26337b5b2813d5dc837d27f768":[5,0,0,14,0,11],
+"stm32f411ce_2ktos__bsp_8c.html#a8b1b70854fd8379fc65f3e649580a026":[5,0,0,14,0,12],
+"stm32f411ce_2ktos__bsp_8c.html#a9a6aa28cbe393921207b9d99cc2e9c56":[5,0,0,14,0,0],
+"stm32f411ce_2ktos__bsp_8c.html#ab26b3fc75982181f81b185b206e897f6":[5,0,0,14,0,3],
+"stm32f411ce_2ktos__bsp_8c.html#ab5e09814056d617c521549e542639b7e":[5,0,0,14,0,13],
+"stm32f411ce_2ktos__bsp_8c.html#ae146fb9a843cb775c0fda7054d4b6471":[5,0,0,14,0,2],
+"stm32f411ce_2ktos__bsp_8c.html#ae3dc4d2dbfdf38c593a5581415fecfed":[5,0,0,14,0,4]
 };

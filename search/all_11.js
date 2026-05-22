@@ -7,6 +7,7 @@ var searchData=
   ['notify_20a_20task_20from_20an_20isr_4',['Example — notify a task from an ISR',['../group__ktos__core.html#autotoc_md3',1,'']]],
   ['nummessages_5',['NumMessages',['../structktos__TASK.html#a844858bb2cf74d5027985f57a8064291',1,'ktos_TASK']]],
   ['nvic_5fiser0_6',['nvic_iser0',['../sam3x8e_2ktos__bsp_8c.html#ab37d21c2e44fe7e3967deaf10e30a763',1,'NVIC_ISER0:&#160;ktos_bsp.c'],['../samd21g18_2ktos__bsp_8c.html#ab37d21c2e44fe7e3967deaf10e30a763',1,'NVIC_ISER0:&#160;ktos_bsp.c']]],
-  ['nvmctrl_5fctrlb_7',['NVMCTRL_CTRLB',['../samd21g18_2startup_8c.html#a46db47520d8832397797d6a296b4231f',1,'startup.c']]],
-  ['nvmctrl_5fhandler_8',['NVMCTRL_Handler',['../samd21g18_2startup_8c.html#aeee84cfd7d3279751e9c3b8042f19155',1,'startup.c']]]
+  ['nvic_5fshpr3_7',['NVIC_SHPR3',['../stm32f411ce_2ktos__bsp_8c.html#a9a6aa28cbe393921207b9d99cc2e9c56',1,'ktos_bsp.c']]],
+  ['nvmctrl_5fctrlb_8',['NVMCTRL_CTRLB',['../samd21g18_2startup_8c.html#a46db47520d8832397797d6a296b4231f',1,'startup.c']]],
+  ['nvmctrl_5fhandler_9',['NVMCTRL_Handler',['../samd21g18_2startup_8c.html#aeee84cfd7d3279751e9c3b8042f19155',1,'startup.c']]]
 ];

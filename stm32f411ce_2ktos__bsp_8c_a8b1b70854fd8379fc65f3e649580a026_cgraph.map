@@ -1,0 +1,7 @@
+<map id="ktos_hal_StartScheduler" name="ktos_hal_StartScheduler">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,184,56"/>
+<area shape="rect" id="Node000002" href="$group__ktos__hal.html#ga6741995a98c2dc4867a11717fa64efd8" title="Re&#45;enable interrupts (AVR sei)." alt="" coords="233,5,423,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="184,31,219,27,219,32,185,36"/>
+<area shape="rect" id="Node000003" href="$nrf52840_2ktos__bsp_8c.html#a1be5aab413ec9e34c264ccf3dc0a24d2" title=" " alt="" coords="232,55,424,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="185,50,219,53,218,59,184,55"/>
+</map>
